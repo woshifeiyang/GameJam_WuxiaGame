@@ -5,9 +5,13 @@ using UnityEngine;
 public class MapManager : MonoBehaviour
 {
     public GameObject[] importMaps;
+    //maps importer
     public GameObject[,] maps;
     public GameObject player;
     public int mapSize = 100;
+    //mapsize in unity unit
+    public int mapLength = 3;
+    //number of maps in one direction, 3 means 3x3 maps
 
 
     private Vector3 playerPos;
@@ -18,17 +22,18 @@ public class MapManager : MonoBehaviour
     void Start()
     {
 
-
-        maps = new GameObject[3, 3];
+        //get maps into 2d array
+        maps = new GameObject[mapLength, mapLength];
         int mapImportNum = 0;
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < mapLength; i++)
         {
-            for (int j = 0; j < 3; j++)
+            for (int j = 0; j < mapLength; j++)
             {
                 maps[i, j] = importMaps[mapImportNum];
                 mapImportNum++;
             }
         }
+        //get player pos
         playerPos = new Vector3(player.transform.position.x, player.transform.position.y, 0);
 
         for (int i = 0; i < importMaps.Length; i++)
@@ -50,19 +55,20 @@ public class MapManager : MonoBehaviour
 
     void FixedUpdate()
     {
+        //update player pos and location
         playerPos = new Vector3(player.transform.position.x, player.transform.position.y, 0);
         currentPosNum = this.getLocatingMapNum();
         currentQuadrant = this.getQuadrant();
 
-        this.triggerMap();
-
+        //this.triggerMap();
+        //trigger adjacent maps
 
         if(currentPosNum[0] != previousPosNum[0] || currentPosNum[1] != previousPosNum[1]) 
         {
             this.moveMap();
-            Debug.Log("c" + currentPosNum[0] + " " + currentPosNum[1]);
-            Debug.Log("p" + previousPosNum[0] + " " + previousPosNum[1]);
-            Debug.Log("change");
+            //Debug.Log("c" + currentPosNum[0] + " " + currentPosNum[1]);
+            //Debug.Log("p" + previousPosNum[0] + " " + previousPosNum[1]);
+            //Debug.Log("change");
             previousPosNum = currentPosNum;
             
         }
@@ -75,14 +81,15 @@ public class MapManager : MonoBehaviour
     private int[] getLocatingMapNum()
     {
         int[] locatingMapNum = { 1, 1 };
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < mapLength; i++)
         {
-            for (int j = 0; j < 3; j++)
+            for (int j = 0; j < mapLength; j++)
             {
                
                 Vector3 mapPos = maps[i, j].transform.position;
                 if ((Mathf.Abs(mapPos.x - playerPos.x) < mapSize / 2) && (Mathf.Abs(mapPos.y - playerPos.y) < mapSize / 2))
                 {
+                    //calculate which map the player is in the range of
                     locatingMapNum = new int[] { i, j };
                     return locatingMapNum;
                 }
@@ -168,57 +175,100 @@ public class MapManager : MonoBehaviour
     {
         GameObject tempCMap = maps[currentPosNum[0], currentPosNum[1]];
         GameObject tempPMap = maps[previousPosNum[0], previousPosNum[1]];
-
-            if (tempCMap.transform.position.y > tempPMap.transform.position.y) 
+        // get map objects
+        // cmap = current map, p map = previous map
+        if (tempCMap.transform.position.y > tempPMap.transform.position.y) 
+        {
+            //Debug.Log("went up");
+            //went up
+            float tempPos = maps[0, 0].transform.position.y;
+            int targetMapNum = 0;
+            for (int i = 0; i < mapLength; i++)
             {
-                Debug.Log("went up");
-                //went up
-                for (int i = 0; i < 3; i++) 
+                if(maps[i, 0].transform.position.y < tempPos)
                 {
-                    maps[previousPosNum[1]-1,i].transform.position = new Vector3( maps[previousPosNum[1]-1, i].transform.position.x, 
-                                                                                    maps[previousPosNum[1]-1, i].transform.position.y + (3 * mapSize), 
-                                                                                    maps[previousPosNum[1]-1, i].transform.position.z);
+                    tempPos = maps[i, 0].transform.position.y;
+                    targetMapNum = i;
+                }
+            }      
+                for (int i = 0; i < mapLength; i++) 
+                {
+                    maps[targetMapNum, i].transform.position = new Vector3(         maps[targetMapNum, i].transform.position.x, 
+                                                                                    maps[targetMapNum, i].transform.position.y + (mapLength * mapSize), 
+                                                                                    maps[targetMapNum, i].transform.position.z);
                     //maps[i, currentPosNum[1] - 1].transform.position.y += 2 * mapSize;
                 }
-            }
-            else if (tempCMap.transform.position.y < tempPMap.transform.position.y)
+        }    
+        else if (tempCMap.transform.position.y < tempPMap.transform.position.y)
+        {
+
+            float tempPos = maps[0, 0].transform.position.y;
+            int targetMapNum = 0;
+            for (int i = 0; i < mapLength; i++)
             {
-                Debug.Log("went down");
-                for (int i = 0; i < 3; i++)
+                if (maps[i, 0].transform.position.y > tempPos)
                 {
-                    maps[previousPosNum[1]-1, i].transform.position = new Vector3( maps[previousPosNum[1]-1, i].transform.position.x, 
-                                                                                    maps[previousPosNum[1]-1, i].transform.position.y - (3 * mapSize), 
-                                                                                    maps[previousPosNum[1]-1, i].transform.position.z);
+                    tempPos = maps[i, 0].transform.position.y;
+                    targetMapNum = i;
+                }
+            }
+            //Debug.Log("went down");
+                for (int i = 0; i < mapLength; i++)
+                {
+                    maps[targetMapNum, i].transform.position = new Vector3(         maps[targetMapNum, i].transform.position.x, 
+                                                                                    maps[targetMapNum, i].transform.position.y - (mapLength * mapSize), 
+                                                                                    maps[targetMapNum, i].transform.position.z);
                     //maps[i, currentPosNum[1] + 1].transform.position.y -= 2 * mapSize;
                 }
                 //went down
-            }
+        }
        
 
-            if (tempCMap.transform.position.x > tempPMap.transform.position.x)
+        if (tempCMap.transform.position.x > tempPMap.transform.position.x)
+        {
+
+            float tempPos = maps[0, 0].transform.position.x;
+            int targetMapNum = 0;
+            for (int i = 0; i < mapLength; i++)
             {
-                Debug.Log("went right");
-                for (int i = 0; i < 3; i++)
+                if (maps[0, i].transform.position.x < tempPos)
                 {
-                    maps[i, previousPosNum[0]].transform.position = new Vector3( maps[i, previousPosNum[0]].transform.position.x + (3 * mapSize), 
-                                                                                    maps[i, previousPosNum[0]].transform.position.y, 
-                                                                                    maps[i, previousPosNum[0]].transform.position.z);
+                    tempPos = maps[0, i].transform.position.x;
+                    targetMapNum = i;
+                }
+            }
+            //Debug.Log("went right");
+                for (int i = 0; i < mapLength; i++)
+                {
+                    maps[i, targetMapNum].transform.position = new Vector3( maps[i, targetMapNum].transform.position.x + (mapLength * mapSize), 
+                                                                                    maps[i, targetMapNum].transform.position.y, 
+                                                                                    maps[i, targetMapNum].transform.position.z);
                     //maps [currentPosNum[1] - 1 ,i].transform.position.x += 2 * mapSize;
                 }
                 //went right
-            }
-            else if (tempCMap.transform.position.x < tempPMap.transform.position.x)
+        }
+        else if (tempCMap.transform.position.x < tempPMap.transform.position.x)
+        {
+            float tempPos = maps[0, 0].transform.position.x;
+            int targetMapNum = 0;
+            for (int i = 0; i < mapLength; i++)
             {
-                Debug.Log("went left");
-                for (int i = 0; i < 3; i++)
+                if (maps[0, i].transform.position.x > tempPos)
                 {
-                    maps[i, previousPosNum[0]].transform.position = new Vector3( maps[i, previousPosNum[0]].transform.position.x - (3 * mapSize), 
-                                                                                    maps[i, previousPosNum[0]].transform.position.y, 
-                                                                                    maps[i, previousPosNum[0]].transform.position.z);
+                    tempPos = maps[0, i].transform.position.x;
+                    targetMapNum = i;
+                }
+            }
+            //Debug.Log("went left");
+                for (int i = 0; i < mapLength; i++)
+                {
+                    maps[i, targetMapNum].transform.position = new Vector3( maps[i, targetMapNum].transform.position.x - (mapLength * mapSize), 
+                                                                                    maps[i, targetMapNum].transform.position.y, 
+                                                                                    maps[i, targetMapNum].transform.position.z);
                     //maps[currentPosNum[1] + 1, i].transform.position.x -= 2 * mapSize;
                 }
                 //went left
-            }
+        }
         
         
     }

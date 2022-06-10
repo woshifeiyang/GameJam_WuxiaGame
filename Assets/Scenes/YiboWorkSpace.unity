@@ -1016,7 +1016,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8563263028949727387, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563263028949727390, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563263028949727390, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}

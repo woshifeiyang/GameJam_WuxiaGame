@@ -11,12 +11,15 @@ public class PlayerController : MonoBehaviour
     
     public Vector2 movement;
 
+    public Transform skill;
+
     public float speed;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        InvokeRepeating("SpawnSkill", 1.0f, 5.0f);
     }
 
     // Update is called once per frame
@@ -40,5 +43,10 @@ public class PlayerController : MonoBehaviour
     void SwitchAnim()
     {
         anim.SetFloat("speed", movement.magnitude);
+    }
+
+    void SpawnSkill()
+    {
+        Instantiate(skill, transform.position, transform.rotation);
     }
 }

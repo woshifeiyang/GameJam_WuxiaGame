@@ -1,0 +1,2466 @@
+fileFormatVersion: 2
+guid: f305eebc646bd294580cb8ceaaaac2f5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3636900024169929489
+    second: 16_sunburn_spritesheet_0
+  - first:
+      213: -7801025535723522783
+    second: 16_sunburn_spritesheet_1
+  - first:
+      213: 929992761325742028
+    second: 16_sunburn_spritesheet_2
+  - first:
+      213: -5407246234350717664
+    second: 16_sunburn_spritesheet_3
+  - first:
+      213: -2654148419914707379
+    second: 16_sunburn_spritesheet_4
+  - first:
+      213: -2228744589622232453
+    second: 16_sunburn_spritesheet_5
+  - first:
+      213: 6263272190325439682
+    second: 16_sunburn_spritesheet_6
+  - first:
+      213: 3735753296659679372
+    second: 16_sunburn_spritesheet_7
+  - first:
+      213: -8310453132643485235
+    second: 16_sunburn_spritesheet_8
+  - first:
+      213: 1407436812790957083
+    second: 16_sunburn_spritesheet_9
+  - first:
+      213: 5753855330253882085
+    second: 16_sunburn_spritesheet_10
+  - first:
+      213: 1765943271687648794
+    second: 16_sunburn_spritesheet_11
+  - first:
+      213: 4039554951370867815
+    second: 16_sunburn_spritesheet_12
+  - first:
+      213: -5573781941526240469
+    second: 16_sunburn_spritesheet_13
+  - first:
+      213: 3438489358563515437
+    second: 16_sunburn_spritesheet_14
+  - first:
+      213: 983870750753396577
+    second: 16_sunburn_spritesheet_15
+  - first:
+      213: 6265798283278840764
+    second: 16_sunburn_spritesheet_16
+  - first:
+      213: 4764206203490849985
+    second: 16_sunburn_spritesheet_17
+  - first:
+      213: 6750589935680655065
+    second: 16_sunburn_spritesheet_18
+  - first:
+      213: 2819493221355987182
+    second: 16_sunburn_spritesheet_19
+  - first:
+      213: -1577169843732162904
+    second: 16_sunburn_spritesheet_20
+  - first:
+      213: 559096768429298963
+    second: 16_sunburn_spritesheet_21
+  - first:
+      213: 7423359587126464373
+    second: 16_sunburn_spritesheet_22
+  - first:
+      213: -3869532909192072933
+    second: 16_sunburn_spritesheet_23
+  - first:
+      213: -4792485684000035400
+    second: 16_sunburn_spritesheet_24
+  - first:
+      213: -2391277357771098244
+    second: 16_sunburn_spritesheet_25
+  - first:
+      213: 6723216669409562616
+    second: 16_sunburn_spritesheet_26
+  - first:
+      213: -3408238494602770409
+    second: 16_sunburn_spritesheet_27
+  - first:
+      213: -8270095943488192715
+    second: 16_sunburn_spritesheet_28
+  - first:
+      213: 6218723282806394756
+    second: 16_sunburn_spritesheet_29
+  - first:
+      213: -1391013807117551562
+    second: 16_sunburn_spritesheet_30
+  - first:
+      213: -1313062158316945709
+    second: 16_sunburn_spritesheet_31
+  - first:
+      213: -3370238458506574945
+    second: 16_sunburn_spritesheet_32
+  - first:
+      213: -3405891168391227487
+    second: 16_sunburn_spritesheet_33
+  - first:
+      213: 2874648784610909869
+    second: 16_sunburn_spritesheet_34
+  - first:
+      213: 2766919344764068492
+    second: 16_sunburn_spritesheet_35
+  - first:
+      213: -7604481204068681643
+    second: 16_sunburn_spritesheet_36
+  - first:
+      213: 8126642164633690539
+    second: 16_sunburn_spritesheet_37
+  - first:
+      213: 5052514067925562059
+    second: 16_sunburn_spritesheet_38
+  - first:
+      213: 73900944802438821
+    second: 16_sunburn_spritesheet_39
+  - first:
+      213: 1292860156061241575
+    second: 16_sunburn_spritesheet_40
+  - first:
+      213: -1644502719512115600
+    second: 16_sunburn_spritesheet_41
+  - first:
+      213: -7476304437819375453
+    second: 16_sunburn_spritesheet_42
+  - first:
+      213: 9020376077729300850
+    second: 16_sunburn_spritesheet_43
+  - first:
+      213: 2067425699724449576
+    second: 16_sunburn_spritesheet_44
+  - first:
+      213: -7571716408800103154
+    second: 16_sunburn_spritesheet_45
+  - first:
+      213: 2688385840614490287
+    second: 16_sunburn_spritesheet_46
+  - first:
+      213: -5682584017595173380
+    second: 16_sunburn_spritesheet_47
+  - first:
+      213: -3161001389483830168
+    second: 16_sunburn_spritesheet_48
+  - first:
+      213: -2830149530689499704
+    second: 16_sunburn_spritesheet_49
+  - first:
+      213: 1812935776265886121
+    second: 16_sunburn_spritesheet_50
+  - first:
+      213: -2754520757361000975
+    second: 16_sunburn_spritesheet_51
+  - first:
+      213: 4652196723891069569
+    second: 16_sunburn_spritesheet_52
+  - first:
+      213: -9189960473933038795
+    second: 16_sunburn_spritesheet_53
+  - first:
+      213: -2497154201582160551
+    second: 16_sunburn_spritesheet_54
+  - first:
+      213: 7326562647693624400
+    second: 16_sunburn_spritesheet_55
+  - first:
+      213: 2911505540911931282
+    second: 16_sunburn_spritesheet_56
+  - first:
+      213: -690644721177463751
+    second: 16_sunburn_spritesheet_57
+  - first:
+      213: 8838842382013582482
+    second: 16_sunburn_spritesheet_58
+  - first:
+      213: 5307238274938574227
+    second: 16_sunburn_spritesheet_59
+  - first:
+      213: -5388409771315575166
+    second: 16_sunburn_spritesheet_60
+  - first:
+      213: -1939731801919907751
+    second: 16_sunburn_spritesheet_61
+  - first:
+      213: -1296328224665941259
+    second: 16_sunburn_spritesheet_62
+  - first:
+      213: 6742614884126944806
+    second: 16_sunburn_spritesheet_63
+  - first:
+      213: -7824056663024893717
+    second: 16_sunburn_spritesheet_64
+  - first:
+      213: 6608104599246327652
+    second: 16_sunburn_spritesheet_65
+  - first:
+      213: 2396728865756858499
+    second: 16_sunburn_spritesheet_66
+  - first:
+      213: -8485301734355767788
+    second: 16_sunburn_spritesheet_67
+  - first:
+      213: 6854567886099486336
+    second: 16_sunburn_spritesheet_68
+  - first:
+      213: -6003871351195527141
+    second: 16_sunburn_spritesheet_69
+  - first:
+      213: -8622469113424142474
+    second: 16_sunburn_spritesheet_70
+  - first:
+      213: -5212098777798200760
+    second: 16_sunburn_spritesheet_71
+  - first:
+      213: 267999178560202338
+    second: 16_sunburn_spritesheet_72
+  - first:
+      213: 5507536236512175664
+    second: 16_sunburn_spritesheet_73
+  - first:
+      213: -7516796277561223481
+    second: 16_sunburn_spritesheet_74
+  - first:
+      213: -6937037990459609291
+    second: 16_sunburn_spritesheet_75
+  - first:
+      213: -3084344750162760958
+    second: 16_sunburn_spritesheet_76
+  - first:
+      213: -4199097133942946481
+    second: 16_sunburn_spritesheet_77
+  - first:
+      213: 6037115261556044818
+    second: 16_sunburn_spritesheet_78
+  - first:
+      213: 3194775282516148682
+    second: 16_sunburn_spritesheet_79
+  - first:
+      213: 5136394178849189928
+    second: 16_sunburn_spritesheet_80
+  - first:
+      213: 2962624279725612897
+    second: 16_sunburn_spritesheet_81
+  - first:
+      213: -7785903233113921601
+    second: 16_sunburn_spritesheet_82
+  - first:
+      213: 7784414662665530386
+    second: 16_sunburn_spritesheet_83
+  - first:
+      213: 6634960520714002538
+    second: 16_sunburn_spritesheet_84
+  - first:
+      213: -7441069889876976748
+    second: 16_sunburn_spritesheet_85
+  - first:
+      213: -5365395336538715058
+    second: 16_sunburn_spritesheet_86
+  - first:
+      213: -9085120908316256531
+    second: 16_sunburn_spritesheet_87
+  - first:
+      213: 2936518382140435207
+    second: 16_sunburn_spritesheet_88
+  - first:
+      213: 4947497772834690138
+    second: 16_sunburn_spritesheet_89
+  - first:
+      213: -7795985403138612414
+    second: 16_sunburn_spritesheet_90
+  - first:
+      213: 864634746575028505
+    second: 16_sunburn_spritesheet_91
+  - first:
+      213: -5187115065845274309
+    second: 16_sunburn_spritesheet_92
+  - first:
+      213: 6267563400358189919
+    second: 16_sunburn_spritesheet_93
+  - first:
+      213: -7119905673699068083
+    second: 16_sunburn_spritesheet_94
+  - first:
+      213: 8272210134289232247
+    second: 16_sunburn_spritesheet_95
+  - first:
+      213: 4710669441614807935
+    second: 16_sunburn_spritesheet_96
+  - first:
+      213: -4685056117186109294
+    second: 16_sunburn_spritesheet_97
+  - first:
+      213: -4555592341076027547
+    second: 16_sunburn_spritesheet_98
+  - first:
+      213: 7122390513307421563
+    second: 16_sunburn_spritesheet_99
+  - first:
+      213: 7280555355214811823
+    second: 16_sunburn_spritesheet_100
+  - first:
+      213: 1041420995571913652
+    second: 16_sunburn_spritesheet_101
+  - first:
+      213: 5919914747880048319
+    second: 16_sunburn_spritesheet_102
+  - first:
+      213: -4582035775714581316
+    second: 16_sunburn_spritesheet_103
+  - first:
+      213: 3865794577474999146
+    second: 16_sunburn_spritesheet_104
+  - first:
+      213: 5301787424992525304
+    second: 16_sunburn_spritesheet_105
+  - first:
+      213: 8254519511559638117
+    second: 16_sunburn_spritesheet_106
+  - first:
+      213: -5313590729360136580
+    second: 16_sunburn_spritesheet_107
+  - first:
+      213: -3136602180837472022
+    second: 16_sunburn_spritesheet_108
+  - first:
+      213: -5026945187936593376
+    second: 16_sunburn_spritesheet_109
+  - first:
+      213: 4828858460384670715
+    second: 16_sunburn_spritesheet_110
+  - first:
+      213: -1221072269900554435
+    second: 16_sunburn_spritesheet_111
+  - first:
+      213: 8298209131213916679
+    second: 16_sunburn_spritesheet_112
+  - first:
+      213: 1309078481131242428
+    second: 16_sunburn_spritesheet_113
+  - first:
+      213: -6429416634301258142
+    second: 16_sunburn_spritesheet_114
+  - first:
+      213: 470459018441084443
+    second: 16_sunburn_spritesheet_115
+  - first:
+      213: 1524995275793959333
+    second: 16_sunburn_spritesheet_116
+  - first:
+      213: -1683655614789743344
+    second: 16_sunburn_spritesheet_117
+  - first:
+      213: 4761221940338318687
+    second: 16_sunburn_spritesheet_118
+  - first:
+      213: 1996954323594154799
+    second: 16_sunburn_spritesheet_119
+  - first:
+      213: 7726484795589840744
+    second: 16_sunburn_spritesheet_120
+  - first:
+      213: 1268813654144173389
+    second: 16_sunburn_spritesheet_121
+  - first:
+      213: -5404911328751606967
+    second: 16_sunburn_spritesheet_122
+  - first:
+      213: 2092403580779257716
+    second: 16_sunburn_spritesheet_123
+  - first:
+      213: -6719384767404610116
+    second: 16_sunburn_spritesheet_124
+  - first:
+      213: -8357026384306125858
+    second: 16_sunburn_spritesheet_125
+  - first:
+      213: -3394036353817260358
+    second: 16_sunburn_spritesheet_126
+  - first:
+      213: -8226569014269958011
+    second: 16_sunburn_spritesheet_127
+  - first:
+      213: 4203994939171252971
+    second: 16_sunburn_spritesheet_128
+  - first:
+      213: 8838949666443808901
+    second: 16_sunburn_spritesheet_129
+  - first:
+      213: 2535814084784171729
+    second: 16_sunburn_spritesheet_130
+  - first:
+      213: 5042950799623544067
+    second: 16_sunburn_spritesheet_131
+  - first:
+      213: -4254025490862985957
+    second: 16_sunburn_spritesheet_132
+  - first:
+      213: 6959727858447570111
+    second: 16_sunburn_spritesheet_133
+  - first:
+      213: 3223636963454188432
+    second: 16_sunburn_spritesheet_134
+  - first:
+      213: -543374162788099352
+    second: 16_sunburn_spritesheet_135
+  - first:
+      213: 2808082524618381335
+    second: 16_sunburn_spritesheet_136
+  - first:
+      213: -7246734359037970940
+    second: 16_sunburn_spritesheet_137
+  - first:
+      213: -978726258069748623
+    second: 16_sunburn_spritesheet_138
+  - first:
+      213: -4573688665986104428
+    second: 16_sunburn_spritesheet_139
+  - first:
+      213: 833487253252807455
+    second: 16_sunburn_spritesheet_140
+  - first:
+      213: 5734864822587632315
+    second: 16_sunburn_spritesheet_141
+  - first:
+      213: 7413391883158104842
+    second: 16_sunburn_spritesheet_142
+  - first:
+      213: -3326394946997854412
+    second: 16_sunburn_spritesheet_143
+  - first:
+      213: 177781396341511500
+    second: 16_sunburn_spritesheet_144
+  - first:
+      213: -8467420076805440324
+    second: 16_sunburn_spritesheet_145
+  - first:
+      213: -107556351313167901
+    second: 16_sunburn_spritesheet_146
+  - first:
+      213: -3378420955594305023
+    second: 16_sunburn_spritesheet_147
+  - first:
+      213: -1407008248352706239
+    second: 16_sunburn_spritesheet_148
+  - first:
+      213: 3190779994974080685
+    second: 16_sunburn_spritesheet_149
+  - first:
+      213: -5552504522972745125
+    second: 16_sunburn_spritesheet_150
+  - first:
+      213: 1328010900319355380
+    second: 16_sunburn_spritesheet_151
+  - first:
+      213: -4199731764830366650
+    second: 16_sunburn_spritesheet_152
+  - first:
+      213: 960273682501954608
+    second: 16_sunburn_spritesheet_153
+  - first:
+      213: 2279974403281486909
+    second: 16_sunburn_spritesheet_154
+  - first:
+      213: 5806800712498168366
+    second: 16_sunburn_spritesheet_155
+  - first:
+      213: 4155538841199131968
+    second: 16_sunburn_spritesheet_156
+  - first:
+      213: 903882593790814409
+    second: 16_sunburn_spritesheet_157
+  - first:
+      213: -6916308861747058056
+    second: 16_sunburn_spritesheet_158
+  - first:
+      213: -8957023877534993797
+    second: 16_sunburn_spritesheet_159
+  - first:
+      213: -1666611962931560788
+    second: 16_sunburn_spritesheet_160
+  - first:
+      213: -6550960155027446947
+    second: 16_sunburn_spritesheet_161
+  - first:
+      213: 1806122842530445991
+    second: 16_sunburn_spritesheet_162
+  - first:
+      213: -6252971743279727646
+    second: 16_sunburn_spritesheet_163
+  - first:
+      213: 1824145771253844070
+    second: 16_sunburn_spritesheet_164
+  - first:
+      213: 8080699015214497787
+    second: 16_sunburn_spritesheet_165
+  - first:
+      213: 1737378170157505672
+    second: 16_sunburn_spritesheet_166
+  - first:
+      213: 994778252097826275
+    second: 16_sunburn_spritesheet_167
+  - first:
+      213: 8487771132752267714
+    second: 16_sunburn_spritesheet_168
+  - first:
+      213: -1407128203723205742
+    second: 16_sunburn_spritesheet_169
+  - first:
+      213: 3533000461946272070
+    second: Sunburn_0
+  - first:
+      213: 9088140971602494198
+    second: Sunburn_1
+  - first:
+      213: -3800702429946850301
+    second: Sunburn_2
+  - first:
+      213: 5939780247327416726
+    second: Sunburn_3
+  - first:
+      213: -7896856726939202918
+    second: Sunburn_4
+  - first:
+      213: 1095025460274560001
+    second: Sunburn_5
+  - first:
+      213: -3614555986187735636
+    second: Sunburn_6
+  - first:
+      213: 6333932769020129390
+    second: Sunburn_7
+  - first:
+      213: -1548978604773017539
+    second: Sunburn_8
+  - first:
+      213: 8782776478589377932
+    second: Sunburn_9
+  - first:
+      213: -3425162127660276958
+    second: Sunburn_10
+  - first:
+      213: -5090959561981521579
+    second: Sunburn_11
+  - first:
+      213: 9086086613993561264
+    second: Sunburn_12
+  - first:
+      213: 1166526845114012936
+    second: Sunburn_13
+  - first:
+      213: 7599352266257229624
+    second: Sunburn_14
+  - first:
+      213: 2587594148515213596
+    second: Sunburn_15
+  - first:
+      213: -2090470180064343849
+    second: Sunburn_16
+  - first:
+      213: -5337142199493260462
+    second: Sunburn_17
+  - first:
+      213: -2700663728715167807
+    second: Sunburn_18
+  - first:
+      213: -5061298810663530173
+    second: Sunburn_19
+  - first:
+      213: -5008496939259236282
+    second: Sunburn_20
+  - first:
+      213: -3307998716777215213
+    second: Sunburn_21
+  - first:
+      213: -1032652564171406617
+    second: Sunburn_22
+  - first:
+      213: 3185677974812459081
+    second: Sunburn_23
+  - first:
+      213: -8659041383853330756
+    second: Sunburn_24
+  - first:
+      213: -6204725810639314833
+    second: Sunburn_25
+  - first:
+      213: 4280267998799008928
+    second: Sunburn_26
+  - first:
+      213: -387586845925938918
+    second: Sunburn_27
+  - first:
+      213: 301646135257842276
+    second: Sunburn_28
+  - first:
+      213: -3786807300628074838
+    second: Sunburn_29
+  - first:
+      213: -1703382244298246470
+    second: Sunburn_30
+  - first:
+      213: -503480222068935739
+    second: Sunburn_31
+  - first:
+      213: 4913614508089348647
+    second: Sunburn_32
+  - first:
+      213: -5289459957488448786
+    second: Sunburn_33
+  - first:
+      213: 6435729670632138159
+    second: Sunburn_34
+  - first:
+      213: 8976015218202537117
+    second: Sunburn_35
+  - first:
+      213: 1669835186680046476
+    second: Sunburn_36
+  - first:
+      213: -3606943433505497503
+    second: Sunburn_37
+  - first:
+      213: -7795360831345984746
+    second: Sunburn_38
+  - first:
+      213: 1112227654654798673
+    second: Sunburn_39
+  - first:
+      213: -3809332293498952832
+    second: Sunburn_40
+  - first:
+      213: -1339606549794454529
+    second: Sunburn_41
+  - first:
+      213: 2635630820897728135
+    second: Sunburn_42
+  - first:
+      213: 5125503512034320491
+    second: Sunburn_43
+  - first:
+      213: 1956570222001826735
+    second: Sunburn_44
+  - first:
+      213: -2924795384361456093
+    second: Sunburn_45
+  - first:
+      213: -6946865207959765899
+    second: Sunburn_46
+  - first:
+      213: 4930530509094392532
+    second: Sunburn_47
+  - first:
+      213: -6922352397771331874
+    second: Sunburn_48
+  - first:
+      213: 7363427575797619972
+    second: Sunburn_49
+  - first:
+      213: 8457059289282460572
+    second: Sunburn_50
+  - first:
+      213: -1887273193345288453
+    second: Sunburn_51
+  - first:
+      213: 1083770683041320237
+    second: Sunburn_52
+  - first:
+      213: -8975962899212300474
+    second: Sunburn_53
+  - first:
+      213: -3818115313599420151
+    second: Sunburn_54
+  - first:
+      213: -18843758186687936
+    second: Sunburn_55
+  - first:
+      213: 898125164695165201
+    second: Sunburn_56
+  - first:
+      213: -4287247990598381584
+    second: Sunburn_57
+  - first:
+      213: 8084473838534606123
+    second: Sunburn_58
+  - first:
+      213: 4968639467813704955
+    second: Sunburn_59
+  - first:
+      213: -712727597535901528
+    second: Sunburn_60
+  - first:
+      213: -6401161075783898933
+    second: Sunburn_61
+  - first:
+      213: 1711912170076561846
+    second: Sunburn_62
+  - first:
+      213: -5669932310385871855
+    second: Sunburn_63
+  - first:
+      213: 7358143378195151699
+    second: Sunburn_64
+  - first:
+      213: -7168304817413968240
+    second: Sunburn_65
+  - first:
+      213: -6816481906894847879
+    second: Sunburn_66
+  - first:
+      213: -6274629564476334495
+    second: Sunburn_67
+  - first:
+      213: 9216193738420970286
+    second: Sunburn_68
+  - first:
+      213: -3687012925532174383
+    second: Sunburn_69
+  - first:
+      213: -5493553711919502488
+    second: Sunburn_70
+  - first:
+      213: 8396471485224438821
+    second: Sunburn_71
+  - first:
+      213: 5867243662026560959
+    second: Sunburn_72
+  - first:
+      213: -5915462375730666653
+    second: Sunburn_73
+  - first:
+      213: 865201142147279340
+    second: Sunburn_74
+  - first:
+      213: -7699298886968705277
+    second: Sunburn_75
+  - first:
+      213: -1168711125263869201
+    second: Sunburn_76
+  - first:
+      213: -1958083235912381398
+    second: Sunburn_77
+  - first:
+      213: -8849935629227526312
+    second: Sunburn_78
+  - first:
+      213: 283112817393813890
+    second: Sunburn_79
+  - first:
+      213: -3953006347233081519
+    second: Sunburn_80
+  - first:
+      213: -3276086833464759406
+    second: Sunburn_81
+  - first:
+      213: 2397972379429703483
+    second: Sunburn_82
+  - first:
+      213: -6660434442811261325
+    second: Sunburn_83
+  - first:
+      213: -1470985135826785942
+    second: Sunburn_84
+  - first:
+      213: -1267171404175062394
+    second: Sunburn_85
+  - first:
+      213: -8955823564893325969
+    second: Sunburn_86
+  - first:
+      213: 2032169502078719349
+    second: Sunburn_87
+  - first:
+      213: -19905455412746741
+    second: Sunburn_88
+  - first:
+      213: -2229975560807013882
+    second: Sunburn_89
+  - first:
+      213: -7233416375345896210
+    second: Sunburn_90
+  - first:
+      213: 7272226280514795500
+    second: Sunburn_91
+  - first:
+      213: -8289383498847087075
+    second: Sunburn_92
+  - first:
+      213: 3779609498197039609
+    second: Sunburn_93
+  - first:
+      213: 8112127520570831787
+    second: Sunburn_94
+  - first:
+      213: 2799760919419060492
+    second: Sunburn_95
+  - first:
+      213: 6090351601766697258
+    second: Sunburn_96
+  - first:
+      213: -3597505824772041862
+    second: Sunburn_97
+  - first:
+      213: -513431471021107235
+    second: Sunburn_98
+  - first:
+      213: 4565400883583144577
+    second: Sunburn_99
+  - first:
+      213: -8887243341365494935
+    second: Sunburn_100
+  - first:
+      213: 6947154034584009127
+    second: Sunburn_101
+  - first:
+      213: 6646108796727675998
+    second: Sunburn_102
+  - first:
+      213: 408179845826354431
+    second: Sunburn_103
+  - first:
+      213: -1545159556090621763
+    second: Sunburn_104
+  - first:
+      213: -8177892019048060959
+    second: Sunburn_105
+  - first:
+      213: -1907187069359197644
+    second: Sunburn_106
+  - first:
+      213: -1597897587662698747
+    second: Sunburn_107
+  - first:
+      213: 2427995870618321717
+    second: Sunburn_108
+  - first:
+      213: 6509022551721233037
+    second: Sunburn_109
+  - first:
+      213: 3194155208005455718
+    second: Sunburn_110
+  - first:
+      213: -7827668004124607714
+    second: Sunburn_111
+  - first:
+      213: -939303571161144867
+    second: Sunburn_112
+  - first:
+      213: -8040692336901746569
+    second: Sunburn_113
+  - first:
+      213: -1002124344215452952
+    second: Sunburn_114
+  - first:
+      213: -3552383211986895534
+    second: Sunburn_115
+  - first:
+      213: 1189735344812002408
+    second: Sunburn_116
+  - first:
+      213: -2823233782792888749
+    second: Sunburn_117
+  - first:
+      213: -8792250195760482104
+    second: Sunburn_118
+  - first:
+      213: -5074432009540045431
+    second: Sunburn_119
+  - first:
+      213: 1041560025876969966
+    second: Sunburn_120
+  - first:
+      213: 1863912304528446061
+    second: Sunburn_121
+  - first:
+      213: 2618327800598259380
+    second: Sunburn_122
+  - first:
+      213: 8942938703840490283
+    second: Sunburn_123
+  - first:
+      213: -8373596801935892048
+    second: Sunburn_124
+  - first:
+      213: 5647587154170496764
+    second: Sunburn_125
+  - first:
+      213: -4636365288578777681
+    second: Sunburn_126
+  - first:
+      213: 4513916751642738517
+    second: Sunburn_127
+  - first:
+      213: -696094763251775884
+    second: Sunburn_128
+  - first:
+      213: -5735501641588904785
+    second: Sunburn_129
+  - first:
+      213: -1774260761809370556
+    second: Sunburn_130
+  - first:
+      213: 1318608371554489809
+    second: Sunburn_131
+  - first:
+      213: 6025670606364071818
+    second: Sunburn_132
+  - first:
+      213: -2876233599196999832
+    second: Sunburn_133
+  - first:
+      213: -6893777392727175109
+    second: Sunburn_134
+  - first:
+      213: 2499335403205174952
+    second: Sunburn_135
+  - first:
+      213: -2479632150173327753
+    second: Sunburn_136
+  - first:
+      213: 5652043920024707431
+    second: Sunburn_137
+  - first:
+      213: 6699995899622238760
+    second: Sunburn_138
+  - first:
+      213: -5368833694273039476
+    second: Sunburn_139
+  - first:
+      213: 3759253636632362079
+    second: Sunburn_140
+  - first:
+      213: 5259359883723012665
+    second: Sunburn_141
+  - first:
+      213: -8348702264950278444
+    second: Sunburn_142
+  - first:
+      213: 7446556859308948661
+    second: Sunburn_143
+  - first:
+      213: 7518410823354447573
+    second: Sunburn_144
+  - first:
+      213: -2152786940620607149
+    second: Sunburn_145
+  - first:
+      213: -856232449828449547
+    second: Sunburn_146
+  - first:
+      213: 6329161108708250484
+    second: Sunburn_147
+  - first:
+      213: 497860125745967357
+    second: Sunburn_148
+  - first:
+      213: -2411476703211181366
+    second: Sunburn_149
+  - first:
+      213: 8400683630492346007
+    second: Sunburn_150
+  - first:
+      213: 8631825265291991957
+    second: Sunburn_151
+  - first:
+      213: -4323349652203827115
+    second: Sunburn_152
+  - first:
+      213: 8696250697591558370
+    second: Sunburn_153
+  - first:
+      213: 897897296530200759
+    second: Sunburn_154
+  - first:
+      213: -2200866316915772588
+    second: Sunburn_155
+  - first:
+      213: -2491393500310538511
+    second: Sunburn_156
+  - first:
+      213: -7495595595576147712
+    second: Sunburn_157
+  - first:
+      213: -2983119180312802658
+    second: Sunburn_158
+  - first:
+      213: -2164394621194173365
+    second: Sunburn_159
+  - first:
+      213: 4205234803592348500
+    second: Sunburn_160
+  - first:
+      213: 5432035317182785665
+    second: Sunburn_161
+  - first:
+      213: -2766572785031776724
+    second: Sunburn_162
+  - first:
+      213: 3900365942544012619
+    second: Sunburn_163
+  - first:
+      213: 124236383382954751
+    second: Sunburn_164
+  - first:
+      213: -5866268610927967943
+    second: Sunburn_165
+  - first:
+      213: -4012215487134837681
+    second: Sunburn_166
+  - first:
+      213: 8165457877953567016
+    second: Sunburn_167
+  - first:
+      213: 3580750007538816391
+    second: Sunburn_168
+  - first:
+      213: 6110491930323238799
+    second: Sunburn_169
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: 2
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sunburn_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 727
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6493995933db70130800000000000000
+      internalID: 3533000461946272070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_3
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 725
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69125d52aa65e6250800000000000000
+      internalID: 5939780247327416726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_4
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 725
+        width: 50
+        height: 51
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a82ac65aab86290800000000000000
+      internalID: -7896856726939202918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_5
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 724
+        width: 55
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10c7cabbadf423f00800000000000000
+      internalID: 1095025460274560001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_6
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 722
+        width: 57
+        height: 51
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cada4863b7486ddc0800000000000000
+      internalID: -3614555986187735636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_7
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 724
+        width: 53
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e60b6a87b46a6e750800000000000000
+      internalID: 6333932769020129390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_8
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 723
+        width: 52
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d38f2d17a2ce08ae0800000000000000
+      internalID: -1548978604773017539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_10
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 726
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22320b231316770d0800000000000000
+      internalID: -3425162127660276958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_20
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 731
+        width: 4
+        height: 5
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64072d4e19e3e7ab0800000000000000
+      internalID: -5008496939259236282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_23
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 623
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9408b795d3dc53c20800000000000000
+      internalID: 3185677974812459081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_25
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 623
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f606520dfb264e9a0800000000000000
+      internalID: -6204725810639314833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_27
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 623
+        width: 48
+        height: 51
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1968f031d30f9af0800000000000000
+      internalID: -387586845925938918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_29
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 622
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae253dc2de827bc0800000000000000
+      internalID: -3786807300628074838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_30
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 623
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab635ebafde5c58e0800000000000000
+      internalID: -1703382244298246470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_32
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 623
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7221fd59c5aa03440800000000000000
+      internalID: 4913614508089348647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_34
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 622
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa56878990e405950800000000000000
+      internalID: 6435729670632138159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_36
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 624
+        width: 51
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c83238f41427c2710800000000000000
+      internalID: 1669835186680046476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_51
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 521
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf67984a70f0fc5e0800000000000000
+      internalID: -1887273193345288453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_52
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 523
+        width: 47
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2d09a4b1b35a0f00800000000000000
+      internalID: 1083770683041320237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_53
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 523
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64f8d53cc49fe6380800000000000000
+      internalID: -8975962899212300474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_54
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 525
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9096d6df954530bc0800000000000000
+      internalID: -3818115313599420151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_55
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 523
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0429c07a3bd0dbff0800000000000000
+      internalID: -18843758186687936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_57
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 524
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ff4068daa2a084c0800000000000000
+      internalID: -4287247990598381584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_58
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 523
+        width: 50
+        height: 51
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2d3bcd6f12d13070800000000000000
+      internalID: 8084473838534606123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_64
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 524
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35bf6b7da606d1660800000000000000
+      internalID: 7358143378195151699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_72
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 425
+        width: 50
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb551cd4603ac6150800000000000000
+      internalID: 5867243662026560959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_74
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 424
+        width: 47
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce963f0dadfc10c00800000000000000
+      internalID: 865201142147279340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_76
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 421
+        width: 50
+        height: 51
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea99957c67e7cfe0800000000000000
+      internalID: -1168711125263869201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_77
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 422
+        width: 50
+        height: 52
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c8bcadbad73d4e0800000000000000
+      internalID: -1958083235912381398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_78
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 424
+        width: 52
+        height: 52
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 857f1d62f66be2580800000000000000
+      internalID: -8849935629227526312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_79
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 421
+        width: 52
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2894e108b91dde300800000000000000
+      internalID: 283112817393813890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_80
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 421
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 157ce4ecba91429c0800000000000000
+      internalID: -3953006347233081519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_81
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 422
+        width: 50
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29baff5e1600982d0800000000000000
+      internalID: -3276086833464759406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_99
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 322
+        width: 52
+        height: 51
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1825a334aef8b5f30800000000000000
+      internalID: 4565400883583144577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_100
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 321
+        width: 51
+        height: 52
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96b3475844b2aa480800000000000000
+      internalID: -8887243341365494935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_101
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 324
+        width: 54
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a93d4f69cf396060800000000000000
+      internalID: 6947154034584009127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_102
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 324
+        width: 55
+        height: 51
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c4d8fecb8bb3c50800000000000000
+      internalID: 6646108796727675998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_103
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 323
+        width: 50
+        height: 52
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffc14fa38652aa500800000000000000
+      internalID: 408179845826354431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_104
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 331
+        width: 52
+        height: 45
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db01be1029d7e8ae0800000000000000
+      internalID: -1545159556090621763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_105
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 326
+        width: 54
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e76329798a428e80800000000000000
+      internalID: -8177892019048060959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_106
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 325
+        width: 57
+        height: 51
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43270a2177f4885e0800000000000000
+      internalID: -1907187069359197644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_119
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 223
+        width: 58
+        height: 53
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9857e7a09fef399b0800000000000000
+      internalID: -5074432009540045431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_121
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 224
+        width: 59
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d62d5e39d52fdd910800000000000000
+      internalID: 1863912304528446061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_123
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 227
+        width: 47
+        height: 47
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2331829e53bb1c70800000000000000
+      internalID: 8942938703840490283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_124
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 223
+        width: 53
+        height: 51
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b1a348e2120bcb80800000000000000
+      internalID: -8373596801935892048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_125
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 225
+        width: 54
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf644623892406e40800000000000000
+      internalID: 5647587154170496764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_126
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 225
+        width: 55
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad7f45a55258afb0800000000000000
+      internalID: -4636365288578777681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_127
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 224
+        width: 49
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55fb95fae57a4ae30800000000000000
+      internalID: 4513916751642738517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_128
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 222
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4764e5a3089f656f0800000000000000
+      internalID: -696094763251775884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_136
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 126
+        width: 44
+        height: 44
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ed74372b3969dd0800000000000000
+      internalID: -2479632150173327753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_137
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 126
+        width: 45
+        height: 45
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 761aafbdff7107e40800000000000000
+      internalID: 5652043920024707431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_138
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 126
+        width: 46
+        height: 46
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82aae89c5ca2bfc50800000000000000
+      internalID: 6699995899622238760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_139
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 125
+        width: 47
+        height: 48
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8315ba43321e75b0800000000000000
+      internalID: -5368833694273039476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_140
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 128
+        width: 46
+        height: 45
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c3110e34d8b2430800000000000000
+      internalID: 3759253636632362079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_141
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 127
+        width: 47
+        height: 47
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93aff3fe2fffcf840800000000000000
+      internalID: 5259359883723012665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_142
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 127
+        width: 45
+        height: 48
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d6b32af583732c80800000000000000
+      internalID: -8348702264950278444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_144
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 126
+        width: 47
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d67e714fc2c65860800000000000000
+      internalID: 7518410823354447573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_152
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 26
+        width: 48
+        height: 46
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 550159cb5606004c0800000000000000
+      internalID: -4323349652203827115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_153
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 26
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e010bb4fe94fa870800000000000000
+      internalID: 8696250697591558370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_155
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 25
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 453fc16deb3f471e0800000000000000
+      internalID: -2200866316915772588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_159
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 27
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4484f93f8686f1e0800000000000000
+      internalID: -2164394621194173365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sunburn_164
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 26
+        width: 50
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff268bb155069b100800000000000000
+      internalID: 124236383382954751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ef030c46197bc894ba0d61759d02949c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    private Rigidbody2D _rb;
 
-    public Animator anim;
+    private Animator _anim;
     
-    public Vector2 movement;
+    private Vector2 _movement;
 
     public Transform skill;
 
@@ -17,36 +17,37 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        InvokeRepeating("SpawnSkill", 1.0f, 5.0f);
+        _rb = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
+        InvokeRepeating("SpawnSkill", 1.0f, 3.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        _movement.x = Input.GetAxisRaw("Horizontal");
+        _movement.y = Input.GetAxisRaw("Vertical");
 
-        if (movement.x != 0)
+        if (_movement.x != 0)
         {
-            transform.localScale = new Vector3(movement.x, 1, 1);
+            transform.localScale = new Vector3(_movement.x, 1, 1);
         }
         SwitchAnim();
     }
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+        _rb.MovePosition(_rb.position + _movement * speed * Time.fixedDeltaTime);
     }
 
-    void SwitchAnim()
+    private void SwitchAnim()
     {
-        anim.SetFloat("speed", movement.magnitude);
+        _anim.SetFloat("speed", _movement.magnitude);
     }
 
     void SpawnSkill()
     {
-        Instantiate(skill, transform.position, transform.rotation);
+        
+        Instantiate(skill, new Vector3(transform.position.x, transform.position.y + 1.0f), transform.rotation);
     }
 }

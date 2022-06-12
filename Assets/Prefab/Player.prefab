@@ -234,9 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ffd35348e9f7c34a8512c875aa714be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 8563263028949727389}
-  anim: {fileID: 8563263028949727391}
-  movement: {x: 0, y: 0}
+  skill: {fileID: 5808194450634383962, guid: 6971bec93ed17a54eabfde5d9535d3ce, type: 3}
   speed: 50
 --- !u!50 &8563263028949727389
 Rigidbody2D:

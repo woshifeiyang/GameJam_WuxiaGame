@@ -7,6 +7,10 @@ public class Skill : MonoBehaviour
 {
     public float skillSpeed;
 
+    public float damage;
+
+    public bool isDisappearable;
+
     private Rigidbody2D _rb;
 
     private GameObject _enemy;
@@ -18,11 +22,21 @@ public class Skill : MonoBehaviour
         _enemy = GameObject.FindGameObjectWithTag("Enemy");
         _player = GameObject.FindGameObjectWithTag("Player");
         _rb = GetComponent<Rigidbody2D>();
-        _rb.AddForce((_enemy.transform.position - _player.transform.position).normalized * skillSpeed, ForceMode2D.Force);
+
+        if (_enemy)
+        {
+            _rb.AddForce((_enemy.transform.position - _player.transform.position).normalized * skillSpeed, ForceMode2D.Force);
+        }
+        Invoke("SelfDestory", 10.0f);
     }
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void SelfDestory()
+    {
+        Destroy(gameObject);
     }
 }

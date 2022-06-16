@@ -70,12 +70,12 @@ public class PlayerController : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(0.05f);
-            if (_hasFound)
+            if (_hasFound || _cc.radius >= 40.0f)
             {
                 _cc.radius = radius;
                 _hasFound = false;
             }
-            else _cc.radius += 1.0f;
+            else _cc.radius += 0.5f;
         }
     }
 

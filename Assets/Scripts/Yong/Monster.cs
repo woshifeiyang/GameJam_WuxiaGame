@@ -20,6 +20,7 @@ public class Monster : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         _player = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     // Update is called once per frame
@@ -29,6 +30,7 @@ public class Monster : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        //rb.AddForce((_player.transform.position - transform.position).normalized * Time.fixedDeltaTime * moveSpeed, ForceMode2D.Force);
         _rb.MovePosition(transform.position + (_player.transform.position - transform.position).normalized * Time.fixedDeltaTime * moveSpeed);
         if (transform.position.x - _player.transform.position.x > 0)
         {

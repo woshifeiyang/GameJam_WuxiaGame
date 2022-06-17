@@ -64,8 +64,8 @@ public class EnemySpawner : MonoBehaviour
                 _enemyPool.Add(enemyName[i], new Queue<GameObject>());
                 for (int j = 0; j < enemyNum[i]; j++)
                 {
-                    string assertPath = "Assets/Prefab/Enemy/" + enemyName[i] + ".prefab";
-                    GameObject enemy = (GameObject)Instantiate(AssetDatabase.LoadAssetAtPath(assertPath, typeof(GameObject)));
+                    string assertPath = "Prefab/Enemy/" + enemyName[i];
+                    GameObject enemy = (GameObject)Instantiate(Resources.Load(assertPath));
                     if (enemy)
                     {
                         enemy.SetActive(false);

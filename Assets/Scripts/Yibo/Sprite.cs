@@ -3,10 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/SpawnManagerScriptableObject", order = 1)]
-public class Sprite :  ScriptableObject
+//[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/SpawnManagerScriptableObject", order = 1)]
+public class Sprite :  MonoBehaviour
 {
     public string spriteName;
+    public bool spriteManagerCheckStatus = true;
+    // false = checked
+    // true = need to be checked
+    public int spriteUsageStatus = 0;
+    // sprite status spreadsheet
+    // 0 = normal using
+    // 1 = not using
+    public float quality;
 
     public float damageFactor;
     public float projectileSize;
@@ -38,10 +46,13 @@ public class Sprite :  ScriptableObject
     {
         SpriteManager spriteManager = GameObject.FindObjectOfType<SpriteManager>();
         spriteManager.AddNewSprite(spriteName, this);
+        spriteManager.UpdateSprite();
     }
 
     private void AddNums()
     {
+        spriteProperty.Add("quality",quality);
+        
         spriteProperty.Add("damageFactor", damageFactor);
         spriteProperty.Add("projectileSize", projectileSize);
         spriteProperty.Add("projectileNum", projectileNum);
@@ -58,5 +69,10 @@ public class Sprite :  ScriptableObject
         spriteProperty.Add("bossDamageFactor", bossDamageFactor);
         spriteProperty.Add("healthStealthFactor", healthStealthFactor);
         spriteProperty.Add("itemBonus", itemBonus);
+    }
+
+    public void StartUsingSprite()
+    {
+        spriteUsageStatus = 0;
     }
 }

@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -14,6 +16,21 @@ public class EnemySpawner : MonoBehaviour
     public int[] enemyNum;
     
     private GameObject _player;
+    
+    [Serializable]
+    public struct EnemyStruct
+    {
+        public string name;
+        public int count;
+    }
+
+    public EnemyStruct[] firstPool;
+    public EnemyStruct[] secondPool;
+    public EnemyStruct[] thirdPool;
+    public EnemyStruct[] fourthPool;
+    public EnemyStruct[] fifthPool;
+    public EnemyStruct[] sixthPool;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +39,6 @@ public class EnemySpawner : MonoBehaviour
         ClearPool();
         InitEnemyList();
         InitEnemyPool();
-        
     }
 
     // Update is called once per frame
@@ -64,7 +80,7 @@ public class EnemySpawner : MonoBehaviour
                 _enemyPool.Add(enemyName[i], new Queue<GameObject>());
                 for (int j = 0; j < enemyNum[i]; j++)
                 {
-                    string assertPath = "Prefab/Enemy/" + enemyName[i];
+                    string assertPath = "Prefab/Enemy/First/" + enemyName[i];
                     GameObject enemy = (GameObject)Instantiate(Resources.Load(assertPath));
                     if (enemy)
                     {
@@ -81,6 +97,31 @@ public class EnemySpawner : MonoBehaviour
             }
             
         }
+    }
+
+    Vector2 GetRandomPosition()
+    {
+        float playerPositionX = _player.transform.position.x;
+        float playerPositionY = _player.transform.position.y;
+
+        int direction = Random.Range(0, 1);
+        // 生成在玩家左右两侧
+        if (direction == 0)
+        {
+            float randomNum = Random.Range(1.0f, 3.0f);
+            float x = Random.Range(playerPositionX - 10.0f + randomNum, playerPositionX + 10.0f + randomNum);
+            float y = Random.Range(playerPositionY - randomNum, playerPositionY + randomNum);
+            return new Vector2(x, y);
+        }
+        // 生成在玩家上下两侧
+        else
+        {
+            float randomNum = Random.Range(1.0f, 10.0f);
+            float x = Random.Range(playerPositionX + randomNum, playerPositionX + randomNum);
+            float y = Random.Range(playerPositionY - 5.0f + randomNum, playerPositionY + 5.0f + randomNum);
+            return new Vector2(x, y);
+        }
+        
     }
     public void ClearPool()
     {

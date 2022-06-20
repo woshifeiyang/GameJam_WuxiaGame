@@ -15,6 +15,10 @@ public class Sprite :  MonoBehaviour
     // 0 = normal using
     // 1 = not using
     public float quality;
+    // 1 = blue
+    // 2 = purple
+    // 3 = orange
+    public int spriteLevel;
 
     public float damageFactor;
     public float projectileSize;
@@ -75,4 +79,17 @@ public class Sprite :  MonoBehaviour
     {
         spriteUsageStatus = 0;
     }
+    
+    //TODO
+    public void upgradeSprite()
+    {
+        
+    }
+
+    public void levelUpSprite()
+    {
+        spriteLevel += 1;
+    }
+    
+    
 }

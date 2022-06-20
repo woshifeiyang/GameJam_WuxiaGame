@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8518602661368774173}
   - component: {fileID: -924086842203989542}
+  - component: {fileID: 2839608255398135601}
   m_Layer: 0
   m_Name: Sprite1
   m_TagString: Untagged
@@ -44,6 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteName: 
+  spriteManagerCheckStatus: 1
+  spriteUsageStatus: 0
+  quality: 0
   damageFactor: 0
   projectileSize: 0
   projectileNum: 0
@@ -60,3 +64,18 @@ MonoBehaviour:
   bossDamageFactor: 0
   healthStealthFactor: 0
   itemBonus: 0
+--- !u!114 &2839608255398135601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284878940482200621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d4c484e6b6bb540a3ed86d428ae92b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  targetPointSecond: 0
+  Speed: 2

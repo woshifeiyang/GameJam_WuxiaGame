@@ -14,6 +14,7 @@ public class FollowPoint : MonoBehaviour
 
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
         PR = Player.GetComponent<PathRecorder>();
         Offset = PR.pathwayPoint[targetPointSecond] - transform.position;
     }

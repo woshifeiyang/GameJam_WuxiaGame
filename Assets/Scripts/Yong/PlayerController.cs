@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
         if (_movement.x != 0)
         {
-            transform.localScale = new Vector3(_movement.x, 1, 1);
+            transform.localScale = new Vector3(_movement.x, 1.0f, 1);
         }
         SwitchAnim();
     }
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
         float radius = _cc.radius;
         while (true)
         {
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.02f);
             if (_hasFound || _cc.radius >= 40.0f)
             {
                 _cc.radius = radius;

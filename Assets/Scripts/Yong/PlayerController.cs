@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
         if (_movement.x != 0)
         {
-            transform.localScale = new Vector3(_movement.x, 1.0f, 1);
+            transform.localScale = new Vector3(_movement.x * 0.8f, 0.8f, 1);
         }
         SwitchAnim();
     }

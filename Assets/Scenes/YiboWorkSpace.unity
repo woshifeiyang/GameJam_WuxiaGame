@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 8563263028949727388, guid: 57f4f183bbd56c64ebfb94eb0f02dbc6, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57f4f183bbd56c64ebfb94eb0f02dbc6, type: 3}
 --- !u!1 &1908394369

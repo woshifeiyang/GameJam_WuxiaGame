@@ -164,6 +164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ffc24cc1121876449062d8258b0aedd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillSpeed: 100
-  damage: 10
-  isDisappearable: 1
+  skillSpeed: 200
+  damage: 50
+  isDisappearable: 0

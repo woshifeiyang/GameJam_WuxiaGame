@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
         _cc = GetComponent<CircleCollider2D>();
 
         _hasFound = false;
-        InvokeRepeating("SpawnSkill", 1.0f, 3.0f);
+        InvokeRepeating("SpawnSkill", 1.0f, 0.1f);
         StartCoroutine("FindNearestTarget");
     }
 

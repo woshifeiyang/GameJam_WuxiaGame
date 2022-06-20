@@ -13,20 +13,13 @@ public class Skill : MonoBehaviour
 
     private Rigidbody2D _rb;
 
-    private GameObject _enemy;
-
-    private GameObject _player;
     // Start is called before the first frame update
     void Start()
     {
-        _enemy = GameObject.FindGameObjectWithTag("Enemy");
-        _player = GameObject.FindGameObjectWithTag("Player");
         _rb = GetComponent<Rigidbody2D>();
-
-        if (_enemy)
-        {
-            _rb.AddForce((_enemy.transform.position - _player.transform.position).normalized * skillSpeed, ForceMode2D.Force);
-        }
+        
+        _rb.AddForce((PlayerController.PlayerControllerInstance.GetNearestEnemyLoc() - PlayerController.PlayerControllerInstance.transform.position).normalized * skillSpeed, ForceMode2D.Force);
+        
         Invoke("SelfDestory", 10.0f);
     }
     // Update is called once per frame

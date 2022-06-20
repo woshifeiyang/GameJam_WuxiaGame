@@ -7,8 +7,6 @@ using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
-    private GameObject _player;
-
     private GameObject _objectInPool;
 
     private GameObject _objectOutOfPool;
@@ -18,12 +16,12 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player");
         _objectInPool = new GameObject();
         _objectInPool.name = "objectInPool";
         _objectOutOfPool = new GameObject();
         _objectOutOfPool.name = "objectOutOfPool";
         
+        InvokeRepeating(nameof(SpawnEnemy), 1.0f, enemySpawnCd);        //后期要改
     }
 
     // Update is called once per frame
@@ -31,32 +29,33 @@ public class EnemySpawner : MonoBehaviour
     {
         
     }
-    
 
-    GameObject GetObjectFromPool(string poolName)
+    void SpawnEnemy()
     {
-        /*if (_enemyPool[poolName].Count != 0)
+        GameObject enemy = EnemyObjectPool.EnemyObjectPoolInstance.GetObjectFromPool("First");      //  后期要改
+        if (enemy)
         {
-            GameObject go = _enemyPool[poolName].Dequeue();
-            go.SetActive(true);
-            go.transform.SetParent(_objectOutOfPool.transform);
-            return go;
+            enemy.transform.position = GetRandomPosition();
+            enemy.transform.SetParent(_objectOutOfPool.transform);
+            enemy.SetActive(true);
         }
-        Debug.Log("Pool is nullptr");*/
-        return null;
+        else
+        {
+            Debug.Log("enemy is null, please check whether the name of pool is right or pool is null");
+        }
     }
     
     Vector2 GetRandomPosition()
     {
-        float playerPositionX = _player.transform.position.x;
-        float playerPositionY = _player.transform.position.y;
+        float playerPositionX = PlayerController.PlayerControllerInstance.GetPlayerPosition().x;
+        float playerPositionY = PlayerController.PlayerControllerInstance.GetPlayerPosition().y;
 
         int direction = Random.Range(0, 1);
         // 生成在玩家左右两侧
         if (direction == 0)
         {
             float randomNum = Random.Range(1.0f, 3.0f);
-            float x = Random.Range(playerPositionX - 2.5f + randomNum, playerPositionX + 2.5f + randomNum);
+            float x = Random.Range(playerPositionX - 3.0f - randomNum, playerPositionX + 3.0f + randomNum);
             float y = Random.Range(playerPositionY - randomNum, playerPositionY + randomNum);
             return new Vector2(x, y);
         }
@@ -65,7 +64,7 @@ public class EnemySpawner : MonoBehaviour
         {
             float randomNum = Random.Range(1.0f, 3.0f);
             float x = Random.Range(playerPositionX + randomNum, playerPositionX + randomNum);
-            float y = Random.Range(playerPositionY - 6.0f + randomNum, playerPositionY + 6.0f + randomNum);
+            float y = Random.Range(playerPositionY - 6.0f - randomNum, playerPositionY + 6.0f + randomNum);
             return new Vector2(x, y);
         }
         

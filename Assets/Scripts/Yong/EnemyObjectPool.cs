@@ -97,6 +97,7 @@ public class EnemyObjectPool : MonoBehaviour
                     {
                         enemy.SetActive(false);
                         _enemyPool["Second"].Enqueue(enemy);
+                        enemy.transform.SetParent(_objectInPool.transform);
                     }
                     else
                     {
@@ -119,6 +120,7 @@ public class EnemyObjectPool : MonoBehaviour
                     {
                         enemy.SetActive(false);
                         _enemyPool["Third"].Enqueue(enemy);
+                        enemy.transform.SetParent(_objectInPool.transform);
                     }
                     else
                     {
@@ -141,6 +143,7 @@ public class EnemyObjectPool : MonoBehaviour
                     {
                         enemy.SetActive(false);
                         _enemyPool["Fourth"].Enqueue(enemy);
+                        enemy.transform.SetParent(_objectInPool.transform);
                     }
                     else
                     {
@@ -151,6 +154,17 @@ public class EnemyObjectPool : MonoBehaviour
             }
         }
         
+    }
+
+    public GameObject GetObjectFromPool(string poolName)
+    {
+        if (_enemyPool[poolName].Count != 0)
+        {
+            GameObject go = _enemyPool[poolName].Dequeue();
+            return go;
+        }
+        Debug.Log("Pool is nullptr");
+        return null;
     }
     
     public void ClearPool()

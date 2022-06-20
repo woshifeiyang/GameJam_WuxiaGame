@@ -15,11 +15,23 @@ public class PlayerController : MonoBehaviour
 
     private GameObject _nearestEnemy;
 
-    private bool _hasFound;
+    private bool _hasFoundEnemy;
+
+    public static PlayerController PlayerControllerInstance;
 
     public Transform skill;
 
-    public float speed;
+    public float moveSpeed;
+
+    public float skillCd;
+
+    public float health;
+
+    private void Awake()
+    {
+        PlayerControllerInstance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +39,8 @@ public class PlayerController : MonoBehaviour
         _anim = GetComponent<Animator>();
         _cc = GetComponent<CircleCollider2D>();
 
-        _hasFound = false;
-        InvokeRepeating("SpawnSkill", 1.0f, 0.1f);
+        _hasFoundEnemy = false;
+        InvokeRepeating("SpawnSkill", 1.0f, skillCd);
         StartCoroutine("FindNearestTarget");
     }
 
@@ -47,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rb.MovePosition(_rb.position + _movement * speed * Time.fixedDeltaTime);
+        _rb.MovePosition(_rb.position + _movement * moveSpeed * Time.fixedDeltaTime);
         if (_nearestEnemy)
         {
             Debug.DrawLine(transform.position, _nearestEnemy.transform.position, Color.red);
@@ -70,10 +82,10 @@ public class PlayerController : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(0.02f);
-            if (_hasFound || _cc.radius >= 40.0f)
+            if (_hasFoundEnemy || _cc.radius >= 40.0f)
             {
                 _cc.radius = radius;
-                _hasFound = false;
+                _hasFoundEnemy = false;
             }
             else _cc.radius += 0.5f;
         }
@@ -84,7 +96,21 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             _nearestEnemy = other.gameObject;
-            _hasFound = true;
+            _hasFoundEnemy = true;
         }
+    }
+
+    public Vector3 GetNearestEnemyLoc()
+    {
+        if (_nearestEnemy && _nearestEnemy.activeInHierarchy)
+        {
+            return _nearestEnemy.transform.position;
+        }
+        return new Vector3(1.0f, 0.0f, 0.0f);
+    }
+
+    public Vector3 GetPlayerPosition()
+    {
+        return transform.position;
     }
 }

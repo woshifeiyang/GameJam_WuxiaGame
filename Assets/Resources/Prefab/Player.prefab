@@ -235,7 +235,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 5808194450634383962, guid: 6971bec93ed17a54eabfde5d9535d3ce, type: 3}
-  speed: 50
+  moveSpeed: 5
+  skillCd: 2
+  health: 100
 --- !u!50 &8563263028949727389
 Rigidbody2D:
   serializedVersion: 4

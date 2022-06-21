@@ -166,4 +166,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillSpeed: 200
   damage: 50
-  isDisappearable: 0
+  isDisappearable: 1

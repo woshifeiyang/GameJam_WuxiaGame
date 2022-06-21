@@ -7,8 +7,6 @@ public class EnemyObjectPool : MonoBehaviour
 {
     private Dictionary<string, Queue<GameObject>> _enemyPool = new Dictionary<string, Queue<GameObject>>();
     
-    private GameObject _player;
-
     private GameObject _objectInPool;
 
     private GameObject _objectOutOfPool;
@@ -35,7 +33,6 @@ public class EnemyObjectPool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player");
         _objectInPool = new GameObject();
         _objectInPool.name = "objectInPool";
         _objectOutOfPool = new GameObject();
@@ -67,7 +64,7 @@ public class EnemyObjectPool : MonoBehaviour
             for (int i = 0; i < firstPool.Length; ++i)
             {
                 string assertPath = "Prefab/Enemy/First/" + firstPool[i].name;
-                for (int j = 0; j < firstPool[i].count; j++)
+                for (int j = 0; j < firstPool[i].count; ++j)
                 {
                     GameObject enemy = (GameObject)Instantiate(Resources.Load(assertPath));
                     if (enemy)

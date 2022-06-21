@@ -64,11 +64,19 @@ public class PlayerController : MonoBehaviour
         {
             Debug.DrawLine(transform.position, _nearestEnemy.transform.position, Color.red);
         }
+        if (health <= 0.0f)
+        {
+            ExitGame();
+        }
     }
 
     private void SwitchAnim()
     {
         _anim.SetFloat("speed", _movement.magnitude);
+        if (health <= 0.0f)
+        {
+            _anim.SetBool("isDead", true);
+        }
     }
 
     void SpawnSkill()
@@ -112,5 +120,15 @@ public class PlayerController : MonoBehaviour
     public Vector3 GetPlayerPosition()
     {
         return transform.position;
+    }
+    
+    public void ExitGame()
+    {
+        //预处理
+    #if UNITY_EDITOR    //在编辑器模式下
+        UnityEditor.EditorApplication.isPlaying = false;
+    #else
+        Application.Quit();
+    #endif
     }
 }

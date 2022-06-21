@@ -50,21 +50,40 @@ public class EnemySpawner : MonoBehaviour
         float playerPositionX = PlayerController.PlayerControllerInstance.GetPlayerPosition().x;
         float playerPositionY = PlayerController.PlayerControllerInstance.GetPlayerPosition().y;
 
-        int direction = Random.Range(0, 1);
+        float direction = Random.Range(0, 100);
         // 生成在玩家左右两侧
-        if (direction == 0)
+        if (direction <= 25)
         {
+            float x;
+            float y = Random.Range(playerPositionY - 6.0f, playerPositionY + 6.0f);
+            int left = Random.Range(0, 1);
             float randomNum = Random.Range(1.0f, 3.0f);
-            float x = Random.Range(playerPositionX - 3.0f - randomNum, playerPositionX + 3.0f + randomNum);
-            float y = Random.Range(playerPositionY - randomNum, playerPositionY + randomNum);
+            if (left == 1)
+            {
+                x = Random.Range(playerPositionX - 3.0f, playerPositionX - 3.0f - randomNum);
+            }
+            else
+            {
+                x = Random.Range(playerPositionX + 3.0f, playerPositionX + 3.0f + randomNum);
+            }
+
             return new Vector2(x, y);
         }
         // 生成在玩家上下两侧
         else
         {
-            float randomNum = Random.Range(1.0f, 3.0f);
-            float x = Random.Range(playerPositionX + randomNum, playerPositionX + randomNum);
-            float y = Random.Range(playerPositionY - 6.0f - randomNum, playerPositionY + 6.0f + randomNum);
+            float randomNum = Random.Range(0.0f, 3.0f);
+            float x = Random.Range(playerPositionX + randomNum, playerPositionX - randomNum);
+            float y;
+            int top = Random.Range(0, 1);
+            if (top == 1)
+            {
+                y = Random.Range(playerPositionY + 6.0f, playerPositionY + 6.0f + randomNum);
+            }
+            else
+            {
+                y = Random.Range(playerPositionY - 6.0f, playerPositionY - 6.0f - randomNum);
+            }
             return new Vector2(x, y);
         }
         

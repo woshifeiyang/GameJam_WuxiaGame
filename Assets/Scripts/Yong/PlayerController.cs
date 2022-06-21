@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
         if (_movement.x != 0)
         {
-            transform.localScale = new Vector3(_movement.x * 0.8f, 0.8f, 1);
+            transform.localScale = new Vector3(-1.0f * _movement.x * 0.4f, 0.4f, 1);
         }
         SwitchAnim();
     }
@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy") && !other.gameObject.GetComponent<Monster>().isDead)
+        if (other.gameObject.CompareTag("Enemy") && other.gameObject.GetComponent<Monster>().isDead == false)
         {
             _nearestEnemy = other.gameObject;
             _hasFoundEnemy = true;

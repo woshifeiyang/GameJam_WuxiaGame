@@ -9,20 +9,23 @@ public class Monster : MonoBehaviour
 
     public float moveSpeed;
     
-    // false = not dead
-    // true = already dead
-    public bool isDead = false;
+    public bool isDead;
 
     private Rigidbody2D _rb;
 
     private GameObject _player;
     
     private Animator _anim;
+    
+    //每次setactive后执行这个函数
+    private void OnEnable()
+    {
+        isDead = false;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        isDead = false;
-        
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         _player = GameObject.FindGameObjectWithTag("Player");
@@ -45,7 +48,7 @@ public class Monster : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D obj)
     {
-        if (obj.gameObject.CompareTag("Skill") && !isDead)
+        if (obj.gameObject.CompareTag("Skill") && isDead == false)
         {
             if (health - obj.gameObject.GetComponent<Skill>().damage > 0.0f)
             {
@@ -55,9 +58,8 @@ public class Monster : MonoBehaviour
             else
             {
                 isDead = true;
-                
-                SwitchAnim();
                 moveSpeed = 0.0f;
+                SwitchAnim();
                 Invoke("SelfDestory", 1.0f);
             }
 

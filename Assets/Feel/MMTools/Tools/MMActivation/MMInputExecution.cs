@@ -83,7 +83,7 @@ namespace MoreMountains.Tools
 		/// <summary>
 		/// On update we process our input
 		/// </summary>
-		protected virtual void Update()
+		public virtual void Update()
 		{
 			HandleInput();
 		}
@@ -91,7 +91,7 @@ namespace MoreMountains.Tools
 		/// <summary>
 		/// Parses all bindings and asks them to trigger events if needed
 		/// </summary>
-		protected virtual void HandleInput()
+		public virtual void HandleInput()
 		{
 			foreach(MMInputExecutionBinding binding in Bindings)
 			{

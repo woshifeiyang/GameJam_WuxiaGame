@@ -8,28 +8,28 @@ public class Monster : MonoBehaviour
     public float health;
 
     public float moveSpeed;
+
+    public float damage;
+
+    private float _moveSpeed;
     
     public bool isDead;
+    //怪物是否能够移动
+    public bool canMove; 
+
+    public string poolBelongTo;
 
     private Rigidbody2D _rb;
 
-    private GameObject _player;
-    
     private Animator _anim;
-    
-    //每次setactive后执行这个函数
-    private void OnEnable()
-    {
-        isDead = false;
-    }
 
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
-        _player = GameObject.FindGameObjectWithTag("Player");
         
+        SetMoveSpeed();
     }
 
     // Update is called once per frame
@@ -39,8 +39,12 @@ public class Monster : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        _rb.MovePosition(transform.position + (_player.transform.position - transform.position).normalized * Time.fixedDeltaTime * moveSpeed);
-        if (transform.position.x - _player.transform.position.x > 0)
+        Vector3 playerPosition = PlayerController.PlayerControllerInstance.GetPlayerPosition();
+        if (canMove)
+        {
+            _rb.MovePosition(transform.position + (playerPosition - transform.position).normalized * Time.fixedDeltaTime * _moveSpeed );
+        }
+        if (transform.position.x - playerPosition.x > 0)
         {
             transform.localScale = new Vector3(-0.5f, 0.5f, 1);
         }else transform.localScale = new Vector3(0.5f, 0.5f, 1);
@@ -58,9 +62,10 @@ public class Monster : MonoBehaviour
             else
             {
                 isDead = true;
-                moveSpeed = 0.0f;
+                _moveSpeed = 0.0f;
+                
                 SwitchAnim();
-                Invoke("SelfDestory", 1.0f);
+                Invoke(nameof(PutObjectInPool), 1.0f);
             }
 
             if (obj.gameObject.GetComponent<Skill>().isDisappearable)
@@ -69,12 +74,19 @@ public class Monster : MonoBehaviour
             }
         }
     }
+
+    public void SetMoveSpeed()
+    {
+        _moveSpeed = moveSpeed;
+    }
     private void SwitchAnim()
     {
         _anim.SetBool("isDead", true);
     }
-    private void SelfDestory()
+
+    private void PutObjectInPool()
     {
-        Destroy(gameObject);
+        EnemyObjectPool.EnemyObjectPoolInstance.PutObjectInPool(this.gameObject);
     }
+
 }

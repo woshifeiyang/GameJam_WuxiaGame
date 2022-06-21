@@ -7,20 +7,11 @@ using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
-    private GameObject _objectInPool;
-
-    private GameObject _objectOutOfPool;
-
     public float enemySpawnCd;
 
     // Start is called before the first frame update
     void Start()
     {
-        _objectInPool = new GameObject();
-        _objectInPool.name = "objectInPool";
-        _objectOutOfPool = new GameObject();
-        _objectOutOfPool.name = "objectOutOfPool";
-        
         InvokeRepeating(nameof(SpawnEnemy), 1.0f, enemySpawnCd);        //后期要改
     }
 
@@ -36,8 +27,10 @@ public class EnemySpawner : MonoBehaviour
         if (enemy)
         {
             enemy.transform.position = GetRandomPosition();
-            enemy.transform.SetParent(_objectOutOfPool.transform);
+            enemy.transform.SetParent(EnemyObjectPool.EnemyObjectPoolInstance.objectOutOfPool.transform);
             enemy.SetActive(true);
+            enemy.GetComponent<Monster>().isDead = false;
+            enemy.GetComponent<Monster>().SetMoveSpeed();
         }
         else
         {

@@ -7,9 +7,9 @@ public class EnemyObjectPool : MonoBehaviour
 {
     private Dictionary<string, Queue<GameObject>> _enemyPool = new Dictionary<string, Queue<GameObject>>();
     
-    private GameObject _objectInPool;
+    public GameObject objectInPool;
 
-    private GameObject _objectOutOfPool;
+    public GameObject objectOutOfPool;
     
     public static EnemyObjectPool EnemyObjectPoolInstance;      // 子弹池单例
     
@@ -33,10 +33,10 @@ public class EnemyObjectPool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _objectInPool = new GameObject();
-        _objectInPool.name = "objectInPool";
-        _objectOutOfPool = new GameObject();
-        _objectOutOfPool.name = "objectOutOfPool";
+        objectInPool = new GameObject();
+        objectInPool.name = "objectInPool";
+        objectOutOfPool = new GameObject();
+        objectOutOfPool.name = "objectOutOfPool";
 
         ClearPool();
         InitEnemyPool();
@@ -71,7 +71,7 @@ public class EnemyObjectPool : MonoBehaviour
                     {
                         enemy.SetActive(false);
                         _enemyPool["First"].Enqueue(enemy);
-                        enemy.transform.SetParent(_objectInPool.transform);
+                        enemy.transform.SetParent(objectInPool.transform);
                     }
                     else
                     {
@@ -94,7 +94,7 @@ public class EnemyObjectPool : MonoBehaviour
                     {
                         enemy.SetActive(false);
                         _enemyPool["Second"].Enqueue(enemy);
-                        enemy.transform.SetParent(_objectInPool.transform);
+                        enemy.transform.SetParent(objectInPool.transform);
                     }
                     else
                     {
@@ -117,7 +117,7 @@ public class EnemyObjectPool : MonoBehaviour
                     {
                         enemy.SetActive(false);
                         _enemyPool["Third"].Enqueue(enemy);
-                        enemy.transform.SetParent(_objectInPool.transform);
+                        enemy.transform.SetParent(objectInPool.transform);
                     }
                     else
                     {
@@ -140,7 +140,7 @@ public class EnemyObjectPool : MonoBehaviour
                     {
                         enemy.SetActive(false);
                         _enemyPool["Fourth"].Enqueue(enemy);
-                        enemy.transform.SetParent(_objectInPool.transform);
+                        enemy.transform.SetParent(objectInPool.transform);
                     }
                     else
                     {
@@ -162,6 +162,19 @@ public class EnemyObjectPool : MonoBehaviour
         }
         Debug.Log("Pool is nullptr");
         return null;
+    }
+
+    public void PutObjectInPool(GameObject ob)
+    {
+        if (ob == null)
+        {
+            Debug.Log("Can not put null object in the pool");
+            return;
+        }
+        
+        _enemyPool[ob.GetComponent<Monster>().poolBelongTo].Enqueue(ob);
+        ob.SetActive(false);
+        ob.transform.SetParent(EnemyObjectPool.EnemyObjectPoolInstance.objectInPool.transform);
     }
     
     public void ClearPool()

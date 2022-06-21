@@ -119,6 +119,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   moveSpeed: 1
+  isDead: 0
+  canMove: 1
+  poolBelongTo: First
 --- !u!50 &2908734386761162180
 Rigidbody2D:
   serializedVersion: 4

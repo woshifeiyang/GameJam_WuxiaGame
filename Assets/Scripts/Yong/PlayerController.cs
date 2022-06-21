@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.Tools;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -17,6 +18,12 @@ public class PlayerController : MonoBehaviour
 
     private bool _hasFoundEnemy;
 
+    private int experience;
+
+    private int level;
+    
+    private MMProgressBar _mmProgressBar;
+
     public static PlayerController PlayerControllerInstance;
 
     public Transform skill;
@@ -27,6 +34,8 @@ public class PlayerController : MonoBehaviour
 
     public float health;
 
+    public float maxHealth;
+    
     private void Awake()
     {
         PlayerControllerInstance = this;
@@ -38,10 +47,12 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         _cc = GetComponent<CircleCollider2D>();
+        _mmProgressBar = GameObject.Find("HorizontalBar").GetComponent<MMProgressBar>();
 
         _hasFoundEnemy = false;
         InvokeRepeating("SpawnSkill", 1.0f, skillCd);
         StartCoroutine("FindNearestTarget");
+        
     }
 
     // Update is called once per frame
@@ -81,7 +92,7 @@ public class PlayerController : MonoBehaviour
 
     void SpawnSkill()
     {
-        Instantiate(skill, new Vector3(transform.position.x, transform.position.y + 1.0f), transform.rotation);
+        Instantiate(skill, new Vector3(transform.position.x, transform.position.y), transform.rotation);
     }
 
     IEnumerator FindNearestTarget()
@@ -90,7 +101,7 @@ public class PlayerController : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(0.02f);
-            if (_hasFoundEnemy || _cc.radius >= 40.0f)
+            if (_hasFoundEnemy || _cc.radius >= 20.0f)
             {
                 _cc.radius = radius;
                 _hasFoundEnemy = false;
@@ -98,7 +109,7 @@ public class PlayerController : MonoBehaviour
             else _cc.radius += 0.5f;
         }
     }
-
+    // 敌人探测器
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy") && other.gameObject.GetComponent<Monster>().isDead == false)
@@ -107,7 +118,17 @@ public class PlayerController : MonoBehaviour
             _hasFoundEnemy = true;
         }
     }
-
+    // 被怪物攻击
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Enemy") && col.gameObject.GetComponent<Monster>().isDead == false)
+        {
+            Debug.Log("main character was attacked by enemy");
+            // health -= col.gameObject.GetComponent<>()
+            _mmProgressBar.UpdateBar01(health / maxHealth);
+        }
+    }
+    
     public Vector3 GetNearestEnemyLoc()
     {
         if (_nearestEnemy && _nearestEnemy.activeInHierarchy)
@@ -121,8 +142,20 @@ public class PlayerController : MonoBehaviour
     {
         return transform.position;
     }
+
+    public void IncreaseExperience()
+    {
+        if (experience + 1 == 30)
+        {
+            ++level;
+            experience = 0;
+        }else if (experience < 30)
+        {
+            ++experience;
+        }
+    }
     
-    public void ExitGame()
+    private void ExitGame()
     {
         //预处理
     #if UNITY_EDITOR    //在编辑器模式下

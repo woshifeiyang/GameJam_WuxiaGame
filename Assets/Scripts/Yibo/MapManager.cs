@@ -8,12 +8,14 @@ public class MapManager : MonoBehaviour
     //maps importer
     public GameObject[,] maps;
     public GameObject player;
-    public int mapSize = 100;
-    //mapsize in unity unit
+    //public int mapSize = 100;
+    //mapsize in unity unit, currently not using
+    public float mapWidth = 100f;
+    public float mapHeight = 100f;
     public int mapLength = 3;
     //number of maps in one direction, 3 means 3x3 maps
 
-
+    
     private Vector3 playerPos;
     private int[] currentPosNum;
     private int currentQuadrant;
@@ -21,7 +23,7 @@ public class MapManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        player = GameObject.FindWithTag("Player");
         //get maps into 2d array
         maps = new GameObject[mapLength, mapLength];
         int mapImportNum = 0;
@@ -87,7 +89,7 @@ public class MapManager : MonoBehaviour
             {
                
                 Vector3 mapPos = maps[i, j].transform.position;
-                if ((Mathf.Abs(mapPos.x - playerPos.x) < mapSize / 2) && (Mathf.Abs(mapPos.y - playerPos.y) < mapSize / 2))
+                if ((Mathf.Abs(mapPos.x - playerPos.x) < mapWidth / 2) && (Mathf.Abs(mapPos.y - playerPos.y) < mapHeight / 2))
                 {
                     //calculate which map the player is in the range of
                     locatingMapNum = new int[] { i, j };
@@ -194,7 +196,7 @@ public class MapManager : MonoBehaviour
                 for (int i = 0; i < mapLength; i++) 
                 {
                     maps[targetMapNum, i].transform.position = new Vector3(         maps[targetMapNum, i].transform.position.x, 
-                                                                                    maps[targetMapNum, i].transform.position.y + (mapLength * mapSize), 
+                                                                                    maps[targetMapNum, i].transform.position.y + (mapLength * mapHeight), 
                                                                                     maps[targetMapNum, i].transform.position.z);
                     //maps[i, currentPosNum[1] - 1].transform.position.y += 2 * mapSize;
                 }
@@ -216,7 +218,7 @@ public class MapManager : MonoBehaviour
                 for (int i = 0; i < mapLength; i++)
                 {
                     maps[targetMapNum, i].transform.position = new Vector3(         maps[targetMapNum, i].transform.position.x, 
-                                                                                    maps[targetMapNum, i].transform.position.y - (mapLength * mapSize), 
+                                                                                    maps[targetMapNum, i].transform.position.y - (mapLength * mapHeight), 
                                                                                     maps[targetMapNum, i].transform.position.z);
                     //maps[i, currentPosNum[1] + 1].transform.position.y -= 2 * mapSize;
                 }
@@ -240,7 +242,7 @@ public class MapManager : MonoBehaviour
             //Debug.Log("went right");
                 for (int i = 0; i < mapLength; i++)
                 {
-                    maps[i, targetMapNum].transform.position = new Vector3( maps[i, targetMapNum].transform.position.x + (mapLength * mapSize), 
+                    maps[i, targetMapNum].transform.position = new Vector3( maps[i, targetMapNum].transform.position.x + (mapLength * mapWidth), 
                                                                                     maps[i, targetMapNum].transform.position.y, 
                                                                                     maps[i, targetMapNum].transform.position.z);
                     //maps [currentPosNum[1] - 1 ,i].transform.position.x += 2 * mapSize;
@@ -262,7 +264,7 @@ public class MapManager : MonoBehaviour
             //Debug.Log("went left");
                 for (int i = 0; i < mapLength; i++)
                 {
-                    maps[i, targetMapNum].transform.position = new Vector3( maps[i, targetMapNum].transform.position.x - (mapLength * mapSize), 
+                    maps[i, targetMapNum].transform.position = new Vector3( maps[i, targetMapNum].transform.position.x - (mapLength * mapWidth), 
                                                                                     maps[i, targetMapNum].transform.position.y, 
                                                                                     maps[i, targetMapNum].transform.position.z);
                     //maps[currentPosNum[1] + 1, i].transform.position.x -= 2 * mapSize;

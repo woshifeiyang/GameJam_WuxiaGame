@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") && !other.gameObject.GetComponent<Monster>().isDead)
         {
             _nearestEnemy = other.gameObject;
             _hasFoundEnemy = true;

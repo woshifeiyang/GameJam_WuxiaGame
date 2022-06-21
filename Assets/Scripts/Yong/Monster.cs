@@ -8,6 +8,10 @@ public class Monster : MonoBehaviour
     public float health;
 
     public float moveSpeed;
+    
+    // false = not dead
+    // true = already dead
+    public bool isDead = false;
 
     private Rigidbody2D _rb;
 
@@ -17,6 +21,8 @@ public class Monster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isDead = false;
+        
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         _player = GameObject.FindGameObjectWithTag("Player");
@@ -39,7 +45,7 @@ public class Monster : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D obj)
     {
-        if (obj.gameObject.CompareTag("Skill"))
+        if (obj.gameObject.CompareTag("Skill") && !isDead)
         {
             if (health - obj.gameObject.GetComponent<Skill>().damage > 0.0f)
             {
@@ -48,6 +54,8 @@ public class Monster : MonoBehaviour
             }
             else
             {
+                isDead = true;
+                
                 SwitchAnim();
                 moveSpeed = 0.0f;
                 Invoke("SelfDestory", 1.0f);

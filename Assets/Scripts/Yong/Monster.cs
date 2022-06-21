@@ -61,9 +61,10 @@ public class Monster : MonoBehaviour
             }
             else
             {
+                PlayerController.PlayerControllerInstance.IncreaseExperience();
+                
                 isDead = true;
                 _moveSpeed = 0.0f;
-                
                 SwitchAnim();
                 Invoke(nameof(PutObjectInPool), 1.0f);
             }

@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
         _hasFoundEnemy = false;
         InvokeRepeating("SpawnSkill", 1.0f, skillCd);
         StartCoroutine("FindNearestTarget");
+        _mmProgressBar.UpdateBar01(health / maxHealth);
         
     }
 
@@ -75,10 +76,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.DrawLine(transform.position, _nearestEnemy.transform.position, Color.red);
         }
-        if (health <= 0.0f)
-        {
-            ExitGame();
-        }
+        
     }
 
     private void SwitchAnim()
@@ -101,7 +99,7 @@ public class PlayerController : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(0.02f);
-            if (_hasFoundEnemy || _cc.radius >= 20.0f)
+            if (_hasFoundEnemy || _cc.radius >= 10.0f)
             {
                 _cc.radius = radius;
                 _hasFoundEnemy = false;
@@ -124,8 +122,15 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.CompareTag("Enemy") && col.gameObject.GetComponent<Monster>().isDead == false)
         {
             Debug.Log("main character was attacked by enemy");
-            // health -= col.gameObject.GetComponent<>()
-            _mmProgressBar.UpdateBar01(health / maxHealth);
+            if(health - col.gameObject.GetComponent<Monster>().damage > 0.0f)
+            {
+                health -= col.gameObject.GetComponent<Monster>().damage;
+                _mmProgressBar.UpdateBar01(health / maxHealth);
+            }
+            else
+            {
+                ExitGame();
+            }
         }
     }
     

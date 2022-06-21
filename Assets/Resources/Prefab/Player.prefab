@@ -238,6 +238,7 @@ MonoBehaviour:
   moveSpeed: 5
   skillCd: 1
   health: 100
+  maxHealth: 100
 --- !u!50 &8563263028949727389
 Rigidbody2D:
   serializedVersion: 4

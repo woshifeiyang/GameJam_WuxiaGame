@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   moveSpeed: 1
+  damage: 30
   isDead: 0
   canMove: 1
   poolBelongTo: First

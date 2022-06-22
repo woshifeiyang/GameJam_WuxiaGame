@@ -24,6 +24,6 @@ public class Scene : MonoBehaviour
 
     public void change2()
     {
-        SceneManager.LoadScene("UI_test");
+        SceneManager.LoadScene("Main");
     }
 }

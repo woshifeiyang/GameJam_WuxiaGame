@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dba9424a489245a4bbbaa552165db17a
+guid: 860fb764364da514898a7f12fb7290d6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -32,7 +32,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: -1
     aniso: 2
     mipBias: -100
     wrapU: 1
@@ -138,7 +138,7 @@ TextureImporter:
     secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
+  pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 

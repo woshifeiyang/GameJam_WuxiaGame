@@ -13,7 +13,7 @@ public class HeroHP : MonoBehaviour
     void Start()
     {
         currentHP = initialHP;
-        mmProgressBar = GameObject.Find("HorizontalBar").GetComponent<MMProgressBar>();
+        mmProgressBar = GameObject.Find("ExpBar").GetComponent<MMProgressBar>();
     }
 
     // Update is called once per frame
@@ -27,9 +27,9 @@ public class HeroHP : MonoBehaviour
                     currentHP = MAX_HP;
                 if (currentHP < 0)
                     currentHP = 0;
-                mmProgressBar.UpdateBar01(percentHP);
             }
-                Debug.Log(percentHP);
+            mmProgressBar.UpdateBar01(percentHP);
+
         }
     
 }

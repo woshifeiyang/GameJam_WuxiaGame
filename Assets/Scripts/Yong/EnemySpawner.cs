@@ -42,6 +42,9 @@ public class EnemySpawner : MonoBehaviour
     {
         float playerPositionX = PlayerController.PlayerControllerInstance.GetPlayerPosition().x;
         float playerPositionY = PlayerController.PlayerControllerInstance.GetPlayerPosition().y;
+        //float playerPositionX = PlayerJoyController.PlayerControllerInstance.GetPlayerPosition().x;
+        //float playerPositionY = PlayerJoyController.PlayerControllerInstance.GetPlayerPosition().y;
+
 
         float direction = Random.Range(0, 100);
         // 生成在玩家左右两侧

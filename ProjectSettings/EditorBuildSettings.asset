@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/YiboWorkSpace.unity
     guid: 55191ec3b68a5df4bb04e07fd99c4d7c
   - enabled: 0
-    path: Assets/Scenes/Yong_Workspace.unity
+    path: Assets/Scenes/AndroidTest.unity
     guid: fd7ead9ac3c0b584e8c06292dab595dd
   m_configObjects: {}

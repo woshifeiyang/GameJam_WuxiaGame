@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5243666614868315179}
   - component: {fileID: 5243666614868315176}
   m_Layer: 0
-  m_Name: Tauren
+  m_Name: Popcorn
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5243666614868315174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 369755329
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2991773290986861209, guid: 0c15b193b0f402845aa342b7ac6039a3, type: 3}
+  m_Sprite: {fileID: 8818772361952249632, guid: 126604918f95210428ea6c6ae4b42572, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,7 +96,7 @@ Animator:
   m_GameObject: {fileID: 5243666614868315174}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 77804d93a11bda949bb26d33fb8b53f4, type: 2}
+  m_Controller: {fileID: 9100000, guid: 15e3056f8c6c28c46bf25dd7227acf9d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -118,18 +118,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.23852468, y: 0.65625}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 1.625, y: 1.3125}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.17, y: 0.13}
     newSize: {x: 1.625, y: 1.3125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.119039, y: 1.3125}
+  m_Size: {x: 0.17, y: 0.13}
   m_EdgeRadius: 0
 --- !u!114 &5243666614868315179
 MonoBehaviour:

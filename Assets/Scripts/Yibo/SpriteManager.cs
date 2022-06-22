@@ -27,7 +27,7 @@ public class SpriteManager : Singleton<SpriteManager>
             Debug.Log("add new sprite failed, sprite with same name already exists.");
             foreach (var VARIABLE in spriteLibrary)
             {
-                Debug.Log(VARIABLE.Key);
+                //Debug.Log(VARIABLE.Key);
             }
         }
         else
@@ -76,7 +76,7 @@ public class SpriteManager : Singleton<SpriteManager>
                         tempFloat += spriteEntry.Value;
                         spriteManagerProperty[spriteEntry.Key] = tempFloat;
                     }
-                    Debug.Log(spriteEntry.Key + " : " + spriteManagerProperty[spriteEntry.Key]);
+                    //Debug.Log(spriteEntry.Key + " : " + spriteManagerProperty[spriteEntry.Key]);
                 }
 
                 entry.Value.spriteManagerCheckStatus = false;

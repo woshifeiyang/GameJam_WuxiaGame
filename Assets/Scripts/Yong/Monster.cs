@@ -22,10 +22,18 @@ public class Monster : MonoBehaviour
     private Rigidbody2D _rb;
 
     private Animator _anim;
+    
+    private Vector3 importedLocalScale;
 
-    // Start is called before the first frame update
+    private void OnEnable()
+    {
+        SetAlive();
+    }
+
+
     void Start()
     {
+        importedLocalScale = transform.localScale;
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         
@@ -44,10 +52,12 @@ public class Monster : MonoBehaviour
         {
             _rb.MovePosition(transform.position + (playerPosition - transform.position).normalized * Time.fixedDeltaTime * _moveSpeed );
         }
+
         if (transform.position.x - playerPosition.x > 0)
         {
-            transform.localScale = new Vector3(-0.5f, 0.5f, 1);
-        }else transform.localScale = new Vector3(0.5f, 0.5f, 1);
+            transform.localScale = new Vector3(-1f * importedLocalScale.x, importedLocalScale.y, importedLocalScale.y);
+        }
+        else transform.localScale = importedLocalScale;
     }
     
     private void OnTriggerEnter2D(Collider2D obj)
@@ -62,11 +72,7 @@ public class Monster : MonoBehaviour
             else
             {
                 PlayerController.PlayerControllerInstance.IncreaseExperience();
-                
-                isDead = true;
-                _moveSpeed = 0.0f;
-                SwitchAnim();
-                Invoke(nameof(PutObjectInPool), 1.0f);
+                SetDead();
             }
 
             if (obj.gameObject.GetComponent<Skill>().isDisappearable)
@@ -88,6 +94,22 @@ public class Monster : MonoBehaviour
     private void PutObjectInPool()
     {
         EnemyObjectPool.EnemyObjectPoolInstance.PutObjectInPool(this.gameObject);
+    }
+
+    public void SetAlive()
+    {
+        isDead = false;
+        SetMoveSpeed();
+        GetComponent<Collider2D>().isTrigger = false;
+    }
+
+    public void SetDead()
+    {
+        isDead = true;
+        _moveSpeed = 0.0f;
+        SwitchAnim();
+        Invoke(nameof(PutObjectInPool), 1.0f);
+        GetComponent<Collider2D>().isTrigger = true;
     }
 
 }

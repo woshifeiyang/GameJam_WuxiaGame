@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     public float maxHealth;
 
     private Vector3 importedLocalScale;
+
+    public FloatingJoystick floatingJoystick;
     private void Awake()
     {
         PlayerControllerInstance = this;
@@ -65,9 +67,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _movement.x = Input.GetAxisRaw("Horizontal");
-        _movement.y = Input.GetAxisRaw("Vertical");
-
+        //_movement.x = Input.GetAxisRaw("Horizontal");
+        //_movement.y = Input.GetAxisRaw("Vertical");
+        _movement = floatingJoystick.Direction;
         if (_movement.x != 0)
         {
             transform.localScale = new Vector3(-1.0f * _movement.x * importedLocalScale.x, importedLocalScale.y, importedLocalScale.z);

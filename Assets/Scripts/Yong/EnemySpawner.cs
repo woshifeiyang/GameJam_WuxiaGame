@@ -47,9 +47,9 @@ public class EnemySpawner : MonoBehaviour
         {
             float x;
             float y = Random.Range(playerPositionY - 6.0f, playerPositionY + 6.0f);
-            int left = Random.Range(0, 1);
+            int left = Random.Range(0, 100);
             float randomNum = Random.Range(1.0f, 3.0f);
-            if (left == 1)
+            if (left <= 50)
             {
                 x = Random.Range(playerPositionX - 3.0f, playerPositionX - 3.0f - randomNum);
             }
@@ -66,8 +66,8 @@ public class EnemySpawner : MonoBehaviour
             float randomNum = Random.Range(0.0f, 3.0f);
             float x = Random.Range(playerPositionX + randomNum, playerPositionX - randomNum);
             float y;
-            int top = Random.Range(0, 1);
-            if (top == 1)
+            int top = Random.Range(0, 100);
+            if (top <= 50)
             {
                 y = Random.Range(playerPositionY + 6.0f, playerPositionY + 6.0f + randomNum);
             }

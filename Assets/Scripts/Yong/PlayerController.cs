@@ -18,7 +18,9 @@ public class PlayerController : MonoBehaviour
 
     private bool _hasFoundEnemy;
 
-    private int experience;
+    private int _curExperience;
+
+    private int _totalExperience;
 
     private int level;
     
@@ -59,6 +61,7 @@ public class PlayerController : MonoBehaviour
         }
 
         _hasFoundEnemy = false;
+        _totalExperience = 30;
         InvokeRepeating("SpawnSkill", 1.0f, skillCd);
         StartCoroutine("FindNearestTarget");
         
@@ -158,13 +161,14 @@ public class PlayerController : MonoBehaviour
 
     public void IncreaseExperience()
     {
-        if (experience + 1 == 30)
+        if (_curExperience + 1 == _totalExperience)
         {
             ++level;
-            experience = 0;
-        }else if (experience < 30)
+            _curExperience = 0;
+            _totalExperience += 5;
+        }else if (_curExperience < _totalExperience)
         {
-            ++experience;
+            ++_curExperience;
         }
     }
     

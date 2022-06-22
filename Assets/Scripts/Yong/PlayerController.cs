@@ -35,10 +35,15 @@ public class PlayerController : MonoBehaviour
     public float health;
 
     public float maxHealth;
-    
+
+    private Vector3 importedLocalScale;
+
+    public FloatingJoystick floatingJoystick;
     private void Awake()
     {
         PlayerControllerInstance = this;
+        importedLocalScale = this.transform.localScale;
+        Debug.Log("X: " + importedLocalScale.x + "Y: " + importedLocalScale.y + "Z: " + importedLocalScale.z);
     }
 
     // Start is called before the first frame update
@@ -47,7 +52,11 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         _cc = GetComponent<CircleCollider2D>();
-        _mmProgressBar = GameObject.Find("HorizontalBar").GetComponent<MMProgressBar>();
+        if (GameObject.Find("HorizontalBar") != null)
+        {
+            _mmProgressBar = GameObject.Find("HorizontalBar").GetComponent<MMProgressBar>();
+            _mmProgressBar.UpdateBar01(health / maxHealth);
+        }
 
         _hasFoundEnemy = false;
         InvokeRepeating("SpawnSkill", 1.0f, skillCd);
@@ -58,16 +67,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _movement.x = Input.GetAxisRaw("Horizontal");
-        _movement.y = Input.GetAxisRaw("Vertical");
-
+        //_movement.x = Input.GetAxisRaw("Horizontal");
+        //_movement.y = Input.GetAxisRaw("Vertical");
+        _movement = floatingJoystick.Direction;
         if (_movement.x != 0)
         {
-            transform.localScale = new Vector3(-1.0f * _movement.x * 0.4f, 0.4f, 1);
+            transform.localScale = new Vector3(-1.0f * _movement.x * importedLocalScale.x, importedLocalScale.y, importedLocalScale.z);
         }
         SwitchAnim();
-        _mmProgressBar.UpdateBar01(health / maxHealth);
-
     }
 
     private void FixedUpdate()

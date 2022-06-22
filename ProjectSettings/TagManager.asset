@@ -55,9 +55,15 @@ TagManager:
   - name: Enemy
     uniqueID: 369755329
     locked: 0
-  - name: Bullet
-    uniqueID: 2682115997
+  - name: Sprite
+    uniqueID: 3710000411
     locked: 0
   - name: Player
     uniqueID: 2577696685
+    locked: 0
+  - name: Bullet
+    uniqueID: 2682115997
+    locked: 0
+  - name: UI
+    uniqueID: 3863814407
     locked: 0

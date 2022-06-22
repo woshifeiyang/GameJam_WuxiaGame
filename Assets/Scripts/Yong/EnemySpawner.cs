@@ -29,8 +29,6 @@ public class EnemySpawner : MonoBehaviour
             enemy.transform.position = GetRandomPosition();
             enemy.transform.SetParent(EnemyObjectPool.EnemyObjectPoolInstance.objectOutOfPool.transform);
             enemy.SetActive(true);
-            enemy.GetComponent<Monster>().isDead = false;
-            enemy.GetComponent<Monster>().SetMoveSpeed();
         }
         else
         {

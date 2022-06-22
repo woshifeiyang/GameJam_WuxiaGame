@@ -52,7 +52,6 @@ public class PlayerController : MonoBehaviour
         _hasFoundEnemy = false;
         InvokeRepeating("SpawnSkill", 1.0f, skillCd);
         StartCoroutine("FindNearestTarget");
-        _mmProgressBar.UpdateBar01(health / maxHealth);
         
     }
 
@@ -67,6 +66,8 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(-1.0f * _movement.x * 0.4f, 0.4f, 1);
         }
         SwitchAnim();
+        _mmProgressBar.UpdateBar01(health / maxHealth);
+
     }
 
     private void FixedUpdate()

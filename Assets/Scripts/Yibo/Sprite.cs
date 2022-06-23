@@ -56,14 +56,10 @@ public class Sprite :  MonoBehaviour
     private void AddNums()
     {
         spriteProperty.Add("quality",quality);
-        
         spriteProperty.Add("damageFactor", damageFactor);
         spriteProperty.Add("projectileSize", projectileSize);
         spriteProperty.Add("projectileNum", projectileNum);
-        spriteProperty.Add("coolDownReduce", coolDownReduce);
-        spriteProperty.Add("healthBonus", healthBonus);
         spriteProperty.Add("damageReduction", damageReduction);
-        spriteProperty.Add("movingSpeedBonus", movingSpeedBonus);
         spriteProperty.Add("currencyBonusFactor", currencyBonusFactor);
         spriteProperty.Add("shieldNumAdd", shieldNumAdd);
         spriteProperty.Add("shieldCooldownReduction", shieldCooldownReduction);
@@ -73,6 +69,11 @@ public class Sprite :  MonoBehaviour
         spriteProperty.Add("bossDamageFactor", bossDamageFactor);
         spriteProperty.Add("healthStealthFactor", healthStealthFactor);
         spriteProperty.Add("itemBonus", itemBonus);
+        
+        
+        spriteProperty.Add("movingSpeedBonus", movingSpeedBonus);
+        spriteProperty.Add("coolDownReduce", coolDownReduce);
+        spriteProperty.Add("healthBonus", healthBonus);
     }
 
     public void StartUsingSprite()

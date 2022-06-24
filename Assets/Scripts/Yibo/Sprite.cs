@@ -40,12 +40,14 @@ public class Sprite :  MonoBehaviour
     //define sprite dictionary
     public Dictionary<string, float> spriteProperty = new Dictionary<string, float>();
 
+    
+
     private void Awake()
     {
         AddNums();
         AddNewSprite();
     }
-
+    
     public void AddNewSprite()
     {
         SpriteManager spriteManager = GameObject.FindObjectOfType<SpriteManager>();

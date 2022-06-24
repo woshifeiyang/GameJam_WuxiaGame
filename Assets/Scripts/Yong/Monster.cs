@@ -35,7 +35,7 @@ public class Monster : MonoBehaviour
 
     void Start()
     {
-        DamagePopupManager = GameObject.FindWithTag("DamagePopupManager").GetComponent<DamagePopupManager>();
+        // DamagePopupManager = GameObject.FindWithTag("DamagePopupManager").GetComponent<DamagePopupManager>();
         
         importedLocalScale = transform.localScale;
         _rb = GetComponent<Rigidbody2D>();
@@ -69,22 +69,6 @@ public class Monster : MonoBehaviour
         if (obj.gameObject.CompareTag("Skill") && isDead == false)
         {
             GetDamaged(obj.gameObject);
-            
-            /*if (health - obj.gameObject.GetComponent<Skill>().damage > 0.0f)
-            {
-                health -= obj.gameObject.GetComponent<Skill>().damage;
-                Debug.Log("Monster health = " + health);
-            }
-            else
-            {
-                PlayerController.PlayerControllerInstance.IncreaseExperience();
-                SetDead();
-            }
-
-            if (obj.gameObject.GetComponent<Skill>().isDisappearable)
-            {
-                Destroy(obj.gameObject);
-            }*/
         }
     }
 

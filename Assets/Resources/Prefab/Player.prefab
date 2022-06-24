@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 8563263028949727389}
   - component: {fileID: 5619804477902150732}
   - component: {fileID: -8427233981717431489}
+  - component: {fileID: 1330847911}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -147,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 8563263028949727387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children:
   - {fileID: 8563263027695354973}
   m_Father: {fileID: 0}
@@ -236,10 +237,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 5808194450634383962, guid: 6971bec93ed17a54eabfde5d9535d3ce, type: 3}
-  moveSpeed: 5
-  skillCd: 1
-  health: 100
-  maxHealth: 100
+  moveSpeed: 2
+  moveSpeedLevelUpFactor: 0.3
+  moveSpeedLevel: 0
+  moveSpeedFinal: 0
+  skillCd: 0.1
+  skillCdLevelUpFactor: 0.85
+  skillCdLevel: 0
+  skillCdFinal: 0
+  curHealth: 1000
+  maxHealth: 10000
+  maxHealthLevelUpFactor: 5
+  maxHealthLevel: 0
+  maxHealthFinal: 0
+  SpriteManager: {fileID: 0}
+  floatingJoystick: {fileID: 0}
 --- !u!50 &8563263028949727389
 Rigidbody2D:
   serializedVersion: 4
@@ -303,3 +315,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7923926, y: 1.2932776}
   m_EdgeRadius: 0
+--- !u!114 &1330847911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8563263028949727387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0e8a315527de64b857493e608cc7bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recordNum: 5
+  pathwayPoint: []

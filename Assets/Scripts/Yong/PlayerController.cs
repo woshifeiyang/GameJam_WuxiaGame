@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     public int skillCdLevel;
     public float skillCdFinal;
 
-    public float health;
+    public float curHealth;
     
     // max health
     public float maxHealth = 20f;
@@ -53,37 +53,36 @@ public class PlayerController : MonoBehaviour
     public float maxHealthFinal;
     
     // import manager objects
-    public SpriteManager SpriteManager;
+    public SpriteManager spriteManager;
 
-    private Vector3 importedLocalScale;
+    private Vector3 _importedLocalScale;
 
-    public FloatingJoystick floatingJoystick;
+    private GameObject _floatingJoystick;
     private void Awake()
     {
-        // get sprite manager
-        SpriteManager = GameObject.Find("SpriteManager").GetComponent<SpriteManager>();        
-        
         PlayerControllerInstance = this;
-        importedLocalScale = this.transform.localScale;
-        Debug.Log("X: " + importedLocalScale.x + "Y: " + importedLocalScale.y + "Z: " + importedLocalScale.z);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         _cc = GetComponent<CircleCollider2D>();
         if (GameObject.Find("HorizontalBar") != null)
         {
             _mmProgressBar = GameObject.Find("HorizontalBar").GetComponent<MMProgressBar>();
-            _mmProgressBar.UpdateBar01(health / maxHealth);
+            _mmProgressBar.UpdateBar01(curHealth / maxHealth);
         }
+        // get sprite manager
+        spriteManager = GameObject.Find("SpriteManager").GetComponent<SpriteManager>();
+        
+        _floatingJoystick = GameObject.Find("Floating Joystick");
+    }
 
+    // Start is called before the first frame update
+    void Start()
+    {
         _hasFoundEnemy = false;
         _totalExperience = 30;
+        _importedLocalScale = this.transform.localScale;
+        Debug.Log("X: " + _importedLocalScale.x + "Y: " + _importedLocalScale.y + "Z: " + _importedLocalScale.z);
+        
         InvokeRepeating("SpawnSkill", 1.0f, skillCd);
         StartCoroutine("FindNearestTarget");
         
@@ -94,17 +93,17 @@ public class PlayerController : MonoBehaviour
     {
         //_movement.x = Input.GetAxisRaw("Horizontal");
         //_movement.y = Input.GetAxisRaw("Vertical");
-        _movement = floatingJoystick.Direction;
+        _movement = _floatingJoystick.GetComponent<FloatingJoystick>().Direction;
         if (_movement.x != 0)
         {
-            transform.localScale = new Vector3(-1.0f * _movement.x * importedLocalScale.x, importedLocalScale.y, importedLocalScale.z);
+            transform.localScale = new Vector3(-1.0f * _movement.x * _importedLocalScale.x, _importedLocalScale.y, _importedLocalScale.z);
         }
         SwitchAnim();
     }
 
     private void FixedUpdate()
     {
-        _rb.MovePosition(_rb.position + _movement * moveSpeed * Time.fixedDeltaTime);
+        _rb.MovePosition(_rb.position + _movement * moveSpeedFinal * Time.fixedDeltaTime);
         if (_nearestEnemy)
         {
             Debug.DrawLine(transform.position, _nearestEnemy.transform.position, Color.red);
@@ -115,7 +114,7 @@ public class PlayerController : MonoBehaviour
     private void SwitchAnim()
     {
         _anim.SetFloat("speed", _movement.magnitude);
-        if (health <= 0.0f)
+        if (curHealth <= 0.0f)
         {
             _anim.SetBool("isDead", true);
         }
@@ -155,10 +154,10 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.CompareTag("Enemy") && col.gameObject.GetComponent<Monster>().isDead == false)
         {
             Debug.Log("main character was attacked by enemy");
-            if(health - col.gameObject.GetComponent<Monster>().damage > 0.0f)
+            if(curHealth - col.gameObject.GetComponent<Monster>().damage > 0.0f)
             {
-                health -= col.gameObject.GetComponent<Monster>().damage;
-                _mmProgressBar.UpdateBar01(health / maxHealth);
+                curHealth -= col.gameObject.GetComponent<Monster>().damage;
+                _mmProgressBar.UpdateBar01(curHealth / maxHealth);
             }
             else
             {
@@ -207,16 +206,16 @@ public class PlayerController : MonoBehaviour
     public void updateParameters()
     {
         // update parameters to the value recorder variables
-        //moveSpeed;
-        float tempMovingSpeedBonus = SpriteManager.spriteManagerProperty["movingSpeedBonus"] == 0 ? 1 : SpriteManager.spriteManagerProperty["movingSpeedBonus"];
+        // moveSpeed;
+        float tempMovingSpeedBonus = spriteManager.spriteManagerProperty["movingSpeedBonus"] == 0 ? 1 : spriteManager.spriteManagerProperty["movingSpeedBonus"];
         moveSpeedFinal = (moveSpeed + (moveSpeedLevel * moveSpeedLevelUpFactor)) * tempMovingSpeedBonus;
         
         //skillCd;
-        float tempcoolDownReduce = SpriteManager.spriteManagerProperty["coolDownReduce"] == 0 ? 1 : SpriteManager.spriteManagerProperty["coolDownReduce"];
+        float tempcoolDownReduce = spriteManager.spriteManagerProperty["coolDownReduce"] == 0 ? 1 : spriteManager.spriteManagerProperty["coolDownReduce"];
         skillCdFinal = (skillCd * Mathf.Pow(skillCdLevelUpFactor, skillCdLevel)) * (1 - tempcoolDownReduce);
 
         //maxHealth;
-        float tempcoolhealthBonus = SpriteManager.spriteManagerProperty["healthBonus"] == 0 ? 1 : SpriteManager.spriteManagerProperty["healthBonus"];
+        float tempcoolhealthBonus = spriteManager.spriteManagerProperty["healthBonus"] == 0 ? 1 : spriteManager.spriteManagerProperty["healthBonus"];
         maxHealthFinal = (maxHealth + (maxHealthLevelUpFactor * maxHealthLevel)) * tempcoolhealthBonus;
         
         Debug.Log("moveSpeedFinal: " + moveSpeedFinal);

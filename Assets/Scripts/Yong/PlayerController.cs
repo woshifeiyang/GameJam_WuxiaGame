@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     private int _totalExperience;
 
-    private int level;
+    private int _level;
     
     private MMProgressBar _mmProgressBar;
 
@@ -184,7 +184,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_curExperience + 1 == _totalExperience)
         {
-            ++level;
+            ++_level;
             _curExperience = 0;
             _totalExperience += 5;
         }else if (_curExperience < _totalExperience)

@@ -12,6 +12,5 @@ public class DamagePopupManager : MonoBehaviour
         DamagePopup DMP = Instantiate(damagePopupPrefab, position, Quaternion.identity);
         DMP.Setup(damageAmount);
     }
-
-
+    
 }

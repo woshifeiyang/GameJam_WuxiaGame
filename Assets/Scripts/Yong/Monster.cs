@@ -19,6 +19,8 @@ public class Monster : MonoBehaviour
 
     public string poolBelongTo;
 
+    public DamagePopupManager DamagePopupManager;
+
     private Rigidbody2D _rb;
 
     private Animator _anim;
@@ -33,6 +35,8 @@ public class Monster : MonoBehaviour
 
     void Start()
     {
+        DamagePopupManager = GameObject.FindWithTag("DamagePopupManager").GetComponent<DamagePopupManager>();
+        
         importedLocalScale = transform.localScale;
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
@@ -64,7 +68,9 @@ public class Monster : MonoBehaviour
     {
         if (obj.gameObject.CompareTag("Skill") && isDead == false)
         {
-            if (health - obj.gameObject.GetComponent<Skill>().damage > 0.0f)
+            GetDamaged(obj.gameObject);
+            
+            /*if (health - obj.gameObject.GetComponent<Skill>().damage > 0.0f)
             {
                 health -= obj.gameObject.GetComponent<Skill>().damage;
                 Debug.Log("Monster health = " + health);
@@ -78,7 +84,7 @@ public class Monster : MonoBehaviour
             if (obj.gameObject.GetComponent<Skill>().isDisappearable)
             {
                 Destroy(obj.gameObject);
-            }
+            }*/
         }
     }
 
@@ -110,6 +116,27 @@ public class Monster : MonoBehaviour
         SwitchAnim();
         Invoke(nameof(PutObjectInPool), 1.0f);
         GetComponent<Collider2D>().isTrigger = true;
+    }
+
+    public void GetDamaged(GameObject damageMaker)
+    {
+        DamagePopupManager.Create(transform.position, (int)damageMaker.GetComponent<Skill>().damage);
+        if (health - damageMaker.GetComponent<Skill>().damage > 0.0f)
+        {
+            health -= damageMaker.GetComponent<Skill>().damage;
+            Debug.Log("Monster health = " + health);
+        }
+        else
+        {
+            PlayerController.PlayerControllerInstance.IncreaseExperience();
+            SetDead();
+        }
+
+        if (damageMaker.GetComponent<Skill>().isDisappearable)
+        {
+            Destroy(damageMaker);
+        }
+        
     }
 
 }

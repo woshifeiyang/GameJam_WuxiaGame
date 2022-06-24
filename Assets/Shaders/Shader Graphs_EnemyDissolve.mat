@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_EmissionSword
-  m_Shader: {fileID: -6465566751694194690, guid: 47dd9954418923b45a215586077e1541, type: 3}
+  m_Name: Shader Graphs_EnemyDissolve
+  m_Shader: {fileID: -6465566751694194690, guid: bbd835611bd32ee42b9d57cc2a9b5dc1, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -20,7 +20,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 4cb1a93b63b099d4e8b93c906665e3a7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 126604918f95210428ea6c6ae4b42572, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: 3e04c247fb2604af186173fce0bc62de, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_d882bd23fabe43a79165134440a11250_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 3e04c247fb2604af186173fce0bc62de, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -36,7 +44,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_c63a06db804740e19f676f500f009c38: 1
+    - Vector1_5bd66f122ca14ef4bb752e192f528315: 0.9
+    - Vector1_8d951bddf1e74c1bada2fafd046f929e: 0.3
     m_Colors:
-    - Color_2495fcef5edf4fe483d5c219d262e144: {r: 0.1153435, g: 0.9056604, b: 0.5609397, a: 0}
+    - Color_e02610e562c8422ca554d6a00a3e54d0: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

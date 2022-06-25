@@ -78,7 +78,7 @@ public class SpriteManager : Singleton<SpriteManager>
                         tempFloat += spriteEntry.Value;
                         spriteManagerProperty[spriteEntry.Key] = tempFloat;
                     }
-                    Debug.Log(spriteEntry.Key + " : " + spriteManagerProperty[spriteEntry.Key]);
+                    //Debug.Log(spriteEntry.Key + " : " + spriteManagerProperty[spriteEntry.Key]);
                 }
 
                 entry.Value.spriteManagerCheckStatus = false;

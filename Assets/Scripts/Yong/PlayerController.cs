@@ -61,18 +61,11 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         PlayerControllerInstance = this;
-        _rb = GetComponent<Rigidbody2D>();
-        _anim = GetComponent<Animator>();
-        _cc = GetComponent<CircleCollider2D>();
-        if (GameObject.Find("HorizontalBar") != null)
-        {
-            _mmProgressBar = GameObject.Find("HorizontalBar").GetComponent<MMProgressBar>();
-            _mmProgressBar.UpdateBar01(curHealth / maxHealth);
-        }
+        _floatingJoystick = GameObject.Find("FloatingJoystick");
         // get sprite manager
         spriteManager = GameObject.Find("SpriteManager").GetComponent<SpriteManager>();
-        
-        _floatingJoystick = GameObject.Find("Floating Joystick");
+        _mmProgressBar = GameObject.Find("HorizontalBar").GetComponent<MMProgressBar>();
+        _movement = _floatingJoystick.GetComponent<FloatingJoystick>().Direction;
     }
 
     // Start is called before the first frame update
@@ -81,8 +74,14 @@ public class PlayerController : MonoBehaviour
         _hasFoundEnemy = false;
         _totalExperience = 30;
         _importedLocalScale = this.transform.localScale;
-        Debug.Log("X: " + _importedLocalScale.x + "Y: " + _importedLocalScale.y + "Z: " + _importedLocalScale.z);
         
+        _rb = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
+        _cc = GetComponent<CircleCollider2D>();
+
+        _mmProgressBar.UpdateBar01(curHealth / maxHealth);
+        
+
         InvokeRepeating("SpawnSkill", 1.0f, skillCd);
         StartCoroutine("FindNearestTarget");
         
@@ -93,7 +92,7 @@ public class PlayerController : MonoBehaviour
     {
         //_movement.x = Input.GetAxisRaw("Horizontal");
         //_movement.y = Input.GetAxisRaw("Vertical");
-        _movement = _floatingJoystick.GetComponent<FloatingJoystick>().Direction;
+        
         if (_movement.x != 0)
         {
             transform.localScale = new Vector3(-1.0f * _movement.x * _importedLocalScale.x, _importedLocalScale.y, _importedLocalScale.z);

@@ -7,13 +7,13 @@ public class HeroHP : MonoBehaviour
     public const int MAX_HP = 100;
     public int initialHP = 80;
     public int currentHP;
-    private MMProgressBar mmProgressBar;
+    private MMProgressBar _mmProgressBar;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHP = initialHP;
-        mmProgressBar = GameObject.Find("HPBar").GetComponent<MMProgressBar>();
+        _mmProgressBar = GameObject.Find("HPBar").GetComponent<MMProgressBar>();
     }
 
     // Update is called once per frame
@@ -28,8 +28,8 @@ public class HeroHP : MonoBehaviour
                 if (currentHP < 0)
                     currentHP = 0;
             }
-            mmProgressBar.UpdateBar01(percentHP);
+            _mmProgressBar.UpdateBar01(Mathf.Clamp(percentHP, 0f, 1f));
 
-        }
+    }
     
 }

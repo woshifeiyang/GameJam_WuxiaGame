@@ -104,7 +104,7 @@ public class Monster : MonoBehaviour
 
     public void GetDamaged(GameObject damageMaker)
     {
-        DamagePopupManager.Create(transform.position, (int)damageMaker.GetComponent<Skill>().damage);
+        // DamagePopupManager.Create(transform.position, (int)damageMaker.GetComponent<Skill>().damage);
         if (health - damageMaker.GetComponent<Skill>().damage > 0.0f)
         {
             health -= damageMaker.GetComponent<Skill>().damage;

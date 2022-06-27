@@ -58,14 +58,19 @@ public class PlayerController : MonoBehaviour
     private Vector3 _importedLocalScale;
 
     private GameObject _floatingJoystick;
+
+    public FloatingJoystick floatingJoystick;
     private void Awake()
     {
         PlayerControllerInstance = this;
-        _floatingJoystick = GameObject.Find("FloatingJoystick");
+        //_floatingJoystick = GameObject.Find("FloatingJoystick");
+        Debug.Log("00000");
+
         // get sprite manager
-        spriteManager = GameObject.Find("SpriteManager").GetComponent<SpriteManager>();
-        _mmProgressBar = GameObject.Find("HorizontalBar").GetComponent<MMProgressBar>();
-        _movement = _floatingJoystick.GetComponent<FloatingJoystick>().Direction;
+        // spriteManager = GameObject.Find("SpriteManager").GetComponent<SpriteManager>();
+        _mmProgressBar = GameObject.Find("HPBar").GetComponent<MMProgressBar>();
+        Debug.Log("11111");
+        
     }
 
     // Start is called before the first frame update
@@ -78,10 +83,8 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         _cc = GetComponent<CircleCollider2D>();
-
-        _mmProgressBar.UpdateBar01(curHealth / maxHealth);
+        //_movement = _floatingJoystick.GetComponent<FloatingJoystick>().Direction;
         
-
         InvokeRepeating("SpawnSkill", 1.0f, skillCd);
         StartCoroutine("FindNearestTarget");
         
@@ -98,6 +101,10 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(-1.0f * _movement.x * _importedLocalScale.x, _importedLocalScale.y, _importedLocalScale.z);
         }
         SwitchAnim();
+        _mmProgressBar.UpdateBar01(Mathf.Clamp(curHealth / maxHealth, 0f, 1f));
+        _movement = floatingJoystick.Direction;
+
+
     }
 
     private void FixedUpdate()
@@ -206,16 +213,26 @@ public class PlayerController : MonoBehaviour
     {
         // update parameters to the value recorder variables
         // moveSpeed;
-        float tempMovingSpeedBonus = spriteManager.spriteManagerProperty["movingSpeedBonus"] == 0 ? 1 : spriteManager.spriteManagerProperty["movingSpeedBonus"];
-        moveSpeedFinal = (moveSpeed + (moveSpeedLevel * moveSpeedLevelUpFactor)) * tempMovingSpeedBonus;
+        // float tempMovingSpeedBonus = spriteManager.spriteManagerProperty["movingSpeedBonus"] == 0 ? 1 : spriteManager.spriteManagerProperty["movingSpeedBonus"];
+        // moveSpeedFinal = (moveSpeed + (moveSpeedLevel * moveSpeedLevelUpFactor)) * tempMovingSpeedBonus;
+        //
+        //
+        // //skillCd;
+        // float tempcoolDownReduce = spriteManager.spriteManagerProperty["coolDownReduce"] == 0 ? 1 : spriteManager.spriteManagerProperty["coolDownReduce"];
+        // skillCdFinal = (skillCd * Mathf.Pow(skillCdLevelUpFactor, skillCdLevel)) * (1 - tempcoolDownReduce);
+        //
+        // //maxHealth;
+        // float tempcoolhealthBonus = spriteManager.spriteManagerProperty["healthBonus"] == 0 ? 1 : spriteManager.spriteManagerProperty["healthBonus"];
+        // maxHealthFinal = (maxHealth + (maxHealthLevelUpFactor * maxHealthLevel)) * tempcoolhealthBonus;
+        
+        moveSpeedFinal = (moveSpeed + (moveSpeedLevel * moveSpeedLevelUpFactor));
+        
         
         //skillCd;
-        float tempcoolDownReduce = spriteManager.spriteManagerProperty["coolDownReduce"] == 0 ? 1 : spriteManager.spriteManagerProperty["coolDownReduce"];
-        skillCdFinal = (skillCd * Mathf.Pow(skillCdLevelUpFactor, skillCdLevel)) * (1 - tempcoolDownReduce);
+        skillCdFinal = (skillCd * Mathf.Pow(skillCdLevelUpFactor, skillCdLevel));
 
         //maxHealth;
-        float tempcoolhealthBonus = spriteManager.spriteManagerProperty["healthBonus"] == 0 ? 1 : spriteManager.spriteManagerProperty["healthBonus"];
-        maxHealthFinal = (maxHealth + (maxHealthLevelUpFactor * maxHealthLevel)) * tempcoolhealthBonus;
+        maxHealthFinal = (maxHealth + (maxHealthLevelUpFactor * maxHealthLevel));
         
         Debug.Log("moveSpeedFinal: " + moveSpeedFinal);
         Debug.Log("skillCdFinal: " + skillCdFinal);

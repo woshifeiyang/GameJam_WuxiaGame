@@ -143,12 +143,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1c8823f534a2d418322b61e275c9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 100
   moveSpeed: 1
-  damage: 30
+  damage: 10
   isDead: 0
   canMove: 1
   poolBelongTo: First
+  DamagePopupManager: {fileID: 0}
 --- !u!50 &5243666614868315176
 Rigidbody2D:
   serializedVersion: 4

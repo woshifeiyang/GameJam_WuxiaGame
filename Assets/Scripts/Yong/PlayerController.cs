@@ -18,9 +18,9 @@ public class PlayerController : MonoBehaviour
 
     private bool _hasFoundEnemy;
 
-    public int _curExperience;
+    private float _curExperience;
 
-    public int _totalExperience;
+    private float _totalExperience;
 
     private int _level;
     
@@ -183,7 +183,7 @@ public class PlayerController : MonoBehaviour
 
     public void IncreaseExperience()
     {
-        if (_curExperience + 1 == _totalExperience)
+        if (_totalExperience - _curExperience < 0.1f)
         {
             ++_level;
             _curExperience = 0;

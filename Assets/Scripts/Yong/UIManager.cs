@@ -21,14 +21,23 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _rogueUIObj = GameObject.Find("RogueUI");
-        _rogueUIObj.SetActive(false);
-        
-        _phoneButtonObj = GameObject.Find("PhoneButton");
-        _phoneButtonObj.SetActive(true);
+        if (GameObject.Find("RogueUI"))
+        {
+            _rogueUIObj = GameObject.Find("RogueUI");
+            _rogueUIObj.SetActive(false);
+        }
 
-        _giftUIObj = GameObject.Find("GiftUI");
-        _giftUIObj.SetActive(false);
+        if (GameObject.Find("PhoneButton"))
+        {
+            _phoneButtonObj = GameObject.Find("PhoneButton");
+            _phoneButtonObj.SetActive(true);
+        }
+
+        if (GameObject.Find("GiftUI"))
+        {
+            _giftUIObj = GameObject.Find("GiftUI");
+            _giftUIObj.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -47,10 +56,9 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;
     }
     
-    public void HpUp()
+    public void AttackUp()
     {
-        ++PlayerController.PlayerControllerInstance.maxHealthLevel;
-        PlayerController.PlayerControllerInstance.curHealth += PlayerController.PlayerControllerInstance.maxHealthLevelUpFactor;
+        ++PlayerController.PlayerControllerInstance.attackLevel;
         PlayerController.PlayerControllerInstance.updateParameters();
     }
     

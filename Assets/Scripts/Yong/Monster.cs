@@ -105,9 +105,9 @@ public class Monster : MonoBehaviour
     public void GetDamaged(GameObject damageMaker)
     {
         // DamagePopupManager.Create(transform.position, (int)damageMaker.GetComponent<Skill>().damage);
-        if (health - damageMaker.GetComponent<Skill>().damage > 0.0f)
+        if (health - PlayerController.PlayerControllerInstance.attackFinal > 0.0f)
         {
-            health -= damageMaker.GetComponent<Skill>().damage;
+            health -= PlayerController.PlayerControllerInstance.attackFinal;
             Debug.Log("Monster health = " + health);
         }
         else

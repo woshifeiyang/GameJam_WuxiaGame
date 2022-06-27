@@ -53,6 +53,11 @@ public class PlayerController : MonoBehaviour
     public int maxHealthLevel;
     public float maxHealthFinal;
     
+    // attack
+    public float maxAttackLevelUpFactor = 5f;
+    public int attackLevel;
+    public float attackFinal;
+    
     // import manager objects
     public SpriteManager spriteManager;
 
@@ -228,6 +233,9 @@ public class PlayerController : MonoBehaviour
 
         //maxHealth;
         maxHealthFinal = (maxHealth + (maxHealthLevelUpFactor * maxHealthLevel));
+        
+        //attack
+        attackFinal = skill.gameObject.GetComponent<Skill>().damage + maxAttackLevelUpFactor * attackLevel;
         
         Debug.Log("moveSpeedFinal: " + moveSpeedFinal);
         Debug.Log("skillCdFinal: " + skillCdFinal);

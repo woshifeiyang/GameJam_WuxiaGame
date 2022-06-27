@@ -241,17 +241,19 @@ MonoBehaviour:
   moveSpeedLevelUpFactor: 0.3
   moveSpeedLevel: 0
   moveSpeedFinal: 0
-  skillCd: 0.1
+  skillCd: 1
   skillCdLevelUpFactor: 0.85
   skillCdLevel: 0
   skillCdFinal: 0
-  curHealth: 1000
-  maxHealth: 10000
+  curHealth: 20
+  maxHealth: 20
   maxHealthLevelUpFactor: 5
   maxHealthLevel: 0
   maxHealthFinal: 0
-  SpriteManager: {fileID: 0}
-  floatingJoystick: {fileID: 0}
+  maxAttackLevelUpFactor: 5
+  attackLevel: 0
+  attackFinal: 0
+  spriteManager: {fileID: 0}
 --- !u!50 &8563263028949727389
 Rigidbody2D:
   serializedVersion: 4

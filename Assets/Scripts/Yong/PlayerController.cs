@@ -18,18 +18,19 @@ public class PlayerController : MonoBehaviour
 
     private bool _hasFoundEnemy;
 
-    private int _curExperience;
+    public int _curExperience;
 
-    private int _totalExperience;
+    public int _totalExperience;
 
     private int _level;
     
     private MMProgressBar _mmProgressBar;
 
+    private MMProgressBar _ExpBar;
+
     public static PlayerController PlayerControllerInstance;
 
     public Transform skill;
-
     
     // player parameters
     // speed
@@ -58,36 +59,32 @@ public class PlayerController : MonoBehaviour
     private Vector3 _importedLocalScale;
 
     private GameObject _floatingJoystick;
-
-    public FloatingJoystick floatingJoystick;
+    
     private void Awake()
     {
         PlayerControllerInstance = this;
-        //_floatingJoystick = GameObject.Find("FloatingJoystick");
-        Debug.Log("00000");
+        _floatingJoystick = GameObject.Find("FloatingJoystick");
 
         // get sprite manager
         // spriteManager = GameObject.Find("SpriteManager").GetComponent<SpriteManager>();
         _mmProgressBar = GameObject.Find("HPBar").GetComponent<MMProgressBar>();
-        Debug.Log("11111");
-        
+        _ExpBar = GameObject.Find("ExpBar").GetComponent<MMProgressBar>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
         _hasFoundEnemy = false;
-        _totalExperience = 30;
+        _totalExperience = 5;
         _importedLocalScale = this.transform.localScale;
         
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         _cc = GetComponent<CircleCollider2D>();
-        //_movement = _floatingJoystick.GetComponent<FloatingJoystick>().Direction;
+        
         
         InvokeRepeating("SpawnSkill", 1.0f, skillCd);
         StartCoroutine("FindNearestTarget");
-        
     }
 
     // Update is called once per frame
@@ -95,16 +92,14 @@ public class PlayerController : MonoBehaviour
     {
         //_movement.x = Input.GetAxisRaw("Horizontal");
         //_movement.y = Input.GetAxisRaw("Vertical");
-        
         if (_movement.x != 0)
         {
             transform.localScale = new Vector3(-1.0f * _movement.x * _importedLocalScale.x, _importedLocalScale.y, _importedLocalScale.z);
         }
         SwitchAnim();
         _mmProgressBar.UpdateBar01(Mathf.Clamp(curHealth / maxHealth, 0f, 1f));
-        _movement = floatingJoystick.Direction;
-
-
+        _ExpBar.UpdateBar01(Mathf.Clamp(_curExperience / _totalExperience, 0f, 1f));
+        _movement = _floatingJoystick.GetComponent<FloatingJoystick>().Direction;
     }
 
     private void FixedUpdate()
@@ -193,6 +188,7 @@ public class PlayerController : MonoBehaviour
             ++_level;
             _curExperience = 0;
             _totalExperience += 5;
+            UIManager.UIManagerInstance.ShowRogueUI();
         }else if (_curExperience < _totalExperience)
         {
             ++_curExperience;
@@ -226,7 +222,6 @@ public class PlayerController : MonoBehaviour
         // maxHealthFinal = (maxHealth + (maxHealthLevelUpFactor * maxHealthLevel)) * tempcoolhealthBonus;
         
         moveSpeedFinal = (moveSpeed + (moveSpeedLevel * moveSpeedLevelUpFactor));
-        
         
         //skillCd;
         skillCdFinal = (skillCd * Mathf.Pow(skillCdLevelUpFactor, skillCdLevel));

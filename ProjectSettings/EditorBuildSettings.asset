@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 0
-    path: Assets/Scenes/YiboWorkSpace.unity
-    guid: 55191ec3b68a5df4bb04e07fd99c4d7c
-  - enabled: 0
     path: Assets/Scenes/AndroidTest.unity
     guid: fd7ead9ac3c0b584e8c06292dab595dd
   - enabled: 1

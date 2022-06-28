@@ -1,29 +1,25 @@
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class Skill : MonoBehaviour
+public class Skill : BulletSkillBase
 {
-    public float skillSpeed;
-
-    public float damage;
-
-    public bool isDisappearable;
-
     private Rigidbody2D _rb;
 
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         
-        _rb.AddForce((PlayerController.Instance.GetNearestEnemyLoc() - PlayerController.Instance.transform.position).normalized * skillSpeed, ForceMode2D.Force);
-        
-        Invoke("SelfDestory", 10.0f);
+        _rb.AddForce((PlayerController.Instance.GetNearestEnemyLoc() - PlayerController.Instance.transform.position).normalized * speed, ForceMode2D.Force);
+        // 持续时间结束时销毁自身
+        Invoke("SelfDestory", skillTime);
     }
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
         
     }
@@ -31,5 +27,17 @@ public class Skill : MonoBehaviour
     private void SelfDestory()
     {
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D obj)
+    {
+        if (obj.gameObject.CompareTag("Enemy"))
+        {
+            --skillPene;
+            if (skillPene == 0)
+            {
+                SelfDestory();
+            }
+        }
     }
 }

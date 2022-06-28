@@ -116,11 +116,6 @@ public class Monster : MonoBehaviour
             SetDead();
         }
 
-        if (damageMaker.GetComponent<Skill>().isDisappearable)
-        {
-            Destroy(damageMaker);
-        }
-        
     }
 
 }

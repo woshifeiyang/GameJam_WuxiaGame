@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_EmissionSword
+  m_Name: M_Lightning_01
   m_Shader: {fileID: -6465566751694194690, guid: 47dd9954418923b45a215586077e1541, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
@@ -38,5 +38,5 @@ Material:
     m_Floats:
     - Vector1_c63a06db804740e19f676f500f009c38: 1
     m_Colors:
-    - Color_2495fcef5edf4fe483d5c219d262e144: {r: 0.1153435, g: 0.9056604, b: 0.5609397, a: 0}
+    - Color_2495fcef5edf4fe483d5c219d262e144: {r: 0.91062516, g: 7.2470584, b: 4.515183, a: 0}
   m_BuildTextureStacks: []

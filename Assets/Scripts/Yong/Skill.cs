@@ -18,7 +18,7 @@ public class Skill : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         
-        _rb.AddForce((PlayerController.PlayerControllerInstance.GetNearestEnemyLoc() - PlayerController.PlayerControllerInstance.transform.position).normalized * skillSpeed, ForceMode2D.Force);
+        _rb.AddForce((PlayerController.Instance.GetNearestEnemyLoc() - PlayerController.Instance.transform.position).normalized * skillSpeed, ForceMode2D.Force);
         
         Invoke("SelfDestory", 10.0f);
     }

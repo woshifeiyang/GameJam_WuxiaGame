@@ -38,8 +38,8 @@ public class EnemySpawner : MonoBehaviour
     
     Vector2 GetRandomPosition()
     {
-        float playerPositionX = PlayerController.PlayerControllerInstance.GetPlayerPosition().x;
-        float playerPositionY = PlayerController.PlayerControllerInstance.GetPlayerPosition().y;
+        float playerPositionX = PlayerController.Instance.GetPlayerPosition().x;
+        float playerPositionY = PlayerController.Instance.GetPlayerPosition().y;
 
         float direction = Random.Range(0, 100);
         // 生成在玩家左右两侧

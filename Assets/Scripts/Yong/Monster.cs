@@ -51,7 +51,7 @@ public class Monster : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Vector3 playerPosition = PlayerController.PlayerControllerInstance.GetPlayerPosition();
+        Vector3 playerPosition = PlayerController.Instance.GetPlayerPosition();
         if (canMove)
         {
             _rb.MovePosition(transform.position + (playerPosition - transform.position).normalized * Time.fixedDeltaTime * _moveSpeed );
@@ -105,14 +105,14 @@ public class Monster : MonoBehaviour
     public void GetDamaged(GameObject damageMaker)
     {
         // DamagePopupManager.Create(transform.position, (int)damageMaker.GetComponent<Skill>().damage);
-        if (health - PlayerController.PlayerControllerInstance.attackFinal > 0.0f)
+        if (health - PlayerController.Instance.attackFinal > 0.0f)
         {
-            health -= PlayerController.PlayerControllerInstance.attackFinal;
+            health -= PlayerController.Instance.attackFinal;
             Debug.Log("Monster health = " + health);
         }
         else
         {
-            PlayerController.PlayerControllerInstance.IncreaseExperience();
+            PlayerController.Instance.IncreaseExperience();
             SetDead();
         }
 

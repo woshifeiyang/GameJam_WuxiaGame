@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using MoreMountains.Tools;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoSingleton<PlayerController>
 {
     private Rigidbody2D _rb;
 
@@ -27,8 +27,6 @@ public class PlayerController : MonoBehaviour
     private MMProgressBar _mmProgressBar;
 
     private MMProgressBar _ExpBar;
-
-    public static PlayerController PlayerControllerInstance;
 
     public Transform skill;
     
@@ -64,10 +62,10 @@ public class PlayerController : MonoBehaviour
     private Vector3 _importedLocalScale;
 
     private GameObject _floatingJoystick;
-    
-    private void Awake()
+
+    protected override void InitAwake()
     {
-        PlayerControllerInstance = this;
+        base.InitAwake();
         _floatingJoystick = GameObject.Find("FloatingJoystick");
 
         // get sprite manager
@@ -193,7 +191,7 @@ public class PlayerController : MonoBehaviour
             ++_level;
             _curExperience = 0;
             _totalExperience += 5;
-            UIManager.UIManagerInstance.ShowRogueUI();
+            UIManager.Instance.ShowRogueUI();
         }else if (_curExperience < _totalExperience)
         {
             ++_curExperience;

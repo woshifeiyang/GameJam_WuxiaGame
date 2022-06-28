@@ -3,20 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIManager : MonoBehaviour
+public class UIManager : MonoSingleton<UIManager>
 {
-    public static UIManager UIManagerInstance;
-
     private GameObject _rogueUIObj;
     
     private GameObject _giftUIObj;
 
     private GameObject _phoneButtonObj;
-
-    private void Awake()
-    {
-        UIManagerInstance = this;
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -58,20 +51,20 @@ public class UIManager : MonoBehaviour
     
     public void AttackUp()
     {
-        ++PlayerController.PlayerControllerInstance.attackLevel;
-        PlayerController.PlayerControllerInstance.updateParameters();
+        ++PlayerController.Instance.attackLevel;
+        PlayerController.Instance.updateParameters();
     }
     
     public void CdDown()
     {
-        PlayerController.PlayerControllerInstance.skillCdLevel++;
-        PlayerController.PlayerControllerInstance.updateParameters();
+        PlayerController.Instance.skillCdLevel++;
+        PlayerController.Instance.updateParameters();
     }
     
     public void SpeedUp()
     {
-        PlayerController.PlayerControllerInstance.moveSpeedLevel++;
-        PlayerController.PlayerControllerInstance.updateParameters();
+        PlayerController.Instance.moveSpeedLevel++;
+        PlayerController.Instance.updateParameters();
     }
 
     public void ShowRogueUI()

@@ -85,9 +85,9 @@ public class PlayerController : MonoSingleton<PlayerController>
         _anim = GetComponent<Animator>();
         _cc = GetComponent<CircleCollider2D>();
 
-        string assertPath = "Prefab/Skill/Scope/401";
+        string assertPath = "Prefab/Skill/Bullet/402";
         
-        SkillManager.Instance.CreateScopeSkill(assertPath, 401, gameObject);
+        SkillManager.Instance.CreateBulletSkill(assertPath, 402, gameObject);
 
         StartCoroutine("FindNearestTarget");
     }

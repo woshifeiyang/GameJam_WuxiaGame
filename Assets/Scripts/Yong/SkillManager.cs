@@ -62,18 +62,18 @@ public class SkillManager : MonoSingleton<SkillManager>
         return bulletSkill;
     }
     
-    //创建一个追踪类技能
-    public SkillBase CreateLinkSkill(string resName, int id, GameObject parent)
+    //创建一个领域类技能
+    public SkillBase CreateFieldSkill(string resName, int id, GameObject parent)
     {
         //创建一个上面的linkSkill对象
-        LinkSkill linkSkill = new LinkSkill();
-        linkSkill.ResName = resName;
-        linkSkill.ID = id;
+        FieldSkill fieldSkill = new FieldSkill();
+        fieldSkill.ResName = resName;
+        fieldSkill.ID = id;
         //取到资源路径后可以实例化这个技能对象了
-        linkSkill.CreateSkill();
+        fieldSkill.CreateSkill();
         //以技能唯一Id作为key，加入我们的技能管理列表
-        AddSkillObj(linkSkill.ID, linkSkill);
-        return linkSkill;
+        AddSkillObj(fieldSkill.ID, fieldSkill);
+        return fieldSkill;
     }
     
     //创建一个追踪类技能

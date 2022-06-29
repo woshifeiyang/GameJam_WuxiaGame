@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScopeSkillBase : MonoBehaviour
+public class FieldSkillBase : MonoBehaviour
 {
     public int id;                // 技能唯一ID
     
     public float damage;         // 技能伤害
 
     public float cd;             // 技能释放CD
-
-    public float skillTime;     // 技能持续时间
 
     public float range;         // 技能范围
 

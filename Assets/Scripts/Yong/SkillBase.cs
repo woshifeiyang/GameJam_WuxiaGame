@@ -42,7 +42,7 @@ public class SkillBase
     }
 }
 
-//实现一个普通范围型AOE技能
+// 范围型技能：以Point为目标点，直接在目标点按照技能cd生成技能
 public class ScopeSkill : SkillBase
 {
     //技能释放的一个位置标准点（用来定位这个技能的位置和角度）
@@ -56,7 +56,6 @@ public class ScopeSkill : SkillBase
         //设置这个技能生成的位置（如鼠标位置、指向性范围一定距离处等）
         base.LoadSkillFinish();    
     }
-
     public override void Update()
     {
         base.Update();
@@ -69,7 +68,7 @@ public class ScopeSkill : SkillBase
         }
     }
 }
-
+// 弹道类技能：以一个对象为目标，按照技能cd从玩家位置生成一个技能
 public class BulletSkill : SkillBase
 {
     public BulletSkill()
@@ -95,10 +94,10 @@ public class BulletSkill : SkillBase
         }
     }
 }
-
-public class LinkSkill : SkillBase
+// 领域类技能：以玩家位置为中心生成一个永久的对象
+public class FieldSkill : SkillBase
 {
-    public LinkSkill()
+    public FieldSkill()
     {
         MType = SkillType.Link;
     }
@@ -108,18 +107,13 @@ public class LinkSkill : SkillBase
         //设置这个技能生成的位置（如鼠标位置、指向性范围一定距离处等）
         base.LoadSkillFinish();
         
-        SkillObj.transform.position = PlayerController.Instance.GetPlayerPosition();         
+        GameObject obj = GameObject.Instantiate(SkillObj);
+        obj.transform.position = PlayerController.Instance.GetPlayerPosition();
     }
     public override void Update()
     {
         base.Update();
-        Timer += (Time.deltaTime);
-        if (Timer >= SkillObj.GetComponent<BulletSkillBase>().skillNum / SkillObj.GetComponent<BulletSkillBase>().cd)
-        {
-            GameObject obj = GameObject.Instantiate(SkillObj);
-            obj.transform.position = PlayerController.Instance.GetPlayerPosition();
-            Timer = 0;
-        }
+        
     }
 }
 

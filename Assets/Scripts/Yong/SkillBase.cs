@@ -54,9 +54,19 @@ public class ScopeSkill : SkillBase
     public override void LoadSkillFinish()
     {
         //设置这个技能生成的位置（如鼠标位置、指向性范围一定距离处等）
-        base.LoadSkillFinish();
-        
-        SkillObj.transform.position = this.Point.transform.position;           
+        base.LoadSkillFinish();    
+    }
+
+    public override void Update()
+    {
+        base.Update();
+        Timer += (Time.deltaTime);
+        if (Timer >= SkillObj.GetComponent<ScopeSkillBase>().cd)
+        {
+            GameObject obj = GameObject.Instantiate(SkillObj);
+            obj.transform.position = Point.transform.position;
+            Timer = 0;
+        }
     }
 }
 
@@ -71,14 +81,13 @@ public class BulletSkill : SkillBase
         //设置这个技能生成的位置（如鼠标位置、指向性范围一定距离处等）
         base.LoadSkillFinish();
         
-        SkillObj.transform.position = PlayerController.Instance.GetPlayerPosition();
     }
     
     public override void Update()
     {
         base.Update();
         Timer += (Time.deltaTime);
-        if (Timer >= SkillObj.GetComponent<BulletSkillBase>().skillNum / SkillObj.GetComponent<BulletSkillBase>().cd)
+        if (Timer >= SkillObj.GetComponent<BulletSkillBase>().cd)
         {
             GameObject obj = GameObject.Instantiate(SkillObj);
             obj.transform.position = PlayerController.Instance.GetPlayerPosition();

@@ -10,16 +10,16 @@ public class ScopeSkillBase : MonoBehaviour
 
     public float cd;             // 技能释放CD
 
-    public int skillNum;        // 技能数量
-    
+    public float skillTime;     // 技能持续时间
+
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         
     }

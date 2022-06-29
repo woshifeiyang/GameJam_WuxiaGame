@@ -84,9 +84,11 @@ public class PlayerController : MonoSingleton<PlayerController>
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         _cc = GetComponent<CircleCollider2D>();
+
+        string assertPath = "Prefab/Skill";
         
-        
-        InvokeRepeating("SpawnSkill", 1.0f, skillCd);
+        SkillManager.Instance.CreateBulletSkill(assertPath, 101, gameObject);
+
         StartCoroutine("FindNearestTarget");
     }
 
@@ -122,11 +124,6 @@ public class PlayerController : MonoSingleton<PlayerController>
         {
             _anim.SetBool("isDead", true);
         }
-    }
-
-    void SpawnSkill()
-    {
-        Instantiate(skill, new Vector3(transform.position.x, transform.position.y), transform.rotation);
     }
 
     IEnumerator FindNearestTarget()

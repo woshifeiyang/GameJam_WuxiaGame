@@ -22,6 +22,8 @@ public class SkillBase
     public Transform SkillTransform = null;
 
     public SkillType MType;  //技能类型
+    
+    public float Timer = 0.0f;  // 定时器
 
     public void CreateSkill()
     {
@@ -70,12 +72,18 @@ public class BulletSkill : SkillBase
         base.LoadSkillFinish();
         
         SkillObj.transform.position = PlayerController.Instance.GetPlayerPosition();
-        
     }
-
+    
     public override void Update()
     {
         base.Update();
+        Timer += (Time.deltaTime);
+        if (Timer >= SkillObj.GetComponent<BulletSkillBase>().skillNum / SkillObj.GetComponent<BulletSkillBase>().cd)
+        {
+            GameObject obj = GameObject.Instantiate(SkillObj);
+            obj.transform.position = PlayerController.Instance.GetPlayerPosition();
+            Timer = 0;
+        }
     }
 }
 
@@ -90,9 +98,19 @@ public class LinkSkill : SkillBase
     {
         //设置这个技能生成的位置（如鼠标位置、指向性范围一定距离处等）
         base.LoadSkillFinish();
-
-        //SkillObj.transform.rotation = Quaternion.LookRotation(this.Point.tansform.rotation);
-        //SkillObj.transform.rotation.position = this.Point.tansform.position;           
+        
+        SkillObj.transform.position = PlayerController.Instance.GetPlayerPosition();         
+    }
+    public override void Update()
+    {
+        base.Update();
+        Timer += (Time.deltaTime);
+        if (Timer >= SkillObj.GetComponent<BulletSkillBase>().skillNum / SkillObj.GetComponent<BulletSkillBase>().cd)
+        {
+            GameObject obj = GameObject.Instantiate(SkillObj);
+            obj.transform.position = PlayerController.Instance.GetPlayerPosition();
+            Timer = 0;
+        }
     }
 }
 
@@ -110,5 +128,9 @@ public class NormalSkill : SkillBase
 
         //SkillObj.transform.rotation = Quaternion.LookRotation(this.Point.tansform.rotation);
         //SkillObj.transform.rotation.position = this.Point.tansform.position;           
+    }
+    public override void Update()
+    {
+        base.Update();
     }
 }

@@ -53,6 +53,10 @@ public class EnemyDetector : MonoSingleton<EnemyDetector>
 
     public Vector3 GetNearestEnemyLoc()
     {
-        return _nearestEnemy.transform.position;
+        if (_nearestEnemy != null)
+        {
+            return _nearestEnemy.transform.position;
+        }
+        return new Vector3(1, 0, 0);
     }
 }

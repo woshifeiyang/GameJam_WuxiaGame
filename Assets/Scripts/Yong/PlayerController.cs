@@ -82,8 +82,7 @@ public class PlayerController : MonoSingleton<PlayerController>
         string assertPath = "Prefab/Skill/Bullet/402";
         
         SkillManager.Instance.CreateBulletSkill(assertPath, 402, gameObject);
-
-        StartCoroutine("FindNearestTarget");
+        
     }
 
     // Update is called once per frame

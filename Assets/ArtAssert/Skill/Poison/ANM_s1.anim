@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ANM_SnakeBody
+  m_Name: ANM_s1
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,17 +21,17 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: -7766637424382265647, guid: a33381fdb66f4654a8c03453296faac6, type: 3}
-    - time: 0.1
+    - time: 0.083333336
       value: {fileID: 4149926256698089342, guid: a33381fdb66f4654a8c03453296faac6, type: 3}
-    - time: 0.23333333
+    - time: 0.16666667
       value: {fileID: 2808559760237250731, guid: a33381fdb66f4654a8c03453296faac6, type: 3}
-    - time: 0.33333334
+    - time: 0.25
       value: {fileID: -4538063122725819375, guid: a33381fdb66f4654a8c03453296faac6, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 60
+  m_SampleRate: 12
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -55,7 +55,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.35000002
+    m_StopTime: 0.33333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

@@ -14,7 +14,7 @@ public class Skill402 : BulletSkillBase
     public override void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        Vector3 v = PlayerController.Instance.GetNearestEnemyLoc()- PlayerController.Instance.transform.position;
+        Vector3 v = EnemyDetector.Instance.GetNearestEnemyLoc()- PlayerController.Instance.transform.position;
         v.z = 0;
         float angle = Vector3.SignedAngle(Vector3.up, v, Vector3.forward);
         Quaternion rotation = Quaternion.Euler(0, 0, angle);

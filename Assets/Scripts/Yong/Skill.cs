@@ -14,7 +14,7 @@ public class Skill : BulletSkillBase
     {
         _rb = GetComponent<Rigidbody2D>();
         
-        _rb.AddForce((PlayerController.Instance.GetNearestEnemyLoc() - PlayerController.Instance.transform.position).normalized * speed, ForceMode2D.Force);
+        _rb.AddForce((EnemyDetector.Instance.GetNearestEnemyLoc() - PlayerController.Instance.transform.position).normalized * speed, ForceMode2D.Force);
         // 持续时间结束时销毁自身
         Invoke("SelfDestory", skillTime);
     }

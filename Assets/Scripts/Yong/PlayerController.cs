@@ -9,14 +9,8 @@ public class PlayerController : MonoSingleton<PlayerController>
     private Rigidbody2D _rb;
 
     private Animator _anim;
-    
-    private CircleCollider2D _cc;
-    
+
     private Vector2 _movement;
-
-    private GameObject _nearestEnemy;
-
-    private bool _hasFoundEnemy;
 
     private float _curExperience;
 
@@ -26,10 +20,10 @@ public class PlayerController : MonoSingleton<PlayerController>
     
     private MMProgressBar _mmProgressBar;
 
-    private MMProgressBar _ExpBar;
+    private MMProgressBar _expBar;
 
     public Transform skill;
-    
+
     // player parameters
     // speed
     public float moveSpeed = 1f;
@@ -63,6 +57,7 @@ public class PlayerController : MonoSingleton<PlayerController>
 
     private GameObject _floatingJoystick;
 
+    public GameObject detector;
     protected override void InitAwake()
     {
         base.InitAwake();
@@ -71,20 +66,19 @@ public class PlayerController : MonoSingleton<PlayerController>
         // get sprite manager
         // spriteManager = GameObject.Find("SpriteManager").GetComponent<SpriteManager>();
         _mmProgressBar = GameObject.Find("HPBar").GetComponent<MMProgressBar>();
-        _ExpBar = GameObject.Find("ExpBar").GetComponent<MMProgressBar>();
+        _expBar = GameObject.Find("ExpBar").GetComponent<MMProgressBar>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        _hasFoundEnemy = false;
         _totalExperience = 5;
         _importedLocalScale = this.transform.localScale;
         
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
-        _cc = GetComponent<CircleCollider2D>();
-
+        detector = transform.Find("EnemyDetector").gameObject;
+        
         string assertPath = "Prefab/Skill/Bullet/402";
         
         SkillManager.Instance.CreateBulletSkill(assertPath, 402, gameObject);
@@ -95,26 +89,21 @@ public class PlayerController : MonoSingleton<PlayerController>
     // Update is called once per frame
     void Update()
     {
-        //_movement.x = Input.GetAxisRaw("Horizontal");
-        //_movement.y = Input.GetAxisRaw("Vertical");
         if (_movement.x != 0)
         {
             transform.localScale = new Vector3(-1.0f * _movement.x * _importedLocalScale.x, _importedLocalScale.y, _importedLocalScale.z);
         }
         SwitchAnim();
+        
         _mmProgressBar.UpdateBar01(Mathf.Clamp(curHealth / maxHealth, 0f, 1f));
-        _ExpBar.UpdateBar01(Mathf.Clamp(_curExperience / _totalExperience, 0f, 1f));
+        _expBar.UpdateBar01(Mathf.Clamp(_curExperience / _totalExperience, 0f, 1f));
         _movement = _floatingJoystick.GetComponent<FloatingJoystick>().Direction;
     }
 
     private void FixedUpdate()
     {
         _rb.MovePosition(_rb.position + _movement * moveSpeedFinal * Time.fixedDeltaTime);
-        if (_nearestEnemy)
-        {
-            Debug.DrawLine(transform.position, _nearestEnemy.transform.position, Color.red);
-        }
-        
+
     }
 
     private void SwitchAnim()
@@ -123,30 +112,6 @@ public class PlayerController : MonoSingleton<PlayerController>
         if (curHealth <= 0.0f)
         {
             _anim.SetBool("isDead", true);
-        }
-    }
-
-    IEnumerator FindNearestTarget()
-    {
-        float radius = _cc.radius;
-        while (true)
-        {
-            yield return new WaitForSeconds(0.02f);
-            if (_hasFoundEnemy || _cc.radius >= 10.0f)
-            {
-                _cc.radius = radius;
-                _hasFoundEnemy = false;
-            }
-            else _cc.radius += 0.5f;
-        }
-    }
-    // 敌人探测器
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Enemy") && other.gameObject.GetComponent<Monster>().isDead == false)
-        {
-            _nearestEnemy = other.gameObject;
-            _hasFoundEnemy = true;
         }
     }
     // 被怪物攻击
@@ -165,15 +130,6 @@ public class PlayerController : MonoSingleton<PlayerController>
                 ExitGame();
             }
         }
-    }
-    
-    public Vector3 GetNearestEnemyLoc()
-    {
-        if (_nearestEnemy && _nearestEnemy.activeInHierarchy)
-        {
-            return _nearestEnemy.transform.position;
-        }
-        return new Vector3(1.0f, 0.0f, 0.0f);
     }
 
     public Vector3 GetPlayerPosition()

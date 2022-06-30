@@ -37,6 +37,11 @@ public class Monster : MonoBehaviour
         EnemyDetector.Instance.enemyList.Add(gameObject);
     }
 
+    private void OnBecameInvisible()
+    {
+        EnemyDetector.Instance.enemyList.Remove(gameObject);
+    }
+
     void Start()
     {
         // DamagePopupManager = GameObject.FindWithTag("DamagePopupManager").GetComponent<DamagePopupManager>();

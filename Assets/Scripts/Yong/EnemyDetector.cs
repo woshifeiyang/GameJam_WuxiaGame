@@ -5,10 +5,12 @@ using UnityEngine;
 public class EnemyDetector : MonoSingleton<EnemyDetector>
 {
     private CircleCollider2D _cc;
-    
+
     private bool _hasFoundEnemy;
     
     private GameObject _nearestEnemy;
+
+    public List<GameObject> enemyList;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,7 @@ public class EnemyDetector : MonoSingleton<EnemyDetector>
 
         _hasFoundEnemy = false;
         StartCoroutine("FindNearestTarget");
+        InvokeRepeating("ShowNum", 0.0f, 0.1f);
     }
 
     // Update is called once per frame
@@ -58,5 +61,10 @@ public class EnemyDetector : MonoSingleton<EnemyDetector>
             return _nearestEnemy.transform.position;
         }
         return new Vector3(1, 0, 0);
+    }
+
+    public void ShowNum()
+    {
+        Debug.Log(enemyList.Count);
     }
 }

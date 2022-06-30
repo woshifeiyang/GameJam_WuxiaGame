@@ -31,7 +31,11 @@ public class Monster : MonoBehaviour
     {
         SetAlive();
     }
-
+    // 如果怪物在摄像机内可见，添加进敌人探测器的可视怪物列表中
+    private void OnBecameVisible()
+    {
+        EnemyDetector.Instance.enemyList.Add(gameObject);
+    }
 
     void Start()
     {
@@ -96,10 +100,12 @@ public class Monster : MonoBehaviour
     public void SetDead()
     {
         isDead = true;
+        EnemyDetector.Instance.enemyList.Remove(gameObject);
         _moveSpeed = 0.0f;
         SwitchAnim();
         Invoke(nameof(PutObjectInPool), 1.0f);
         GetComponent<Collider2D>().isTrigger = true;
+        // 从敌人探测器列表中移除该对象
     }
 
     public void GetDamaged(GameObject damageMaker)

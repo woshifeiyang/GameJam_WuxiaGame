@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_MagicCircle
-  m_Shader: {fileID: -6465566751694194690, guid: a18ad4c652efe804fb2f58f68c694ce1, type: 3}
+  m_Name: M_SnakeEmi
+  m_Shader: {fileID: -6465566751694194690, guid: 47dd9954418923b45a215586077e1541, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 4cb1a93b63b099d4e8b93c906665e3a7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -36,8 +36,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_0db0bd49ad804f21b50b475818c68370: 1.26
     - Vector1_c63a06db804740e19f676f500f009c38: 1
     m_Colors:
-    - Color_2495fcef5edf4fe483d5c219d262e144: {r: 1.851591, g: 1.8711845, b: 0.28410655, a: 0}
+    - Color_2495fcef5edf4fe483d5c219d262e144: {r: 7.2470584, g: 0.94856787, b: 6.108777, a: 0}
   m_BuildTextureStacks: []

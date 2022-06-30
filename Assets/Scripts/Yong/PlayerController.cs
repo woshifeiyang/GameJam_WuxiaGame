@@ -83,7 +83,6 @@ public class PlayerController : MonoSingleton<PlayerController>
         
         SkillManager.Instance.CreateBulletSkill(assertPath, 402, gameObject);
 
-        StartCoroutine("FindNearestTarget");
     }
 
     // Update is called once per frame

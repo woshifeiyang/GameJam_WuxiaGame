@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class EnemyDetector : MonoSingleton<EnemyDetector>
 {
@@ -64,6 +66,10 @@ public class EnemyDetector : MonoSingleton<EnemyDetector>
         return new Vector3(1, 0, 0);
     }
 
+    public static List<T> GetRandomElements<T>(IEnumerable<T> list, int elementsCount)
+    {
+        return list.OrderBy(arg => Guid.NewGuid()).Take(elementsCount).ToList();
+    }
     public void ShowNum()
     {
         Debug.Log(enemyList.Count);

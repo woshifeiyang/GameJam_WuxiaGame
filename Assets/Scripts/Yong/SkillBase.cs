@@ -6,8 +6,8 @@ public enum SkillType
 {
     Scope,      //范围型技能     
     Bullet,     //弹道类技能
-    Link,       //指向性技能
-    Normal,     //常规技能
+    Field,       //指向性技能
+    MultTarget,     //常规技能
 }
 
 public class SkillBase 
@@ -122,7 +122,7 @@ public class FieldSkill : SkillBase
     
     public FieldSkill()
     {
-        MType = SkillType.Link;
+        MType = SkillType.Field;
     }
     
     public override void LoadSkillFinish()
@@ -144,11 +144,15 @@ public class FieldSkill : SkillBase
     }
 }
 
-public class NormalSkill : SkillBase
+public class MultTargetSkill : SkillBase
 {
-    public NormalSkill()
+    public float Damage;
+    public float Cd;
+    public int SkillNum;
+    
+    public MultTargetSkill()
     {
-        MType = SkillType.Normal;
+        MType = SkillType.MultTarget;
     }
     
     public override void LoadSkillFinish()
@@ -156,11 +160,29 @@ public class NormalSkill : SkillBase
         //设置这个技能生成的位置（如鼠标位置、指向性范围一定距离处等）
         base.LoadSkillFinish();
 
-        //SkillObj.transform.rotation = Quaternion.LookRotation(this.Point.tansform.rotation);
-        //SkillObj.transform.rotation.position = this.Point.tansform.position;           
+        Damage = SkillObj.GetComponent<MultTargetSkillBase>().damage;
+        Cd = SkillObj.GetComponent<MultTargetSkillBase>().cd;
+        SkillNum = SkillObj.GetComponent<MultTargetSkillBase>().skillNum;
     }
     public override void Update()
     {
         base.Update();
+        Timer += (Time.deltaTime);
+        if (Timer >= Cd)
+        {
+            int num = EnemyDetector.Instance.enemyList.Count;
+            List<GameObject> list;
+            if (SkillNum > num) list = EnemyDetector.Instance.enemyList;
+            else list = EnemyDetector.GetRandomElements(EnemyDetector.Instance.enemyList, SkillNum);
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i])
+                {
+                    GameObject obj = GameObject.Instantiate(SkillObj);
+                    SkillObj.transform.position = list[i].transform.position;
+                }
+            }
+            Timer = 0;
+        }
     }
 }

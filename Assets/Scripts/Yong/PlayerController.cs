@@ -79,9 +79,9 @@ public class PlayerController : MonoSingleton<PlayerController>
         _anim = GetComponent<Animator>();
         detector = transform.Find("EnemyDetector").gameObject;
         
-        string assertPath = "Prefab/Skill/Bullet/402";
+        string assertPath = "Prefab/Skill/Bullet/102";
         
-        SkillManager.Instance.CreateBulletSkill(assertPath, 402, gameObject);
+        SkillManager.Instance.CreateBulletSkill(assertPath, 102, gameObject);
         
     }
 
@@ -90,7 +90,7 @@ public class PlayerController : MonoSingleton<PlayerController>
     {
         if (_movement.x != 0)
         {
-            transform.localScale = new Vector3(-1.0f * _movement.x * _importedLocalScale.x, _importedLocalScale.y, _importedLocalScale.z);
+            transform.localScale = new Vector3(_movement.x * _importedLocalScale.x, _importedLocalScale.y, _importedLocalScale.z);
         }
         SwitchAnim();
         
@@ -185,7 +185,7 @@ public class PlayerController : MonoSingleton<PlayerController>
         maxHealthFinal = (maxHealth + (maxHealthLevelUpFactor * maxHealthLevel));
         
         //attack
-        attackFinal = skill.gameObject.GetComponent<Skill>().damage + maxAttackLevelUpFactor * attackLevel;
+        attackFinal = skill.gameObject.GetComponent<Skill101>().damage + maxAttackLevelUpFactor * attackLevel;
         
         Debug.Log("moveSpeedFinal: " + moveSpeedFinal);
         Debug.Log("skillCdFinal: " + skillCdFinal);

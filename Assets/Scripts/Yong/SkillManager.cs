@@ -36,12 +36,11 @@ public class SkillManager : MonoSingleton<SkillManager>
     }
 
     //创建一个范围型AOE技能
-    public SkillBase CreateScopeSkill(string resName, int id, GameObject parent)
+    public SkillBase CreateScopeSkill(string resName, int id)
     {
         //创建一个上面的ScopeSkill对象
         ScopeSkill scopeSkill = new ScopeSkill();
         scopeSkill.ResName = resName;
-        scopeSkill.Point = parent;
         scopeSkill.ID = id;
         //取到资源路径后可以实例化这个技能对象了
         scopeSkill.CreateSkill();

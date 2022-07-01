@@ -16,6 +16,7 @@ public class EnemyDetector : MonoSingleton<EnemyDetector>
     void Start()
     {
         _cc = GetComponent<CircleCollider2D>();
+        enemyList = new List<GameObject>();
 
         _hasFoundEnemy = false;
         StartCoroutine("FindNearestTarget");

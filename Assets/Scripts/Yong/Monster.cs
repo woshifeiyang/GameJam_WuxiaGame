@@ -25,7 +25,7 @@ public class Monster : MonoBehaviour
 
     private Animator _anim;
     
-    private Vector3 importedLocalScale;
+    private Vector3 _importedLocalScale;
 
     private void OnEnable()
     {
@@ -36,17 +36,18 @@ public class Monster : MonoBehaviour
     {
         EnemyDetector.Instance.enemyList.Add(gameObject);
     }
-
+    
     private void OnBecameInvisible()
     {
-        EnemyDetector.Instance.enemyList.Remove(gameObject);
+        if(gameObject && EnemyDetector.Instance.enemyList.Contains(gameObject))
+            EnemyDetector.Instance.enemyList.Remove(gameObject);
     }
 
     void Start()
     {
         // DamagePopupManager = GameObject.FindWithTag("DamagePopupManager").GetComponent<DamagePopupManager>();
         
-        importedLocalScale = transform.localScale;
+        _importedLocalScale = transform.localScale;
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         
@@ -68,9 +69,9 @@ public class Monster : MonoBehaviour
 
         if (transform.position.x - playerPosition.x > 0)
         {
-            transform.localScale = new Vector3(-1f * importedLocalScale.x, importedLocalScale.y, importedLocalScale.y);
+            transform.localScale = new Vector3(-1f * _importedLocalScale.x, _importedLocalScale.y, _importedLocalScale.y);
         }
-        else transform.localScale = importedLocalScale;
+        else transform.localScale = _importedLocalScale;
     }
     
     private void OnTriggerEnter2D(Collider2D obj)

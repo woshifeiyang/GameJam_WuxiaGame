@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class Skill : BulletSkillBase
+public class Skill101 : BulletSkillBase
 {
     private Rigidbody2D _rb;
 

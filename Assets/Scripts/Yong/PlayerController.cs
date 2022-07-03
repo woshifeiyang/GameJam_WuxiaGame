@@ -11,13 +11,7 @@ public class PlayerController : MonoSingleton<PlayerController>
     private Animator _anim;
 
     private Vector2 _movement;
-
-    private float _curExperience;
-
-    private float _totalExperience;
-
-    private int _level;
-    
+   
     private MMProgressBar _mmProgressBar;
 
     private MMProgressBar _expBar;
@@ -25,28 +19,32 @@ public class PlayerController : MonoSingleton<PlayerController>
     public Transform skill;
 
     // player parameters
-    // speed
+    // experience
+    private float _curExperience;
+    private float _totalExperience;
+    private int _level;
+    
+    // moveSpeed
     public float moveSpeed = 1f;
-    public float moveSpeedLevelUpFactor = 0.3f;
+    public float moveSpeedRatio = 0.3f;
     public int moveSpeedLevel;
     public float moveSpeedFinal;
 
-    // skillcd
+    // cd
     public float skillCd = 1f;
-    public float skillCdLevelUpFactor = 0.85f;
+    public float skillCdRatio = 0.85f;
     public int skillCdLevel;
     public float skillCdFinal;
 
+    // health
     public float curHealth;
-    
-    // max health
     public float maxHealth = 20f;
-    public float maxHealthLevelUpFactor = 5f;
-    public int maxHealthLevel;
-    public float maxHealthFinal;
+    public float healthRatio = 5f;
+    public int healthLevel;
+    public float healthFinal;
     
     // attack
-    public float maxAttackLevelUpFactor = 5f;
+    public float attackRatio = 5f;
     public int attackLevel;
     public float attackFinal;
     
@@ -56,8 +54,7 @@ public class PlayerController : MonoSingleton<PlayerController>
     private Vector3 _importedLocalScale;
 
     private GameObject _floatingJoystick;
-
-    public GameObject detector;
+    
     protected override void InitAwake()
     {
         base.InitAwake();
@@ -77,8 +74,7 @@ public class PlayerController : MonoSingleton<PlayerController>
         
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
-        detector = transform.Find("EnemyDetector").gameObject;
-        
+
         string assertPath = "Prefab/Skill/Bullet/102";
         
         SkillManager.Instance.CreateBulletSkill(assertPath, 102, gameObject);
@@ -176,19 +172,19 @@ public class PlayerController : MonoSingleton<PlayerController>
         // float tempcoolhealthBonus = spriteManager.spriteManagerProperty["healthBonus"] == 0 ? 1 : spriteManager.spriteManagerProperty["healthBonus"];
         // maxHealthFinal = (maxHealth + (maxHealthLevelUpFactor * maxHealthLevel)) * tempcoolhealthBonus;
         
-        moveSpeedFinal = (moveSpeed + (moveSpeedLevel * moveSpeedLevelUpFactor));
+        moveSpeedFinal = (moveSpeed + (moveSpeedLevel * moveSpeedRatio));
         
         //skillCd;
-        skillCdFinal = (skillCd * Mathf.Pow(skillCdLevelUpFactor, skillCdLevel));
+        skillCdFinal = (skillCd * Mathf.Pow(skillCdRatio, skillCdLevel));
 
-        //maxHealth;
-        maxHealthFinal = (maxHealth + (maxHealthLevelUpFactor * maxHealthLevel));
+        //Health;
+        healthFinal = (maxHealth + (healthRatio * healthLevel));
         
         //attack
-        attackFinal = skill.gameObject.GetComponent<Skill101>().damage + maxAttackLevelUpFactor * attackLevel;
+        attackFinal = skill.gameObject.GetComponent<Skill101>().damage + attackRatio * attackLevel;
         
         Debug.Log("moveSpeedFinal: " + moveSpeedFinal);
         Debug.Log("skillCdFinal: " + skillCdFinal);
-        Debug.Log("maxHealthFinal: " + maxHealthFinal);
+        Debug.Log("maxHealthFinal: " + healthFinal);
     }
 }

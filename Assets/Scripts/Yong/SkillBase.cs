@@ -4,10 +4,10 @@ using UnityEngine;
 
 public enum SkillType
 {
-    Scope,      //范围型技能     
-    Bullet,     //弹道类技能
-    Field,       //指向性技能
-    MultTarget,     //常规技能
+    Scope,          //范围型技能     
+    Bullet,         //弹道类技能
+    Field,          //领域技能
+    MultTarget,     //多目标单体技能
 }
 
 public class SkillBase 

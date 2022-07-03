@@ -22,7 +22,7 @@ public class EnemyDetector : MonoSingleton<EnemyDetector>
 
         _hasFoundEnemy = false;
         StartCoroutine("FindNearestTarget");
-        InvokeRepeating("ShowNum", 0.0f, 0.1f);
+        //InvokeRepeating("ShowNum", 0.0f, 0.1f);
     }
 
     // Update is called once per frame

@@ -27,27 +27,27 @@ public class PlayerController : MonoSingleton<PlayerController>
     // moveSpeed
     public float moveSpeed = 1f;
     public float moveSpeedRatio = 0.3f;
-    public int moveSpeedLevel;
-    public float moveSpeedFinal;
+    private int _moveSpeedLevel = 1;
+    private float _moveSpeedFinal;
 
-    // cd
+    // skillCd
     public float skillCd = 1f;
     public float skillCdRatio = 0.85f;
-    public int skillCdLevel;
-    public float skillCdFinal;
+    private int _skillCdLevel = 1;
+    private float _skillCdFinal;
 
     // health
     public float curHealth;
     public float maxHealth = 20f;
     public float healthRatio = 5f;
-    public int healthLevel;
-    public float healthFinal;
+    private int _healthLevel = 1;
+    private float _healthFinal;
     
     // attack
-    public float attackRatio = 5f;
-    public int attackLevel;
-    public float attackFinal;
-    
+    public float curAttack;
+    public float attackRatio = 5.0f;
+    private int _attackLevel = 1;
+
     // import manager objects
     public SpriteManager spriteManager;
 
@@ -75,9 +75,9 @@ public class PlayerController : MonoSingleton<PlayerController>
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
 
-        string assertPath = "Prefab/Skill/Bullet/102";
+        string assertPath = "Prefab/Skill/Bullet/402";
         
-        SkillManager.Instance.CreateBulletSkill(assertPath, 102, gameObject);
+        SkillManager.Instance.CreateBulletSkill(assertPath, 402, gameObject);
         
     }
 
@@ -93,12 +93,7 @@ public class PlayerController : MonoSingleton<PlayerController>
         _mmProgressBar.UpdateBar01(Mathf.Clamp(curHealth / maxHealth, 0f, 1f));
         _expBar.UpdateBar01(Mathf.Clamp(_curExperience / _totalExperience, 0f, 1f));
         _movement = _floatingJoystick.GetComponent<FloatingJoystick>().Direction;
-    }
-
-    private void FixedUpdate()
-    {
-        _rb.MovePosition(_rb.position + _movement * moveSpeedFinal * Time.fixedDeltaTime);
-
+        _rb.MovePosition(_rb.position + _movement * _moveSpeedFinal * Time.deltaTime);
     }
 
     private void SwitchAnim()
@@ -118,7 +113,6 @@ public class PlayerController : MonoSingleton<PlayerController>
             if(curHealth - col.gameObject.GetComponent<Monster>().damage > 0.0f)
             {
                 curHealth -= col.gameObject.GetComponent<Monster>().damage;
-                _mmProgressBar.UpdateBar01(curHealth / maxHealth);
             }
             else
             {
@@ -132,6 +126,25 @@ public class PlayerController : MonoSingleton<PlayerController>
         return transform.position;
     }
 
+    public void AttackLevelUp()
+    {
+        ++_attackLevel;
+    }
+    
+    public void MoveSpeedLevelUp()
+    {
+        ++_moveSpeedLevel;
+    }
+    
+    public void HealthLevelUp()
+    {
+        ++_healthLevel;
+    }
+
+    public void SkillCdUp()
+    {
+        ++_skillCdLevel;
+    }
     public void IncreaseExperience()
     {
         if (_totalExperience - _curExperience < 0.1f)
@@ -144,6 +157,16 @@ public class PlayerController : MonoSingleton<PlayerController>
         {
             ++_curExperience;
         }
+    }
+
+    public float GetPlayerAttack()
+    {
+        return curAttack + _attackLevel * attackRatio;
+    }
+
+    public float GetPlayerSkillCd()
+    {
+        return _skillCdLevel * skillCdRatio;
     }
     
     private void ExitGame()
@@ -163,7 +186,6 @@ public class PlayerController : MonoSingleton<PlayerController>
         // float tempMovingSpeedBonus = spriteManager.spriteManagerProperty["movingSpeedBonus"] == 0 ? 1 : spriteManager.spriteManagerProperty["movingSpeedBonus"];
         // moveSpeedFinal = (moveSpeed + (moveSpeedLevel * moveSpeedLevelUpFactor)) * tempMovingSpeedBonus;
         //
-        //
         // //skillCd;
         // float tempcoolDownReduce = spriteManager.spriteManagerProperty["coolDownReduce"] == 0 ? 1 : spriteManager.spriteManagerProperty["coolDownReduce"];
         // skillCdFinal = (skillCd * Mathf.Pow(skillCdLevelUpFactor, skillCdLevel)) * (1 - tempcoolDownReduce);
@@ -172,19 +194,16 @@ public class PlayerController : MonoSingleton<PlayerController>
         // float tempcoolhealthBonus = spriteManager.spriteManagerProperty["healthBonus"] == 0 ? 1 : spriteManager.spriteManagerProperty["healthBonus"];
         // maxHealthFinal = (maxHealth + (maxHealthLevelUpFactor * maxHealthLevel)) * tempcoolhealthBonus;
         
-        moveSpeedFinal = (moveSpeed + (moveSpeedLevel * moveSpeedRatio));
+        _moveSpeedFinal = (moveSpeed + (_moveSpeedLevel * moveSpeedRatio));
         
         //skillCd;
-        skillCdFinal = (skillCd * Mathf.Pow(skillCdRatio, skillCdLevel));
+        _skillCdFinal = (skillCd * Mathf.Pow(skillCdRatio, _skillCdLevel));
 
         //Health;
-        healthFinal = (maxHealth + (healthRatio * healthLevel));
-        
-        //attack
-        attackFinal = skill.gameObject.GetComponent<Skill101>().damage + attackRatio * attackLevel;
-        
-        Debug.Log("moveSpeedFinal: " + moveSpeedFinal);
-        Debug.Log("skillCdFinal: " + skillCdFinal);
-        Debug.Log("maxHealthFinal: " + healthFinal);
+        _healthFinal = (maxHealth + (healthRatio * _healthLevel));
+
+        Debug.Log("moveSpeedFinal: " + _moveSpeedFinal);
+        Debug.Log("skillCdFinal: " + _skillCdFinal);
+        Debug.Log("maxHealthFinal: " + _healthFinal);
     }
 }

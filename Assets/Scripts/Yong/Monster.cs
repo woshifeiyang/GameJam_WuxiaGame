@@ -112,18 +112,22 @@ public class Monster : MonoBehaviour
         Invoke(nameof(PutObjectInPool), 1.0f);
         GetComponent<Collider2D>().isTrigger = true;
         // 从敌人探测器列表中移除该对象
+        EnemyDetector.Instance.enemyList.Remove(gameObject);
     }
 
     public void GetDamaged(GameObject damageMaker)
     {
+        float totalDamage = damageMaker.GetComponent<MonoSkillBase>().damage *
+                            PlayerController.Instance.GetPlayerAttack();
         // DamagePopupManager.Create(transform.position, (int)damageMaker.GetComponent<Skill>().damage);
-        if (health - PlayerController.Instance.attackFinal > 0.0f)
+        if (health - totalDamage > 0.0f)
         {
-            health -= PlayerController.Instance.attackFinal;
+            health -= totalDamage;
             Debug.Log("Monster health = " + health);
         }
         else
         {
+            Debug.Log("Attack damage = " + totalDamage);
             PlayerController.Instance.IncreaseExperience();
             SetDead();
         }

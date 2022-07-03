@@ -23,7 +23,7 @@ public class MonoSingleton<T> : MonoBehaviour where T : Component
     }
     public virtual void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
         if (_instance == null)
         {
             _instance = this as T;
@@ -33,3 +33,4 @@ public class MonoSingleton<T> : MonoBehaviour where T : Component
     
     protected virtual void InitAwake(){}
 }
+

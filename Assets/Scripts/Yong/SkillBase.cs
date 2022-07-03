@@ -143,7 +143,7 @@ public class FieldSkill : SkillBase
         Skill.GetComponent<FieldSkillBase>().cd = Cd;
     }
 }
-
+// 多目标单体技能： 随机选取屏幕内预定数量的怪物生成多个技能造成单体伤害
 public class MultTargetSkill : SkillBase
 {
     public float Damage;

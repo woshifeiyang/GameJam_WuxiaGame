@@ -51,19 +51,19 @@ public class UIManager : MonoSingleton<UIManager>
     
     public void AttackUp()
     {
-        ++PlayerController.Instance.attackLevel;
+        PlayerController.Instance.AttackLevelUp();
         PlayerController.Instance.updateParameters();
     }
     
     public void CdDown()
     {
-        PlayerController.Instance.skillCdLevel++;
+        PlayerController.Instance.SkillCdUp();
         PlayerController.Instance.updateParameters();
     }
     
     public void SpeedUp()
     {
-        PlayerController.Instance.moveSpeedLevel++;
+        PlayerController.Instance.MoveSpeedLevelUp();
         PlayerController.Instance.updateParameters();
     }
 

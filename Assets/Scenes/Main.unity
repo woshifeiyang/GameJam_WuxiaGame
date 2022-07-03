@@ -2792,7 +2792,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &997865249
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7578,6 +7578,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8563263028949727388, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
+      propertyPath: curAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563263028949727388, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
+      propertyPath: attackLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563263028949727388, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
+      propertyPath: healthLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563263028949727388, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
+      propertyPath: skillCdLevel
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
 --- !u!224 &1977988993982418472
@@ -8310,7 +8326,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "CD DOWN\n !"
+  m_Text: CD DOWN
 --- !u!222 &4305869944075838283
 CanvasRenderer:
   m_ObjectHideFlags: 0

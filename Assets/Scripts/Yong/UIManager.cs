@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoSingleton<UIManager>
 {
-    private GameObject _rogueUIObj;
+    private GameObject _basicPropUIObj;
     
     private GameObject _giftUIObj;
 
@@ -14,10 +14,10 @@ public class UIManager : MonoSingleton<UIManager>
     // Start is called before the first frame update
     void Start()
     {
-        if (GameObject.Find("RogueUI"))
+        if (GameObject.Find("BasicPropUI"))
         {
-            _rogueUIObj = GameObject.Find("RogueUI");
-            _rogueUIObj.SetActive(false);
+            _basicPropUIObj = GameObject.Find("BasicPropUI");
+            _basicPropUIObj.SetActive(false);
         }
 
         if (GameObject.Find("PhoneButton"))
@@ -69,8 +69,8 @@ public class UIManager : MonoSingleton<UIManager>
 
     public void ShowRogueUI()
     {
-        _rogueUIObj.SetActive(true);
-        _rogueUIObj.GetComponent<Animator>().SetBool("isVisable", true);
+        _basicPropUIObj.SetActive(true);
+        _basicPropUIObj.GetComponent<Animator>().SetBool("isVisable", true);
         _phoneButtonObj.SetActive(false);
         PauseGame();
     }
@@ -100,11 +100,11 @@ public class UIManager : MonoSingleton<UIManager>
 
     IEnumerator CloseRogueUI_C()
     {
-        _rogueUIObj.GetComponent<Animator>().SetBool("isVisable", false);
+        _basicPropUIObj.GetComponent<Animator>().SetBool("isVisable", false);
         _phoneButtonObj.SetActive(true);
         RestartGame();
         yield return new WaitForSeconds(0.5f);
-        _rogueUIObj.SetActive(false);
+        _basicPropUIObj.SetActive(false);
         StopCoroutine(nameof(CloseRogueUI_C));
     }
     

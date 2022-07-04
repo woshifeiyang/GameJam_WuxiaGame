@@ -18,6 +18,8 @@ public class PlayerController : MonoSingleton<PlayerController>
 
     public Transform skill;
 
+    public static bool attackByEnemy = false;
+
     // player parameters
     // experience
     private float _curExperience;
@@ -76,9 +78,13 @@ public class PlayerController : MonoSingleton<PlayerController>
         _anim = GetComponent<Animator>();
 
         string assertPath = "Prefab/Skill/Bullet/402";
-        
+        string assertPath1 = "Prefab/Skill201";
+        string assertPath2 = "Prefab/Skill202";
         SkillManager.Instance.CreateBulletSkill(assertPath, 402, gameObject);
-        
+        SkillManager.Instance.CreateMultTargetSkill(assertPath1, 201);
+        SkillManager.Instance.CreateScopeSkill(assertPath2, 202);
+
+
     }
 
     // Update is called once per frame
@@ -110,7 +116,8 @@ public class PlayerController : MonoSingleton<PlayerController>
         if (col.gameObject.CompareTag("Enemy") && col.gameObject.GetComponent<Monster>().isDead == false)
         {
             Debug.Log("main character was attacked by enemy");
-            if(curHealth - col.gameObject.GetComponent<Monster>().damage > 0.0f)
+            attackByEnemy = true;
+            if (curHealth - col.gameObject.GetComponent<Monster>().damage > 0.0f)
             {
                 curHealth -= col.gameObject.GetComponent<Monster>().damage;
             }

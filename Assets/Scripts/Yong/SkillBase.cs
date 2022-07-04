@@ -184,5 +184,21 @@ public class MultTargetSkill : SkillBase
             }
             Timer = 0;
         }
+        if (PlayerController.attackByEnemy)
+        {
+            int num = EnemyDetector.Instance.enemyList.Count;
+            List<GameObject> list;
+            if (SkillNum > num) list = EnemyDetector.Instance.enemyList;
+            else list = EnemyDetector.GetRandomElements(EnemyDetector.Instance.enemyList, SkillNum);
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i])
+                {
+                    _ = GameObject.Instantiate(SkillObj);
+                    SkillObj.transform.position = list[i].transform.position;
+                }
+            }
+            PlayerController.attackByEnemy = false;
+        }
     }
 }

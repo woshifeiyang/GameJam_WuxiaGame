@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_SnakeEmi
+  m_Name: M_SwordEmi
   m_Shader: {fileID: -6465566751694194690, guid: 47dd9954418923b45a215586077e1541, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
@@ -38,5 +38,5 @@ Material:
     m_Floats:
     - Vector1_c63a06db804740e19f676f500f009c38: 1
     m_Colors:
-    - Color_2495fcef5edf4fe483d5c219d262e144: {r: 4.172287, g: 0.4920149, b: 0.5216638, a: 0}
+    - Color_2495fcef5edf4fe483d5c219d262e144: {r: 3.6235292, g: 0.47428393, b: 3.0543885, a: 0}
   m_BuildTextureStacks: []

@@ -63,7 +63,8 @@ public class PlayerController : MonoSingleton<PlayerController>
         _floatingJoystick = GameObject.Find("FloatingJoystick");
 
         // get sprite manager
-        // spriteManager = GameObject.Find("SpriteManager").GetComponent<SpriteManager>();
+        spriteManager = GameObject.Find("SpriteManager").GetComponent<SpriteManager>();
+
         _mmProgressBar = GameObject.Find("HPBar").GetComponent<MMProgressBar>();
         _expBar = GameObject.Find("ExpBar").GetComponent<MMProgressBar>();
     }
@@ -190,24 +191,24 @@ public class PlayerController : MonoSingleton<PlayerController>
     {
         // update parameters to the value recorder variables
         // moveSpeed;
-        // float tempMovingSpeedBonus = spriteManager.spriteManagerProperty["movingSpeedBonus"] == 0 ? 1 : spriteManager.spriteManagerProperty["movingSpeedBonus"];
-        // moveSpeedFinal = (moveSpeed + (moveSpeedLevel * moveSpeedLevelUpFactor)) * tempMovingSpeedBonus;
+        float tempMovingSpeedBonus = spriteManager.spriteManagerProperty["movingSpeedBonus"] == 0 ? 1 : spriteManager.spriteManagerProperty["movingSpeedBonus"];
+        _moveSpeedFinal = (moveSpeed + (_moveSpeedLevel * moveSpeedRatio)) * tempMovingSpeedBonus;
         //
         // //skillCd;
-        // float tempcoolDownReduce = spriteManager.spriteManagerProperty["coolDownReduce"] == 0 ? 1 : spriteManager.spriteManagerProperty["coolDownReduce"];
-        // skillCdFinal = (skillCd * Mathf.Pow(skillCdLevelUpFactor, skillCdLevel)) * (1 - tempcoolDownReduce);
+        float tempcoolDownReduce = spriteManager.spriteManagerProperty["coolDownReduce"] == 0 ? 1 : spriteManager.spriteManagerProperty["coolDownReduce"];
+        _skillCdFinal = (skillCd * Mathf.Pow(skillCdRatio, _skillCdLevel)) * (1 - tempcoolDownReduce);
         //
         // //maxHealth;
-        // float tempcoolhealthBonus = spriteManager.spriteManagerProperty["healthBonus"] == 0 ? 1 : spriteManager.spriteManagerProperty["healthBonus"];
-        // maxHealthFinal = (maxHealth + (maxHealthLevelUpFactor * maxHealthLevel)) * tempcoolhealthBonus;
+        float tempcoolhealthBonus = spriteManager.spriteManagerProperty["healthBonus"] == 0 ? 1 : spriteManager.spriteManagerProperty["healthBonus"];
+        _healthFinal = (maxHealth + (healthRatio * _healthLevel)) * tempcoolhealthBonus;
         
-        _moveSpeedFinal = (moveSpeed + (_moveSpeedLevel * moveSpeedRatio));
+        //_moveSpeedFinal = (moveSpeed + (_moveSpeedLevel * moveSpeedRatio));
         
         //skillCd;
-        _skillCdFinal = (skillCd * Mathf.Pow(skillCdRatio, _skillCdLevel));
+        //_skillCdFinal = (skillCd * Mathf.Pow(skillCdRatio, _skillCdLevel));
 
         //Health;
-        _healthFinal = (maxHealth + (healthRatio * _healthLevel));
+        //_healthFinal = (maxHealth + (healthRatio * _healthLevel));
 
         Debug.Log("moveSpeedFinal: " + _moveSpeedFinal);
         Debug.Log("skillCdFinal: " + _skillCdFinal);

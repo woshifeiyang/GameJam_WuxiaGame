@@ -25,19 +25,29 @@ public class Monster : MonoBehaviour
 
     private Animator _anim;
     
-    private Vector3 importedLocalScale;
+    private Vector3 _importedLocalScale;
 
     private void OnEnable()
     {
         SetAlive();
     }
-
+    // 如果怪物在摄像机内可见，添加进敌人探测器的可视怪物列表中
+    private void OnBecameVisible()
+    {
+        EnemyDetector.Instance.enemyList.Add(gameObject);
+    }
+    
+    private void OnBecameInvisible()
+    {
+        if(gameObject && EnemyDetector.Instance.enemyList.Contains(gameObject))
+            EnemyDetector.Instance.enemyList.Remove(gameObject);
+    }
 
     void Start()
     {
         // DamagePopupManager = GameObject.FindWithTag("DamagePopupManager").GetComponent<DamagePopupManager>();
         
-        importedLocalScale = transform.localScale;
+        _importedLocalScale = transform.localScale;
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         
@@ -59,9 +69,9 @@ public class Monster : MonoBehaviour
 
         if (transform.position.x - playerPosition.x > 0)
         {
-            transform.localScale = new Vector3(-1f * importedLocalScale.x, importedLocalScale.y, importedLocalScale.y);
+            transform.localScale = new Vector3(-1f * _importedLocalScale.x, _importedLocalScale.y, _importedLocalScale.y);
         }
-        else transform.localScale = importedLocalScale;
+        else transform.localScale = _importedLocalScale;
     }
     
     private void OnTriggerEnter2D(Collider2D obj)
@@ -96,22 +106,28 @@ public class Monster : MonoBehaviour
     public void SetDead()
     {
         isDead = true;
+        EnemyDetector.Instance.enemyList.Remove(gameObject);
         _moveSpeed = 0.0f;
         SwitchAnim();
         Invoke(nameof(PutObjectInPool), 1.0f);
         GetComponent<Collider2D>().isTrigger = true;
+        // 从敌人探测器列表中移除该对象
+        EnemyDetector.Instance.enemyList.Remove(gameObject);
     }
 
     public void GetDamaged(GameObject damageMaker)
     {
+        float totalDamage = damageMaker.GetComponent<MonoSkillBase>().damage *
+                            PlayerController.Instance.GetPlayerAttack();
         // DamagePopupManager.Create(transform.position, (int)damageMaker.GetComponent<Skill>().damage);
-        if (health - PlayerController.Instance.attackFinal > 0.0f)
+        if (health - totalDamage > 0.0f)
         {
-            health -= PlayerController.Instance.attackFinal;
+            health -= totalDamage;
             Debug.Log("Monster health = " + health);
         }
         else
         {
+            Debug.Log("Attack damage = " + totalDamage);
             PlayerController.Instance.IncreaseExperience();
             SetDead();
         }

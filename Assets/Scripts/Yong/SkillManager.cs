@@ -36,12 +36,11 @@ public class SkillManager : MonoSingleton<SkillManager>
     }
 
     //创建一个范围型AOE技能
-    public SkillBase CreateScopeSkill(string resName, int id, GameObject parent)
+    public SkillBase CreateScopeSkill(string resName, int id)
     {
         //创建一个上面的ScopeSkill对象
         ScopeSkill scopeSkill = new ScopeSkill();
         scopeSkill.ResName = resName;
-        scopeSkill.Point = parent;
         scopeSkill.ID = id;
         //取到资源路径后可以实例化这个技能对象了
         scopeSkill.CreateSkill();
@@ -76,17 +75,17 @@ public class SkillManager : MonoSingleton<SkillManager>
         return fieldSkill;
     }
     
-    //创建一个追踪类技能
-    public SkillBase CreateNormalSkill(string resName, int id, GameObject parent)
+    //创建一个多目标单体类技能
+    public SkillBase CreateMultTargetSkill(string resName, int id)
     {
         //创建一个上面的NormalSkill对象
-        NormalSkill normalSkill = new NormalSkill();
-        normalSkill.ResName = resName;
-        normalSkill.ID = id;
+        MultTargetSkill multTargetSkill = new MultTargetSkill();
+        multTargetSkill.ResName = resName;
+        multTargetSkill.ID = id;
         //取到资源路径后可以实例化这个技能对象了
-        normalSkill.CreateSkill();
+        multTargetSkill.CreateSkill();
         //以技能唯一Id作为key，加入我们的技能管理列表
-        AddSkillObj(normalSkill.ID, normalSkill);
-        return normalSkill;
+        AddSkillObj(multTargetSkill.ID, multTargetSkill);
+        return multTargetSkill;
     }
 }

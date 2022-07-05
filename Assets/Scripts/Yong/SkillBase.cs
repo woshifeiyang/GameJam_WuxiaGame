@@ -4,10 +4,10 @@ using UnityEngine;
 
 public enum SkillType
 {
-    Scope,      //范围型技能     
-    Bullet,     //弹道类技能
-    Link,       //指向性技能
-    Normal,     //常规技能
+    Scope,          //范围型技能     
+    Bullet,         //弹道类技能
+    Field,          //领域技能
+    MultTarget,     //多目标单体技能
 }
 
 public class SkillBase 
@@ -42,11 +42,13 @@ public class SkillBase
     }
 }
 
-// 范围型技能：以Point为目标点，直接在目标点按照技能cd生成技能
+// 范围型技能：直接在目标点按照技能cd生成技能
 public class ScopeSkill : SkillBase
 {
-    //技能释放的一个位置标准点（用来定位这个技能的位置和角度）
-    public GameObject Point;
+    public float Damage;
+    public float Cd;
+    public float Range;
+    
     public ScopeSkill()
     {
         MType = SkillType.Scope;
@@ -54,16 +56,21 @@ public class ScopeSkill : SkillBase
     public override void LoadSkillFinish()
     {
         //设置这个技能生成的位置（如鼠标位置、指向性范围一定距离处等）
-        base.LoadSkillFinish();    
+        base.LoadSkillFinish();
+        Damage = SkillObj.GetComponent<ScopeSkillBase>().damage;
+        Cd = SkillObj.GetComponent<ScopeSkillBase>().cd;
+        Range = SkillObj.GetComponent<ScopeSkillBase>().range;
     }
     public override void Update()
     {
         base.Update();
         Timer += (Time.deltaTime);
-        if (Timer >= SkillObj.GetComponent<ScopeSkillBase>().cd)
+        if (Timer >= Cd)
         {
+            //初始化技能生成的属性
             GameObject obj = GameObject.Instantiate(SkillObj);
-            obj.transform.position = Point.transform.position;
+            obj.GetComponent<ScopeSkillBase>().damage = Damage;
+            obj.GetComponent<ScopeSkillBase>().range = Range;
             Timer = 0;
         }
     }
@@ -71,25 +78,36 @@ public class ScopeSkill : SkillBase
 // 弹道类技能：以一个对象为目标，按照技能cd从玩家位置生成一个技能
 public class BulletSkill : SkillBase
 {
+    public float Speed;
+    public float Damage;
+    public float Cd;
+    public int SkillNum;
+
     public BulletSkill()
     {
         MType = SkillType.Bullet;
     }
     public override void LoadSkillFinish()
     {
-        //设置这个技能生成的位置（如鼠标位置、指向性范围一定距离处等）
+        // 记录技能的初始属性
         base.LoadSkillFinish();
-        
+        Speed = SkillObj.GetComponent<BulletSkillBase>().speed;
+        Damage = SkillObj.GetComponent<BulletSkillBase>().damage;
+        Cd = SkillObj.GetComponent<BulletSkillBase>().cd;
+        SkillNum = SkillObj.GetComponent<BulletSkillBase>().skillNum;
     }
     
     public override void Update()
     {
         base.Update();
         Timer += (Time.deltaTime);
-        if (Timer >= SkillObj.GetComponent<BulletSkillBase>().cd)
+        if (Timer >= Cd)
         {
+            //初始化技能生成的属性
             GameObject obj = GameObject.Instantiate(SkillObj);
             obj.transform.position = PlayerController.Instance.GetPlayerPosition();
+            obj.GetComponent<BulletSkillBase>().speed = Speed;
+            obj.GetComponent<BulletSkillBase>().damage = Damage;
             Timer = 0;
         }
     }
@@ -97,31 +115,44 @@ public class BulletSkill : SkillBase
 // 领域类技能：以玩家位置为中心生成一个永久的对象
 public class FieldSkill : SkillBase
 {
+    public GameObject Skill;
+    public float Damage;
+    public float Cd;
+    public float Range;
+    
     public FieldSkill()
     {
-        MType = SkillType.Link;
+        MType = SkillType.Field;
     }
     
     public override void LoadSkillFinish()
     {
-        //设置这个技能生成的位置（如鼠标位置、指向性范围一定距离处等）
         base.LoadSkillFinish();
-        
-        GameObject obj = GameObject.Instantiate(SkillObj);
-        obj.transform.position = PlayerController.Instance.GetPlayerPosition();
+        //初始化技能生成的属性
+        Skill = GameObject.Instantiate(SkillObj);
+        Damage = Skill.GetComponent<FieldSkillBase>().damage;
+        Range = Skill.GetComponent<FieldSkillBase>().range;
+        Cd = Skill.GetComponent<FieldSkillBase>().cd;
     }
     public override void Update()
     {
         base.Update();
-        
+        Skill.transform.position = PlayerController.Instance.GetPlayerPosition();
+        Skill.GetComponent<FieldSkillBase>().damage = Damage;
+        Skill.GetComponent<FieldSkillBase>().range = Range;
+        Skill.GetComponent<FieldSkillBase>().cd = Cd;
     }
 }
-
-public class NormalSkill : SkillBase
+// 多目标单体技能： 随机选取屏幕内预定数量的怪物生成多个技能造成单体伤害
+public class MultTargetSkill : SkillBase
 {
-    public NormalSkill()
+    public float Damage;
+    public float Cd;
+    public int SkillNum;
+    
+    public MultTargetSkill()
     {
-        MType = SkillType.Normal;
+        MType = SkillType.MultTarget;
     }
     
     public override void LoadSkillFinish()
@@ -129,11 +160,45 @@ public class NormalSkill : SkillBase
         //设置这个技能生成的位置（如鼠标位置、指向性范围一定距离处等）
         base.LoadSkillFinish();
 
-        //SkillObj.transform.rotation = Quaternion.LookRotation(this.Point.tansform.rotation);
-        //SkillObj.transform.rotation.position = this.Point.tansform.position;           
+        Damage = SkillObj.GetComponent<MultTargetSkillBase>().damage;
+        Cd = SkillObj.GetComponent<MultTargetSkillBase>().cd;
+        SkillNum = SkillObj.GetComponent<MultTargetSkillBase>().skillNum;
     }
     public override void Update()
     {
         base.Update();
+        Timer += (Time.deltaTime);
+        if (Timer >= Cd)
+        {
+            int num = EnemyDetector.Instance.enemyList.Count;
+            List<GameObject> list;
+            if (SkillNum > num) list = EnemyDetector.Instance.enemyList;
+            else list = EnemyDetector.GetRandomElements(EnemyDetector.Instance.enemyList, SkillNum);
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i])
+                {
+                    GameObject obj = GameObject.Instantiate(SkillObj);
+                    SkillObj.transform.position = list[i].transform.position;
+                }
+            }
+            Timer = 0;
+        }
+        if (PlayerController.attackByEnemy)
+        {
+            int num = EnemyDetector.Instance.enemyList.Count;
+            List<GameObject> list;
+            if (SkillNum > num) list = EnemyDetector.Instance.enemyList;
+            else list = EnemyDetector.GetRandomElements(EnemyDetector.Instance.enemyList, SkillNum);
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i])
+                {
+                    _ = GameObject.Instantiate(SkillObj);
+                    SkillObj.transform.position = list[i].transform.position;
+                }
+            }
+            PlayerController.attackByEnemy = false;
+        }
     }
 }

@@ -160,7 +160,7 @@ public class PlayerController : MonoSingleton<PlayerController>
             ++_level;
             _curExperience = 0;
             _totalExperience += 5;
-            UIManager.Instance.ShowRogueUI();
+            UIManager.Instance.ShowBasicPropUI();
         }else if (_curExperience < _totalExperience)
         {
             ++_curExperience;

@@ -29,26 +29,33 @@ public class PlayerController : MonoSingleton<PlayerController>
     // moveSpeed
     public float moveSpeed = 1f;
     public float moveSpeedRatio = 0.3f;
-    private int _moveSpeedLevel = 1;
+    private int _moveSpeedLevel = 0;
     private float _moveSpeedFinal;
 
     // skillCd
     public float skillCd = 1f;
     public float skillCdRatio = 0.85f;
-    private int _skillCdLevel = 1;
+    private int _skillCdLevel = 0;
     private float _skillCdFinal;
 
     // health
     public float curHealth;
     public float maxHealth = 20f;
     public float healthRatio = 5f;
-    private int _healthLevel = 1;
+    private int _healthLevel = 0;
     private float _healthFinal;
     
     // attack
     public float curAttack;
     public float attackRatio = 5.0f;
     private int _attackLevel = 1;
+
+    // Projectiles
+    private int _skillNum = 1;
+    
+    // SkillRange
+    private float _rangeSkillLevel = 0;
+    public float skillRangeRatio = 0.5f;
 
     // import manager objects
     public SpriteManager spriteManager;
@@ -139,6 +146,12 @@ public class PlayerController : MonoSingleton<PlayerController>
         return transform.position;
     }
 
+    public void LevelUp()
+    {
+        ++_level;
+        _curExperience = 0;
+        _totalExperience += 5;
+    }
     public void AttackLevelUp()
     {
         ++_attackLevel;
@@ -154,18 +167,20 @@ public class PlayerController : MonoSingleton<PlayerController>
         ++_healthLevel;
     }
 
+    public void SkillRangeUp()
+    {
+        
+    }
+
     public void AttackSpeedUpgrade()
     {
         ++_skillCdLevel;
     }
     public void IncreaseExperience()
     {
-        if (_totalExperience - _curExperience < 0.1f)
+        if (_totalExperience - _curExperience <= 1.0f)
         {
-            ++_level;
-            _curExperience = 0;
-            _totalExperience += 5;
-            UIManager.Instance.ShowBasicPropUI();
+            EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_LevelUp);
         }else if (_curExperience < _totalExperience)
         {
             ++_curExperience;

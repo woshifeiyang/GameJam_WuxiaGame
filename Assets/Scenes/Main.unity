@@ -8145,31 +8145,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2356155991632940790}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1863913717}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: SpeedUpgrade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1863913717}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: CloseBasicPropUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2356155992956769784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8213,31 +8189,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2356155992956769787}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1863913717}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: AttackSpeedUpgrade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1863913717}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: CloseBasicPropUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!224 &2356155992956769785
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8942,31 +8894,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6992257942145791676}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1863913717}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: DamageUpgrade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1863913717}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: CloseBasicPropUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &6992257942145791676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9081,6 +9009,63 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &8624275749141597350
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1225371751310173640, guid: e47e3f13df41ec044be25b3f784f9472, type: 3}
+      propertyPath: m_Name
+      value: EventListener
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422341148811158203, guid: e47e3f13df41ec044be25b3f784f9472, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422341148811158203, guid: e47e3f13df41ec044be25b3f784f9472, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2801.2705
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422341148811158203, guid: e47e3f13df41ec044be25b3f784f9472, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2531.423
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422341148811158203, guid: e47e3f13df41ec044be25b3f784f9472, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1855.0417
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422341148811158203, guid: e47e3f13df41ec044be25b3f784f9472, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422341148811158203, guid: e47e3f13df41ec044be25b3f784f9472, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422341148811158203, guid: e47e3f13df41ec044be25b3f784f9472, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422341148811158203, guid: e47e3f13df41ec044be25b3f784f9472, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422341148811158203, guid: e47e3f13df41ec044be25b3f784f9472, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422341148811158203, guid: e47e3f13df41ec044be25b3f784f9472, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422341148811158203, guid: e47e3f13df41ec044be25b3f784f9472, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e47e3f13df41ec044be25b3f784f9472, type: 3}
 --- !u!1001 &9117474602853307059
 PrefabInstance:
   m_ObjectHideFlags: 0

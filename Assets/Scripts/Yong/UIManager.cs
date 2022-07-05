@@ -4,6 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+public enum BasicPropId
+{
+    DamageUpgrade = 1,
+    HpUpgrade = 2,
+    CharacterSpeedUpgrade = 3,
+    AttackSpeedUpgrade = 4,
+    ProjectileUpgrade = 5,
+    BallisticSpeedUpgrade = 6,
+    DamageRangeUpgrade = 7
+}
 public class UIManager : MonoSingleton<UIManager>
 {
     private GameObject _basicPropUIObj;
@@ -11,6 +21,8 @@ public class UIManager : MonoSingleton<UIManager>
     private GameObject _giftUIObj;
 
     private GameObject _phoneButtonObj;
+    
+    private  BasicPropId basicPropId;
     
     // BasicPropUI
     private Button _bpButton1;
@@ -41,6 +53,7 @@ public class UIManager : MonoSingleton<UIManager>
             _giftUIObj = GameObject.Find("GiftUI");
             _giftUIObj.SetActive(false);
         }
+        
     }
 
     // Update is called once per frame
@@ -59,24 +72,30 @@ public class UIManager : MonoSingleton<UIManager>
         Time.timeScale = 1;
     }
     
-    public void AttackUp()
+    private void DamageUpgrade()
     {
         PlayerController.Instance.AttackLevelUp();
         PlayerController.Instance.updateParameters();
     }
     
-    public void CdDown()
+    private void AttackSpeedUpgrade()
     {
-        PlayerController.Instance.SkillCdUp();
+        PlayerController.Instance.AttackSpeedUpgrade();
         PlayerController.Instance.updateParameters();
     }
     
-    public void SpeedUp()
+    private void SpeedUpgrade()
     {
         PlayerController.Instance.MoveSpeedLevelUp();
         PlayerController.Instance.updateParameters();
     }
 
+    private void HpUpgrade()
+    {
+        PlayerController.Instance.HealthLevelUp();
+        PlayerController.Instance.updateParameters();
+    }
+    
     public void ShowBasicPropUI()
     {
         _basicPropUIObj.SetActive(true);
@@ -98,6 +117,7 @@ public class UIManager : MonoSingleton<UIManager>
             string skillNamePath = "BP_SkillName" + i;
             string skillDesPath = "BP_SkillDes" + i;
             Button bpButton = _basicPropUIObj.transform.Find(buttonPath).GetComponent<Button>();
+            InitBasicPropButton(bpButton, list[i - 1], basicPropId);
             Image bpImage = bpButton.transform.Find(imagePath).GetComponent<Image>();
             Text skillNameText = bpButton.transform.Find(skillNamePath).GetComponent<Text>();
             skillNameText.text = list[i - 1].KeyName;
@@ -105,6 +125,39 @@ public class UIManager : MonoSingleton<UIManager>
             skillDesText.text = list[i - 1].Description + " " + list[i - 1].Value;
         }
     }
+
+    private void InitBasicPropButton(Button button, BasicPropJson obj, BasicPropId id)
+    {
+        switch (obj.Id)
+        {
+            case (int)BasicPropId.DamageUpgrade:
+                button.onClick.AddListener(DamageUpgrade);
+                button.onClick.AddListener(CloseBasicPropUI);
+                return;
+            case (int)BasicPropId.HpUpgrade:
+                button.onClick.AddListener(HpUpgrade);
+                button.onClick.AddListener(CloseBasicPropUI);
+                return;
+            case (int)BasicPropId.ProjectileUpgrade:
+                button.onClick.AddListener(CloseBasicPropUI);
+                return;
+            case (int)BasicPropId.AttackSpeedUpgrade:
+                button.onClick.AddListener(AttackSpeedUpgrade);
+                button.onClick.AddListener(CloseBasicPropUI);
+                return;
+            case (int)BasicPropId.BallisticSpeedUpgrade:
+                button.onClick.AddListener(CloseBasicPropUI);
+                return;
+            case (int)BasicPropId.CharacterSpeedUpgrade:
+                button.onClick.AddListener(SpeedUpgrade);
+                button.onClick.AddListener(CloseBasicPropUI);
+                return;
+            case (int)BasicPropId.DamageRangeUpgrade:
+                button.onClick.AddListener(CloseBasicPropUI);
+                return;
+        }
+    }
+    
     public void ShowGiftUI()
     {
         _giftUIObj.SetActive(true);
@@ -113,9 +166,9 @@ public class UIManager : MonoSingleton<UIManager>
         PauseGame();
     }
 
-    public void CloseRogueUI()
+    public void CloseBasicPropUI()
     {
-        StartCoroutine(CloseRogueUI_C());
+        StartCoroutine(CloseBasicPropUI_C());
     }
 
     public void CloseGiftUI()
@@ -128,14 +181,14 @@ public class UIManager : MonoSingleton<UIManager>
         SceneManager.LoadScene(sceneName);
     }
 
-    IEnumerator CloseRogueUI_C()
+    IEnumerator CloseBasicPropUI_C()
     {
         _basicPropUIObj.GetComponent<Animator>().SetBool("isVisable", false);
         _phoneButtonObj.SetActive(true);
         RestartGame();
         yield return new WaitForSeconds(0.5f);
         _basicPropUIObj.SetActive(false);
-        StopCoroutine(nameof(CloseRogueUI_C));
+        StopCoroutine(nameof(CloseBasicPropUI_C));
     }
     
     IEnumerator CloseGiftUI_C()

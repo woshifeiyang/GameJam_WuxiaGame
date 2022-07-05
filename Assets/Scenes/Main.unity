@@ -8148,7 +8148,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1863913717}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: SpeedUp
+        m_MethodName: SpeedUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8160,7 +8160,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1863913717}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: CloseRogueUI
+        m_MethodName: CloseBasicPropUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8216,7 +8216,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1863913717}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: CdDown
+        m_MethodName: AttackSpeedUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8228,7 +8228,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1863913717}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: CloseRogueUI
+        m_MethodName: CloseBasicPropUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8945,7 +8945,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1863913717}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: AttackUp
+        m_MethodName: DamageUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8957,7 +8957,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1863913717}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: CloseRogueUI
+        m_MethodName: CloseBasicPropUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -101,8 +101,9 @@ public class PlayerController : MonoSingleton<PlayerController>
         }
         SwitchAnim();
         
-        _mmProgressBar.UpdateBar01(Mathf.Clamp(curHealth / maxHealth, 0f, 1f));
+        _mmProgressBar.UpdateBar01(Mathf.Clamp(curHealth / _healthFinal, 0f, 1f));
         _expBar.UpdateBar01(Mathf.Clamp(_curExperience / _totalExperience, 0f, 1f));
+        // 控制玩家移动
         _movement = _floatingJoystick.GetComponent<FloatingJoystick>().Direction;
         _rb.MovePosition(_rb.position + _movement * _moveSpeedFinal * Time.deltaTime);
     }
@@ -153,7 +154,7 @@ public class PlayerController : MonoSingleton<PlayerController>
         ++_healthLevel;
     }
 
-    public void SkillCdUp()
+    public void AttackSpeedUpgrade()
     {
         ++_skillCdLevel;
     }
@@ -205,17 +206,10 @@ public class PlayerController : MonoSingleton<PlayerController>
         // //maxHealth;
         float tempcoolhealthBonus = spriteManager.spriteManagerProperty["healthBonus"] == 0 ? 1 : spriteManager.spriteManagerProperty["healthBonus"];
         _healthFinal = (maxHealth + (healthRatio * _healthLevel)) * tempcoolhealthBonus;
-        
-        //_moveSpeedFinal = (moveSpeed + (_moveSpeedLevel * moveSpeedRatio));
-        
-        //skillCd;
-        //_skillCdFinal = (skillCd * Mathf.Pow(skillCdRatio, _skillCdLevel));
+        curHealth += healthRatio;
 
-        //Health;
-        //_healthFinal = (maxHealth + (healthRatio * _healthLevel));
-
-        Debug.Log("moveSpeedFinal: " + _moveSpeedFinal);
-        Debug.Log("skillCdFinal: " + _skillCdFinal);
-        Debug.Log("maxHealthFinal: " + _healthFinal);
+        Debug.Log("moveSpeedLevel: " + _moveSpeedLevel);
+        Debug.Log("skillCdLevel: " + _skillCdLevel);
+        Debug.Log("HealthLevel: " + _healthLevel);
     }
 }

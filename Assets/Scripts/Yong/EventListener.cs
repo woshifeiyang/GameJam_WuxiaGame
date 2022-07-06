@@ -7,10 +7,12 @@ using UnityEngine;
 
 public class EventListener : MonoSingleton<EventListener>
 {
+    public int enemyKills = 0;
     public enum MessageEvent
     {
         Message_LevelUp,
         Message_SpawnBoss,
+        Message_KillEnemy,
     }
     
     //定义一个字典，用来管理所有的事件
@@ -18,15 +20,21 @@ public class EventListener : MonoSingleton<EventListener>
 
     private delegate void LevelUp();
 
+    private delegate void EnemyKills();
+
     private LevelUp _levelUp;
+
+    private EnemyKills _enemyKills;
     
     // Start is called before the first frame update
     void Start()
     {
         _levelUp = new LevelUp(UIManager.Instance.ShowBasicPropUI);
         _levelUp += PlayerController.Instance.LevelUp;
+        _enemyKills = new EnemyKills(AddEnemyKills);
         
         AddListener(MessageEvent.Message_LevelUp, _levelUp);
+        AddListener(MessageEvent.Message_KillEnemy, _enemyKills);
     }
     
     //消息触发
@@ -43,5 +51,11 @@ public class EventListener : MonoSingleton<EventListener>
     
     public void AddListener(MessageEvent msg_id, Delegate func) {
         MessageList[msg_id] = func;
+    }
+
+    public void AddEnemyKills()
+    {
+        ++enemyKills;
+        Debug.Log("enemyKills is :" + enemyKills);
     }
 }

@@ -138,7 +138,7 @@ MonoBehaviour:
   range: 1
   animator: {fileID: 0}
   skillRadius: 3
-  skill303LastSeconds: 0.1
+  skill303LastSeconds: 1
   circleLeft: {fileID: 8329058951985160386, guid: 2ed94e78b1eb8b246b95a46158b25653, type: 3}
   circleRight: {fileID: 8329058951985160386, guid: 2ed94e78b1eb8b246b95a46158b25653, type: 3}
   circleTop: {fileID: 8329058951985160386, guid: 2ed94e78b1eb8b246b95a46158b25653, type: 3}

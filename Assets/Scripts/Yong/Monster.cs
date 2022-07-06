@@ -113,6 +113,7 @@ public class Monster : MonoBehaviour
         GetComponent<Collider2D>().isTrigger = true;
         // 从敌人探测器列表中移除该对象
         EnemyDetector.Instance.enemyList.Remove(gameObject);
+        EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_KillEnemy);
     }
 
     public void GetDamaged(GameObject damageMaker)

@@ -51,14 +51,13 @@ public class Skill303 : FieldSkillBase
             circleBottomGameobject = Instantiate(circleTop, new Vector2(playerPosition.x, (playerPosition.y - skillRadius)), Quaternion.identity);
             circleBottom.GetComponent<CircleCollider2D>().radius = range;
             StartCoroutine("SkillLastSeconds");
-
+            Invoke(nameof(SkillLastSeconds), skill303LastSeconds);
         }
 
     }
 
-    IEnumerator SkillLastSeconds()
+    private void SkillLastSeconds()
     {
-        yield return new WaitForSeconds(skill303LastSeconds);
         DestroyImmediate(circleLeftGameobject, true);
         DestroyImmediate(circleRightGameobject, true);
         DestroyImmediate(circleTopGameobject, true);

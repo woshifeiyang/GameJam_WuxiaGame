@@ -33,7 +33,6 @@ public class PlayerController : MonoSingleton<PlayerController>
     private float _moveSpeedFinal;
 
     // skillCd
-    public float skillCd = 1f;
     public float skillCdRatio = 0.85f;
     private int _skillCdLevel = 0;
     private float _skillCdFinal;
@@ -46,15 +45,15 @@ public class PlayerController : MonoSingleton<PlayerController>
     private float _healthFinal;
     
     // attack
-    public float curAttack;
     public float attackRatio = 5.0f;
     private int _attackLevel = 1;
 
     // Projectiles
-    private int _skillNum = 1;
-    
+    private int _projectileLevel = 0;
+    public int projectileRatio;
+
     // SkillRange
-    private float _rangeSkillLevel = 0;
+    private float _skillRangeLevel = 0;
     public float skillRangeRatio = 0.5f;
 
     // import manager objects
@@ -95,8 +94,7 @@ public class PlayerController : MonoSingleton<PlayerController>
         SkillManager.Instance.CreateScopeSkill(assertPath2, 202);
         SkillManager.Instance.CreateFieldSkill(assertPath3, 301, gameObject);
         SkillManager.Instance.CreateFieldSkill(assertPath4, 303, gameObject);
-
-
+        
     }
 
     // Update is called once per frame
@@ -169,7 +167,7 @@ public class PlayerController : MonoSingleton<PlayerController>
 
     public void SkillRangeUp()
     {
-        
+        ++_skillRangeLevel;
     }
 
     public void AttackSpeedUpgrade()
@@ -189,7 +187,7 @@ public class PlayerController : MonoSingleton<PlayerController>
 
     public float GetPlayerAttack()
     {
-        return curAttack + _attackLevel * attackRatio;
+        return _attackLevel * attackRatio;
     }
 
     public float GetPlayerSkillCd()
@@ -206,21 +204,15 @@ public class PlayerController : MonoSingleton<PlayerController>
         Application.Quit();
     #endif
     }
-
+    // update parameters to the value recorder variables
     public void updateParameters()
     {
-        // update parameters to the value recorder variables
         // moveSpeed;
-        float tempMovingSpeedBonus = spriteManager.spriteManagerProperty["movingSpeedBonus"] == 0 ? 1 : spriteManager.spriteManagerProperty["movingSpeedBonus"];
-        _moveSpeedFinal = (moveSpeed + (_moveSpeedLevel * moveSpeedRatio)) * tempMovingSpeedBonus;
-        //
+        _moveSpeedFinal = moveSpeed + (_moveSpeedLevel * moveSpeedRatio);
         // //skillCd;
-        float tempcoolDownReduce = spriteManager.spriteManagerProperty["coolDownReduce"] == 0 ? 1 : spriteManager.spriteManagerProperty["coolDownReduce"];
-        _skillCdFinal = (skillCd * Mathf.Pow(skillCdRatio, _skillCdLevel)) * (1 - tempcoolDownReduce);
-        //
-        // //maxHealth;
-        float tempcoolhealthBonus = spriteManager.spriteManagerProperty["healthBonus"] == 0 ? 1 : spriteManager.spriteManagerProperty["healthBonus"];
-        _healthFinal = (maxHealth + (healthRatio * _healthLevel)) * tempcoolhealthBonus;
+        _skillCdFinal = Mathf.Pow(skillCdRatio, _skillCdLevel);
+        // //Health;
+        _healthFinal = maxHealth + (healthRatio * _healthLevel);
         curHealth += healthRatio;
 
         Debug.Log("moveSpeedLevel: " + _moveSpeedLevel);

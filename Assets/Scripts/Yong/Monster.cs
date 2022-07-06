@@ -106,7 +106,6 @@ public class Monster : MonoBehaviour
     public void SetDead()
     {
         isDead = true;
-        EnemyDetector.Instance.enemyList.Remove(gameObject);
         _moveSpeed = 0.0f;
         SwitchAnim();
         Invoke(nameof(PutObjectInPool), 1.0f);

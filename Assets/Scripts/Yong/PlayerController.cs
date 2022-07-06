@@ -16,12 +16,10 @@ public class PlayerController : MonoSingleton<PlayerController>
     private MMProgressBar _mmProgressBar;
 
     private MMProgressBar _expBar;
+    
+    public MMFeedbacks PlayerDamageFeedback;
 
     public Transform skill;
-
-    public static bool attackByEnemy = false;
-
-    public MMFeedbacks PlayerDamageFeedback;
 
     // player parameters
     // experience
@@ -49,7 +47,7 @@ public class PlayerController : MonoSingleton<PlayerController>
     
     // attack
     public float attackRatio = 5.0f;
-    private int _attackLevel = 1;
+    private int _attackLevel = 0;
 
     // Projectiles
     private int _projectileLevel = 0;
@@ -58,6 +56,10 @@ public class PlayerController : MonoSingleton<PlayerController>
     // SkillRange
     private float _skillRangeLevel = 0;
     public float skillRangeRatio = 0.5f;
+    
+    // Ballistic Speed
+    private int _skillSpeedLevel = 0;
+    public float skillSpeedRatio = 40.0f;
 
     // import manager objects
     public SpriteManager spriteManager;
@@ -130,7 +132,6 @@ public class PlayerController : MonoSingleton<PlayerController>
         if (col.gameObject.CompareTag("Enemy") && col.gameObject.GetComponent<Monster>().isDead == false)
         {
             Debug.Log("main character was attacked by enemy");
-            attackByEnemy = true;
             if (curHealth - col.gameObject.GetComponent<Monster>().damage > 0.0f)
             {
                 curHealth -= col.gameObject.GetComponent<Monster>().damage;
@@ -196,9 +197,23 @@ public class PlayerController : MonoSingleton<PlayerController>
 
     public float GetPlayerSkillCd()
     {
-        return _skillCdLevel * skillCdRatio;
+        return (float)Math.Pow(skillCdRatio, _skillCdLevel);
     }
-    
+
+    public float GetPlayerSkillSpeed()
+    {
+        return _skillSpeedLevel * skillSpeedRatio;
+    }
+
+    public float GetPlayerSkillRange()
+    {
+        return _skillRangeLevel * skillRangeRatio;
+    }
+
+    public int GetPlayerProjectileNum()
+    {
+        return _projectileLevel * projectileRatio;
+    }
     private void ExitGame()
     {
         //预处理

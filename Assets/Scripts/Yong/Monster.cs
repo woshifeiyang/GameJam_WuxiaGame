@@ -109,6 +109,15 @@ public class Monster : MonoBehaviour
         isDead = true;
         _moveSpeed = 0.0f;
         SwitchAnim();
+
+        //test if the child has children
+        if (transform.childCount != 0) { 
+            if (transform.GetChild(0).transform.GetChild(0) != null)
+            {
+                transform.GetChild(0).gameObject.SetActive(true);
+            } 
+        }
+
         Invoke(nameof(PutObjectInPool), 1.0f);
         GetComponent<Collider2D>().isTrigger = true;
         // 从敌人探测器列表中移除该对象

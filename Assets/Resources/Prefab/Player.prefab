@@ -325,24 +325,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skill: {fileID: 5808194450634383962, guid: 6971bec93ed17a54eabfde5d9535d3ce, type: 3}
-  moveSpeed: 2
-  moveSpeedLevelUpFactor: 0.3
-  moveSpeedLevel: 0
-  moveSpeedFinal: 0
+  moveSpeed: 5
+  moveSpeedRatio: 0.3
   skillCd: 1
-  skillCdLevelUpFactor: 0.85
-  skillCdLevel: 0
-  skillCdFinal: 0
+  skillCdRatio: 0.85
   curHealth: 50
   maxHealth: 50
-  maxHealthLevelUpFactor: 5
-  maxHealthLevel: 0
-  maxHealthFinal: 0
-  maxAttackLevelUpFactor: 5
-  attackLevel: 0
-  attackFinal: 0
+  healthRatio: 5
+  curAttack: 0
+  attackRatio: 5
   spriteManager: {fileID: 0}
-  detector: {fileID: 0}
 --- !u!50 &8563263028949727389
 Rigidbody2D:
   serializedVersion: 4

@@ -5,14 +5,18 @@ using UnityEngine;
 public class Skill202 : ScopeSkillBase
 {
     private Rigidbody2D _rb;
-   
+    private int targetnum;
     // Start is called before the first frame update
     public override void Start()
     {
         this.transform.localScale = new Vector3(range,range,1);
         //this.GetComponent<CircleCollider2D>().radius = range;
         var visibleenemies = EnemyDetector.Instance.enemyList;
-        var targets = visibleenemies.GetRandomElements(1);
+        if(visibleenemies.Count != 0)
+        {
+            targetnum = Mathf.Min(visibleenemies.Count, 1);
+        }
+        var targets = visibleenemies.GetRandomElements(targetnum);
         foreach (var e in targets)
         { 
             _rb = GetComponent<Rigidbody2D>();

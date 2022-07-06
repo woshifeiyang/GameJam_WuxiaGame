@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3335133905705391868}
   - component: {fileID: 5830186774688432510}
   - component: {fileID: 3992537975579521413}
-  - component: {fileID: 4435113281497342262}
+  - component: {fileID: -3565436844570131261}
   m_Layer: 0
   m_Name: 101
   m_TagString: Skill
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7606956049182085652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -1612851299
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3533000461946272070, guid: f305eebc646bd294580cb8ceaaaac2f5, type: 3}
+  m_Sprite: {fileID: 654431043188590632, guid: ca538f9fecfa0484b836c4806db62926, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,7 +96,7 @@ Animator:
   m_GameObject: {fileID: 7606956049182085652}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9248d5592fe983a499361acde2c11342, type: 2}
+  m_Controller: {fileID: 9100000, guid: e3cbf6b1c2b3ac3488a4cc43422c62bd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -139,20 +139,20 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.78125}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 1}
-    oldSize: {x: 1.5625, y: 1.5625}
+    pivot: {x: 0.5, y: 0.45}
+    oldSize: {x: 0.5, y: 1.8}
     newSize: {x: 1.5625, y: 1.5625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5625, y: 1.5625}
+  m_Size: {x: 0.5, y: 1.8}
   m_EdgeRadius: 0
---- !u!114 &4435113281497342262
+--- !u!114 &-3565436844570131261
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,9 +165,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 101
-  speed: 200
   damage: 25
   cd: 2
+  speed: 300
   skillNum: 1
   skillPene: 1
   skillTime: 5

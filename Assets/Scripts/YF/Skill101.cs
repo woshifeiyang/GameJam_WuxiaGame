@@ -13,8 +13,12 @@ public class Skill101 : BulletSkillBase
     public override void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        
-        _rb.AddForce((EnemyDetector.Instance.GetNearestEnemyLoc() - PlayerController.Instance.transform.position).normalized * speed, ForceMode2D.Force);
+        Vector3 v = EnemyDetector.Instance.GetNearestEnemyLoc() - PlayerController.Instance.transform.position;
+        v.z = 0;
+        float angle = Vector3.SignedAngle(Vector3.up, v, Vector3.forward);
+        Quaternion rotation = Quaternion.Euler(0, 0, angle);
+        transform.rotation = rotation;
+        _rb.AddForce(v.normalized * speed, ForceMode2D.Force);
         // 持续时间结束时销毁自身
         Invoke("SelfDestory", skillTime);
     }

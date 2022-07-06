@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Tools;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class PlayerController : MonoSingleton<PlayerController>
@@ -15,10 +16,10 @@ public class PlayerController : MonoSingleton<PlayerController>
     private MMProgressBar _mmProgressBar;
 
     private MMProgressBar _expBar;
+    
+    public MMFeedbacks PlayerDamageFeedback;
 
     public Transform skill;
-
-    public static bool attackByEnemy = false;
 
     // player parameters
     // experience
@@ -29,26 +30,36 @@ public class PlayerController : MonoSingleton<PlayerController>
     // moveSpeed
     public float moveSpeed = 1f;
     public float moveSpeedRatio = 0.3f;
-    private int _moveSpeedLevel = 1;
+    private int _moveSpeedLevel = 0;
     private float _moveSpeedFinal;
 
     // skillCd
-    public float skillCd = 1f;
     public float skillCdRatio = 0.85f;
-    private int _skillCdLevel = 1;
+    private int _skillCdLevel = 0;
     private float _skillCdFinal;
 
     // health
     public float curHealth;
     public float maxHealth = 20f;
     public float healthRatio = 5f;
-    private int _healthLevel = 1;
+    private int _healthLevel = 0;
     private float _healthFinal;
     
     // attack
-    public float curAttack;
     public float attackRatio = 5.0f;
-    private int _attackLevel = 1;
+    private int _attackLevel = 0;
+
+    // Projectiles
+    private int _projectileLevel = 0;
+    public int projectileRatio;
+
+    // SkillRange
+    private float _skillRangeLevel = 0;
+    public float skillRangeRatio = 0.5f;
+    
+    // Ballistic Speed
+    private int _skillSpeedLevel = 0;
+    public float skillSpeedRatio = 40.0f;
 
     // import manager objects
     public SpriteManager spriteManager;
@@ -81,11 +92,14 @@ public class PlayerController : MonoSingleton<PlayerController>
         string assertPath = "Prefab/Skill/Bullet/402";
         string assertPath1 = "Prefab/Skill201";
         string assertPath2 = "Prefab/Skill202";
+        string assertPath3 = "Prefab/Skill301";
+        string assertPath4 = "Prefab/Skill303";
         SkillManager.Instance.CreateBulletSkill(assertPath, 402, gameObject);
         SkillManager.Instance.CreateMultTargetSkill(assertPath1, 201);
         SkillManager.Instance.CreateScopeSkill(assertPath2, 202);
-
-
+        SkillManager.Instance.CreateFieldSkill(assertPath3, 301, gameObject);
+        SkillManager.Instance.CreateFieldSkill(assertPath4, 303, gameObject);
+        
     }
 
     // Update is called once per frame
@@ -97,8 +111,9 @@ public class PlayerController : MonoSingleton<PlayerController>
         }
         SwitchAnim();
         
-        _mmProgressBar.UpdateBar01(Mathf.Clamp(curHealth / maxHealth, 0f, 1f));
+        _mmProgressBar.UpdateBar01(Mathf.Clamp(curHealth / _healthFinal, 0f, 1f));
         _expBar.UpdateBar01(Mathf.Clamp(_curExperience / _totalExperience, 0f, 1f));
+        // 控制玩家移动
         _movement = _floatingJoystick.GetComponent<FloatingJoystick>().Direction;
         _rb.MovePosition(_rb.position + _movement * _moveSpeedFinal * Time.deltaTime);
     }
@@ -117,10 +132,10 @@ public class PlayerController : MonoSingleton<PlayerController>
         if (col.gameObject.CompareTag("Enemy") && col.gameObject.GetComponent<Monster>().isDead == false)
         {
             Debug.Log("main character was attacked by enemy");
-            attackByEnemy = true;
             if (curHealth - col.gameObject.GetComponent<Monster>().damage > 0.0f)
             {
                 curHealth -= col.gameObject.GetComponent<Monster>().damage;
+                PlayerDamageFeedback?.PlayFeedbacks();
             }
             else
             {
@@ -134,6 +149,12 @@ public class PlayerController : MonoSingleton<PlayerController>
         return transform.position;
     }
 
+    public void LevelUp()
+    {
+        ++_level;
+        _curExperience = 0;
+        _totalExperience += 5;
+    }
     public void AttackLevelUp()
     {
         ++_attackLevel;
@@ -149,18 +170,20 @@ public class PlayerController : MonoSingleton<PlayerController>
         ++_healthLevel;
     }
 
-    public void SkillCdUp()
+    public void SkillRangeUp()
+    {
+        ++_skillRangeLevel;
+    }
+
+    public void AttackSpeedUpgrade()
     {
         ++_skillCdLevel;
     }
     public void IncreaseExperience()
     {
-        if (_totalExperience - _curExperience < 0.1f)
+        if (_totalExperience - _curExperience <= 1.0f)
         {
-            ++_level;
-            _curExperience = 0;
-            _totalExperience += 5;
-            UIManager.Instance.ShowBasicPropUI();
+            EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_LevelUp);
         }else if (_curExperience < _totalExperience)
         {
             ++_curExperience;
@@ -169,14 +192,28 @@ public class PlayerController : MonoSingleton<PlayerController>
 
     public float GetPlayerAttack()
     {
-        return curAttack + _attackLevel * attackRatio;
+        return _attackLevel * attackRatio;
     }
 
     public float GetPlayerSkillCd()
     {
-        return _skillCdLevel * skillCdRatio;
+        return (float)Math.Pow(skillCdRatio, _skillCdLevel);
     }
-    
+
+    public float GetPlayerSkillSpeed()
+    {
+        return _skillSpeedLevel * skillSpeedRatio;
+    }
+
+    public float GetPlayerSkillRange()
+    {
+        return _skillRangeLevel * skillRangeRatio;
+    }
+
+    public int GetPlayerProjectileNum()
+    {
+        return _projectileLevel * projectileRatio;
+    }
     private void ExitGame()
     {
         //预处理
@@ -186,32 +223,19 @@ public class PlayerController : MonoSingleton<PlayerController>
         Application.Quit();
     #endif
     }
-
+    // update parameters to the value recorder variables
     public void updateParameters()
     {
-        // update parameters to the value recorder variables
         // moveSpeed;
-        float tempMovingSpeedBonus = spriteManager.spriteManagerProperty["movingSpeedBonus"] == 0 ? 1 : spriteManager.spriteManagerProperty["movingSpeedBonus"];
-        _moveSpeedFinal = (moveSpeed + (_moveSpeedLevel * moveSpeedRatio)) * tempMovingSpeedBonus;
-        //
+        _moveSpeedFinal = moveSpeed + (_moveSpeedLevel * moveSpeedRatio);
         // //skillCd;
-        float tempcoolDownReduce = spriteManager.spriteManagerProperty["coolDownReduce"] == 0 ? 1 : spriteManager.spriteManagerProperty["coolDownReduce"];
-        _skillCdFinal = (skillCd * Mathf.Pow(skillCdRatio, _skillCdLevel)) * (1 - tempcoolDownReduce);
-        //
-        // //maxHealth;
-        float tempcoolhealthBonus = spriteManager.spriteManagerProperty["healthBonus"] == 0 ? 1 : spriteManager.spriteManagerProperty["healthBonus"];
-        _healthFinal = (maxHealth + (healthRatio * _healthLevel)) * tempcoolhealthBonus;
-        
-        //_moveSpeedFinal = (moveSpeed + (_moveSpeedLevel * moveSpeedRatio));
-        
-        //skillCd;
-        //_skillCdFinal = (skillCd * Mathf.Pow(skillCdRatio, _skillCdLevel));
+        _skillCdFinal = Mathf.Pow(skillCdRatio, _skillCdLevel);
+        // //Health;
+        _healthFinal = maxHealth + (healthRatio * _healthLevel);
+        curHealth += healthRatio;
 
-        //Health;
-        //_healthFinal = (maxHealth + (healthRatio * _healthLevel));
-
-        Debug.Log("moveSpeedFinal: " + _moveSpeedFinal);
-        Debug.Log("skillCdFinal: " + _skillCdFinal);
-        Debug.Log("maxHealthFinal: " + _healthFinal);
+        Debug.Log("moveSpeedLevel: " + _moveSpeedLevel);
+        Debug.Log("skillCdLevel: " + _skillCdLevel);
+        Debug.Log("HealthLevel: " + _healthLevel);
     }
 }

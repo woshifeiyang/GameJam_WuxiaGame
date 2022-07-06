@@ -106,13 +106,13 @@ public class Monster : MonoBehaviour
     public void SetDead()
     {
         isDead = true;
-        EnemyDetector.Instance.enemyList.Remove(gameObject);
         _moveSpeed = 0.0f;
         SwitchAnim();
         Invoke(nameof(PutObjectInPool), 1.0f);
         GetComponent<Collider2D>().isTrigger = true;
         // 从敌人探测器列表中移除该对象
         EnemyDetector.Instance.enemyList.Remove(gameObject);
+        EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_KillEnemy);
     }
 
     public void GetDamaged(GameObject damageMaker)

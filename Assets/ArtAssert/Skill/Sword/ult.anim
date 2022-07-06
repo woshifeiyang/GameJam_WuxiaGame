@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ANM_SwordEmi
+  m_Name: ult
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,17 +21,17 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 4146761577445850104, guid: abebeab3b5cfb624f80a5c82613bc67e, type: 3}
-    - time: 0.06666667
+    - time: 0.083333336
       value: {fileID: -8464190468836844997, guid: abebeab3b5cfb624f80a5c82613bc67e, type: 3}
-    - time: 0.13333334
+    - time: 0.16666667
       value: {fileID: 7699022339737137013, guid: abebeab3b5cfb624f80a5c82613bc67e, type: 3}
-    - time: 0.21666667
+    - time: 0.25
       value: {fileID: 5044504857861481040, guid: abebeab3b5cfb624f80a5c82613bc67e, type: 3}
-    - time: 0.3
+    - time: 0.33333334
       value: {fileID: 7126477032424569369, guid: abebeab3b5cfb624f80a5c82613bc67e, type: 3}
-    - time: 0.4
+    - time: 0.41666666
       value: {fileID: 1291573120183570121, guid: abebeab3b5cfb624f80a5c82613bc67e, type: 3}
-    - time: 0.48333332
+    - time: 0.5
       value: {fileID: 8543768953857989179, guid: abebeab3b5cfb624f80a5c82613bc67e, type: 3}
     - time: 0.5833333
       value: {fileID: -4513274493274191296, guid: abebeab3b5cfb624f80a5c82613bc67e, type: 3}
@@ -39,7 +39,7 @@ AnimationClip:
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 60
+  m_SampleRate: 12
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -67,7 +67,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.59999996
+    m_StopTime: 0.6666666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

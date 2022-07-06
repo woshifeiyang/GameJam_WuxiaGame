@@ -69,8 +69,9 @@ public class ScopeSkill : SkillBase
         {
             //初始化技能生成的属性
             GameObject obj = GameObject.Instantiate(SkillObj);
-            obj.GetComponent<ScopeSkillBase>().damage = Damage;
-            obj.GetComponent<ScopeSkillBase>().range = Range;
+            obj.GetComponent<ScopeSkillBase>().damage = Damage + PlayerController.Instance.GetPlayerAttack();
+            obj.GetComponent<ScopeSkillBase>().range = Range + PlayerController.Instance.GetPlayerSkillRange();
+            obj.GetComponent<ScopeSkillBase>().cd = Cd * PlayerController.Instance.GetPlayerSkillCd();
             Timer = 0;
         }
     }
@@ -106,8 +107,10 @@ public class BulletSkill : SkillBase
             //初始化技能生成的属性
             GameObject obj = GameObject.Instantiate(SkillObj);
             obj.transform.position = PlayerController.Instance.GetPlayerPosition();
-            obj.GetComponent<BulletSkillBase>().speed = Speed;
-            obj.GetComponent<BulletSkillBase>().damage = Damage;
+            obj.GetComponent<BulletSkillBase>().speed = Speed + PlayerController.Instance.GetPlayerSkillSpeed();
+            obj.GetComponent<BulletSkillBase>().damage = Damage + PlayerController.Instance.GetPlayerAttack();
+            obj.GetComponent<BulletSkillBase>().skillNum = SkillNum + PlayerController.Instance.GetPlayerProjectileNum();
+            obj.GetComponent<BulletSkillBase>().cd = Cd * PlayerController.Instance.GetPlayerSkillCd();
             Timer = 0;
         }
     }
@@ -138,9 +141,9 @@ public class FieldSkill : SkillBase
     {
         base.Update();
         Skill.transform.position = PlayerController.Instance.GetPlayerPosition();
-        Skill.GetComponent<FieldSkillBase>().damage = Damage;
-        Skill.GetComponent<FieldSkillBase>().range = Range;
-        Skill.GetComponent<FieldSkillBase>().cd = Cd;
+        Skill.GetComponent<FieldSkillBase>().damage = Damage + PlayerController.Instance.GetPlayerAttack();
+        Skill.GetComponent<FieldSkillBase>().range = Range + PlayerController.Instance.GetPlayerSkillRange();
+        Skill.GetComponent<FieldSkillBase>().cd = Cd * PlayerController.Instance.GetPlayerSkillCd();
     }
 }
 // 多目标单体技能： 随机选取屏幕内预定数量的怪物生成多个技能造成单体伤害
@@ -180,25 +183,11 @@ public class MultTargetSkill : SkillBase
                 {
                     GameObject obj = GameObject.Instantiate(SkillObj);
                     SkillObj.transform.position = list[i].transform.position;
+                    obj.GetComponent<MultTargetSkillBase>().damage = Damage + PlayerController.Instance.GetPlayerAttack();
+                    obj.GetComponent<MultTargetSkillBase>().cd = Cd * PlayerController.Instance.GetPlayerSkillCd();
                 }
             }
             Timer = 0;
-        }
-        if (PlayerController.attackByEnemy)
-        {
-            int num = EnemyDetector.Instance.enemyList.Count;
-            List<GameObject> list;
-            if (SkillNum > num) list = EnemyDetector.Instance.enemyList;
-            else list = EnemyDetector.GetRandomElements(EnemyDetector.Instance.enemyList, SkillNum);
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (list[i])
-                {
-                    _ = GameObject.Instantiate(SkillObj);
-                    SkillObj.transform.position = list[i].transform.position;
-                }
-            }
-            PlayerController.attackByEnemy = false;
         }
     }
 }

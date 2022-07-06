@@ -88,4 +88,5 @@ public class SkillManager : MonoSingleton<SkillManager>
         AddSkillObj(multTargetSkill.ID, multTargetSkill);
         return multTargetSkill;
     }
+    
 }

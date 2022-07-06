@@ -78,6 +78,7 @@ public class Monster : MonoBehaviour
     {
         if (obj.gameObject.CompareTag("Skill") && isDead == false)
         {
+            Debug.Log(obj.GetComponent<MonoSkillBase>().damage);
             GetDamaged(obj.gameObject);
         }
     }
@@ -117,8 +118,8 @@ public class Monster : MonoBehaviour
 
     public void GetDamaged(GameObject damageMaker)
     {
-        float totalDamage = damageMaker.GetComponent<MonoSkillBase>().damage *
-                            PlayerController.Instance.GetPlayerAttack();
+        float totalDamage = damageMaker.GetComponent<MonoSkillBase>().damage;
+        
         // DamagePopupManager.Create(transform.position, (int)damageMaker.GetComponent<Skill>().damage);
         if (health - totalDamage > 0.0f)
         {

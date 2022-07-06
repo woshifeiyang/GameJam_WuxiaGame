@@ -19,8 +19,6 @@ public class PlayerController : MonoSingleton<PlayerController>
     
     public MMFeedbacks PlayerDamageFeedback;
 
-    public Transform skill;
-
     // player parameters
     // experience
     private float _curExperience;
@@ -95,10 +93,10 @@ public class PlayerController : MonoSingleton<PlayerController>
         string assertPath3 = "Prefab/Skill301";
         string assertPath4 = "Prefab/Skill303";
         SkillManager.Instance.CreateBulletSkill(assertPath, 402, gameObject);
-        SkillManager.Instance.CreateMultTargetSkill(assertPath1, 201);
-        SkillManager.Instance.CreateScopeSkill(assertPath2, 202);
-        SkillManager.Instance.CreateFieldSkill(assertPath3, 301, gameObject);
-        SkillManager.Instance.CreateFieldSkill(assertPath4, 303, gameObject);
+        //SkillManager.Instance.CreateMultTargetSkill(assertPath1, 201);
+        //SkillManager.Instance.CreateScopeSkill(assertPath2, 202);
+        //SkillManager.Instance.CreateFieldSkill(assertPath3, 301, gameObject);
+        //SkillManager.Instance.CreateFieldSkill(assertPath4, 303, gameObject);
         
     }
 

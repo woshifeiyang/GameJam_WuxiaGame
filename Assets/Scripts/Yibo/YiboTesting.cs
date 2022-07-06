@@ -26,6 +26,6 @@ public class YiboTesting : MonoBehaviour
 
     private void FixedUpdate()
     {
-        StatisticManager.addEnemyKilled(1);
+        StatisticManager.addEnemyKilled(1, 1);
     }
 }

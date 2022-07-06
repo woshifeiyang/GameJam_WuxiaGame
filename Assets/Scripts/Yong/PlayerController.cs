@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Tools;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class PlayerController : MonoSingleton<PlayerController>
@@ -19,6 +20,8 @@ public class PlayerController : MonoSingleton<PlayerController>
     public Transform skill;
 
     public static bool attackByEnemy = false;
+
+    public MMFeedbacks PlayerDamageFeedback;
 
     // player parameters
     // experience
@@ -131,6 +134,7 @@ public class PlayerController : MonoSingleton<PlayerController>
             if (curHealth - col.gameObject.GetComponent<Monster>().damage > 0.0f)
             {
                 curHealth -= col.gameObject.GetComponent<Monster>().damage;
+                PlayerDamageFeedback?.PlayFeedbacks();
             }
             else
             {

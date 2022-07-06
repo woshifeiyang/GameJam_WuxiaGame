@@ -9,7 +9,17 @@ public class EnemyKillZone : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            Destroy(other.gameObject);
+            if (other.GetComponent<Monster>().poolBelongTo == null)
+            {
+                Destroy(other.gameObject);
+                Debug.Log("destroy out of pool");
+            }
+            else
+            {
+                EnemyObjectPool.EnemyObjectPoolInstance.PutObjectInPool(other.gameObject);
+                Debug.Log("put object in pool");
+            }
+
         }
     }
 }

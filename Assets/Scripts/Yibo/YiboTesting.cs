@@ -15,15 +15,17 @@ public class YiboTesting : MonoBehaviour
 
     void Start()
     {
-        DPM.Create(Vector3.zero, 100);
-        DPM.Create(Vector3.zero, 200);
-        DPM.Create(Vector3.zero, 300);
-        DPM.Create(Vector3.zero, 400);
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void FixedUpdate()
+    {
+        StatisticManager.addEnemyKilled(1);
     }
 }

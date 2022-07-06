@@ -19,7 +19,7 @@ public class Skill203 : FieldSkillBase
     public override void Update()
     {
         base.Update();
-        if (PlayerController.attackByEnemy)
+        /*if (PlayerController.attackByEnemy)
         {
             int num = EnemyDetector.Instance.enemyList.Count;
             List<GameObject> list;
@@ -34,8 +34,7 @@ public class Skill203 : FieldSkillBase
                 }
             }
             PlayerController.attackByEnemy = false;
-        }
-
+        }*/
     }
 
     private void UpgradeSkill()

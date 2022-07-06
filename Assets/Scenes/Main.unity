@@ -8680,6 +8680,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8563263028949727388, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
+      propertyPath: projectileRatio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563263028949727388, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
       propertyPath: PlayerDamageFeedback
       value: 
       objectReference: {fileID: 1717498147}

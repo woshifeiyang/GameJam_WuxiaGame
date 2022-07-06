@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Skill201 : MultTargetSkillBase
 {
-    private Rigidbody2D _rb;
+    public static int doubleStrike;
+    //private Rigidbody2D _rb;
     //投射物数量
     //public int amount = 4;
     // Start is called before the first frame update
     public override void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
+        doubleStrike += doubleStrike;
+        //_rb = GetComponent<Rigidbody2D>();
         //_rb.transform.position = skillobj.transform.position;
         Invoke("SelfDestory", 0.3f);
     }

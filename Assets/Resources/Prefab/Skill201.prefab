@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -4671153315590858050}
   - component: {fileID: 5989791567437145260}
   - component: {fileID: -2217911918567614697}
-  - component: {fileID: 2238824252624375129}
+  - component: {fileID: 5265446905703836406}
   m_Layer: 0
   m_Name: Skill201
   m_TagString: Skill
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8329058951985160386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6922635, y: 5.768621, z: 0}
+  m_LocalPosition: {x: -3.4472198, y: -7.041109, z: 0}
   m_LocalScale: {x: 1.3, y: 1.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 4866600824618754406, guid: 68d46ed8b976a794695f359daf99e196, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.057849724, g: 0.29845473, b: 0.7075472, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -141,8 +141,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.44
---- !u!114 &2238824252624375129
+  m_Radius: 0.15
+--- !u!114 &5265446905703836406
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,10 +151,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8329058951985160386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 812973d1f4754dc4aac2976175a6b388, type: 3}
+  m_Script: {fileID: 11500000, guid: 17ec10d302c875345a46c8655b3e9c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 201
-  damage: 0
-  cd: 4
-  skillNum: 4
+  id: 2011
+  damage: 1
+  cd: 10000
+  skillNum: 3

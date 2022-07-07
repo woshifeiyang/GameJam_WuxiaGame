@@ -5,24 +5,24 @@ using UnityEngine;
 public class Skill202 : ScopeSkillBase
 {
     private Rigidbody2D _rb;
-    private int targetnum;
+    private int randomIndex;
     // Start is called before the first frame update
     public override void Start()
     {
         this.transform.localScale = new Vector3(range,range,1);
         //this.GetComponent<CircleCollider2D>().radius = range;
-        var visibleenemies = EnemyDetector.Instance.enemyList;
+        List<GameObject> visibleenemies;
+        visibleenemies = EnemyDetector.Instance.enemyList;
         if(visibleenemies.Count != 0)
         {
-            targetnum = Mathf.Min(visibleenemies.Count, 1);
-        }
-        var targets = visibleenemies.GetRandomElements(targetnum);
-        foreach (var e in targets)
-        { 
+            randomIndex = Random.Range(0, visibleenemies.Count);
             _rb = GetComponent<Rigidbody2D>();
-            _rb.transform.position = e.transform.position;
-            Invoke("SelfDestory", skillTime);
+            _rb.transform.position = visibleenemies[randomIndex].transform.position;
         }
+        
+        
+        Invoke("SelfDestory", skillTime);
+        
 
 
     }

@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class Skill201 : MultTargetSkillBase
 {
-    public static int doubleStrike;
+    //public delegate void DouStk();
+    //public static Strike strike;
     //private Rigidbody2D _rb;
     //投射物数量
     //public int amount = 4;
     // Start is called before the first frame update
     public override void Start()
     {
-        doubleStrike += doubleStrike;
+        if (Random.value > 0.5)
+        {
+            
+            Debug.Log("随机完成");
+            GameObject.Find("SkillManager").GetComponent<Strike>().Lightcall1();
+        }
         //_rb = GetComponent<Rigidbody2D>();
         //_rb.transform.position = skillobj.transform.position;
         Invoke("SelfDestory", 0.3f);
@@ -28,17 +34,6 @@ public class Skill201 : MultTargetSkillBase
         Destroy(gameObject);
     }
 
-    //private void searchTarget()
-    //{
-    //    var visibleenemies = Monster.VisibleEnemies;
-    //    int targetnum = Mathf.Min(visibleenemies.Count, amount);
-    //    var targets = visibleenemies.GetRandomElements(targetnum);
-    //    foreach (var e in targets)
-    //    {
-    //        _rb = GetComponent<Rigidbody2D>();
-    //        _rb.transform.position = e.transform.position;
-    //        Invoke("SelfDestory", skillTime);
-    //    }
-    //}
+    
     
 }

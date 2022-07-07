@@ -69,6 +69,7 @@ public class PlayerController : MonoSingleton<PlayerController>
     protected override void InitAwake()
     {
         base.InitAwake();
+        Application.targetFrameRate = 90;
         _floatingJoystick = GameObject.Find("FloatingJoystick");
 
         // get sprite manager

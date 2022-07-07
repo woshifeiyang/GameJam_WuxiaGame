@@ -15,7 +15,7 @@ public class showFPS : MonoBehaviour {
         tempTime += Time.deltaTime;
         if (tempTime > timeGap)
         {
-            fpsText.text = Mathf.Ceil(fps).ToString();
+            fpsText.text = "FPS:"+Mathf.Ceil(fps).ToString();
             tempTime = 0f;
         }
     }

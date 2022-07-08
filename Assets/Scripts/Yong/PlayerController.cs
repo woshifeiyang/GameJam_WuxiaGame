@@ -88,24 +88,6 @@ public class PlayerController : MonoSingleton<PlayerController>
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
 
-        string assertPath = "Prefab/Skill/Bullet/402";
-        string assertPath1 = "Prefab/201";
-        string assertPath11 = "Prefab/Skill201";
-        string assertPath2 = "Prefab/202";
-        string assertPath5 = "Prefab/203";
-        string assertPath6 = "Prefab/204";
-        string assertPath3 = "Prefab/Skill301";
-        string assertPath4 = "Prefab/Skill303";
-        //SkillManager.Instance.CreateBulletSkill(assertPath, 402, gameObject);
-        SkillManager.Instance.CreateMultTargetSkill(assertPath1, 201);
-        SkillManager.Instance.CreateMultTargetSkill(assertPath11, 2011);
-        SkillManager.Instance.CreateScopeSkill(assertPath2, 202);
-        //SkillManager.Instance.CreateFieldSkill(assertPath3, 301, gameObject);
-        //SkillManager.Instance.CreateFieldSkill(assertPath4, 303, gameObject);
-        SkillManager.Instance.CreateFieldSkill(assertPath5, 203, gameObject);
-        SkillManager.Instance.CreateFieldSkill(assertPath6, 204, gameObject);
-
-
     }
 
     // Update is called once per frame

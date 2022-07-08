@@ -37,7 +37,8 @@ public class PopcornRespawn : MonoBehaviour
     {
         for (int i = 0; i < locations.Length; i++)
         {
-            Instantiate(deathProduct, locations[i]);
+            GameObject tempProduct = Instantiate(deathProduct, locations[i]);
+            tempProduct.transform.SetParent(null);
         }
     }
 

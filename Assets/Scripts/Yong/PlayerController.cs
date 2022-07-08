@@ -93,6 +93,7 @@ public class PlayerController : MonoSingleton<PlayerController>
         string assertPath11 = "Prefab/Skill201";
         string assertPath2 = "Prefab/202";
         string assertPath5 = "Prefab/203";
+        string assertPath6 = "Prefab/204";
         string assertPath3 = "Prefab/Skill301";
         string assertPath4 = "Prefab/Skill303";
         //SkillManager.Instance.CreateBulletSkill(assertPath, 402, gameObject);
@@ -102,6 +103,8 @@ public class PlayerController : MonoSingleton<PlayerController>
         //SkillManager.Instance.CreateFieldSkill(assertPath3, 301, gameObject);
         //SkillManager.Instance.CreateFieldSkill(assertPath4, 303, gameObject);
         SkillManager.Instance.CreateFieldSkill(assertPath5, 203, gameObject);
+        SkillManager.Instance.CreateFieldSkill(assertPath6, 204, gameObject);
+
 
     }
 

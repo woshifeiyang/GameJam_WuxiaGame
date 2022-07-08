@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: -4671153315590858050}
   - component: {fileID: 5989791567437145260}
   - component: {fileID: -2217911918567614697}
-  - component: {fileID: 2238824252624375129}
+  - component: {fileID: -5615994479665487382}
   m_Layer: 0
-  m_Name: 201
+  m_Name: 202m
   m_TagString: Skill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8329058951985160386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1557198, y: -10.491775, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.7, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5cc0f956e3adb024aae002de8807522f, type: 2}
+  - {fileID: 2100000, guid: 455e9891b42d14c47ada91da0b4042b1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: -584966885
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4866600824618754406, guid: 68d46ed8b976a794695f359daf99e196, type: 3}
-  m_Color: {r: 0.5188679, g: 0.43402156, b: 0.43402156, a: 1}
+  m_Sprite: {fileID: -5552092635038601778, guid: f12ed5c0ca064b14d80385b6e8f0f600, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,7 +96,7 @@ Animator:
   m_GameObject: {fileID: 8329058951985160386}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c495220b8605b2549ae8da9c6b7b492b, type: 2}
+  m_Controller: {fileID: 9100000, guid: b323452d9da7ccc42961fdd3ae71af72, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -141,8 +141,8 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.15
---- !u!114 &2238824252624375129
+  m_Radius: 0.5
+--- !u!114 &-5615994479665487382
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,10 +151,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8329058951985160386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 812973d1f4754dc4aac2976175a6b388, type: 3}
+  m_Script: {fileID: 11500000, guid: b679db939e08d0b4aa2a192f18c16454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 201
-  damage: 100
-  cd: 4
-  skillNum: 4
+  id: 202
+  damage: 1000
+  cd: 2
+  skillTime: 0.6
+  range: 2

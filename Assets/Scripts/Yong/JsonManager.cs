@@ -17,7 +17,22 @@ public class BasicPropJson
 
     public string ResAddress;
 }
-    
+
+public class SkillListJson
+{
+    public int Id;
+
+    public string KeyName;
+
+    public string Category;
+
+    public string Description;
+
+    public string Buff;
+
+    public string ResAddress;
+}
+
 public class JsonManager : MonoSingleton<JsonManager>
 {
     public List<BasicPropJson> basicPropList;
@@ -41,7 +56,7 @@ public class JsonManager : MonoSingleton<JsonManager>
         JsonData jsonData = JsonMapper.ToObject(text);
         if (jsonData != null)
         {
-            Debug.Log("JsonData数量"+ jsonData.Count);
+            Debug.Log("JsonData BasicProp数量"+ jsonData.Count);
             for (int i = 0; i < jsonData.Count; ++i)
             {
                 BasicPropJson basicPropObj = new BasicPropJson();
@@ -54,7 +69,26 @@ public class JsonManager : MonoSingleton<JsonManager>
             }
         }
     }
-    
+
+    public void ParseSkillListJson()
+    {
+        string text = GetTextForStreamingAssets("SkillList.json");
+        JsonData jsonData = JsonMapper.ToObject(text);
+        if (jsonData != null)
+        {
+            Debug.Log("JsonData SkillList数量"+ jsonData.Count);
+            for (int i = 0; i < jsonData.Count; ++i)
+            {
+                BasicPropJson basicPropObj = new BasicPropJson();
+                basicPropObj.Id = (int)jsonData[i]["Id"];
+                basicPropObj.KeyName = jsonData[i]["KeyName"].ToString();
+                basicPropObj.Value = (float)(double)jsonData[i]["Value"];
+                basicPropObj.Description = jsonData[i]["Description"].ToString();
+                basicPropObj.ResAddress = jsonData[i]["ResAddress"].ToString();
+                basicPropList.Add(basicPropObj);
+            }
+        }
+    }
     private string GetTextForStreamingAssets(string path)
     {
         string localPath;

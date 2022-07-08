@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b679db939e08d0b4aa2a192f18c16454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 202
+  id: 2022
   damage: 1000
   cd: 2
   skillTime: 0.6

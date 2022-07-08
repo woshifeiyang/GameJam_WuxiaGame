@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 807993656694076403}
   - component: {fileID: 5830186774688432510}
   - component: {fileID: 3992537975579521413}
-  - component: {fileID: -7632696765228323814}
-  - component: {fileID: -235842165668480462}
+  - component: {fileID: -5791762241564236916}
   m_Layer: 0
   m_Name: 102
   m_TagString: Skill
@@ -75,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -1612851299
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 654431043188590632, guid: ca538f9fecfa0484b836c4806db62926, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e925c3c05cfc9b7468ed424f41d5eca0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -123,8 +122,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.45}
-    oldSize: {x: 0.5, y: 1.8}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 1.2}
     newSize: {x: 1.5625, y: 1.5625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -133,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1.8}
   m_EdgeRadius: 0
---- !u!114 &-7632696765228323814
+--- !u!114 &-5791762241564236916
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,32 +141,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7606956049182085652}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64379163bffd1b247992962d4a2cc6b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d8fc02938e42e846b1fa316aa8ca343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 102
   damage: 25
-  cd: 2
-  speed: 300
+  cd: 3
+  speed: 200
   skillNum: 1
-  skillPene: 1
-  skillTime: 5
---- !u!95 &-235842165668480462
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7606956049182085652}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e3cbf6b1c2b3ac3488a4cc43422c62bd, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  skillPene: 100
+  skillTime: 3

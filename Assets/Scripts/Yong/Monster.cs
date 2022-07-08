@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
+    public string monsterId;
+    
     public float health;
 
     public float moveSpeed;
@@ -111,14 +113,18 @@ public class Monster : MonoBehaviour
         SwitchAnim();
 
         //test if the child has children
-        if (transform.childCount != 0) { 
-            if (transform.GetChild(0).transform.GetChild(0) != null)
+        if (monsterId == "102")
+        {
+            if (transform.childCount != 0)
             {
-                transform.GetChild(0).gameObject.SetActive(true);
-            } 
+                if (transform.GetChild(0).transform.GetChild(0) != null)
+                {
+                    transform.GetChild(0).gameObject.SetActive(true);
+                }
+            }
         }
 
-        Invoke(nameof(PutObjectInPool), 1.0f);
+        Invoke(nameof(PutObjectInPool), 5.0f);
         GetComponent<Collider2D>().isTrigger = true;
         // 从敌人探测器列表中移除该对象
         EnemyDetector.Instance.enemyList.Remove(gameObject);

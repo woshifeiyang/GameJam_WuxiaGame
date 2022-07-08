@@ -87,7 +87,9 @@ public class PlayerController : MonoSingleton<PlayerController>
         
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
-
+        
+        string path = "Prefab/Skill/Bullet/402";
+        SkillManager.Instance.CreateBulletSkill(path,402, PlayerController.Instance.gameObject);
     }
 
     // Update is called once per frame
@@ -129,6 +131,19 @@ public class PlayerController : MonoSingleton<PlayerController>
             {
                 ExitGame();
             }
+        }
+    }
+
+    public void GetDamaged(float damageAmount)
+    {
+        if (curHealth - damageAmount > 0.0f)
+        {
+            curHealth -= damageAmount;
+            PlayerDamageFeedback?.PlayFeedbacks();
+        }
+        else
+        {
+            ExitGame();
         }
     }
 

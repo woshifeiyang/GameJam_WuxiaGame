@@ -25,7 +25,7 @@ public class PopcornRespawn : MonoBehaviour
     {
         
         locations = new Transform[locationHolder.childCount];
-        Debug.Log("childlength" + locationHolder.childCount);
+        //Debug.Log("childlength" + locationHolder.childCount);
         for (int i = 0; i < locations.Length; i++)
         {
             locations[i] = locationHolder.GetChild(i);
@@ -50,7 +50,7 @@ public class PopcornRespawn : MonoBehaviour
     private void OnDrawGizmos()
     {
         updateLocatingPoint();
-        Debug.Log(locations.Length);
+        //Debug.Log(locations.Length);
         Gizmos.color = Color.green;
         foreach (Transform t in locations)
         {

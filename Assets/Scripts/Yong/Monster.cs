@@ -21,6 +21,8 @@ public class Monster : MonoBehaviour
 
     public string poolBelongTo;
 
+    public Animation deathAnimation;
+
     public DamagePopupManager DamagePopupManager;
 
     private Rigidbody2D _rb;
@@ -74,6 +76,7 @@ public class Monster : MonoBehaviour
             transform.localScale = new Vector3(-1f * _importedLocalScale.x, _importedLocalScale.y, _importedLocalScale.y);
         }
         else transform.localScale = _importedLocalScale;
+        
     }
     
     private void OnTriggerEnter2D(Collider2D obj)
@@ -123,12 +126,18 @@ public class Monster : MonoBehaviour
                 }
             }
         }
-
-        Invoke(nameof(PutObjectInPool), 5.0f);
         GetComponent<Collider2D>().isTrigger = true;
-        // 从敌人探测器列表中移除该对象
-        EnemyDetector.Instance.enemyList.Remove(gameObject);
-        EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_KillEnemy);
+    }
+
+    public void RecycleMonster()
+    {
+        if (poolBelongTo != null)
+        {
+            Invoke(nameof(PutObjectInPool), 0f);
+            // 从敌人探测器列表中移除该对象
+            EnemyDetector.Instance.enemyList.Remove(gameObject);
+            EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_KillEnemy);
+        }
     }
 
     public void GetDamaged(GameObject damageMaker)

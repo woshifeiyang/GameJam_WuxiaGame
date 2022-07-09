@@ -39,9 +39,27 @@ public class PopcornRespawn : MonoBehaviour
         {
             GameObject tempProduct = Instantiate(deathProduct, locations[i]);
             tempProduct.transform.SetParent(null);
+            tempProduct.tag = "NotDamagableEnemy";
+            StartCoroutine(tagChange(tempProduct));
         }
+        transform.SetParent(null);
+        StartCoroutine(SelfDestory());
     }
 
+    IEnumerator tagChange(GameObject gameObject)
+    {
+        Debug.Log("startC");
+        yield return new WaitForSeconds(1f);
+        gameObject.tag = "Enemy";
+        Debug.Log(gameObject.tag);
+    }
+
+    IEnumerator SelfDestory()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(this);
+    }
+    
     private void OnEnable()
     {
         updateLocatingPoint();

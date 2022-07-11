@@ -43,6 +43,7 @@ public class JsonManager : MonoSingleton<JsonManager>
     void Start()
     {
         basicPropList = new List<BasicPropJson>();
+        skillList = new List<SkillListJson>();
         ParseBasicPropJson();
         ParseSkillListJson();
     }

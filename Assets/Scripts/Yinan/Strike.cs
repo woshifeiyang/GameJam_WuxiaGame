@@ -11,12 +11,12 @@ public class Strike : MonoSkillBase
     // Start is called before the first frame update
     void Start()
     {
-        SkillObj = Resources.Load("Prefab/201") as GameObject;
+        SkillObj = Resources.Load("Prefab/Skill/MultTarget/201") as GameObject;
         if (SkillObj != null)
         {
             Debug.Log("Skill init sucs");
         }
-        SkillObj2 = Resources.Load("Prefab/Skill201") as GameObject;
+        SkillObj2 = Resources.Load("Prefab/Skill/MultTarget/201m") as GameObject;
         if(SkillObj2 != null)
         {
             Debug.Log("Skill2 init sucs");

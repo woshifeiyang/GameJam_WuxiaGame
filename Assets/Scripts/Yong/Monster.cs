@@ -34,6 +34,8 @@ public class Monster : MonoBehaviour
     
     private Vector3 _importedLocalScale;
 
+    private float _distance;
+
     private void OnEnable()
     {
         SetAlive();
@@ -115,6 +117,7 @@ public class Monster : MonoBehaviour
 
     public void SetDead()
     {
+        ActiveSKill302();
         isDead = true;
         _moveSpeed = 0.0f;
         SwitchAnim();
@@ -166,6 +169,17 @@ public class Monster : MonoBehaviour
             SetDead();
         }
 
+    }
+    public void ActiveSKill302()
+    {
+        Debug.Log("技能302激活");
+        GameObject.Find("SkillManager").GetComponent<Cure>().CurePlayer(GetDistance());
+    }
+
+    private float GetDistance()
+    {
+        Debug.Log("获取的距离为"+ Vector3.Distance(this.transform.position, PlayerController.Instance.GetPlayerPosition()));
+        return Vector3.Distance(this.transform.position, PlayerController.Instance.GetPlayerPosition());
     }
 
 }

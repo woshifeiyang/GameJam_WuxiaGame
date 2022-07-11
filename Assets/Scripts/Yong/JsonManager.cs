@@ -36,12 +36,15 @@ public class SkillListJson
 public class JsonManager : MonoSingleton<JsonManager>
 {
     public List<BasicPropJson> basicPropList;
+
+    public List<SkillListJson> skillList;
     
     // Start is called before the first frame update
     void Start()
     {
         basicPropList = new List<BasicPropJson>();
         ParseBasicPropJson();
+        ParseSkillListJson();
     }
 
     // Update is called once per frame
@@ -79,13 +82,14 @@ public class JsonManager : MonoSingleton<JsonManager>
             Debug.Log("JsonData SkillList数量"+ jsonData.Count);
             for (int i = 0; i < jsonData.Count; ++i)
             {
-                BasicPropJson basicPropObj = new BasicPropJson();
-                basicPropObj.Id = (int)jsonData[i]["Id"];
-                basicPropObj.KeyName = jsonData[i]["KeyName"].ToString();
-                basicPropObj.Value = (float)(double)jsonData[i]["Value"];
-                basicPropObj.Description = jsonData[i]["Description"].ToString();
-                basicPropObj.ResAddress = jsonData[i]["ResAddress"].ToString();
-                basicPropList.Add(basicPropObj);
+                SkillListJson skillListJson = new SkillListJson();
+                skillListJson.Id = (int)jsonData[i]["Id"];
+                skillListJson.KeyName = jsonData[i]["KeyName"].ToString();
+                skillListJson.Category = jsonData[i]["Category"].ToString();
+                skillListJson.Description = jsonData[i]["Description"].ToString();
+                skillListJson.Buff = jsonData[i]["Buff"].ToString();
+                skillListJson.ResAddress = jsonData[i]["ResAddress"].ToString();
+                skillList.Add(skillListJson);
             }
         }
     }

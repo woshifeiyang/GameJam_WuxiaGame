@@ -13,9 +13,9 @@ public class Skill401 : ScopeSkillBase
     public override void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _rb.transform.position = PlayerController.Instance.GetPlayerPosition();
         Invoke("SelfDestory", skillTime);
-        //_rb.AddForce((PlayerController.Instance.GetNearestEnemyLoc() - PlayerController.Instance.transform.position).normalized * speed, ForceMode2D.Force);
-        //_rb.AddForce((PlayerController.Instance.transform.position - PlayerController.Instance.GetNearestEnemyLoc()).normalized * speed, ForceMode2D.Force);
+        
 
         // 持续时间结束时销毁自身
     }

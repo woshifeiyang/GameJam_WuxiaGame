@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class Monster : MonoBehaviour
@@ -24,6 +25,8 @@ public class Monster : MonoBehaviour
     public Animation deathAnimation;
 
     public DamagePopupManager DamagePopupManager;
+
+    public MMFeedbacks MMF;
 
     private Rigidbody2D _rb;
 
@@ -49,6 +52,7 @@ public class Monster : MonoBehaviour
 
     void Start()
     {
+        MMF = GetComponent<MMFeedbacks>();
         // DamagePopupManager = GameObject.FindWithTag("DamagePopupManager").GetComponent<DamagePopupManager>();
         
         _importedLocalScale = transform.localScale;
@@ -138,12 +142,17 @@ public class Monster : MonoBehaviour
             EnemyDetector.Instance.enemyList.Remove(gameObject);
             EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_KillEnemy);
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void GetDamaged(GameObject damageMaker)
     {
         float totalDamage = damageMaker.GetComponent<MonoSkillBase>().damage;
         
+        MMF?.PlayFeedbacks();
         // DamagePopupManager.Create(transform.position, (int)damageMaker.GetComponent<Skill>().damage);
         if (health - totalDamage > 0.0f)
         {

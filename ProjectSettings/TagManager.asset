@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Skill
   - DamagePopupManager
+  - NotDamagableEnemy
   layers:
   - Default
   - TransparentFX

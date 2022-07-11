@@ -6,7 +6,9 @@ using UnityEngine;
 public class EnemyObjectPool : MonoBehaviour
 {
     private Dictionary<string, Queue<GameObject>> _enemyPool = new Dictionary<string, Queue<GameObject>>();
-    
+
+    public Dictionary<string, int> numCountOfPool = new Dictionary<string, int>();
+
     public GameObject objectInPool;
 
     public GameObject objectOutOfPool;
@@ -37,9 +39,11 @@ public class EnemyObjectPool : MonoBehaviour
         objectInPool.name = "objectInPool";
         objectOutOfPool = new GameObject();
         objectOutOfPool.name = "objectOutOfPool";
-
+        
+        
         ClearPool();
         InitEnemyPool();
+        
     }
 
     // Update is called once per frame
@@ -47,12 +51,29 @@ public class EnemyObjectPool : MonoBehaviour
     {
         
     }
+
+    void InitEnemyPoolCount()
+    {
+        numCountOfPool.Add("First", 0);
+        numCountOfPool.Add("Second", 0);
+        numCountOfPool.Add("Third", 0);
+        numCountOfPool.Add("Fourth", 0);
+        
+        numCountOfPool.Add("FirstMax", 0);
+        numCountOfPool.Add("SecondMax", 0);
+        numCountOfPool.Add("ThirdMax", 0);
+        numCountOfPool.Add("FourthMax", 0);
+    }
     
     /// <summary>
     /// 将每个结构体数组中设定的怪物种类和数量填充进不同的对象池
     /// </summary>
     void InitEnemyPool()
     {
+        //only first pool right now
+        //init stats of pool first
+        InitEnemyPoolCount();
+        
         _enemyPool.Add("First", new Queue<GameObject>());
         _enemyPool.Add("Second", new Queue<GameObject>());
         _enemyPool.Add("Third", new Queue<GameObject>());
@@ -79,6 +100,10 @@ public class EnemyObjectPool : MonoBehaviour
                     }
                 }
                 Debug.Log("the number of " + firstPool[i].name + " is " + firstPool[i].count);
+                
+                // add number count of each pool
+                numCountOfPool["FirstMax"] += firstPool[i].count;
+                numCountOfPool["First"] = numCountOfPool["FirstMax"];
             }
         }
         if (secondPool.Length != 0)
@@ -158,6 +183,9 @@ public class EnemyObjectPool : MonoBehaviour
         if (_enemyPool[poolName].Count != 0)
         {
             GameObject go = _enemyPool[poolName].Dequeue();
+            
+            // minus pool num by 1 
+            numCountOfPool[poolName] --;
             return go;
         }
         Debug.Log("Pool is nullptr");
@@ -173,6 +201,9 @@ public class EnemyObjectPool : MonoBehaviour
         }
         
         _enemyPool[ob.GetComponent<Monster>().poolBelongTo].Enqueue(ob);
+        
+        // add one to the pool number counter
+        numCountOfPool[ob.GetComponent<Monster>().poolBelongTo]++;
         ob.SetActive(false);
         ob.transform.SetParent(EnemyObjectPool.EnemyObjectPoolInstance.objectInPool.transform);
     }

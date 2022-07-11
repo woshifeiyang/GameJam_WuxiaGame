@@ -9,16 +9,31 @@ public class EnemySpawner : MonoBehaviour
 {
     public float enemySpawnCd;
 
+    public string currentPool;
+
+    public EnemyObjectPool objectPoolHolder;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating(nameof(SpawnEnemy), 1.0f, enemySpawnCd);        //后期要改
+        objectPoolHolder = GetComponent<EnemyObjectPool>();
+        
+        InvokeRepeating(nameof(SpawnEnemy), 1.0f, enemySpawnCd); //后期要改
+        InvokeRepeating(nameof(updateSpawnCd), 1.0f, 0.1f);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void updateSpawnCd()
+    {
+        float spawnCdResult = 1f;
+        
+        
+        
+        enemySpawnCd = spawnCdResult;
     }
 
     void SpawnEnemy()

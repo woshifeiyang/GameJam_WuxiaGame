@@ -19,15 +19,15 @@
     "Id": 103,
     "KeyName":"Split Sword",
     "Category":"Bullet",
-    "Description":"The sword splits two swords on both sides of the attack direction",
+    "Description":"The sword will split multiple swords to attack enemies",
     "Buff":"Buff: Normal Damage upgrade, Increase attack speed, Projectiles+1, Projectiles flight speed+",
     "ResAddress":""
   },
   {
-    "Id": 104,
+    "Id": 201,
     "KeyName":"Lightning Strike",
     "Category":"MultTarget",
-    "Description":"Single attack",
+    "Description":"Lightning strikes a single monster",
     "Buff":"Buff: Increase attack speed, Projectiles+1",
     "ResAddress":""
   },
@@ -44,14 +44,16 @@
     "KeyName":"Overload",
     "Category":"Field",
     "Description":"When main character was attacked, a lightning strike will be released",
-    "Buff":"","ResAddress":""
+    "Buff":"",
+    "ResAddress":""
   },
   {
     "Id": 204,
     "KeyName":"Lightning Return",
     "Category":"Field",
     "Description":"When releasing lightning strike, there is a 50% chance to release it again",
-    "Buff":"","ResAddress":""
+    "Buff":"",
+    "ResAddress":""
   },
   {
     "Id": 301,

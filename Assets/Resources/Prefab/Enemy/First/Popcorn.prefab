@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterId: 101
-  health: 100
+  health: 50
   moveSpeed: 1
   damage: 5
   isDead: 0
@@ -154,6 +154,7 @@ MonoBehaviour:
   poolBelongTo: First
   deathAnimation: {fileID: 0}
   DamagePopupManager: {fileID: 0}
+  MMF: {fileID: 0}
 --- !u!50 &5243666614868315176
 Rigidbody2D:
   serializedVersion: 4

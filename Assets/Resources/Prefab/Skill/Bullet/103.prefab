@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1612851299
-  m_SortingLayer: 7
+  m_SortingLayerID: -584966885
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 654431043188590632, guid: ca538f9fecfa0484b836c4806db62926, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -148,11 +148,11 @@ MonoBehaviour:
   id: 103
   damage: 25
   cd: 2
-  speed: 300
-  skillNum: 1
+  speed: 150
+  skillNum: 10
   skillPene: 1
   skillTime: 5
-  rotationAngel: 0
+  rotationAngel: 30
 --- !u!95 &-8812554272505138609
 Animator:
   serializedVersion: 3

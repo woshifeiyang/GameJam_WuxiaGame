@@ -88,10 +88,10 @@ public class PlayerController : MonoSingleton<PlayerController>
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         
-        string path = "Prefab/Skill/Bullet/402";
+        string path = "Prefab/Skill/Bullet/103";
         string path1 = "Prefab/Skill/Scope/401";
-        //SkillManager.Instance.CreateBulletSkill(path,402, PlayerController.Instance.gameObject);
-        SkillManager.Instance.CreateScopeSkill(path1, 401);
+        SkillManager.Instance.CreateBulletSkill(path,103, PlayerController.Instance.gameObject);
+        //SkillManager.Instance.CreateScopeSkill(path1, 401);
     }
 
     // Update is called once per frame
@@ -219,6 +219,11 @@ public class PlayerController : MonoSingleton<PlayerController>
     {
         return _projectileLevel * projectileRatio;
     }
+
+    public float GetPlayerHealthFinal()
+    {
+        return _healthFinal;
+    }
     private void ExitGame()
     {
         //预处理
@@ -233,11 +238,10 @@ public class PlayerController : MonoSingleton<PlayerController>
     {
         // moveSpeed;
         _moveSpeedFinal = moveSpeed + (_moveSpeedLevel * moveSpeedRatio);
-        // //skillCd;
+        // skillCd;
         _skillCdFinal = Mathf.Pow(skillCdRatio, _skillCdLevel);
-        // //Health;
+        // Health;
         _healthFinal = maxHealth + (healthRatio * _healthLevel);
-        curHealth += healthRatio;
 
         Debug.Log("moveSpeedLevel: " + _moveSpeedLevel);
         Debug.Log("skillCdLevel: " + _skillCdLevel);

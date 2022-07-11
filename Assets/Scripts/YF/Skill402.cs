@@ -9,7 +9,7 @@ public class Skill402 : BulletSkillBase
 {
     private Rigidbody2D _rb;
     public bool first = true;
-
+    
     // Start is called before the first frame update
     public override void Start()
     {
@@ -30,7 +30,7 @@ public class Skill402 : BulletSkillBase
             if(Vector3.Distance(_rb.transform.position, PlayerController.Instance.GetPlayerPosition()) <= 1.0f)
             {
                 SelfDestory();
-                if (PlayerController.Instance.curHealth < PlayerController.Instance.maxHealth)
+                if (PlayerController.Instance.curHealth < PlayerController.Instance.GetPlayerHealthFinal())
                     PlayerController.Instance.curHealth += 1;
             }
             Vector3 playerPosition = PlayerController.Instance.GetPlayerPosition();

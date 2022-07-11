@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,39 +20,27 @@ public class Skill103 : BulletSkillBase
         float angle = Vector3.SignedAngle(Vector3.up, vec, Vector3.forward);
         Quaternion rotation = Quaternion.Euler(0, 0, angle);
         transform.rotation = rotation;
-        transform.position = PlayerController.Instance.transform.position + new Vector3(0,1,0);
         _rb.AddForce(vec.normalized * speed, ForceMode2D.Force);
         // 持续时间结束时销毁自身
         Invoke("SelfDestory", skillTime);
         
         string assertPath = "Prefab/Skill/Bullet/103m";
-        for (int i = 1, j = 1; i < skillNum; i++)
+        for (int i = 1; i < skillNum; i++)
         {
-            float childAngle = i % 2 == 0 ? rotationAngel * i : -1 * rotationAngel * i;
+            float childOffsetAngle = i % 2 == 0 ? rotationAngel * (int)((i + 1) / 2) : -1 * rotationAngel * (int)((i + 1) / 2);
+            Quaternion childRotation = Quaternion.Euler(0, 0, childOffsetAngle);
+            Vector3 childVec = childRotation * vec;     // 最终的向量方向
             
-            GameObject childSkill = (GameObject)Instantiate(Resources.Load(assertPath));
-                
-        }
-        
+            float childRotationValue = Vector3.SignedAngle(Vector3.up, childVec, Vector3.forward);
+            Quaternion childRotationAngel = Quaternion.Euler(0, 0, childRotationValue);
 
-        /*if (skillNum > 1)
-        {
-            for (int i = 1; i < skillNum; i++)
-            {
-                
-            }
-            Vector3 vec = EnemyDetector.Instance.GetNearestEnemyLoc() - PlayerController.Instance.transform.position;
-            Quaternion offset = Quaternion.Euler(0, 0, rotationAngel);
-            Vector3 Normal = offset * vec;
-            Normal.z = 0;
-            float angle = Vector3.SignedAngle(Vector3.up, Normal, Vector3.forward);
-            Quaternion picRotation = Quaternion.Euler(0, 0, angle);
-            transform.rotation = picRotation;
-            _rb.AddForce((Normal).normalized * speed, ForceMode2D.Force);
-            // 持续时间结束时销毁自身
-            Invoke("SelfDestory", skillTime);
-        }*/
-        
+            GameObject childSkill = (GameObject)Instantiate(Resources.Load(assertPath));
+            Rigidbody2D rb = childSkill.GetComponent<Rigidbody2D>();
+            childSkill.transform.position = transform.position;
+            childSkill.transform.rotation = childRotationAngel;
+            rb.AddForce(childVec.normalized * speed, ForceMode2D.Force);
+        }
+
     }
     // Update is called once per frame
     public override void Update()

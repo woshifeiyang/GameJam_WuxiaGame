@@ -12,12 +12,12 @@ public class EnemyKillZone : MonoBehaviour
             if (other.GetComponent<Monster>().poolBelongTo == null)
             {
                 Destroy(other.gameObject);
-                Debug.Log("destroy out of pool");
+                //Debug.Log("destroy out of pool");
             }
             else
             {
                 EnemyObjectPool.EnemyObjectPoolInstance.PutObjectInPool(other.gameObject);
-                Debug.Log("put object in pool");
+                //Debug.Log("put object in pool");
             }
 
         }

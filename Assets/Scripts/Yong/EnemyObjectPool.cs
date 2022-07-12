@@ -54,15 +54,23 @@ public class EnemyObjectPool : MonoBehaviour
 
     void InitEnemyPoolCount()
     {
+        // current num for each pool
         numCountOfPool.Add("First", 0);
         numCountOfPool.Add("Second", 0);
         numCountOfPool.Add("Third", 0);
         numCountOfPool.Add("Fourth", 0);
         
+        // constant max number of each pool
         numCountOfPool.Add("FirstMax", 0);
         numCountOfPool.Add("SecondMax", 0);
         numCountOfPool.Add("ThirdMax", 0);
         numCountOfPool.Add("FourthMax", 0);
+        
+        // current num of monsters on the field for each pool
+        numCountOfPool.Add("FirstOnField", 0);
+        numCountOfPool.Add("SecondOnField", 0);
+        numCountOfPool.Add("ThirdOnField", 0);
+        numCountOfPool.Add("FourthOnField", 0);
     }
     
     /// <summary>
@@ -186,6 +194,7 @@ public class EnemyObjectPool : MonoBehaviour
             
             // minus pool num by 1 
             numCountOfPool[poolName] --;
+            numCountOfPool[poolName + "OnField"]++;
             return go;
         }
         Debug.Log("Pool is nullptr");
@@ -199,11 +208,15 @@ public class EnemyObjectPool : MonoBehaviour
             Debug.Log("Can not put null object in the pool");
             return;
         }
+
+        string tempPoolName = ob.GetComponent<Monster>().poolBelongTo;
         
-        _enemyPool[ob.GetComponent<Monster>().poolBelongTo].Enqueue(ob);
+        _enemyPool[tempPoolName].Enqueue(ob);
         
         // add one to the pool number counter
-        numCountOfPool[ob.GetComponent<Monster>().poolBelongTo]++;
+        numCountOfPool[tempPoolName]++;
+        numCountOfPool[tempPoolName + "OnField"]--;
+        
         ob.SetActive(false);
         ob.transform.SetParent(EnemyObjectPool.EnemyObjectPoolInstance.objectInPool.transform);
     }

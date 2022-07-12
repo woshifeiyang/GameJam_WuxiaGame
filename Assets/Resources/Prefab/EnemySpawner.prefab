@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8599008191193289619}
   - component: {fileID: 8599008191193289644}
   - component: {fileID: 5159115867889821447}
+  - component: {fileID: 4614396183551652625}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -45,6 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawnCd: 1
+  currentPool: 
+  screenWidthUnit: 9.5
+  screenHeightUnit: 20
+  objectPoolHolder: {fileID: 0}
 --- !u!114 &5159115867889821447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,3 +72,15 @@ MonoBehaviour:
   secondPool: []
   thirdPool: []
   fourthPool: []
+--- !u!114 &4614396183551652625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8599008191193289645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 174698b9d9216664a80722f0fae0d090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

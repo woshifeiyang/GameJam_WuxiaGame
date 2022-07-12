@@ -71,20 +71,20 @@ public class EnemySpawner : MonoBehaviour
 
         float direction = Random.Range(0, 100);
         // 生成在玩家左右两侧
-        if (direction <= 25)
+        if (direction <= 1)
         {
             float x;
-            float y = Random.Range(playerPositionY - 6.0f, playerPositionY + 6.0f);
+            float y = Random.Range(playerPositionY - (screenHeightUnit / 2), playerPositionY + (screenHeightUnit / 2));
             int left = Random.Range(0, 100);
             float randomNum = Random.Range(0.5f, 1.5f);
             if (left <= 50)
             {
-                x = playerPositionX - (screenWidthUnit / 2);
+                x = playerPositionX - (screenWidthUnit / 2) - 0.3f;
                 //x = Random.Range(playerPositionX - (screenWidthUnit/2), playerPositionX - (screenWidthUnit/2) - randomNum);
             }
             else
             {
-                x = playerPositionX + (screenWidthUnit / 2);
+                x = playerPositionX + (screenWidthUnit / 2) + 0.3f;
                 //x = Random.Range(playerPositionX + (screenWidthUnit/2), playerPositionX + (screenWidthUnit/2) + randomNum);
             }
 
@@ -104,7 +104,7 @@ public class EnemySpawner : MonoBehaviour
             }
             else
             {
-                y = playerPositionY - (screenHeightUnit / 2) - 1f;
+                y = playerPositionY - (screenHeightUnit / 2);
                 //y = Random.Range(playerPositionY - 6.0f, playerPositionY - 6.0f - randomNum);
             }
             return new Vector2(x, y);

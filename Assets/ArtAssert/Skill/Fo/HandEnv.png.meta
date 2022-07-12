@@ -1,40 +1,55 @@
 fileFormatVersion: 2
-guid: 7bb8b2b81fedebe43a62502b5a70ee42
+guid: 5e83eda3011984649b92d7e73a94b468
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 140433255743585067
-    second: Hand_0
+      213: 1253092937518684293
+    second: HandEnv_0
   - first:
-      213: 562137124616465177
-    second: Hand_1
+      213: 116376010369833784
+    second: HandEnv_1
   - first:
-      213: 6154574129086443714
-    second: Hand_2
+      213: -1635475349987769140
+    second: HandEnv_2
   - first:
-      213: 221626951010510309
-    second: Hand_3
+      213: 6779638018170936591
+    second: HandEnv_3
   - first:
-      213: -2849654119546418606
-    second: Hand_4
+      213: -8031166070853657643
+    second: HandEnv_4
   - first:
-      213: 3636446236040794570
-    second: Hand_5
+      213: -4431755168151697638
+    second: HandEnv_5
   - first:
-      213: -2108518928582217112
-    second: Hand_6
+      213: -2729497897578389410
+    second: HandEnv_6
   - first:
-      213: 3751353961570923179
-    second: Hand_7
+      213: -7749328303682382912
+    second: HandEnv_7
   - first:
-      213: -711544313521421489
-    second: Hand_8
+      213: 7216519855317506195
+    second: HandEnv_8
   - first:
-      213: -1921727788298035922
-    second: Hand_9
+      213: 1472330556226207769
+    second: HandEnv_9
   - first:
-      213: -8482845576496581372
-    second: Hand_10
+      213: -2585838719035767284
+    second: HandEnv_10
+  - first:
+      213: -7090653663163208140
+    second: HandEnv_11
+  - first:
+      213: -672112618171315650
+    second: HandEnv_12
+  - first:
+      213: -3232986975880216917
+    second: HandEnv_13
+  - first:
+      213: -5352736647696852076
+    second: HandEnv_14
+  - first:
+      213: -9104989443326862030
+    second: HandEnv_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -160,7 +175,112 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hand_0
+      name: HandEnv_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5881a533361e36110800000000000000
+      internalID: 1253092937518684293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HandEnv_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b98766d537d9100800000000000000
+      internalID: 116376010369833784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HandEnv_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc4421595df9d49e0800000000000000
+      internalID: -1635475349987769140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HandEnv_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0ddfc28bdc161e50800000000000000
+      internalID: 6779638018170936591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HandEnv_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5db199e62019b8090800000000000000
+      internalID: -8031166070853657643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HandEnv_5
       rect:
         serializedVersion: 2
         x: 1280
@@ -174,14 +294,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2b7f335d4be2f100800000000000000
-      internalID: 140433255743585067
+      spriteID: a1701dea72e3f72c0800000000000000
+      internalID: -4431755168151697638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hand_1
+      name: HandEnv_6
       rect:
         serializedVersion: 2
         x: 1536
@@ -195,14 +315,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91be2db8cbc1dc700800000000000000
-      internalID: 562137124616465177
+      spriteID: e502aa7af10ee1ad0800000000000000
+      internalID: -2729497897578389410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hand_2
+      name: HandEnv_7
       rect:
         serializedVersion: 2
         x: 1792
@@ -216,14 +336,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c0b104ef80796550800000000000000
-      internalID: 6154574129086443714
+      spriteID: 0c3912b27fad47490800000000000000
+      internalID: -7749328303682382912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hand_3
+      name: HandEnv_8
       rect:
         serializedVersion: 2
         x: 2048
@@ -237,14 +357,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e562a7a980631300800000000000000
-      internalID: 221626951010510309
+      spriteID: 398d0cad29a362460800000000000000
+      internalID: 7216519855317506195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hand_4
+      name: HandEnv_9
       rect:
         serializedVersion: 2
         x: 2304
@@ -258,14 +378,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25a05b72daef378d0800000000000000
-      internalID: -2849654119546418606
+      spriteID: 91001d317d4ce6410800000000000000
+      internalID: 1472330556226207769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hand_5
+      name: HandEnv_10
       rect:
         serializedVersion: 2
         x: 2560
@@ -279,14 +399,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac19400c590477230800000000000000
-      internalID: 3636446236040794570
+      spriteID: c060c69a2614d1cd0800000000000000
+      internalID: -2585838719035767284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hand_6
+      name: HandEnv_11
       rect:
         serializedVersion: 2
         x: 2816
@@ -300,14 +420,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8627ba3b4390db2e0800000000000000
-      internalID: -2108518928582217112
+      spriteID: 43ea5ddaf00f89d90800000000000000
+      internalID: -7090653663163208140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hand_7
+      name: HandEnv_12
       rect:
         serializedVersion: 2
         x: 3072
@@ -321,14 +441,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba270327d8c7f0430800000000000000
-      internalID: 3751353961570923179
+      spriteID: e3a47d0822d2ca6f0800000000000000
+      internalID: -672112618171315650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hand_8
+      name: HandEnv_13
       rect:
         serializedVersion: 2
         x: 3328
@@ -342,14 +462,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f434b9e77361026f0800000000000000
-      internalID: -711544313521421489
+      spriteID: baef13b797f1223d0800000000000000
+      internalID: -3232986975880216917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hand_9
+      name: HandEnv_14
       rect:
         serializedVersion: 2
         x: 3584
@@ -363,14 +483,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2d9f7f12c6a455e0800000000000000
-      internalID: -1921727788298035922
+      spriteID: 49b50d1016247b5b0800000000000000
+      internalID: -5352736647696852076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hand_10
+      name: HandEnv_15
       rect:
         serializedVersion: 2
         x: 3840
@@ -384,8 +504,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4057d6864e0e64a80800000000000000
-      internalID: -8482845576496581372
+      spriteID: 23d12d2775494a180800000000000000
+      internalID: -9104989443326862030
       vertices: []
       indices: 
       edges: []
@@ -393,7 +513,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8714bfd9224e8394da0bfcf7b3641c02
+    spriteID: 8d4639fea628f5145814325866ef0c03
     internalID: 0
     vertices: []
     indices: 

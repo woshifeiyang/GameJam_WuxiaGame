@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 402
-  damage: 100
+  damage: 50
   cd: 1
   speed: 200
   skillNum: 1

@@ -23,18 +23,6 @@ public class UIManager : MonoSingleton<UIManager>
     private GameObject _giftUIObj;
 
     private GameObject _phoneButtonObj;
-    
-    private  BasicPropId basicPropId;
-    
-    // BasicPropUI
-    private Button _bpButton1;
-    private Button _bpButton2;
-    private Button _bpButton3;
-    
-    // SkillListUI
-    private Button _skillButton1;
-    private Button _skillButton2;
-    private Button _skillButton3;
 
     // Start is called before the first frame update
     void Start()
@@ -43,22 +31,12 @@ public class UIManager : MonoSingleton<UIManager>
         {
             _basicPropUIObj = GameObject.Find("BasicPropUI");
             _basicPropUIObj.SetActive(false);
-            
-            _bpButton1 = _basicPropUIObj.transform.Find("Upgrade/BP_Button1").GetComponent<Button>();
-            _bpButton2 = _basicPropUIObj.transform.Find("Upgrade/BP_Button2").GetComponent<Button>();
-            _bpButton3 = _basicPropUIObj.transform.Find("Upgrade/BP_Button3").GetComponent<Button>();
         }
         
         if (GameObject.Find("SkillListUI"))
         {
             _skillListUIObj = GameObject.Find("SkillListUI");
             _skillListUIObj.SetActive(false);
-            Image image = _skillListUIObj.transform.Find("Upgrade/Description").GetComponent<Image>();
-            image.gameObject.SetActive(false);
-            
-            _skillButton1 = _skillListUIObj.transform.Find("Upgrade/Skill_Button1").GetComponent<Button>();
-            _skillButton2 = _skillListUIObj.transform.Find("Upgrade/Skill_Button2").GetComponent<Button>();
-            _skillButton3 = _skillListUIObj.transform.Find("Upgrade/Skill_Button3").GetComponent<Button>();
         }
 
         if (GameObject.Find("PhoneButton"))
@@ -145,7 +123,7 @@ public class UIManager : MonoSingleton<UIManager>
             string skillNamePath = "BP_SkillName" + i;
             string skillDesPath = "BP_SkillDes" + i;
             Button bpButton = _basicPropUIObj.transform.Find(buttonPath).GetComponent<Button>();
-            InitBasicPropButton(bpButton, list[i - 1], basicPropId);
+            InitBasicPropButton(bpButton, list[i - 1]);
             //Image bpImage = bpButton.transform.Find(imagePath).GetComponent<Image>();
             Text skillNameText = bpButton.transform.Find(skillNamePath).GetComponent<Text>();
             skillNameText.text = list[i - 1].KeyName;
@@ -156,6 +134,9 @@ public class UIManager : MonoSingleton<UIManager>
 
     private void InitSkillListUI()
     {
+        Image descriptionPage = _skillListUIObj.transform.Find("Upgrade/Description").GetComponent<Image>();
+        descriptionPage.gameObject.SetActive(false); 
+        
         List<SkillListJson> list = EnemyDetector.GetRandomElements(JsonManager.Instance.skillList, 3);
         for (int i = 1; i <= list.Count; i++)
         {
@@ -163,14 +144,13 @@ public class UIManager : MonoSingleton<UIManager>
             string skillNamePath = "Skill_Name" + i;
             string desButtonPath = "Des_Button" + i;
             Button skillButton = _skillListUIObj.transform.Find(skillButtonPath).GetComponent<Button>();
-            
             Text skillNameText = skillButton.transform.Find(skillNamePath).GetComponent<Text>();
             skillNameText.text = list[i - 1].KeyName;
             Button desButton = skillButton.transform.Find(desButtonPath).GetComponent<Button>();
             InitSkillListButton(skillButton, desButton, list[i - 1]);
         }
     }
-    private void InitBasicPropButton(Button button, BasicPropJson obj, BasicPropId id)
+    private void InitBasicPropButton(Button button, BasicPropJson obj)
     {
         switch (obj.Id)
         {
@@ -207,17 +187,71 @@ public class UIManager : MonoSingleton<UIManager>
         switch (obj.Category)
         {
             case "Bullet":
-                SkillManager.Instance.CreateBulletSkill("Prefab/Skill/Bullet/" + obj.Id, obj.Id);
+                skillButton.onClick.AddListener(()=>{ChooseBulletSkill(obj);});
+                desButton.onClick.AddListener(()=>{ShowSkillInformation(obj);});
                 return;
             case "Scope":
+                skillButton.onClick.AddListener(()=>{ChooseScopeSkill(obj);});
+                desButton.onClick.AddListener(()=>{ShowSkillInformation(obj);});
                 return;
             case "Field":
+                skillButton.onClick.AddListener(()=>{ChooseFieldSkill(obj);});
+                desButton.onClick.AddListener(()=>{ShowSkillInformation(obj);});
                 return;
             case "MultTarget":
+                skillButton.onClick.AddListener(()=>{ChooseMultTargetSkill(obj);});
+                desButton.onClick.AddListener(()=>{ShowSkillInformation(obj);});
                 return;
         }
     }
+
+    private void ShowSkillInformation(SkillListJson obj)
+    {
+        Image descriptionPage = _skillListUIObj.transform.Find("Upgrade/Description").GetComponent<Image>();
+        descriptionPage.gameObject.SetActive(true); 
+        
+        Text skillDesText = _skillListUIObj.transform.Find("Upgrade/Description/SkillDescription").GetComponent<Text>();
+        Text buffDesText = _skillListUIObj.transform.Find("Upgrade/Description/BuffDescription").GetComponent<Text>();
+
+        skillDesText.text = obj.Description;
+        buffDesText.text = obj.Buff;
+        
+    }
+    private void ChooseBulletSkill(SkillListJson obj)
+    {
+        // 加载技能
+        SkillManager.Instance.CreateBulletSkill("Prefab/Skill/Bullet/" + obj.Id, obj.Id);
+        // 从JsonManager的SkillList删除该技能
+        JsonManager.Instance.skillList.Remove(obj);
+        CloseSkillListUI();
+    }
     
+    private void ChooseScopeSkill(SkillListJson obj)
+    {
+        // 加载技能
+        SkillManager.Instance.CreateScopeSkill("Prefab/Skill/Scope/" + obj.Id, obj.Id);
+        // 从JsonManager的SkillList删除该技能
+        JsonManager.Instance.skillList.Remove(obj);
+        CloseSkillListUI();
+    }
+    
+    private void ChooseFieldSkill(SkillListJson obj)
+    {
+        // 加载技能
+        SkillManager.Instance.CreateFieldSkill("Prefab/Skill/Field/" + obj.Id, obj.Id);
+        // 从JsonManager的SkillList删除该技能
+        JsonManager.Instance.skillList.Remove(obj);
+        CloseSkillListUI();
+    }
+    
+    private void ChooseMultTargetSkill(SkillListJson obj)
+    {
+        // 加载技能
+        SkillManager.Instance.CreateMultTargetSkill("Prefab/Skill/MultTarget/" + obj.Id, obj.Id);
+        // 从JsonManager的SkillList删除该技能
+        JsonManager.Instance.skillList.Remove(obj);
+        CloseSkillListUI();
+    }
     
     public void ShowGiftUI()
     {
@@ -232,6 +266,11 @@ public class UIManager : MonoSingleton<UIManager>
         StartCoroutine(CloseBasicPropUI_C());
     }
 
+    public void CloseSkillListUI()
+    {
+        StartCoroutine(CloseSkillListUI_C());
+    }
+    
     public void CloseGiftUI()
     {
         StartCoroutine(CloseGiftUI_C());
@@ -250,6 +289,16 @@ public class UIManager : MonoSingleton<UIManager>
         yield return new WaitForSeconds(0.5f);
         _basicPropUIObj.SetActive(false);
         StopCoroutine(nameof(CloseBasicPropUI_C));
+    }
+    
+    IEnumerator CloseSkillListUI_C()
+    {
+        _skillListUIObj.GetComponent<Animator>().SetBool("isVisable", false);
+        _phoneButtonObj.SetActive(true);
+        RestartGame();
+        yield return new WaitForSeconds(0.5f);
+        _skillListUIObj.SetActive(false);
+        StopCoroutine(nameof(CloseSkillListUI_C));
     }
     
     IEnumerator CloseGiftUI_C()

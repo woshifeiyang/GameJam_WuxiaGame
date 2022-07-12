@@ -62,7 +62,7 @@ public class SkillManager : MonoSingleton<SkillManager>
     }
     
     //创建一个领域类技能
-    public SkillBase CreateFieldSkill(string resName, int id, GameObject parent)
+    public SkillBase CreateFieldSkill(string resName, int id)
     {
         //创建一个上面的linkSkill对象
         FieldSkill fieldSkill = new FieldSkill();

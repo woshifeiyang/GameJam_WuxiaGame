@@ -89,7 +89,7 @@ public class Monster : MonoBehaviour
     {
         if (obj.gameObject.CompareTag("Skill") && isDead == false)
         {
-            Debug.Log(obj.GetComponent<MonoSkillBase>().damage);
+            //Debug.Log(obj.GetComponent<MonoSkillBase>().damage);
             GetDamaged(obj.gameObject);
         }
     }
@@ -117,7 +117,7 @@ public class Monster : MonoBehaviour
 
     public void SetDead()
     {
-        ActiveSKill302();
+        //ActiveSKill302();
         isDead = true;
         _moveSpeed = 0.0f;
         SwitchAnim();
@@ -170,11 +170,11 @@ public class Monster : MonoBehaviour
         }
 
     }
-    public void ActiveSKill302()
+    /*public void ActiveSKill302()
     {
         Debug.Log("技能302激活");
         GameObject.Find("SkillManager").GetComponent<Cure>().CurePlayer(GetDistance());
-    }
+    }*/
 
     private float GetDistance()
     {

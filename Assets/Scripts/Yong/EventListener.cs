@@ -3,14 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class EventListener : MonoSingleton<EventListener>
 {
     public int enemyKills = 0;
     public enum MessageEvent
     {
-        Message_LevelUp,
+        Message_BasicPropLevelUp,
+        Message_GetSkill,
         Message_SpawnBoss,
         Message_KillEnemy,
     }
@@ -18,22 +17,31 @@ public class EventListener : MonoSingleton<EventListener>
     //定义一个字典，用来管理所有的事件
     public Dictionary<MessageEvent, Delegate> MessageList = new Dictionary<MessageEvent, Delegate>();
 
-    private delegate void LevelUp();
+    private delegate void BasicPropLevelUp();
+
+    private delegate void GetSkill();
 
     private delegate void EnemyKills();
 
-    private LevelUp _levelUp;
+    private BasicPropLevelUp _basicPropLevelUp;
 
     private EnemyKills _enemyKills;
+
+    private GetSkill _getSkill;
     
     // Start is called before the first frame update
     void Start()
     {
-        _levelUp = new LevelUp(UIManager.Instance.ShowBasicPropUI);
-        _levelUp += PlayerController.Instance.LevelUp;
+        _basicPropLevelUp = new BasicPropLevelUp(UIManager.Instance.ShowBasicPropUI);
+        _basicPropLevelUp += PlayerController.Instance.LevelUp;
+
+        _getSkill = new GetSkill(UIManager.Instance.ShowSkillListUI);
+        _getSkill += PlayerController.Instance.LevelUp;
+        
         _enemyKills = new EnemyKills(AddEnemyKills);
         
-        AddListener(MessageEvent.Message_LevelUp, _levelUp);
+        AddListener(MessageEvent.Message_BasicPropLevelUp, _basicPropLevelUp);
+        AddListener(MessageEvent.Message_GetSkill, _getSkill);
         AddListener(MessageEvent.Message_KillEnemy, _enemyKills);
     }
     

@@ -23,7 +23,7 @@ public class PlayerController : MonoSingleton<PlayerController>
     // experience
     private float _curExperience;
     private float _totalExperience;
-    private int _level;
+    private int _level = 1;
     
     // moveSpeed
     public float moveSpeed = 1f;
@@ -87,11 +87,8 @@ public class PlayerController : MonoSingleton<PlayerController>
         
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
-        
-        string path = "Prefab/Skill/Bullet/103";
-        string path1 = "Prefab/Skill/Field/303";
-        //SkillManager.Instance.CreateFieldSkill(path1,303, PlayerController.Instance.gameObject);
-        SkillManager.Instance.CreateBulletSkill(path, 103);
+
+        SkillManager.Instance.CreateBulletSkill("Prefab/Skill/Bullet/402", 402);
     }
 
     // Update is called once per frame
@@ -123,7 +120,6 @@ public class PlayerController : MonoSingleton<PlayerController>
     {
         if (col.gameObject.CompareTag("Enemy") && col.gameObject.GetComponent<Monster>().isDead == false)
         {
-            Debug.Log("main character was attacked by enemy");
             if (curHealth - col.gameObject.GetComponent<Monster>().damage > 0.0f)
             {
                 curHealth -= col.gameObject.GetComponent<Monster>().damage;
@@ -188,7 +184,14 @@ public class PlayerController : MonoSingleton<PlayerController>
     {
         if (_totalExperience - _curExperience <= 1.0f)
         {
-            EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_LevelUp);
+            if (_level % 5 == 0)
+            {
+                EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GetSkill);
+            }
+            else
+            {
+                EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_BasicPropLevelUp);
+            }
         }else if (_curExperience < _totalExperience)
         {
             ++_curExperience;

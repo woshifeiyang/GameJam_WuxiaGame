@@ -6381,6 +6381,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3543274579851716129, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8563263027695354970, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
       propertyPath: field of view
       value: 85

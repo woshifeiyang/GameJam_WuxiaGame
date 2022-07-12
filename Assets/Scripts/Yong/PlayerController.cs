@@ -89,8 +89,8 @@ public class PlayerController : MonoSingleton<PlayerController>
         _anim = GetComponent<Animator>();
         
         string path = "Prefab/Skill/Bullet/103";
-        string path1 = "Prefab/Skill/Field/301";
-        SkillManager.Instance.CreateFieldSkill(path1,301, PlayerController.Instance.gameObject);
+        string path1 = "Prefab/Skill/Field/303";
+        SkillManager.Instance.CreateFieldSkill(path1,303, PlayerController.Instance.gameObject);
         //SkillManager.Instance.CreateScopeSkill(path1, 401);
     }
 

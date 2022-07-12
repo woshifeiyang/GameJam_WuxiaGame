@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2217911918567614697}
   - component: {fileID: -3478162349509671747}
   m_Layer: 0
-  m_Name: Skill303
+  m_Name: 303
   m_TagString: Skill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   cd: 3
   range: 1
   animator: {fileID: 0}
-  skillRadius: 3
+  skillRadius: 1
   skill303LastSeconds: 1
   circleLeft: {fileID: 8329058951985160386, guid: 2ed94e78b1eb8b246b95a46158b25653, type: 3}
   circleRight: {fileID: 8329058951985160386, guid: 2ed94e78b1eb8b246b95a46158b25653, type: 3}

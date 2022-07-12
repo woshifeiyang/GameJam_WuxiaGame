@@ -50,7 +50,7 @@ public class Skill303 : FieldSkillBase
             circleTop.GetComponent<CircleCollider2D>().radius = range;
             circleBottomGameobject = Instantiate(circleTop, new Vector2(playerPosition.x, (playerPosition.y - skillRadius)), Quaternion.identity);
             circleBottom.GetComponent<CircleCollider2D>().radius = range;
-            StartCoroutine("SkillLastSeconds");
+            //StartCoroutine("SkillLastSeconds");
             Invoke(nameof(SkillLastSeconds), skill303LastSeconds);
         }
 

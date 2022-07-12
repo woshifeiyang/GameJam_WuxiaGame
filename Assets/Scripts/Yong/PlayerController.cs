@@ -90,8 +90,8 @@ public class PlayerController : MonoSingleton<PlayerController>
         
         string path = "Prefab/Skill/Bullet/103";
         string path1 = "Prefab/Skill/Field/303";
-        SkillManager.Instance.CreateFieldSkill(path1,303, PlayerController.Instance.gameObject);
-        //SkillManager.Instance.CreateScopeSkill(path1, 401);
+        //SkillManager.Instance.CreateFieldSkill(path1,303, PlayerController.Instance.gameObject);
+        SkillManager.Instance.CreateBulletSkill(path, 103);
     }
 
     // Update is called once per frame

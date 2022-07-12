@@ -11,8 +11,8 @@ public class EnemySpawner : MonoBehaviour
 
     public string currentPool;
 
-    public float screenWidthUnit = 5.8f;
-    public float screenHeightUnit = 12.5f;
+    public float screenWidthUnit = 9.5f;
+    public float screenHeightUnit = 20f;
 
     public EnemyObjectPool objectPoolHolder;
     // Start is called before the first frame update
@@ -104,7 +104,7 @@ public class EnemySpawner : MonoBehaviour
             }
             else
             {
-                y = playerPositionY - (screenHeightUnit / 2);
+                y = playerPositionY - (screenHeightUnit / 2) + 1f;
                 //y = Random.Range(playerPositionY - 6.0f, playerPositionY - 6.0f - randomNum);
             }
             return new Vector2(x, y);

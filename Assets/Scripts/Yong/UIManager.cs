@@ -17,6 +17,8 @@ public enum BasicPropId
 public class UIManager : MonoSingleton<UIManager>
 {
     private GameObject _basicPropUIObj;
+
+    private GameObject _skillListUIObj;
     
     private GameObject _giftUIObj;
 
@@ -28,6 +30,11 @@ public class UIManager : MonoSingleton<UIManager>
     private Button _bpButton1;
     private Button _bpButton2;
     private Button _bpButton3;
+    
+    // SkillListUI
+    private Button _skillButton1;
+    private Button _skillButton2;
+    private Button _skillButton3;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +47,18 @@ public class UIManager : MonoSingleton<UIManager>
             _bpButton1 = _basicPropUIObj.transform.Find("Upgrade/BP_Button1").GetComponent<Button>();
             _bpButton2 = _basicPropUIObj.transform.Find("Upgrade/BP_Button2").GetComponent<Button>();
             _bpButton3 = _basicPropUIObj.transform.Find("Upgrade/BP_Button3").GetComponent<Button>();
+        }
+        
+        if (GameObject.Find("SkillListUI"))
+        {
+            _skillListUIObj = GameObject.Find("SkillListUI");
+            _skillListUIObj.SetActive(false);
+            Image image = _skillListUIObj.transform.Find("Upgrade/Description").GetComponent<Image>();
+            image.gameObject.SetActive(false);
+            
+            _skillButton1 = _skillListUIObj.transform.Find("Upgrade/Skill_Button1").GetComponent<Button>();
+            _skillButton2 = _skillListUIObj.transform.Find("Upgrade/Skill_Button2").GetComponent<Button>();
+            _skillButton3 = _skillListUIObj.transform.Find("Upgrade/Skill_Button3").GetComponent<Button>();
         }
 
         if (GameObject.Find("PhoneButton"))
@@ -103,7 +122,16 @@ public class UIManager : MonoSingleton<UIManager>
         _phoneButtonObj.SetActive(false);
         
         InitBasicPropUI();
+        PauseGame();
+    }
+
+    public void ShowSkillListUI()
+    {
+        _skillListUIObj.SetActive(true);
+        _skillListUIObj.GetComponent<Animator>().SetBool("isVisable", true);
+        _phoneButtonObj.SetActive(false);
         
+        InitSkillListUI();
         PauseGame();
     }
 
@@ -118,7 +146,7 @@ public class UIManager : MonoSingleton<UIManager>
             string skillDesPath = "BP_SkillDes" + i;
             Button bpButton = _basicPropUIObj.transform.Find(buttonPath).GetComponent<Button>();
             InitBasicPropButton(bpButton, list[i - 1], basicPropId);
-            Image bpImage = bpButton.transform.Find(imagePath).GetComponent<Image>();
+            //Image bpImage = bpButton.transform.Find(imagePath).GetComponent<Image>();
             Text skillNameText = bpButton.transform.Find(skillNamePath).GetComponent<Text>();
             skillNameText.text = list[i - 1].KeyName;
             Text skillDesText = bpButton.transform.Find(skillDesPath).GetComponent<Text>();
@@ -126,6 +154,22 @@ public class UIManager : MonoSingleton<UIManager>
         }
     }
 
+    private void InitSkillListUI()
+    {
+        List<SkillListJson> list = EnemyDetector.GetRandomElements(JsonManager.Instance.skillList, 3);
+        for (int i = 1; i <= list.Count; i++)
+        {
+            string skillButtonPath = "Upgrade/Skill_Button" + i;
+            string skillNamePath = "Skill_Name" + i;
+            string desButtonPath = "Des_Button" + i;
+            Button skillButton = _skillListUIObj.transform.Find(skillButtonPath).GetComponent<Button>();
+            
+            Text skillNameText = skillButton.transform.Find(skillNamePath).GetComponent<Text>();
+            skillNameText.text = list[i - 1].KeyName;
+            Button desButton = skillButton.transform.Find(desButtonPath).GetComponent<Button>();
+            InitSkillListButton(skillButton, desButton, list[i - 1]);
+        }
+    }
     private void InitBasicPropButton(Button button, BasicPropJson obj, BasicPropId id)
     {
         switch (obj.Id)
@@ -157,6 +201,23 @@ public class UIManager : MonoSingleton<UIManager>
                 return;
         }
     }
+    
+    private void InitSkillListButton(Button skillButton, Button desButton, SkillListJson obj)
+    {
+        switch (obj.Category)
+        {
+            case "Bullet":
+                SkillManager.Instance.CreateBulletSkill("Prefab/Skill/Bullet/" + obj.Id, obj.Id);
+                return;
+            case "Scope":
+                return;
+            case "Field":
+                return;
+            case "MultTarget":
+                return;
+        }
+    }
+    
     
     public void ShowGiftUI()
     {

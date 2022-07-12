@@ -48,7 +48,7 @@ public class SkillManager : MonoSingleton<SkillManager>
     }
     
     //创建一个弹道类技能
-    public SkillBase CreateBulletSkill(string resName, int id, GameObject parent)
+    public SkillBase CreateBulletSkill(string resName, int id)
     {
         //创建一个上面的BulletSkill对象
         BulletSkill bulletSkill = new BulletSkill();

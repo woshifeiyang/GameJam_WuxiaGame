@@ -71,7 +71,7 @@ public class EnemySpawner : MonoBehaviour
 
         float direction = Random.Range(0, 100);
         // 生成在玩家左右两侧
-        if (direction <= 1)
+        if (direction <= 30)
         {
             float x;
             float y = Random.Range(playerPositionY - (screenHeightUnit / 2), playerPositionY + (screenHeightUnit / 2));

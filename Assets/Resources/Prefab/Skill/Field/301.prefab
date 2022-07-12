@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2217911918567614697}
   - component: {fileID: 6166255097908423282}
   m_Layer: 0
-  m_Name: Skill301
+  m_Name: 301
   m_TagString: Skill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,6 +135,6 @@ MonoBehaviour:
   id: 301
   damage: 1000
   cd: 3
-  range: 5
+  range: 1
   animator: {fileID: 0}
   Skill301LastSeconds: 1

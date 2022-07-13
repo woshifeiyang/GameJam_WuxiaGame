@@ -1,18 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BounceBack : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float bounceForce = 1f;
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        
+        if (col.gameObject.CompareTag("Player"))
+        {
+            col.rigidbody.AddForce(col.contacts[0].normal * bounceForce);
+        }
     }
 }

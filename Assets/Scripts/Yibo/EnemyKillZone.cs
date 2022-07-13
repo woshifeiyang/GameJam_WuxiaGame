@@ -9,7 +9,7 @@ public class EnemyKillZone : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            if (other.GetComponent<Monster>().poolBelongTo == null)
+            if (other.GetComponent<Monster>().poolBelongTo == "")
             {
                 Destroy(other.gameObject);
                 //Debug.Log("destroy out of pool");
@@ -21,5 +21,18 @@ public class EnemyKillZone : MonoBehaviour
             }
 
         }
+
+        if (other.CompareTag("EliteEnemy"))
+        {
+            StartCoroutine(moveEliteEnemyAfterSeconds(2f, other.gameObject));
+        }
+    }
+
+    IEnumerator moveEliteEnemyAfterSeconds(float waitedTime, GameObject targetEnemy)
+    {
+        yield return new WaitForSeconds(waitedTime);
+        
+        Vector3 enemyTargetPosition = EnemySpawner.GetRandomPosition();
+        targetEnemy.transform.position = enemyTargetPosition;
     }
 }

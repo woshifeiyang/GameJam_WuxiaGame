@@ -20,7 +20,7 @@ public class Monster : MonoBehaviour
     //怪物是否能够移动
     public bool canMove; 
 
-    public string poolBelongTo;
+    public string poolBelongTo = null;
 
     public Animation deathAnimation;
 
@@ -138,8 +138,9 @@ public class Monster : MonoBehaviour
 
     public void RecycleMonster()
     {
-        if (poolBelongTo != null)
+        if (poolBelongTo != "")
         {
+            Debug.Log("poolRecycle");
             Invoke(nameof(PutObjectInPool), 0f);
             // 从敌人探测器列表中移除该对象
             EnemyDetector.Instance.enemyList.Remove(gameObject);

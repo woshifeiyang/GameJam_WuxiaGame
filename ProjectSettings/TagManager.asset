@@ -8,6 +8,8 @@ TagManager:
   - Skill
   - DamagePopupManager
   - NotDamagableEnemy
+  - EliteEnemy
+  - Boss
   layers:
   - Default
   - TransparentFX

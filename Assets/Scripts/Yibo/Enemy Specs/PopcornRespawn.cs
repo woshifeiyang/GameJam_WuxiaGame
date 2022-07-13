@@ -13,12 +13,9 @@ public class PopcornRespawn : MonoBehaviour
     private Monster monsterComponent;
 
     private Transform[] locations;
-
-    private Transform parentTemp;
+    
     void Start()
     {
-        parentTemp = transform.parent;
-        
         Debug.Log("enter Awake");
         monsterComponent = enemyParent.GetComponent<Monster>();
 
@@ -43,7 +40,7 @@ public class PopcornRespawn : MonoBehaviour
         {
             GameObject tempProduct = Instantiate(deathProduct, locations[i]);
             tempProduct.transform.SetParent(null);
-            tempProduct.GetComponent<Monster>().poolBelongTo = null;
+            tempProduct.GetComponent<Monster>().poolBelongTo = "";
             tempProduct.GetComponent<Monster>().SetAlive();
             tempProduct.GetComponent<Monster>().health = 99999f;
             tempProduct.tag = "NotDamagableEnemy";
@@ -63,7 +60,11 @@ public class PopcornRespawn : MonoBehaviour
     IEnumerator SelfRecycle()
     {
         yield return new WaitForSeconds(1f);
-        transform.SetParent(parentTemp);
+        if (enemyParent.gameObject)
+        {
+            transform.SetParent(enemyParent.transform);
+        }
+
         gameObject.SetActive(false);
     }
     

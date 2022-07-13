@@ -55,6 +55,18 @@ public class EnemyDetector : MonoSingleton<EnemyDetector>
             _nearestEnemy = other.gameObject;
             _hasFoundEnemy = true;
         }
+
+        if (other.gameObject.CompareTag("EliteEnemy") && other.gameObject.GetComponent<Monster>().isDead == false)
+        {
+            _nearestEnemy = other.gameObject;
+            _hasFoundEnemy = true;
+        }
+        
+        if (other.gameObject.CompareTag("Boss") && other.gameObject.GetComponent<Monster>().isDead == false)
+        {
+            _nearestEnemy = other.gameObject;
+            _hasFoundEnemy = true;
+        }
     }
 
     public Vector3 GetNearestEnemyLoc()

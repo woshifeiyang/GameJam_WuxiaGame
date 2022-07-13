@@ -27,6 +27,7 @@ public class Skill303 : FieldSkillBase
     private GameObject circleTopGameobject;
     private GameObject circleBottomGameobject;
 
+
     private Vector3 playerPosition;
     // Start is called before the first frame update
     public override void Start()
@@ -43,13 +44,13 @@ public class Skill303 : FieldSkillBase
         {
             skill303Timer = 0;
             circleLeftGameobject = Instantiate(circleLeft, new Vector2((playerPosition.x - skillRadius), playerPosition.y), Quaternion.identity).gameObject;
-            circleLeft.GetComponent<CircleCollider2D>().radius = range;
+            circleLeft.GetComponent<CircleCollider2D>().radius = 1;
             circleRightGameobject = Instantiate(circleRight, new Vector2((playerPosition.x + skillRadius), playerPosition.y), Quaternion.identity);
-            circleRight.GetComponent<CircleCollider2D>().radius = range;
+            circleRight.GetComponent<CircleCollider2D>().radius = 1;
             circleTopGameobject = Instantiate(circleTop, new Vector2(playerPosition.x, (playerPosition.y + skillRadius)), Quaternion.identity);
-            circleTop.GetComponent<CircleCollider2D>().radius = range;
+            circleTop.GetComponent<CircleCollider2D>().radius = 1;
             circleBottomGameobject = Instantiate(circleTop, new Vector2(playerPosition.x, (playerPosition.y - skillRadius)), Quaternion.identity);
-            circleBottom.GetComponent<CircleCollider2D>().radius = range;
+            circleBottom.GetComponent<CircleCollider2D>().radius = 1;
             //StartCoroutine("SkillLastSeconds");
             Invoke(nameof(SkillLastSeconds), skill303LastSeconds);
         }
@@ -63,4 +64,6 @@ public class Skill303 : FieldSkillBase
         DestroyImmediate(circleTopGameobject, true);
         DestroyImmediate(circleBottomGameobject, true);
     }
+
+
 }

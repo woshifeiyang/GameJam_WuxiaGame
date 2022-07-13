@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DouStk : Strike
 {
-    public static bool dou = false;
+    public bool dou = false;
     // Start is called before the first frame update
    
 

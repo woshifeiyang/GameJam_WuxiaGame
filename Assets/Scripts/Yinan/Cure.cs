@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cure : FieldSkillBase
 {
-    public static bool cure = false;
+    public bool cure = false;
    
     public void EnableCure()
     {

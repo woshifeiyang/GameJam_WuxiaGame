@@ -19,6 +19,10 @@ public class PlayerController : MonoSingleton<PlayerController>
     
     public MMFeedbacks PlayerDamageFeedback;
 
+    public bool canMove = true;
+
+    public Vector2 lastVelocity;
+
     // player parameters
     // experience
     private float _curExperience;
@@ -65,7 +69,8 @@ public class PlayerController : MonoSingleton<PlayerController>
     private Vector3 _importedLocalScale;
 
     private GameObject _floatingJoystick;
-    
+
+    private FloatingJoystick floatingJoystick;
     protected override void InitAwake()
     {
         base.InitAwake();
@@ -89,6 +94,9 @@ public class PlayerController : MonoSingleton<PlayerController>
         _anim = GetComponent<Animator>();
 
         SkillManager.Instance.CreateBulletSkill("Prefab/Skill/Bullet/402", 402);
+
+        floatingJoystick = _floatingJoystick.GetComponent<FloatingJoystick>();
+        canMove = true;
     }
 
     // Update is called once per frame
@@ -103,8 +111,16 @@ public class PlayerController : MonoSingleton<PlayerController>
         _mmProgressBar.UpdateBar01(Mathf.Clamp(curHealth / _healthFinal, 0f, 1f));
         _expBar.UpdateBar01(Mathf.Clamp(_curExperience / _totalExperience, 0f, 1f));
         // 控制玩家移动
-        _movement = _floatingJoystick.GetComponent<FloatingJoystick>().Direction;
-        _rb.MovePosition(_rb.position + _movement * _moveSpeedFinal * Time.deltaTime);
+        _movement = floatingJoystick.Direction;
+        if (canMove)
+        {
+            _rb.MovePosition(_rb.position + _movement * _moveSpeedFinal * Time.deltaTime);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        lastVelocity = _rb.velocity;
     }
 
     private void SwitchAnim()

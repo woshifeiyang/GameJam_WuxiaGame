@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 5243666614868315173}
   - component: {fileID: 5243666614868315172}
   - component: {fileID: 5243666614868315175}
-  - component: {fileID: 5243666614868315178}
   - component: {fileID: 5243666614868315179}
   - component: {fileID: 5243666614868315176}
   - component: {fileID: 6330701687432149144}
   - component: {fileID: 241514865916295343}
+  - component: {fileID: 3120933844455717040}
   m_Layer: 0
   m_Name: Popcorn
   m_TagString: Enemy
@@ -107,32 +107,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &5243666614868315178
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5243666614868315174}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0077451095, y: 0.014351219}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4, y: 0.4}
-    newSize: {x: 1.625, y: 1.3125}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.15450977, y: 0.14959061}
-  m_EdgeRadius: 0
 --- !u!114 &5243666614868315179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,3 +305,19 @@ MonoBehaviour:
     m_RotationOrder: 4
   FlipX: 0
   FlipY: 0
+--- !u!70 &3120933844455717040
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243666614868315174}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.015429825, y: 0.018515809}
+  m_Size: {x: 0.16458482, y: 0.18133733}
+  m_Direction: 0

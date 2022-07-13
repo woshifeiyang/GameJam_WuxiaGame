@@ -952,7 +952,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16fdb80c56a764146b404fcd4a34ccbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceForce: 5
+  bounceForce: 150
+  player: {fileID: 0}
+  bounceTime: 0.3
 --- !u!61 &217474117
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1325,6 +1327,10 @@ PrefabInstance:
     - target: {fileID: 5243666614868315174, guid: 9d984bf38dd3a404498566c25ce58a2e, type: 3}
       propertyPath: m_Name
       value: Boba Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243666614868315174, guid: 9d984bf38dd3a404498566c25ce58a2e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d984bf38dd3a404498566c25ce58a2e, type: 3}
@@ -4791,7 +4797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8599008191193289645, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}

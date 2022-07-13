@@ -146,6 +146,18 @@ public class PlayerController : MonoSingleton<PlayerController>
                 ExitGame();
             }
         }
+        if (col.gameObject.CompareTag("BossSkill"))
+        {
+            if (curHealth - col.gameObject.GetComponent<MonoSkillBase>().damage > 0.0f)
+            {
+                curHealth -= col.gameObject.GetComponent<MonoSkillBase>().damage;
+                PlayerDamageFeedback?.PlayFeedbacks();
+            }
+            else
+            {
+                ExitGame();
+            }
+        }
     }
 
     public void GetDamaged(float damageAmount)

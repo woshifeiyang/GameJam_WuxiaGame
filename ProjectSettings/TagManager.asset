@@ -10,6 +10,7 @@ TagManager:
   - NotDamagableEnemy
   - EliteEnemy
   - Boss
+  - BossSkill
   layers:
   - Default
   - TransparentFX

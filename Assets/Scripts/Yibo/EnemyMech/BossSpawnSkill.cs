@@ -35,11 +35,6 @@ public class BossSpawnSkill : MonoBehaviour
         }
     }
 
-    void BossSpawnMechanics()
-    {
-
-    }
-
     BoxCollider2D GetRandomCollider()
     {
         BoxCollider2D result;

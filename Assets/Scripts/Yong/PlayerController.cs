@@ -29,7 +29,7 @@ public class PlayerController : MonoSingleton<PlayerController>
     public float moveSpeed = 1f;
     public float moveSpeedRatio = 0.3f;
     private int _moveSpeedLevel = 0;
-    private float _moveSpeedFinal;
+    public float _moveSpeedFinal;
 
     // skillCd
     public float skillCdRatio = 0.85f;

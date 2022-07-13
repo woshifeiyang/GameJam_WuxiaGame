@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 6330701687432149144}
   - component: {fileID: 241514865916295343}
   m_Layer: 0
-  m_Name: Boba Boss
+  m_Name: Boss Fo
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -301,7 +301,7 @@ SpriteRenderer:
   m_SortingLayerID: 369755329
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1975095690653377776, guid: 787762d47576d774986782b56f15dcba, type: 3}
+  m_Sprite: {fileID: 7638051527858590695, guid: ac3fa3afa2433194095e517af5f80e0d, type: 3}
   m_Color: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -322,7 +322,7 @@ Animator:
   m_GameObject: {fileID: 5243666614868315174}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c0f703e5242cecc40b1e34f4dee77cd3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5f1ee5e2d2fcf0544aa52d79ad6adc88, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -348,7 +348,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.16}
+    oldSize: {x: 5, y: 5}
     newSize: {x: 1.625, y: 1.3125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

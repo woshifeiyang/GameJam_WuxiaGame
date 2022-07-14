@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,7 +25,7 @@ public class BossSkill_1 : MonoBehaviour
             yield return new WaitForSeconds(cd);
             
             Vector3 vec = PlayerController.Instance.GetPlayerPosition() - transform.position;
-            string assertPath = "Prefab/Enemy/Boss/1";
+            string assertPath = "Prefab/Enemy/Special/BossSkill/1";
             
             for (int i = 0; i < skillNum; i++)
             {
@@ -43,4 +44,5 @@ public class BossSkill_1 : MonoBehaviour
             }
         }
     }
+    
 }

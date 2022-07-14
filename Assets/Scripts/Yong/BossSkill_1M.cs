@@ -16,6 +16,15 @@ public class BossSkill_1M : BulletSkillBase
     {
         if (obj.gameObject.CompareTag("Player"))
         {
+            if (PlayerController.Instance.curHealth - damage > 0.0f)
+            {
+                PlayerController.Instance.curHealth -= damage;
+                PlayerController.Instance.PlayerDamageFeedback?.PlayFeedbacks();
+            }
+            else
+            {
+                EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GameOver);
+            }
             SelfDestory();
         }
     }

@@ -100,6 +100,12 @@ public class UIManager : MonoSingleton<UIManager>
         PlayerController.Instance.HealthLevelUp();
         PlayerController.Instance.updateParameters();
     }
+
+    private void SKillRangeUpgrade()
+    {
+        PlayerController.Instance.SkillRangeUp();
+        PlayerController.Instance.updateParameters();
+    }
     
     public void ShowBasicPropUI()
     {
@@ -184,6 +190,7 @@ public class UIManager : MonoSingleton<UIManager>
                 button.onClick.AddListener(CloseBasicPropUI);
                 return;
             case (int)BasicPropId.ProjectileUpgrade:
+                
                 button.onClick.AddListener(CloseBasicPropUI);
                 return;
             case (int)BasicPropId.AttackSpeedUpgrade:

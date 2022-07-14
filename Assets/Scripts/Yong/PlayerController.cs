@@ -147,18 +147,6 @@ public class PlayerController : MonoSingleton<PlayerController>
                 EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GameOver);
             }
         }
-        if (col.gameObject.CompareTag("BossSkill"))
-        {
-            if (curHealth - col.gameObject.GetComponent<MonoSkillBase>().damage > 0.0f)
-            {
-                curHealth -= col.gameObject.GetComponent<MonoSkillBase>().damage;
-                PlayerDamageFeedback?.PlayFeedbacks();
-            }
-            else
-            {
-                EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GameOver);
-            }
-        }
     }
 
     public void GetDamaged(float damageAmount)
@@ -213,7 +201,7 @@ public class PlayerController : MonoSingleton<PlayerController>
     {
         if (_totalExperience - _curExperience <= 1.0f)
         {
-            if (_level % 5 == 0)
+            if (_level % 2 == 0)
             {
                 EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GetSkill);
             }

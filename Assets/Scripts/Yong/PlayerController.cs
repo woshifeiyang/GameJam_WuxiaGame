@@ -186,8 +186,20 @@ public class PlayerController : MonoSingleton<PlayerController>
     public void HealthLevelUp()
     {
         ++_healthLevel;
+        if (curHealth < maxHealth + (healthRatio * _healthLevel))
+        {
+            curHealth += healthRatio;
+        }
     }
 
+    public void SkillSpeedUp()
+    {
+        ++_skillSpeedLevel;
+    }
+    public void ProjectilesUp()
+    {
+        ++_projectileLevel;
+    }
     public void SkillRangeUp()
     {
         ++_skillRangeLevel;

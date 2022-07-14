@@ -95,6 +95,15 @@ public class UIManager : MonoSingleton<UIManager>
         PlayerController.Instance.updateParameters();
     }
 
+    private void ProjectilesUpgrade()
+    {
+        PlayerController.Instance.ProjectilesUp();
+    }
+
+    private void BallisticSpeedUpgrade()
+    {
+        PlayerController.Instance.SkillSpeedUp();
+    }
     private void HpUpgrade()
     {
         PlayerController.Instance.HealthLevelUp();
@@ -104,7 +113,6 @@ public class UIManager : MonoSingleton<UIManager>
     private void SKillRangeUpgrade()
     {
         PlayerController.Instance.SkillRangeUp();
-        PlayerController.Instance.updateParameters();
     }
     
     public void ShowBasicPropUI()
@@ -190,7 +198,7 @@ public class UIManager : MonoSingleton<UIManager>
                 button.onClick.AddListener(CloseBasicPropUI);
                 return;
             case (int)BasicPropId.ProjectileUpgrade:
-                
+                button.onClick.AddListener(ProjectilesUpgrade);
                 button.onClick.AddListener(CloseBasicPropUI);
                 return;
             case (int)BasicPropId.AttackSpeedUpgrade:
@@ -198,6 +206,7 @@ public class UIManager : MonoSingleton<UIManager>
                 button.onClick.AddListener(CloseBasicPropUI);
                 return;
             case (int)BasicPropId.BallisticSpeedUpgrade:
+                button.onClick.AddListener(BallisticSpeedUpgrade);
                 button.onClick.AddListener(CloseBasicPropUI);
                 return;
             case (int)BasicPropId.CharacterSpeedUpgrade:
@@ -205,6 +214,7 @@ public class UIManager : MonoSingleton<UIManager>
                 button.onClick.AddListener(CloseBasicPropUI);
                 return;
             case (int)BasicPropId.DamageRangeUpgrade:
+                button.onClick.AddListener(SKillRangeUpgrade);
                 button.onClick.AddListener(CloseBasicPropUI);
                 return;
         }

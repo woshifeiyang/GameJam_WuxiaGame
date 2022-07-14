@@ -20,7 +20,8 @@ public class Skill402 : BulletSkillBase
         Quaternion rotation = Quaternion.Euler(0, 0, angle);
         transform.rotation = rotation;
         _rb.AddForce(v.normalized * speed, ForceMode2D.Force);
-
+        // 持续时间结束时销毁自身
+        Invoke("SelfDestory", skillTime);
     }
     // Update is called once per frame
     public override void Update()

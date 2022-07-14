@@ -65,6 +65,9 @@ TextureImporter:
   - first:
       213: -3725264591590717227
     second: Fo_Splash_20
+  - first:
+      213: -475055348295548213
+    second: Fo_Splash_21
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -626,6 +629,27 @@ TextureImporter:
       bones: []
       spriteID: 5d805eb57933d4cc0800000000000000
       internalID: -3725264591590717227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fo_Splash_21
+      rect:
+        serializedVersion: 2
+        x: 10752
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc2c13c7da34869f0800000000000000
+      internalID: -475055348295548213
       vertices: []
       indices: 
       edges: []

@@ -97,6 +97,7 @@ public class PlayerController : MonoSingleton<PlayerController>
 
         floatingJoystick = _floatingJoystick.GetComponent<FloatingJoystick>();
         canMove = true;
+        
     }
 
     // Update is called once per frame
@@ -143,7 +144,7 @@ public class PlayerController : MonoSingleton<PlayerController>
             }
             else
             {
-                ExitGame();
+                EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GameOver);
             }
         }
         if (col.gameObject.CompareTag("BossSkill"))
@@ -155,7 +156,7 @@ public class PlayerController : MonoSingleton<PlayerController>
             }
             else
             {
-                ExitGame();
+                EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GameOver);
             }
         }
     }
@@ -169,7 +170,7 @@ public class PlayerController : MonoSingleton<PlayerController>
         }
         else
         {
-            ExitGame();
+            EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GameOver);
         }
     }
 
@@ -255,6 +256,7 @@ public class PlayerController : MonoSingleton<PlayerController>
     {
         return _healthFinal;
     }
+    
     private void ExitGame()
     {
         //预处理
@@ -264,6 +266,7 @@ public class PlayerController : MonoSingleton<PlayerController>
         Application.Quit();
     #endif
     }
+    
     // update parameters to the value recorder variables
     public void updateParameters()
     {

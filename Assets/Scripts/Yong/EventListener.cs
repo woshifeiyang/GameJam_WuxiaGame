@@ -12,6 +12,7 @@ public class EventListener : MonoSingleton<EventListener>
         Message_GetSkill,
         Message_SpawnBoss,
         Message_KillEnemy,
+        Message_GameOver,
     }
     
     //定义一个字典，用来管理所有的事件
@@ -23,11 +24,15 @@ public class EventListener : MonoSingleton<EventListener>
 
     private delegate void EnemyKills();
 
+    private delegate void GameOver();
+
     private BasicPropLevelUp _basicPropLevelUp;
 
     private EnemyKills _enemyKills;
 
     private GetSkill _getSkill;
+
+    private GameOver _gameOver;
     
     // Start is called before the first frame update
     void Start()
@@ -39,10 +44,13 @@ public class EventListener : MonoSingleton<EventListener>
         _getSkill += PlayerController.Instance.LevelUp;
         
         _enemyKills = new EnemyKills(AddEnemyKills);
+
+        _gameOver = new GameOver(UIManager.Instance.ShowEvaluationUI);
         
         AddListener(MessageEvent.Message_BasicPropLevelUp, _basicPropLevelUp);
         AddListener(MessageEvent.Message_GetSkill, _getSkill);
         AddListener(MessageEvent.Message_KillEnemy, _enemyKills);
+        AddListener(MessageEvent.Message_GameOver, _gameOver);
     }
     
     //消息触发

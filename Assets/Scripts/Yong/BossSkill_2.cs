@@ -24,4 +24,6 @@ public class BossSkill_2 : MonoBehaviour
             
         }
     }
+
+    
 }

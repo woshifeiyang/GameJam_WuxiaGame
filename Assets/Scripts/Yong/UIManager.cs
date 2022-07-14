@@ -19,6 +19,8 @@ public class UIManager : MonoSingleton<UIManager>
     private GameObject _basicPropUIObj;
 
     private GameObject _skillListUIObj;
+
+    private GameObject _evaluationObj;
     
     private GameObject _giftUIObj;
 
@@ -37,6 +39,12 @@ public class UIManager : MonoSingleton<UIManager>
         {
             _skillListUIObj = GameObject.Find("SkillListUI");
             _skillListUIObj.SetActive(false);
+        }
+        
+        if (GameObject.Find("EvaluationUI"))
+        {
+            _evaluationObj = GameObject.Find("EvaluationUI");
+            _evaluationObj.SetActive(false);
         }
 
         if (GameObject.Find("PhoneButton"))
@@ -113,6 +121,14 @@ public class UIManager : MonoSingleton<UIManager>
         PauseGame();
     }
 
+    public void ShowEvaluationUI()
+    {
+        _evaluationObj.SetActive(true);
+        _phoneButtonObj.SetActive(false);
+        
+        PauseGame();
+    }
+
     private void InitBasicPropUI()
     {
         List<BasicPropJson> list = EnemyDetector.GetRandomElements(JsonManager.Instance.basicPropList, 3);
@@ -143,7 +159,12 @@ public class UIManager : MonoSingleton<UIManager>
             string skillButtonPath = "Upgrade/Skill_Button" + i;
             string skillNamePath = "Skill_Name" + i;
             string desButtonPath = "Des_Button" + i;
+            string imagePath = "Skill_Image" + i;
             Button skillButton = _skillListUIObj.transform.Find(skillButtonPath).GetComponent<Button>();
+            
+            Image image = skillButton.transform.Find(imagePath).GetComponent<Image>();
+            UnityEngine.Sprite sprite = Resources.Load(list[i - 1].ResAddress, typeof(UnityEngine.Sprite)) as UnityEngine.Sprite;
+            image.sprite = sprite;
             Text skillNameText = skillButton.transform.Find(skillNamePath).GetComponent<Text>();
             skillNameText.text = list[i - 1].KeyName;
             Button desButton = skillButton.transform.Find(desButtonPath).GetComponent<Button>();

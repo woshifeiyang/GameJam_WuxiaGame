@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +13,6 @@ public class BossSkill_2M : ScopeSkillBase
     {
         _hasFound = false;
         // 持续时间结束时销毁自身
-        Invoke("SelfDestory", skillTime);
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class BossSkill_2M : ScopeSkillBase
         Destroy(gameObject);
     }
     
-    public void MakeDamageOnPlayer()
+    /*public void MakeDamageOnPlayer()
     {
         _colliders = Physics.OverlapSphere(PlayerController.Instance.GetPlayerPosition(), range);
         if (_colliders.Length == 0)
@@ -46,6 +46,24 @@ public class BossSkill_2M : ScopeSkillBase
 
         if (_hasFound)
         {
+            if (PlayerController.Instance.curHealth - damage > 0.0f)
+            {
+                PlayerController.Instance.curHealth -= damage;
+                PlayerController.Instance.PlayerDamageFeedback?.PlayFeedbacks();
+            }
+            else
+            {
+                EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GameOver);
+            }
+        }
+    }*/
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log("damages");
+        if (col.CompareTag("Player"))
+        {
+            Debug.Log("damages");
             if (PlayerController.Instance.curHealth - damage > 0.0f)
             {
                 PlayerController.Instance.curHealth -= damage;

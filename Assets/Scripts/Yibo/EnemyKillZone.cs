@@ -21,18 +21,7 @@ public class EnemyKillZone : MonoBehaviour
             }
 
         }
-
-        if (other.CompareTag("EliteEnemy"))
-        {
-            StartCoroutine(moveEliteEnemyAfterSeconds(2f, other.gameObject));
-        }
     }
 
-    IEnumerator moveEliteEnemyAfterSeconds(float waitedTime, GameObject targetEnemy)
-    {
-        yield return new WaitForSeconds(waitedTime);
-        
-        Vector3 enemyTargetPosition = EnemySpawner.GetRandomPosition();
-        targetEnemy.transform.position = enemyTargetPosition;
-    }
+
 }

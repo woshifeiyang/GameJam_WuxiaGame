@@ -239,6 +239,8 @@ GameObject:
   - component: {fileID: 6330701687432149144}
   - component: {fileID: 241514865916295343}
   - component: {fileID: 1091101535386853692}
+  - component: {fileID: 7299026114413424727}
+  - component: {fileID: 755629543082741024}
   m_Layer: 0
   m_Name: Boss Fo
   m_TagString: Boss
@@ -614,6 +616,35 @@ PolygonCollider2D:
       - {x: 0.575, y: 1.35}
       - {x: 0.575, y: 1.475}
       - {x: 0.55, y: 1.525}
+--- !u!114 &7299026114413424727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243666614868315174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8843281b563e0a47a1b2ade7f7ce154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationAngel: 45
+  cd: 3
+  skillNum: 8
+  speed: 150
+--- !u!114 &755629543082741024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243666614868315174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08bc72778d7ee8148aa6fff15b24191c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cd: 5
 --- !u!1 &5524315569000780145
 GameObject:
   m_ObjectHideFlags: 0

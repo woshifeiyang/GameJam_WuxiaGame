@@ -14,7 +14,7 @@ public class Skill201 : MultTargetSkillBase
             
             if (Random.value > 0.5)
             {
-                Debug.Log("Ëæ»úÍê³É");
+                
                 Invoke("Lightcall1", 0.3f);
             }
         }

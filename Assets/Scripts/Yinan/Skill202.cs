@@ -25,9 +25,9 @@ public class Skill202 : ScopeSkillBase
         
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("Åö×²¼ì²âµ½Íæ¼Ò");
+       
         if (col.gameObject.CompareTag("Player") && triggered == false)
         {
             triggered = true;
@@ -40,6 +40,7 @@ public class Skill202 : ScopeSkillBase
         
         this.GetComponent<CircleCollider2D>().enabled = true;
         //Time.timeScale = 0;
+        Invoke("SelfDestory", 0.6f);
         
     }
 

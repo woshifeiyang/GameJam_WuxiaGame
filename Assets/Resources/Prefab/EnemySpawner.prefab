@@ -47,8 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpawnCd: 1
   currentPool: 
-  screenWidthUnit: 9.5
-  screenHeightUnit: 20
   objectPoolHolder: {fileID: 0}
 --- !u!114 &5159115867889821447
 MonoBehaviour:
@@ -84,3 +82,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 174698b9d9216664a80722f0fae0d090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstLevelEliteEnemy:
+  - {fileID: 5243666614868315174, guid: 5b36e002e2de0ac4bb58557353f95464, type: 3}
+  - {fileID: 5243666614868315174, guid: 5e8628c4a4c12dd4f8f48bc577d4b768, type: 3}
+  - {fileID: 5243666614868315174, guid: bba6e4bd891bb7241bb74b7f341e6481, type: 3}
+  - {fileID: 5243666614868315174, guid: 9d984bf38dd3a404498566c25ce58a2e, type: 3}
+  firstLevelBoss: {fileID: 0}
+  eliteEnemyCd: 60

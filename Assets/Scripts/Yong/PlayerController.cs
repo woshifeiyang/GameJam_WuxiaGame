@@ -93,7 +93,7 @@ public class PlayerController : MonoSingleton<PlayerController>
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
 
-        SkillManager.Instance.CreateBulletSkill("Prefab/Skill/Bullet/402", 402);
+        SkillManager.Instance.CreateFieldSkill("Prefab/Skill/Field/104s1", 104);
 
         floatingJoystick = _floatingJoystick.GetComponent<FloatingJoystick>();
         canMove = true;

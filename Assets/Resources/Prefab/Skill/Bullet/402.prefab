@@ -147,13 +147,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 402
-  damage: 50
-  cd: 1
-  speed: 200
+  damage: 25
+  cd: 2
+  speed: 300
   skillNum: 1
   skillPene: 1
   skillTime: 2
   first: 1
+  HPcure: 1
 --- !u!95 &633404206094256152
 Animator:
   serializedVersion: 3

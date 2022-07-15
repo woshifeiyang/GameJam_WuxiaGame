@@ -12,6 +12,7 @@ public class Skill401 : ScopeSkillBase
     // Start is called before the first frame update
     public override void Start()
     {
+        this.transform.localScale *= ((range * 0.25f)+1);
         _rb = GetComponent<Rigidbody2D>();
         _rb.transform.position = PlayerController.Instance.GetPlayerPosition();
         Invoke("SelfDestory", skillTime);

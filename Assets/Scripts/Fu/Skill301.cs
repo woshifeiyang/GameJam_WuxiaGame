@@ -11,6 +11,7 @@ public class Skill301 : FieldSkillBase
     private float Skill301LastSeconds;
     public override void Start()
     {
+
         this.GetComponent<CircleCollider2D>().radius = range;
         this.GetComponent<CircleCollider2D>().enabled = false;
         animator = this.GetComponent<Animator>();
@@ -22,6 +23,8 @@ public class Skill301 : FieldSkillBase
         skill301Timer += Time.deltaTime;
         if(skill301Timer > cd)
         {
+            //ÉËº¦ÏµÊý
+            damage = 0.3f*PlayerController.Instance.maxHealth;
             skill301Timer = 0;
 
             this.GetComponent<CircleCollider2D>().enabled = !this.GetComponent<CircleCollider2D>().enabled;

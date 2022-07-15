@@ -19,8 +19,9 @@ public class Skill104 : FieldSkillBase
     {
         Destroy(gameObject);
     }
-    private void ColliderOpen()
+    private void SwordCall()
     {
-        this.GetComponent<CircleCollider2D>().enabled = true;
+        GameObject.Find("SkillManager").GetComponent<SwordEmi>().SwordCall1();
+        Debug.Log("Ω£’Û’ŸªΩ");
     }
 }

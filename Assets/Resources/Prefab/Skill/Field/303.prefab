@@ -133,11 +133,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 303
-  damage: 1000
+  damage: 0
   cd: 3
   range: 100
   animator: {fileID: 0}
-  skillRadius: 1
+  skillRadius: 1.5
   skill303LastSeconds: 1
   circleLeft: {fileID: 2700564444382527405, guid: 89eaae61630e11d4e87e11501fb58236, type: 3}
   circleRight: {fileID: 2700564444382527405, guid: 89eaae61630e11d4e87e11501fb58236, type: 3}

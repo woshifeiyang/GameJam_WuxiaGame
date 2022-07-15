@@ -9,7 +9,8 @@ public class Skill402 : BulletSkillBase
 {
     private Rigidbody2D _rb;
     public bool first = true;
-    
+    [SerializeField]
+    private int HPcure;
     // Start is called before the first frame update
     public override void Start()
     {
@@ -32,7 +33,7 @@ public class Skill402 : BulletSkillBase
             {
                 SelfDestory();
                 if (PlayerController.Instance.curHealth < PlayerController.Instance.GetPlayerHealthFinal())
-                    PlayerController.Instance.curHealth += 1;
+                    PlayerController.Instance.curHealth += HPcure;
             }
             Vector3 playerPosition = PlayerController.Instance.GetPlayerPosition();
             Vector3 y = playerPosition - _rb.transform.position;

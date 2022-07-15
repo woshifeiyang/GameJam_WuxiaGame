@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2217911918567614697}
   - component: {fileID: 5265446905703836406}
   m_Layer: 0
-  m_Name: Skill201
+  m_Name: 201m
   m_TagString: Skill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,6 +155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2011
-  damage: 1
+  damage: 50
   cd: 10000
-  skillNum: 3
+  skillNum: 2

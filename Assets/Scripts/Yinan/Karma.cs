@@ -22,7 +22,7 @@ public class Karma : FieldSkillBase
             time = 0;
             if (karma)
             {
-                if(EventListener.Instance.enemyKills - initialKillnumber > 50)
+                if(EventListener.Instance.enemyKills - initialKillnumber > 10)
                 {
                     IncreaseHP();
                 }
@@ -33,7 +33,7 @@ public class Karma : FieldSkillBase
 
     void IncreaseHP()
     {
-        PlayerController.Instance.maxHealth += 5f;
+        PlayerController.Instance.maxHealth += 1f;
         initialKillnumber = EventListener.Instance.enemyKills;
     }
 

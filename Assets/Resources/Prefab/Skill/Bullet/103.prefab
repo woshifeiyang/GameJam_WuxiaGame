@@ -149,10 +149,10 @@ MonoBehaviour:
   damage: 25
   cd: 2
   speed: 150
-  skillNum: 10
+  skillNum: 36
   skillPene: 1
   skillTime: 5
-  rotationAngel: 30
+  rotationAngel: 10
 --- !u!95 &-8812554272505138609
 Animator:
   serializedVersion: 3

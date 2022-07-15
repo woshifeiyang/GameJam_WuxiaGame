@@ -96,9 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16fdb80c56a764146b404fcd4a34ccbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceForce: 500
+  bounceForce: 1000
   player: {fileID: 0}
-  bounceTime: 0.3
+  bounceTime: 0.7
 --- !u!58 &3672709048669840044
 CircleCollider2D:
   m_ObjectHideFlags: 0

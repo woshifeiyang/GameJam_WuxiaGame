@@ -358,7 +358,7 @@ MonoBehaviour:
   BoundSpriteRenderer: {fileID: 5243666614868315172}
   Mode: 0
   Duration: 0.3
-  StartsOff: 0
+  StartsOff: 1
   Channel: 0
   ResetShakerValuesAfterShake: 1
   ResetTargetValuesAfterShake: 1

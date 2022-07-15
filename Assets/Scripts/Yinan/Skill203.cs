@@ -7,7 +7,8 @@ public class Skill203 : FieldSkillBase
  
     public override void Start()
     {
-        _ = GameObject.Find("Player").GetComponent<AntiThunder>().enabled;
+        Debug.Log("À×·´¼¤»î");
+        _ = GameObject.Find("Player").AddComponent<AntiThunder>();
         
     }
     

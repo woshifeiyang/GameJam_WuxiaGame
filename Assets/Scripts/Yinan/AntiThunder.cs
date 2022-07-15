@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class AntiThunder : MonoBehaviour
 {
-    // Start is called before the first frame update
-    
-    void Start()
+    public void Start()
     {
-       
+        
     }
-
-    // Update is called once per frame
-    
-    void OnCollisionEnter2D()
+    public void OnCollisionEnter2D(Collision2D col)
     {
-       GameObject.Find("SkillManager").GetComponent<Strike>().Lightcall();
+        if (col.gameObject.CompareTag("Enemy") && col.gameObject.GetComponent<Monster>().isDead == false)
+        {
+            GameObject.Find("SkillManager").GetComponent<Strike>().Lightcall();
+        }
     }
 }

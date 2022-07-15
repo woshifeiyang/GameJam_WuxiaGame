@@ -6,9 +6,12 @@ public class Skill202 : ScopeSkillBase
 {
     private Rigidbody2D _rb;
     private int randomIndex;
+    private bool triggered = false;
+    private Animator animator;
     // Start is called before the first frame update
     public override void Start()
     {
+        animator = this.GetComponent<Animator>();
         this.transform.localScale = new Vector3(range,range,1);
         //this.GetComponent<CircleCollider2D>().radius = range;
         List<GameObject> visibleenemies;
@@ -20,11 +23,24 @@ public class Skill202 : ScopeSkillBase
             _rb.transform.position = visibleenemies[randomIndex].transform.position;
         }
         
-        
-        Invoke("SelfDestory", skillTime);
-        
+    }
 
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log("Åö×²¼ì²âµ½Íæ¼Ò");
+        if (col.gameObject.CompareTag("Player") && triggered == false)
+        {
+            triggered = true;
+            animator.SetTrigger("lightstorm");
 
+        }
+    }
+    private void ColliderOpen()
+    {
+        
+        this.GetComponent<CircleCollider2D>().enabled = true;
+        //Time.timeScale = 0;
+        
     }
 
     // Update is called once per frame

@@ -8,7 +8,7 @@ public class Skill204 : FieldSkillBase
     
     public override void Start()
     {
-        GameObject.Find("SkillManager").GetComponent<DouStk>().EnableAnti();
+        GameObject.Find("SkillManager").GetComponent<DouStk>().EnableDou();
     }
 
    

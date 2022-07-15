@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b83551d0773c17478796ec5b77010df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPhases: 140000003c000000e8030000
+  spawnPhases: 140000003c00000010270000
   enemiesToSpawn:
   - {fileID: 5243666614868315174, guid: d494a0c0100c12a46904a31cbc2983a6, type: 3}
   - {fileID: 5243666614868315174, guid: 38d3f6f4461eb1548a69394af03372a0, type: 3}

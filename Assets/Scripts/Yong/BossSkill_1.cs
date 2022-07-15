@@ -12,6 +12,8 @@ public class BossSkill_1 : MonoBehaviour
     public int skillNum;
 
     public float speed;
+
+    public int bulletWaveNumber = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +26,19 @@ public class BossSkill_1 : MonoBehaviour
         {
             yield return new WaitForSeconds(cd);
             
+            if (bulletWaveNumber == 3)
+            {
+                bulletWaveNumber = 0;
+            }
+            
             Vector3 vec = PlayerController.Instance.GetPlayerPosition() - transform.position;
             string assertPath = "Prefab/Enemy/Special/BossSkill/1";
             
             for (int i = 0; i < skillNum; i++)
             {
                 GameObject skill = (GameObject)Instantiate(Resources.Load(assertPath));
+                skill.GetComponent<Animator>().SetInteger("ColorSelection", bulletWaveNumber);
+                
                 float childOffsetAngle = i % 2 == 0 ? rotationAngel * (int)((i + 1) / 2) : -1 * rotationAngel * (int)((i + 1) / 2);
                 Quaternion childRotation = Quaternion.Euler(0, 0, childOffsetAngle);
                 Vector3 childVec = childRotation * vec;     // 最终的向量方向
@@ -41,7 +50,12 @@ public class BossSkill_1 : MonoBehaviour
                 skill.transform.position = transform.position;
                 skill.transform.rotation = childRotationAngel;
                 rb.AddForce(childVec.normalized * speed, ForceMode2D.Force);
+                
+                
             }
+            
+            bulletWaveNumber++;
+
         }
     }
     

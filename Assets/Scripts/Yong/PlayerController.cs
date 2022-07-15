@@ -137,7 +137,8 @@ public class PlayerController : MonoSingleton<PlayerController>
     // 被怪物攻击
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Enemy") && col.gameObject.GetComponent<Monster>().isDead == false)
+        if ((col.gameObject.CompareTag("Enemy") || col.gameObject.CompareTag("EliteEnemy") || col.gameObject.CompareTag("Boss"))
+            && col.gameObject.GetComponent<Monster>().isDead == false)
         {
             if (curHealth - col.gameObject.GetComponent<Monster>().damage > 0.0f)
             {

@@ -123,15 +123,9 @@ public class Monster : MonoBehaviour
         SwitchAnim();
 
         //test if the child has children
-        if (monsterId == "102")
+        if (monsterId == "102" || monsterId == "302")
         {
-            if (transform.childCount != 0)
-            {
-                if (transform.GetChild(0).transform.GetChild(0) != null)
-                {
-                    transform.GetChild(0).gameObject.SetActive(true);
-                }
-            }
+            transform.GetChild(0).gameObject.SetActive(true);
         }
         GetComponent<Collider2D>().isTrigger = true;
     }

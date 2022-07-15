@@ -12,6 +12,9 @@ public class Skill303AnimEvent : FieldSkillBase
 
     private void ColliderOpen()
     {
+        //ÉËº¦ÏµÊýºÍ·¶Î§
+        this.transform.localScale *= ((range*0.25f)+1); 
+        damage = 0.5f * PlayerController.Instance.curHealth;
         this.GetComponent<CircleCollider2D>().enabled = true;
         //Time.timeScale = 0;
         Debug.Log(this.GetComponent<CircleCollider2D>().enabled);

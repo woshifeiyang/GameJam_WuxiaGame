@@ -12,6 +12,8 @@ public class Skill102 : BulletSkillBase
     // Start is called before the first frame update
     public override void Start()
     {
+        //伤害系数
+        damage *= 3f;
         _rb = GetComponent<Rigidbody2D>();
         Vector3 vec = EnemyDetector.Instance.GetNearestEnemyLoc() - PlayerController.Instance.transform.position;
         vec.z = 0;

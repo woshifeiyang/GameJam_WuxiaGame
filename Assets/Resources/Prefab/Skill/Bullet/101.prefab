@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 101
-  damage: 25
+  damage: 50
   cd: 2
   speed: 300
   skillNum: 1

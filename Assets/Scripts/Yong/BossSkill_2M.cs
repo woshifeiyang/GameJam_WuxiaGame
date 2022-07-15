@@ -60,10 +60,8 @@ public class BossSkill_2M : ScopeSkillBase
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("damages");
         if (col.CompareTag("Player"))
         {
-            Debug.Log("damages");
             if (PlayerController.Instance.curHealth - damage > 0.0f)
             {
                 PlayerController.Instance.curHealth -= damage;

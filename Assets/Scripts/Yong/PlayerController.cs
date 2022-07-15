@@ -112,16 +112,18 @@ public class PlayerController : MonoSingleton<PlayerController>
         _mmProgressBar.UpdateBar01(Mathf.Clamp(curHealth / _healthFinal, 0f, 1f));
         _expBar.UpdateBar01(Mathf.Clamp(_curExperience / _totalExperience, 0f, 1f));
         // 控制玩家移动
-        _movement = floatingJoystick.Direction;
-        if (canMove)
-        {
-            _rb.MovePosition(_rb.position + _movement * _moveSpeedFinal * Time.deltaTime);
-        }
+
     }
 
     private void FixedUpdate()
     {
         lastVelocity = _rb.velocity;
+        
+        _movement = floatingJoystick.Direction;
+        if (canMove)
+        {
+            _rb.MovePosition(_rb.position + _movement * _moveSpeedFinal * Time.deltaTime);
+        }
     }
 
     private void SwitchAnim()

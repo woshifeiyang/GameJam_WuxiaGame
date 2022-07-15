@@ -24,7 +24,11 @@ public class BounceBack : MonoBehaviour
         if (col.gameObject.CompareTag("Player"))
         {
             player.GetComponent<PlayerController>().canMove = false;
+            rb.velocity = new Vector2(0f, 0f);
             //rb.AddForce( (col.GetContact(0). - player.transform.position) * bounceForce);
+            /*Vector2 Direction = (this.transform.position - player.transform.position).normalized;
+            Debug.Log("x: " + Direction.x + "Y: " + Direction.y);*/
+            rb.AddForce( - col.contacts[0].normal * bounceForce);
             Invoke(nameof(StopBounce),bounceTime);
         }
     }

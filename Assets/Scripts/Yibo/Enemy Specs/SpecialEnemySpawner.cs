@@ -24,6 +24,7 @@ public class SpecialEnemySpawner : MonoBehaviour
     {
         if (secondMarker > eliteEnemyCd && enemySpawnMarker < firstLevelEliteEnemy.Length)
         {
+            Debug.Log("Spawn " + enemySpawnMarker + "elite");
             secondMarker = 0f;
             SpecialEnemySpawn(firstLevelEliteEnemy[enemySpawnMarker]);
             enemySpawnMarker++;

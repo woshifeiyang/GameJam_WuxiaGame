@@ -2528,11 +2528,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5243666614868315173, guid: 9d984bf38dd3a404498566c25ce58a2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.609005
+      value: -11.53
       objectReference: {fileID: 0}
     - target: {fileID: 5243666614868315173, guid: 9d984bf38dd3a404498566c25ce58a2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.960981
+      value: -5.28
       objectReference: {fileID: 0}
     - target: {fileID: 5243666614868315173, guid: 9d984bf38dd3a404498566c25ce58a2e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8650,6 +8650,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4614396183551652625, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
+      propertyPath: eliteEnemyCd
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614396183551652625, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
+      propertyPath: firstLevelBoss
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614396183551652625, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
+      propertyPath: firstLevelEliteEnemy.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614396183551652625, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
+      propertyPath: firstLevelEliteEnemy.Array.data[0]
+      value: 
+      objectReference: {fileID: 5243666614868315174, guid: 5e8628c4a4c12dd4f8f48bc577d4b768, type: 3}
+    - target: {fileID: 4614396183551652625, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
+      propertyPath: firstLevelEliteEnemy.Array.data[1]
+      value: 
+      objectReference: {fileID: 5243666614868315174, guid: 5e8628c4a4c12dd4f8f48bc577d4b768, type: 3}
+    - target: {fileID: 4614396183551652625, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
+      propertyPath: firstLevelEliteEnemy.Array.data[2]
+      value: 
+      objectReference: {fileID: 5243666614868315174, guid: 5e8628c4a4c12dd4f8f48bc577d4b768, type: 3}
+    - target: {fileID: 4614396183551652625, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
+      propertyPath: firstLevelEliteEnemy.Array.data[3]
+      value: 
+      objectReference: {fileID: 5243666614868315174, guid: 5e8628c4a4c12dd4f8f48bc577d4b768, type: 3}
+    - target: {fileID: 5159115867889821447, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5159115867889821447, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
       propertyPath: firstPool.Array.size
       value: 2
@@ -8715,6 +8747,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8599008191193289644, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599008191193289644, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
       propertyPath: currentPool
       value: First
       objectReference: {fileID: 0}
@@ -8736,7 +8772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8599008191193289645, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}

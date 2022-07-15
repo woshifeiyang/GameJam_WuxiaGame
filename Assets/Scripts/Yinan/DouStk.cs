@@ -9,7 +9,7 @@ public class DouStk : Strike
    
 
     // Update is called once per frame
-    public void EnableAnti()
+    public void EnableDou()
     {
         dou = true;
     }

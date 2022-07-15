@@ -961,12 +961,12 @@ MonoBehaviour:
   moveSpeedRatio: 0.3
   _moveSpeedFinal: 0
   skillCdRatio: 0.85
-  curHealth: 50
-  maxHealth: 50
+  curHealth: 100
+  maxHealth: 100
   healthRatio: 5
   attackRatio: 5
-  projectileRatio: 0
-  skillRangeRatio: 0.5
+  projectileRatio: 1
+  skillRangeRatio: 1
   skillSpeedRatio: 40
   spriteManager: {fileID: 0}
 --- !u!50 &8563263028949727389

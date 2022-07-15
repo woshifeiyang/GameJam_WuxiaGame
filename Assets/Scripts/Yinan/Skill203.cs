@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Skill203 : FieldSkillBase
 {
-    
-    
+ 
     public override void Start()
     {
-        //GameObject.Find("Player").AddComponent<AntiThunder>(); ;
-   
+        Debug.Log("À×·´¼¤»î");
+        _ = GameObject.Find("Player").AddComponent<AntiThunder>();
+        
     }
     
 

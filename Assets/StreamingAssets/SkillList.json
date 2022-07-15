@@ -41,19 +41,19 @@
   },
   {
     "Id": 203,
-    "KeyName":"Overload",
+    "KeyName":"Lightning Return",
     "Category":"Field",
     "Description":"When main character was attacked, a lightning strike will be released",
     "Buff":"",
-    "ResAddress":"SkillIcon/Overload"
+    "ResAddress":"SkillIcon/LightningReturn"
   },
   {
     "Id": 204,
-    "KeyName":"Lightning Return",
+    "KeyName":"Overload",
     "Category":"Field",
     "Description":"When releasing lightning strike, there is a 50% chance to release it again",
     "Buff":"",
-    "ResAddress":""
+    "ResAddress":"SkillIcon/OverLoad"
   },
   {
     "Id": 301,
@@ -64,12 +64,28 @@
     "ResAddress":"SkillIcon/MagicCircle"
   },
   {
+    "Id": 302,
+    "KeyName":"Mandala",
+    "Category":"Field",
+    "Description":"When the enemy within the magic circle dies, the character will recover HP",
+    "Buff":"",
+    "ResAddress":"SkillIcon/Mandala"
+  },
+  {
     "Id": 303,
     "KeyName":"Buddha Palms",
     "Category":"Field",
     "Description":"Four Buddha palms appear around the character, performing AOE HP% attack",
     "Buff":"Buff: HP, Damage range",
     "ResAddress":"SkillIcon/BuddhaPalms"
+  },
+  {
+    "Id": 304,
+    "KeyName":"Bad Karma",
+    "Category":"Field",
+    "Description":"Increase the maximum blood volume based on the number of kills/level",
+    "Buff":"",
+    "ResAddress":""
   },
   {
     "Id": 401,

@@ -23,7 +23,6 @@ public class BossSkill_2 : MonoBehaviour
             GameObject skill = (GameObject)Instantiate(Resources.Load(assertPath));
             Vector3 tempPosition = PlayerController.Instance.GetPlayerPosition();
             skill.transform.position = new Vector3(tempPosition.x, tempPosition.y - 1f, tempPosition.z);
-
         }
     }
 

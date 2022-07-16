@@ -13,11 +13,7 @@ public class SwordEmi : MonoSkillBase
     {
         Sword = Resources.Load("Prefab/Skill/Field/104s1") as GameObject;
         SkillObj = Resources.Load("Prefab/Skill/MultTarget/104") as GameObject;
-        if (SkillObj != null)
-        {
-            Debug.Log("½£Õó³õÊ¼»¯");
-        }
-        
+
     }
 
         // Update is called once per frame
@@ -38,7 +34,7 @@ public class SwordEmi : MonoSkillBase
         {
             if (list[i])
             {
-                Debug.Log("½£ÕóÊµÀý»¯");
+                Debug.Log("å‰‘é˜µå®žä¾‹åŒ–");
                 GameObject obj = GameObject.Instantiate(SkillObj);
                 SkillObj.transform.position = list[i].transform.position;
                 obj.GetComponent<MultTargetSkillBase>().damage = Damage + PlayerController.Instance.GetPlayerAttack();
@@ -48,7 +44,7 @@ public class SwordEmi : MonoSkillBase
     public void SwordCall1()
     {
         int num = EnemyDetector.Instance.enemyList.Count;
-        Debug.Log("¹ÖÎïÊýÁ¿" + num);
+        Debug.Log("æ€ªç‰©æ•°é‡" + num);
         if (num > 0)
         {
             List<GameObject> list = EnemyDetector.GetRandomElement(EnemyDetector.Instance.enemyList);

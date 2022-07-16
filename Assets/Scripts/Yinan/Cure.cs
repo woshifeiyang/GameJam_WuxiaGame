@@ -20,9 +20,7 @@ public class Cure : FieldSkillBase
             {
                 if (PlayerController.Instance.curHealth < PlayerController.Instance.maxHealth)
                     PlayerController.Instance.curHealth += PlayerController.Instance.maxHealth/100;
-                Debug.Log("治疗成功");
             }
-            Debug.Log("超出范围");
         }
     }
 }

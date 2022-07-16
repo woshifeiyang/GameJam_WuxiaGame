@@ -126,6 +126,8 @@ public class UIManager : MonoSingleton<UIManager>
     
     public void ShowBasicPropUI()
     {
+        if (_basicPropUIObj.activeSelf) return;
+        
         _basicPropUIObj.SetActive(true);
         _basicPropUIObj.GetComponent<Animator>().SetBool("isVisable", true);
         _phoneButtonObj.SetActive(false);
@@ -136,6 +138,8 @@ public class UIManager : MonoSingleton<UIManager>
 
     public void ShowSkillListUI()
     {
+        if (_skillListUIObj.activeSelf) return;
+        
         _skillListUIObj.SetActive(true);
         _skillListUIObj.GetComponent<Animator>().SetBool("isVisable", true);
         _phoneButtonObj.SetActive(false);
@@ -146,6 +150,8 @@ public class UIManager : MonoSingleton<UIManager>
 
     public void ShowFirstChooseUI()
     {
+        if (_firstChooseUIObj.activeSelf) return;
+        
         _firstChooseUIObj.SetActive(true);
         _firstChooseUIObj.GetComponent<Animator>().SetBool("isVisable", true);
         _phoneButtonObj.SetActive(false);
@@ -155,6 +161,8 @@ public class UIManager : MonoSingleton<UIManager>
     }
     public void ShowEvaluationUI()
     {
+        if (_evaluationUIObj.activeSelf) return;
+        
         _evaluationUIObj.SetActive(true);
         _phoneButtonObj.SetActive(false);
         
@@ -172,7 +180,9 @@ public class UIManager : MonoSingleton<UIManager>
             string skillDesPath = "BP_SkillDes" + i;
             Button bpButton = _basicPropUIObj.transform.Find(buttonPath).GetComponent<Button>();
             InitBasicPropButton(bpButton, list[i - 1]);
-            //Image bpImage = bpButton.transform.Find(imagePath).GetComponent<Image>();
+            Image bpImage = bpButton.transform.Find(imagePath).GetComponent<Image>();
+            UnityEngine.Sprite sprite = Resources.Load(list[i - 1].ResAddress, typeof(UnityEngine.Sprite)) as UnityEngine.Sprite;
+            bpImage.sprite = sprite;
             Text skillNameText = bpButton.transform.Find(skillNamePath).GetComponent<Text>();
             skillNameText.text = list[i - 1].KeyName;
             Text skillDesText = bpButton.transform.Find(skillDesPath).GetComponent<Text>();
@@ -228,30 +238,37 @@ public class UIManager : MonoSingleton<UIManager>
         switch (obj.Id)
         {
             case (int)BasicPropId.DamageUpgrade:
+                button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(DamageUpgrade);
                 button.onClick.AddListener(CloseBasicPropUI);
                 return;
             case (int)BasicPropId.HpUpgrade:
+                button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(HpUpgrade);
                 button.onClick.AddListener(CloseBasicPropUI);
                 return;
             case (int)BasicPropId.ProjectileUpgrade:
+                button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(ProjectilesUpgrade);
                 button.onClick.AddListener(CloseBasicPropUI);
                 return;
             case (int)BasicPropId.AttackSpeedUpgrade:
+                button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(AttackSpeedUpgrade);
                 button.onClick.AddListener(CloseBasicPropUI);
                 return;
             case (int)BasicPropId.BallisticSpeedUpgrade:
+                button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(BallisticSpeedUpgrade);
                 button.onClick.AddListener(CloseBasicPropUI);
                 return;
             case (int)BasicPropId.CharacterSpeedUpgrade:
+                button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(SpeedUpgrade);
                 button.onClick.AddListener(CloseBasicPropUI);
                 return;
             case (int)BasicPropId.DamageRangeUpgrade:
+                button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(SKillRangeUpgrade);
                 button.onClick.AddListener(CloseBasicPropUI);
                 return;
@@ -263,21 +280,25 @@ public class UIManager : MonoSingleton<UIManager>
         switch (obj.Category)
         {
             case "Bullet":
+                skillButton.onClick.RemoveAllListeners();
                 skillButton.onClick.AddListener(()=>{ChooseBulletSkill(obj);});
                 skillButton.onClick.AddListener(()=>{CloseSkillListUI();});
                 desButton.onClick.AddListener(()=>{ShowSkillInformation(obj);});
                 return;
             case "Scope":
+                skillButton.onClick.RemoveAllListeners();
                 skillButton.onClick.AddListener(()=>{ChooseScopeSkill(obj);});
                 skillButton.onClick.AddListener(()=>{CloseSkillListUI();});
                 desButton.onClick.AddListener(()=>{ShowSkillInformation(obj);});
                 return;
             case "Field":
+                skillButton.onClick.RemoveAllListeners();
                 skillButton.onClick.AddListener(()=>{ChooseFieldSkill(obj);});
                 skillButton.onClick.AddListener(()=>{CloseSkillListUI();});
                 desButton.onClick.AddListener(()=>{ShowSkillInformation(obj);});
                 return;
             case "MultTarget":
+                skillButton.onClick.RemoveAllListeners();
                 skillButton.onClick.AddListener(()=>{ChooseMultTargetSkill(obj);});
                 skillButton.onClick.AddListener(()=>{CloseSkillListUI();});
                 desButton.onClick.AddListener(()=>{ShowSkillInformation(obj);});
@@ -290,19 +311,22 @@ public class UIManager : MonoSingleton<UIManager>
         switch (num)
         {
             case 1:
-                Debug.Log("Choose 1");
+                skillButton.onClick.RemoveAllListeners();
                 skillButton.onClick.AddListener(()=>{ChooseBulletSkill(skill);});
                 skillButton.onClick.AddListener(()=>{CloseFirstChooseUI();});
                 return;
             case 2:
+                skillButton.onClick.RemoveAllListeners();
                 skillButton.onClick.AddListener(()=>{ChooseMultTargetSkill(skill);});
                 skillButton.onClick.AddListener(()=>{CloseFirstChooseUI();});
                 return;
             case 3:
+                skillButton.onClick.RemoveAllListeners();
                 skillButton.onClick.AddListener(()=>{ChooseFieldSkill(skill);});
                 skillButton.onClick.AddListener(()=>{CloseFirstChooseUI();});
                 return;
             case 4:
+                skillButton.onClick.RemoveAllListeners();
                 skillButton.onClick.AddListener(()=>{ChooseScopeSkill(skill);});
                 skillButton.onClick.AddListener(()=>{CloseFirstChooseUI();});
                 return;
@@ -325,32 +349,48 @@ public class UIManager : MonoSingleton<UIManager>
     {
         // 加载技能
         SkillManager.Instance.CreateBulletSkill("Prefab/Skill/Bullet/" + obj.Id, obj.Id);
+        Debug.Log("Id of skill is:" + obj.Id);
+        Debug.Log("the num of skillList is: " + JsonManager.Instance.skillList.Count);
         // 从JsonManager的SkillList删除该技能
         JsonManager.Instance.skillList.Remove(obj);
+        Debug.Log(JsonManager.Instance.skillList.Contains(obj));
+        Debug.Log("After delete the num of skillList is: " + JsonManager.Instance.skillList.Count);
     }
     
     private void ChooseScopeSkill(SkillListJson obj)
     {
+        Debug.Log("the num of skillList is: " + JsonManager.Instance.skillList.Count);
         // 加载技能
         SkillManager.Instance.CreateScopeSkill("Prefab/Skill/Scope/" + obj.Id, obj.Id);
+        Debug.Log("Id of skill is:" + obj.Id);
         // 从JsonManager的SkillList删除该技能
         JsonManager.Instance.skillList.Remove(obj);
+        Debug.Log(JsonManager.Instance.skillList.Contains(obj));
+        Debug.Log("After delete the num of skillList is: " + JsonManager.Instance.skillList.Count);
     }
     
     private void ChooseFieldSkill(SkillListJson obj)
     {
+        Debug.Log("the num of skillList is: " + JsonManager.Instance.skillList.Count);
+        Debug.Log("Id of skill is:" + obj.Id);
         // 加载技能
         SkillManager.Instance.CreateFieldSkill("Prefab/Skill/Field/" + obj.Id, obj.Id);
         // 从JsonManager的SkillList删除该技能
         JsonManager.Instance.skillList.Remove(obj);
+        Debug.Log(JsonManager.Instance.skillList.Contains(obj));
+        Debug.Log("After delete the num of skillList is: " + JsonManager.Instance.skillList.Count);
     }
     
     private void ChooseMultTargetSkill(SkillListJson obj)
     {
+        Debug.Log("the num of skillList is: " + JsonManager.Instance.skillList.Count);
+        Debug.Log("Id of skill is:" + obj.Id);
         // 加载技能
         SkillManager.Instance.CreateMultTargetSkill("Prefab/Skill/MultTarget/" + obj.Id, obj.Id);
         // 从JsonManager的SkillList删除该技能
         JsonManager.Instance.skillList.Remove(obj);
+        Debug.Log(JsonManager.Instance.skillList.Contains(obj));
+        Debug.Log("After delete the num of skillList is: " + JsonManager.Instance.skillList.Count);
     }
     
     public void ShowGiftUI()

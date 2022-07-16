@@ -85,7 +85,7 @@
     "Category":"Field",
     "Description":"Increase the maximum blood volume based on the number of kills/level",
     "Buff":"",
-    "ResAddress":""
+    "ResAddress":"SkillIcon/Karma"
   },
   {
     "Id": 401,

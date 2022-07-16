@@ -4,41 +4,37 @@ using UnityEngine;
 
 public class Skill301 : FieldSkillBase
 {
-    [SerializeField]
-    private Animator animator;
-    private float skill301Timer;
-    [SerializeField]
-    private float Skill301LastSeconds;
+    public float skill301Timer;
+
+    public float skillLastTime;
+
+    private CircleCollider2D _cc;
     public override void Start()
     {
-
-        this.GetComponent<CircleCollider2D>().radius = range;
-        this.GetComponent<CircleCollider2D>().enabled = false;
-        animator = this.GetComponent<Animator>();
+        _cc = this.GetComponent<CircleCollider2D>();
+        _cc.radius = range;
+        _cc.enabled = false;
     }
 
     public override void Update()
     {
-
         skill301Timer += Time.deltaTime;
+        _cc.radius = range;
         if(skill301Timer > cd)
         {
-            //ÉËº¦ÏµÊý
-            damage = 0.3f*PlayerController.Instance.maxHealth;
+            //ä¼¤å®³ç³»æ•°
+            damage = 0.3f * PlayerController.Instance.maxHealth;
             skill301Timer = 0;
 
             this.GetComponent<CircleCollider2D>().enabled = !this.GetComponent<CircleCollider2D>().enabled;
 
             StartCoroutine("SkillLastSeconds");
-
-
         }
-
     }
 
     IEnumerator SkillLastSeconds()
     {
-        yield return new WaitForSeconds(Skill301LastSeconds);
+        yield return new WaitForSeconds(skillLastTime);
         this.GetComponent<CircleCollider2D>().enabled = !this.GetComponent<CircleCollider2D>().enabled;
     }
 }

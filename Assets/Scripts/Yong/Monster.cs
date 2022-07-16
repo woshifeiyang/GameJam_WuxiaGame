@@ -134,7 +134,7 @@ public class Monster : MonoBehaviour
     {
         if (poolBelongTo != "")
         {
-            Debug.Log("poolRecycle");
+            //Debug.Log("poolRecycle");
             Invoke(nameof(PutObjectInPool), 0f);
             // 从敌人探测器列表中移除该对象
             EnemyDetector.Instance.enemyList.Remove(gameObject);
@@ -155,11 +155,11 @@ public class Monster : MonoBehaviour
         if (health - totalDamage > 0.0f)
         {
             health -= totalDamage;
-            Debug.Log("Monster health = " + health);
+            //Debug.Log("Monster health = " + health);
         }
         else
         {
-            Debug.Log("Attack damage = " + totalDamage);
+            //Debug.Log("Attack damage = " + totalDamage);
             PlayerController.Instance.IncreaseExperience();
             SetDead();
         }
@@ -167,13 +167,13 @@ public class Monster : MonoBehaviour
     }
     public void ActiveSKill302()
     {
-        Debug.Log("技能302激活");
+        //Debug.Log("技能302激活");
         GameObject.Find("SkillManager").GetComponent<Cure>().CurePlayer(GetDistance());
     }
 
     private float GetDistance()
     {
-        Debug.Log("获取的距离为"+ Vector3.Distance(this.transform.position, PlayerController.Instance.GetPlayerPosition()));
+        //Debug.Log("获取的距离为"+ Vector3.Distance(this.transform.position, PlayerController.Instance.GetPlayerPosition()));
         return Vector3.Distance(this.transform.position, PlayerController.Instance.GetPlayerPosition());
     }
 

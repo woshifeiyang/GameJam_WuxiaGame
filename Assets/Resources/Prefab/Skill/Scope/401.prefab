@@ -101,7 +101,7 @@ MonoBehaviour:
   id: 401
   damage: 25
   cd: 0.2
-  skillTime: 3
+  skillTime: 5
   range: 0
 --- !u!50 &6642257295902386187
 Rigidbody2D:

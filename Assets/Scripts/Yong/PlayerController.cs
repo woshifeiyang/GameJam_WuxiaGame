@@ -109,7 +109,6 @@ public class PlayerController : MonoSingleton<PlayerController>
         
         _mmProgressBar.UpdateBar01(Mathf.Clamp(curHealth / _healthFinal, 0f, 1f));
         _expBar.UpdateBar01(Mathf.Clamp(_curExperience / _totalExperience, 0f, 1f));
-        // 控制玩家移动
 
     }
 
@@ -278,8 +277,8 @@ public class PlayerController : MonoSingleton<PlayerController>
         // Health;
         _healthFinal = maxHealth + (healthRatio * _healthLevel);
 
-        Debug.Log("moveSpeedLevel: " + _moveSpeedLevel);
-        Debug.Log("skillCdLevel: " + _skillCdLevel);
-        Debug.Log("HealthLevel: " + _healthLevel);
+        //Debug.Log("moveSpeedLevel: " + _moveSpeedLevel);
+        //Debug.Log("skillCdLevel: " + _skillCdLevel);
+        //Debug.Log("HealthLevel: " + _healthLevel);
     }
 }

@@ -8,17 +8,14 @@ public class Skill201 : MultTargetSkillBase
     public override void Start()
     {
         bool dou = GameObject.Find("SkillManager").GetComponent<DouStk>().GetDou();
-        Debug.Log("dou" + dou);
+        //Debug.Log("dou" + dou);
         if (dou)
         {
-            
             if (Random.value > 0.5)
             {
-                
                 Invoke("Lightcall1", 0.3f);
             }
         }
-        
         Invoke("SelfDestory", 0.3f);
     }
 
@@ -26,8 +23,7 @@ public class Skill201 : MultTargetSkillBase
     {
         GameObject.Find("SkillManager").GetComponent<Strike>().Lightcall1();
     }
-
-   
+    
     private void SelfDestory()
     {
         Destroy(gameObject);

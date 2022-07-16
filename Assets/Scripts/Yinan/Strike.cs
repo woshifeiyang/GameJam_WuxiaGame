@@ -12,15 +12,15 @@ public class Strike : MonoSkillBase
     void Start()
     {
         SkillObj = Resources.Load("Prefab/Skill/MultTarget/201") as GameObject;
-        if (SkillObj != null)
+        /*if (SkillObj != null)
         {
             Debug.Log("Skill init sucs");
-        }
+        }*/
         SkillObj2 = Resources.Load("Prefab/Skill/MultTarget/201m") as GameObject;
-        if(SkillObj2 != null)
+        /*if(SkillObj2 != null)
         {
             Debug.Log("Skill2 init sucs");
-        }
+        }*/
         UpgradeSkill();
     }
 
@@ -52,7 +52,7 @@ public class Strike : MonoSkillBase
     public void Lightcall1()
     {
         int num = EnemyDetector.Instance.enemyList.Count;
-        Debug.Log("¹ÖÎïÊýÁ¿"+num);
+        Debug.Log("æ€ªç‰©æ•°é‡"+num);
         if (num > 0)
         {
             List<GameObject> list = EnemyDetector.GetRandomElement(EnemyDetector.Instance.enemyList);

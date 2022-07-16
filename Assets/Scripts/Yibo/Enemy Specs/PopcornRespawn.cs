@@ -16,7 +16,7 @@ public class PopcornRespawn : MonoBehaviour
     
     void Start()
     {
-        Debug.Log("enter Awake");
+        //Debug.Log("enter Awake");
         monsterComponent = enemyParent.GetComponent<Monster>();
 
         updateLocatingPoint();

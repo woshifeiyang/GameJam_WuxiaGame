@@ -72,6 +72,6 @@ public class EventListener : MonoSingleton<EventListener>
     public void AddEnemyKills()
     {
         ++enemyKills;
-        Debug.Log("enemyKills is :" + enemyKills);
+        //Debug.Log("enemyKills is :" + enemyKills);
     }
 }

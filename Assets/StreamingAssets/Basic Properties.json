@@ -4,48 +4,48 @@
     "KeyName": "Damage Upgrade",
     "Value": 5.0,
     "Description": "Your damage will increase",
-    "ResAddress": ""
+    "ResAddress": "SkillIcon/DamageUpgrade"
   },
   {
     "Id": 2,
     "KeyName": "HP Upgrade",
     "Value": 5.0,
     "Description": "Your HP will increase",
-    "ResAddress": ""
+    "ResAddress": "SkillIcon/HPUpgrade"
   },
   {
     "Id": 3,
     "KeyName": "Character Speed Upgrade",
     "Value": 0.3,
     "Description": "Your character speed will increase",
-    "ResAddress": ""
+    "ResAddress": "SkillIcon/MoveSpeed"
   },
   {
     "Id": 4,
     "KeyName": "Attack Speed Upgrade",
     "Value": 0.85,
     "Description": "Your attack speed will increase",
-    "ResAddress": ""
+    "ResAddress": "SkillIcon/AttackSpeed"
   },
   {
     "Id": 5,
     "KeyName": "Projectile Upgrade",
     "Value": 1.0,
     "Description": "Your projectile will increase",
-    "ResAddress": ""
+    "ResAddress": "SkillIcon/BulletCopy"
   },
   {
     "Id": 6,
     "KeyName": "Ballistic Speed Upgrade",
     "Value": 40.0,
     "Description": "Your ballistic speed will increase",
-    "ResAddress": ""
+    "ResAddress": "SkillIcon/BulletSpeed"
   },
   {
     "Id": 7,
-    "KeyName": "Damage Range Upgrade",
+    "KeyName": "Skill Range Upgrade",
     "Value": 2.0,
-    "Description": "Your damage range will increase",
-    "ResAddress": ""
+    "Description": "The range of your skill will increase",
+    "ResAddress": "SkillIcon/DamageRange"
   }
 ]

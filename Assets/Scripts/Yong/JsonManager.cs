@@ -60,7 +60,6 @@ public class JsonManager : MonoSingleton<JsonManager>
         JsonData jsonData = JsonMapper.ToObject(text);
         if (jsonData != null)
         {
-            Debug.Log("JsonData BasicProp数量"+ jsonData.Count);
             for (int i = 0; i < jsonData.Count; ++i)
             {
                 BasicPropJson basicPropObj = new BasicPropJson();
@@ -80,7 +79,7 @@ public class JsonManager : MonoSingleton<JsonManager>
         JsonData jsonData = JsonMapper.ToObject(text);
         if (jsonData != null)
         {
-            Debug.Log("JsonData SkillList数量"+ jsonData.Count);
+            //Debug.Log("JsonData SkillList数量"+ jsonData.Count);
             for (int i = 0; i < jsonData.Count; ++i)
             {
                 SkillListJson skillListJson = new SkillListJson();

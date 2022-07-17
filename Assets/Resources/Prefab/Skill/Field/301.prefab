@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 301
   damage: 1000
-  cd: 3
-  range: 10
-  animator: {fileID: 0}
-  Skill301LastSeconds: 1
+  cd: 0.5
+  range: 2
+  skill301Timer: 0
+  skillLastTime: 0.05

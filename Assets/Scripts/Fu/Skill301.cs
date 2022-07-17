@@ -12,18 +12,20 @@ public class Skill301 : FieldSkillBase
     public override void Start()
     {
         _cc = this.GetComponent<CircleCollider2D>();
-        _cc.radius = range;
+        //_cc.radius = range;
         _cc.enabled = false;
+        
     }
 
     public override void Update()
     {
+        this.transform.localScale = new Vector3(range, range, 1f);
         skill301Timer += Time.deltaTime;
-        _cc.radius = range;
+        //_cc.radius = range;
         if(skill301Timer > cd)
         {
-            //伤害系数
-            damage = 0.3f * PlayerController.Instance.maxHealth;
+            //�˺�ϵ��
+            //damage = 0.3f * PlayerController.Instance.maxHealth;
             skill301Timer = 0;
 
             this.GetComponent<CircleCollider2D>().enabled = !this.GetComponent<CircleCollider2D>().enabled;

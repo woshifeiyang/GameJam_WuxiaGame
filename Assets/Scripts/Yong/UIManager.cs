@@ -349,48 +349,36 @@ public class UIManager : MonoSingleton<UIManager>
     {
         // 加载技能
         SkillManager.Instance.CreateBulletSkill("Prefab/Skill/Bullet/" + obj.Id, obj.Id);
-        Debug.Log("Id of skill is:" + obj.Id);
-        Debug.Log("the num of skillList is: " + JsonManager.Instance.skillList.Count);
+        //Debug.Log("Id of skill is:" + obj.Id);
+        //Debug.Log("the num of skillList is: " + JsonManager.Instance.skillList.Count);
         // 从JsonManager的SkillList删除该技能
         JsonManager.Instance.skillList.Remove(obj);
-        Debug.Log(JsonManager.Instance.skillList.Contains(obj));
-        Debug.Log("After delete the num of skillList is: " + JsonManager.Instance.skillList.Count);
+        //Debug.Log(JsonManager.Instance.skillList.Contains(obj));
+        //Debug.Log("After delete the num of skillList is: " + JsonManager.Instance.skillList.Count);
     }
     
     private void ChooseScopeSkill(SkillListJson obj)
     {
-        Debug.Log("the num of skillList is: " + JsonManager.Instance.skillList.Count);
         // 加载技能
         SkillManager.Instance.CreateScopeSkill("Prefab/Skill/Scope/" + obj.Id, obj.Id);
-        Debug.Log("Id of skill is:" + obj.Id);
         // 从JsonManager的SkillList删除该技能
         JsonManager.Instance.skillList.Remove(obj);
-        Debug.Log(JsonManager.Instance.skillList.Contains(obj));
-        Debug.Log("After delete the num of skillList is: " + JsonManager.Instance.skillList.Count);
     }
     
     private void ChooseFieldSkill(SkillListJson obj)
     {
-        Debug.Log("the num of skillList is: " + JsonManager.Instance.skillList.Count);
-        Debug.Log("Id of skill is:" + obj.Id);
         // 加载技能
         SkillManager.Instance.CreateFieldSkill("Prefab/Skill/Field/" + obj.Id, obj.Id);
         // 从JsonManager的SkillList删除该技能
         JsonManager.Instance.skillList.Remove(obj);
-        Debug.Log(JsonManager.Instance.skillList.Contains(obj));
-        Debug.Log("After delete the num of skillList is: " + JsonManager.Instance.skillList.Count);
     }
     
     private void ChooseMultTargetSkill(SkillListJson obj)
     {
-        Debug.Log("the num of skillList is: " + JsonManager.Instance.skillList.Count);
-        Debug.Log("Id of skill is:" + obj.Id);
         // 加载技能
         SkillManager.Instance.CreateMultTargetSkill("Prefab/Skill/MultTarget/" + obj.Id, obj.Id);
         // 从JsonManager的SkillList删除该技能
         JsonManager.Instance.skillList.Remove(obj);
-        Debug.Log(JsonManager.Instance.skillList.Contains(obj));
-        Debug.Log("After delete the num of skillList is: " + JsonManager.Instance.skillList.Count);
     }
     
     public void ShowGiftUI()

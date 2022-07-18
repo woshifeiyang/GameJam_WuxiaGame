@@ -214,15 +214,9 @@ public class PlayerController : MonoSingleton<PlayerController>
     {
         if (_totalExperience - _curExperience <= 1.0f)
         {
-            if (_level % 2 == 0)
-            {
-                //EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GetSkill);
-            }
-            else
-            {
-                EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_BasicPropLevelUp);
-            }
-        }else if (_curExperience < _totalExperience)
+            EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_BasicPropLevelUp);
+        }
+        else if (_curExperience < _totalExperience)
         {
             ++_curExperience;
         }

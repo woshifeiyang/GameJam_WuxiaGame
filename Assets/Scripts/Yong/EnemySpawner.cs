@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : MonoSingleton<EnemySpawner>
 {
     public float enemySpawnCd;
 
@@ -22,7 +22,6 @@ public class EnemySpawner : MonoBehaviour
         
         //InvokeRepeating(nameof(SpawnEnemy), 1.0f, enemySpawnCd); //后期要改
         //InvokeRepeating(nameof(updateSpawnCd), 1.0f, 0.05f);
-        StartCoroutine(SpawnEnemy());
     }
 
     // Update is called once per frame
@@ -49,8 +48,14 @@ public class EnemySpawner : MonoBehaviour
         enemySpawnCd = spawnCdResult;
     }
 
-    IEnumerator SpawnEnemy()
+    public void SpawnEnemy()
     {
+        StartCoroutine(SpawnEnemy_C());
+    }
+    
+    IEnumerator SpawnEnemy_C()
+    {
+        
         while (true)
         {
             yield return new WaitForSeconds(enemySpawnCd);

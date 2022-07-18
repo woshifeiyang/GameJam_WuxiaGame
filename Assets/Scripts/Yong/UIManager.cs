@@ -314,21 +314,25 @@ public class UIManager : MonoSingleton<UIManager>
                 skillButton.onClick.RemoveAllListeners();
                 skillButton.onClick.AddListener(()=>{ChooseBulletSkill(skill);});
                 skillButton.onClick.AddListener(()=>{CloseFirstChooseUI();});
+                skillButton.onClick.AddListener(() => {EnemySpawner.Instance.SpawnEnemy();});
                 return;
             case 2:
                 skillButton.onClick.RemoveAllListeners();
                 skillButton.onClick.AddListener(()=>{ChooseMultTargetSkill(skill);});
                 skillButton.onClick.AddListener(()=>{CloseFirstChooseUI();});
+                skillButton.onClick.AddListener(() => {EnemySpawner.Instance.SpawnEnemy();});
                 return;
             case 3:
                 skillButton.onClick.RemoveAllListeners();
                 skillButton.onClick.AddListener(()=>{ChooseFieldSkill(skill);});
                 skillButton.onClick.AddListener(()=>{CloseFirstChooseUI();});
+                skillButton.onClick.AddListener(() => {EnemySpawner.Instance.SpawnEnemy();});
                 return;
             case 4:
                 skillButton.onClick.RemoveAllListeners();
                 skillButton.onClick.AddListener(()=>{ChooseScopeSkill(skill);});
                 skillButton.onClick.AddListener(()=>{CloseFirstChooseUI();});
+                skillButton.onClick.AddListener(() => {EnemySpawner.Instance.SpawnEnemy();});
                 return;
         }
     }

@@ -222,7 +222,7 @@ MonoBehaviour:
   poolBelongTo: First
   deathAnimation: {fileID: 0}
   DamagePopupManager: {fileID: 0}
-  MMF: {fileID: 0}
+  MMF: {fileID: 984393302730652780}
 --- !u!50 &5243666614868315176
 Rigidbody2D:
   serializedVersion: 4

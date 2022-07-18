@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 301
-  damage: 1000
+  damage: 1
   cd: 0.5
   range: 2
   skill301Timer: 0

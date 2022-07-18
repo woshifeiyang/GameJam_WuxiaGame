@@ -12,7 +12,7 @@ public class Skill202 : ScopeSkillBase
     public override void Start()
     {
         animator = this.GetComponent<Animator>();
-        this.transform.localScale = new Vector3(range,range,1);
+        this.transform.localScale = new Vector3(3+range*1.5f,3+range*1.5f,1);
         //this.GetComponent<CircleCollider2D>().radius = range;
         List<GameObject> visibleenemies;
         visibleenemies = EnemyDetector.Instance.enemyList;
@@ -21,6 +21,7 @@ public class Skill202 : ScopeSkillBase
             randomIndex = Random.Range(0, visibleenemies.Count);
             _rb = GetComponent<Rigidbody2D>();
             _rb.transform.position = visibleenemies[randomIndex].transform.position;
+            _rb.transform.position = _rb.transform.position + (Random.insideUnitSphere);
         }
         
     }
@@ -40,7 +41,7 @@ public class Skill202 : ScopeSkillBase
         
         this.GetComponent<CircleCollider2D>().enabled = true;
         //Time.timeScale = 0;
-        Invoke("SelfDestory", 0.6f);
+        //Invoke("SelfDestory", 0.6f);
         
     }
 

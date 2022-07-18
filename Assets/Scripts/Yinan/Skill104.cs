@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill104 : FieldSkillBase
+public class Skill104 : MultTargetSkillBase
 {
     
     public override void Start()
@@ -22,6 +22,6 @@ public class Skill104 : FieldSkillBase
     private void SwordCall()
     {
         GameObject.Find("SkillManager").GetComponent<SwordEmi>().SwordCall1();
-        Debug.Log("Ω£’Û’ŸªΩ");
+        
     }
 }

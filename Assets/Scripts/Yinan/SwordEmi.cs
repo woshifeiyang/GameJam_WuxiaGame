@@ -34,7 +34,7 @@ public class SwordEmi : MonoSkillBase
         {
             if (list[i])
             {
-                Debug.Log("剑阵实例化");
+               
                 GameObject obj = GameObject.Instantiate(SkillObj);
                 SkillObj.transform.position = list[i].transform.position;
                 obj.GetComponent<MultTargetSkillBase>().damage = Damage + PlayerController.Instance.GetPlayerAttack();
@@ -44,7 +44,6 @@ public class SwordEmi : MonoSkillBase
     public void SwordCall1()
     {
         int num = EnemyDetector.Instance.enemyList.Count;
-        Debug.Log("怪物数量" + num);
         if (num > 0)
         {
             List<GameObject> list = EnemyDetector.GetRandomElement(EnemyDetector.Instance.enemyList);

@@ -142,6 +142,10 @@ public class Monster : MonoBehaviour
 
     public void RecycleMonster()
     {
+        if (monsterId[0] == '3')
+        {
+            EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GetSkill);
+        }
         if (poolBelongTo != "")
         {
             //Debug.Log("poolRecycle");

@@ -216,7 +216,7 @@ public class PlayerController : MonoSingleton<PlayerController>
         {
             if (_level % 2 == 0)
             {
-                EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GetSkill);
+                //EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GetSkill);
             }
             else
             {

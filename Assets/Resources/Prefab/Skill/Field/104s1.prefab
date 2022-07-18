@@ -123,7 +123,7 @@ MonoBehaviour:
   id: 104
   damage: 0
   cd: 0
-  range: 1
+  skillNum: 0
 --- !u!1 &3605120482634809295
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3605120482634809295}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c3421d727fc28a4daf8296842f616b5, type: 3}
   m_Name: 
@@ -198,7 +198,7 @@ MonoBehaviour:
   id: 104
   damage: 0
   cd: 0
-  range: 1
+  skillNum: 0
 --- !u!1 &5956764895685882132
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +322,7 @@ MonoBehaviour:
   id: 104
   damage: 0
   cd: 0
-  range: 1
+  skillNum: 0
 --- !u!1 &6523601532986524798
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,4 +446,4 @@ MonoBehaviour:
   id: 104
   damage: 0
   cd: 0
-  range: 1
+  skillNum: 0

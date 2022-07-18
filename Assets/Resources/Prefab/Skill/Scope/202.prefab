@@ -122,7 +122,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
 --- !u!114 &-5615994479665487382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   damage: 100
   cd: 4
   skillTime: 0.6
-  range: 3
+  range: 0
 --- !u!95 &6455378244226601992
 Animator:
   serializedVersion: 3

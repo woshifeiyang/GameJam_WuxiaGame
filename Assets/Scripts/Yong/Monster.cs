@@ -65,6 +65,7 @@ public class Monster : MonoBehaviour
     {
         MMF = GetComponent<MMFeedbacks>();
         MMF?.ResetFeedbacks();
+        _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 1);
         // DamagePopupManager = GameObject.FindWithTag("DamagePopupManager").GetComponent<DamagePopupManager>();
         
         _importedLocalScale = transform.localScale;

@@ -172,7 +172,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2036539861646664206, guid: eb2e691d5ad142a43bdc9e2a3c800395, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.10094166, a: 1}
+  m_Color: {r: 0.745283, g: 0.19335175, b: 0.24962701, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -370,9 +370,9 @@ MonoBehaviour:
   ModifyColor: 1
   ColorOverTime:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 0}
-    key2: {r: 1, g: 1, b: 1, a: 1}
+    key0: {r: 0.7490196, g: 0.19607843, b: 0.2509804, a: 1}
+    key1: {r: 0.7490196, g: 0.19607843, b: 0.2509804, a: 0}
+    key2: {r: 0.7490196, g: 0.19607843, b: 0.2509804, a: 1}
     key3: {r: 0, g: 0, b: 0, a: 1}
     key4: {r: 0, g: 0, b: 0, a: 1}
     key5: {r: 0, g: 0, b: 0, a: 0}

@@ -36,9 +36,13 @@ public class Monster : MonoBehaviour
 
     private float _distance;
 
+    private SpriteRenderer _spriteRenderer;
+
     private void OnEnable()
     {
         SetAlive();
+        MMF?.ResetFeedbacks();
+        _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 1);
     }
     // 如果怪物在摄像机内可见，添加进敌人探测器的可视怪物列表中
     private void OnBecameVisible()
@@ -52,9 +56,15 @@ public class Monster : MonoBehaviour
             EnemyDetector.Instance.enemyList.Remove(gameObject);
     }
 
+    private void Awake()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     void Start()
     {
         MMF = GetComponent<MMFeedbacks>();
+        MMF?.ResetFeedbacks();
         // DamagePopupManager = GameObject.FindWithTag("DamagePopupManager").GetComponent<DamagePopupManager>();
         
         _importedLocalScale = transform.localScale;

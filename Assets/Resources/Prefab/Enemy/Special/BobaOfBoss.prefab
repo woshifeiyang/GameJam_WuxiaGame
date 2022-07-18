@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6330701687432149144}
   - component: {fileID: 241514865916295343}
   m_Layer: 0
-  m_Name: Boba
+  m_Name: BobaOfBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 932182fd20847c54db45c8c1d96c20ae, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -155,6 +155,7 @@ MonoBehaviour:
   poolBelongTo: 
   deathAnimation: {fileID: 0}
   DamagePopupManager: {fileID: 0}
+  MMF: {fileID: 0}
 --- !u!50 &5243666614868315176
 Rigidbody2D:
   serializedVersion: 4

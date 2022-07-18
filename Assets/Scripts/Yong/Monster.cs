@@ -101,6 +101,10 @@ public class Monster : MonoBehaviour
         {
             //Debug.Log(obj.GetComponent<MonoSkillBase>().damage);
             GetDamaged(obj.gameObject);
+            if (tag == "Boss")
+            {
+                Debug.Log("damage Boss");
+            }
         }
     }
 

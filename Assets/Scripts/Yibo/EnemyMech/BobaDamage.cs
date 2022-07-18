@@ -9,11 +9,9 @@ public class BobaDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("get touched by boba");
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<PlayerController>().GetDamaged(damage);
-            Debug.Log("get damaged by boba");
         }
     }
 }

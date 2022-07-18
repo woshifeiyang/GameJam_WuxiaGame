@@ -29,7 +29,7 @@ public class Skill202 : ScopeSkillBase
     void OnTriggerEnter2D(Collider2D col)
     {
        
-        if (col.gameObject.CompareTag("Player") && triggered == false)
+        if (col.gameObject.CompareTag("Enemy") && triggered == false)
         {
             triggered = true;
             animator.SetTrigger("lightstorm");

@@ -16,7 +16,7 @@ public class Cure : FieldSkillBase
     {
         if (cure)
         {
-            if (distance < range)
+            if (distance < (range+2)*0.5f)
             {
                 if (PlayerController.Instance.curHealth < PlayerController.Instance.maxHealth)
                     PlayerController.Instance.curHealth += PlayerController.Instance.maxHealth/100;

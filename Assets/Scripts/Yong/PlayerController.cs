@@ -96,6 +96,7 @@ public class PlayerController : MonoSingleton<PlayerController>
         floatingJoystick = _floatingJoystick.GetComponent<FloatingJoystick>();
         canMove = true;
         
+        
     }
 
     // Update is called once per frame

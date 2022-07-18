@@ -83,9 +83,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstLevelEliteEnemy:
-  - {fileID: 5243666614868315174, guid: 5b36e002e2de0ac4bb58557353f95464, type: 3}
+  - {fileID: 5243666614868315174, guid: ba67345368c85ea40a527c0948fd399c, type: 3}
   - {fileID: 5243666614868315174, guid: 5e8628c4a4c12dd4f8f48bc577d4b768, type: 3}
-  - {fileID: 5243666614868315174, guid: bba6e4bd891bb7241bb74b7f341e6481, type: 3}
+  - {fileID: 5243666614868315174, guid: 95f92361e95ca324aa356012eb64f697, type: 3}
   - {fileID: 5243666614868315174, guid: 9d984bf38dd3a404498566c25ce58a2e, type: 3}
   firstLevelBoss: {fileID: 0}
   eliteEnemyCd: 60

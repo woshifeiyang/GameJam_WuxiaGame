@@ -11,11 +11,14 @@ public class BounceBack : MonoBehaviour
 
     public float bounceTime = 0.3f;
 
+    public Animator anim;
+
     private Rigidbody2D rb;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rb = player.GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     
@@ -29,6 +32,9 @@ public class BounceBack : MonoBehaviour
             /*Vector2 Direction = (this.transform.position - player.transform.position).normalized;
             Debug.Log("x: " + Direction.x + "Y: " + Direction.y);*/
             rb.AddForce( - col.contacts[0].normal * bounceForce);
+            
+            anim.Play("Base Layer.BounceTrigger", 0, 0f);
+            
             Invoke(nameof(StopBounce),bounceTime);
         }
     }

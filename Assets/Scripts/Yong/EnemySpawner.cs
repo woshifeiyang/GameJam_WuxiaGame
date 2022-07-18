@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
         objectPoolHolder = GetComponent<EnemyObjectPool>();
         
         //InvokeRepeating(nameof(SpawnEnemy), 1.0f, enemySpawnCd); //后期要改
-        InvokeRepeating(nameof(updateSpawnCd), 1.0f, 0.1f);
+        //InvokeRepeating(nameof(updateSpawnCd), 1.0f, 0.05f);
         StartCoroutine(SpawnEnemy());
     }
 
@@ -31,7 +31,11 @@ public class EnemySpawner : MonoBehaviour
         
     }
 
-    
+    private void FixedUpdate()
+    {
+        updateSpawnCd();
+    }
+
     void updateSpawnCd()
     {
         float spawnCdResult = 1f;

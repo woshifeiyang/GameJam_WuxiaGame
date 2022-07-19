@@ -122,7 +122,7 @@ public class PlayerController : MonoSingleton<PlayerController>
     {
         lastVelocity = _rb.velocity;
         
-        _movement = floatingJoystick.Direction;
+        _movement = floatingJoystick.Direction.normalized;
         if (canMove)
         {
             _rb.MovePosition(_rb.position + _movement * _moveSpeedFinal * Time.deltaTime);

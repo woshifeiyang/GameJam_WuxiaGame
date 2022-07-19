@@ -8339,11 +8339,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4614396183551652625, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
       propertyPath: eliteEnemyCd
-      value: 1
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5159115867889821447, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
       propertyPath: firstPool.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5159115867889821447, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
       propertyPath: firstPool.Array.data[0].name
@@ -8355,11 +8355,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5159115867889821447, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
       propertyPath: firstPool.Array.data[2].name
-      value: 
+      value: Boba
       objectReference: {fileID: 0}
     - target: {fileID: 5159115867889821447, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
       propertyPath: firstPool.Array.data[2].count
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8599008191193289619, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
       propertyPath: m_RootOrder
@@ -12089,11 +12089,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8563263028949727388, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
       propertyPath: curHealth
-      value: 10000
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8563263028949727388, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
       propertyPath: maxHealth
-      value: 10000
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8563263028949727388, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
       propertyPath: attackLevel

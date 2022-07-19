@@ -65,6 +65,7 @@ public class Monster : MonoBehaviour
     {
         MMF = GetComponent<MMFeedbacks>();
         MMF?.ResetFeedbacks();
+        _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 1);
         // DamagePopupManager = GameObject.FindWithTag("DamagePopupManager").GetComponent<DamagePopupManager>();
         
         _importedLocalScale = transform.localScale;
@@ -101,6 +102,10 @@ public class Monster : MonoBehaviour
         {
             //Debug.Log(obj.GetComponent<MonoSkillBase>().damage);
             GetDamaged(obj.gameObject);
+            if (tag == "Boss")
+            {
+                Debug.Log("damage Boss");
+            }
         }
     }
 
@@ -142,6 +147,10 @@ public class Monster : MonoBehaviour
 
     public void RecycleMonster()
     {
+        if (monsterId[0] == '3')
+        {
+            EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GetSkill);
+        }
         if (poolBelongTo != "")
         {
             //Debug.Log("poolRecycle");

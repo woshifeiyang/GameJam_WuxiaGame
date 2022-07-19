@@ -102,10 +102,15 @@ public class PlayerController : MonoSingleton<PlayerController>
     // Update is called once per frame
     void Update()
     {
-        if (_movement.x != 0)
+        if (_movement.x > 0)
         {
-            transform.localScale = new Vector3(_movement.x * _importedLocalScale.x, _importedLocalScale.y, _importedLocalScale.z);
+            transform.localScale = new Vector3(1 * _importedLocalScale.x, _importedLocalScale.y, _importedLocalScale.z);
         }
+        else if (_movement.x < 0)
+        {
+            transform.localScale = new Vector3(-1 * _importedLocalScale.x, _importedLocalScale.y, _importedLocalScale.z);
+        }
+
         SwitchAnim();
         
         _mmProgressBar.UpdateBar01(Mathf.Clamp(curHealth / _healthFinal, 0f, 1f));

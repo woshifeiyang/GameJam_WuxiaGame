@@ -12096,6 +12096,10 @@ PrefabInstance:
       value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8563263028949727388, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563263028949727388, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
       propertyPath: attackLevel
       value: 1
       objectReference: {fileID: 0}
@@ -12579,8 +12583,8 @@ MonoBehaviour:
   handleRange: 1
   deadZone: 0
   axisOptions: 0
-  snapX: 1
-  snapY: 1
+  snapX: 0
+  snapY: 0
   background: {fileID: 7642904424588332792}
   handle: {fileID: 3146555979188571387}
 --- !u!114 &3146555978962269052

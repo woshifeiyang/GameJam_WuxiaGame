@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public enum BasicPropId
 {
@@ -183,9 +184,11 @@ public class UIManager : MonoSingleton<UIManager>
             Image bpImage = bpButton.transform.Find(imagePath).GetComponent<Image>();
             UnityEngine.Sprite sprite = Resources.Load(list[i - 1].ResAddress, typeof(UnityEngine.Sprite)) as UnityEngine.Sprite;
             bpImage.sprite = sprite;
-            Text skillNameText = bpButton.transform.Find(skillNamePath).GetComponent<Text>();
+            TextMeshProUGUI skillNameText = bpButton.transform.Find(skillNamePath).GetComponent<TextMeshProUGUI>();
+            //Text skillNameText = bpButton.transform.Find(skillNamePath).GetComponent<Text>();
             skillNameText.text = list[i - 1].KeyName;
-            Text skillDesText = bpButton.transform.Find(skillDesPath).GetComponent<Text>();
+            TextMeshProUGUI skillDesText = bpButton.transform.Find(skillDesPath).GetComponent<TextMeshProUGUI>();
+            //Text skillDesText = bpButton.transform.Find(skillDesPath).GetComponent<Text>();
             skillDesText.text = list[i - 1].Description + " " + list[i - 1].Value;
         }
     }
@@ -340,10 +343,13 @@ public class UIManager : MonoSingleton<UIManager>
     private void ShowSkillInformation(SkillListJson obj)
     {
         Image descriptionPage = _skillListUIObj.transform.Find("Upgrade/Description").GetComponent<Image>();
-        descriptionPage.gameObject.SetActive(true); 
-        
-        Text skillDesText = _skillListUIObj.transform.Find("Upgrade/Description/SkillDescription").GetComponent<Text>();
-        Text buffDesText = _skillListUIObj.transform.Find("Upgrade/Description/BuffDescription").GetComponent<Text>();
+        descriptionPage.gameObject.SetActive(true);
+
+        TextMeshProUGUI skillDesText = _skillListUIObj.transform.Find("Upgrade/Description/SkillDescription").GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI buffDesText = _skillListUIObj.transform.Find("Upgrade/Description/BuffDescription").GetComponent<TextMeshProUGUI>();
+
+        //Text skillDesText = _skillListUIObj.transform.Find("Upgrade/Description/SkillDescription").GetComponent<Text>();
+        //Text buffDesText = _skillListUIObj.transform.Find("Upgrade/Description/BuffDescription").GetComponent<Text>();
 
         skillDesText.text = obj.Description;
         buffDesText.text = obj.Buff;

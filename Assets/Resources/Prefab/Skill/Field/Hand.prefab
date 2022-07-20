@@ -167,7 +167,7 @@ MonoBehaviour:
   id: 0
   damage: 100
   cd: 1
-  range: 0
+  range: 4
   colliderLastTime: 0.02
 --- !u!1 &2700564444420341293
 GameObject:

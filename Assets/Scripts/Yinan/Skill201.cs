@@ -23,7 +23,12 @@ public class Skill201 : MultTargetSkillBase
     {
         GameObject.Find("SkillManager").GetComponent<Strike>().Lightcall1();
     }
-    
+
+    private void Lightcall()
+    {
+        GameObject.Find("SkillManager").GetComponent<Strike>().Lightcall();
+    }
+
     private void SelfDestory()
     {
         Destroy(gameObject);

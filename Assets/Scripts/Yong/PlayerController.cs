@@ -117,6 +117,11 @@ public class PlayerController : MonoSingleton<PlayerController>
         
         _mmProgressBar.UpdateBar01(Mathf.Clamp(curHealth / _healthFinal, 0f, 1f));
         _expBar.UpdateBar01(Mathf.Clamp(_curExperience / _totalExperience, 0f, 1f));
+        
+        if (Input.GetKeyDown (KeyCode.Space))
+        {
+            EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GetSkill);
+        }
 
     }
 
@@ -154,6 +159,7 @@ public class PlayerController : MonoSingleton<PlayerController>
                 }
                 else
                 {
+                    curHealth = 0.0f;
                     EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GameOver);
                 }
             }

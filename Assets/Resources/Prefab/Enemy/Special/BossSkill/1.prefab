@@ -155,9 +155,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  damage: 10
+  damage: 20
   cd: 0
   speed: 0
   skillNum: 0
   skillPene: 0
-  skillTime: 3
+  skillTime: 5

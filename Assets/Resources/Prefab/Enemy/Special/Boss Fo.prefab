@@ -628,9 +628,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8843281b563e0a47a1b2ade7f7ce154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationAngel: 45
+  rotationAngel: 30
   cd: 3
-  skillNum: 8
+  skillNum: 12
   speed: 150
   bulletWaveNumber: 0
 --- !u!114 &755629543082741024

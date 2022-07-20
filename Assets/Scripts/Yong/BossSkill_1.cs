@@ -53,7 +53,6 @@ public class BossSkill_1 : MonoBehaviour
                 
                 
             }
-            
             bulletWaveNumber++;
 
         }

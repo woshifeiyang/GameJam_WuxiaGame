@@ -162,8 +162,32 @@ public class PlayerController : MonoSingleton<PlayerController>
                     curHealth = 0.0f;
                     EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GameOver);
                 }
+                
+                BounceEnemy(1f, 0.3f, col);
             }
         }
+    }
+
+    private void BounceEnemy(float bounceForce, float bounceTime, Collision2D targetCollider)
+    {
+        Debug.Log("bounce Enemy");
+        
+        Monster tempM = targetCollider.gameObject.GetComponent<Monster>();
+        Rigidbody2D rb = targetCollider.gameObject.GetComponent<Rigidbody2D>();
+
+        float tempSpeed = tempM.moveSpeed;
+        tempM.moveSpeed = 0f;
+
+        rb.velocity = new Vector2(0f, 0f);
+        rb.AddForce( - targetCollider.contacts[0].normal * bounceForce);
+
+        StartCoroutine(StopBounceMonster(bounceTime,tempM,tempSpeed));
+    }
+
+    IEnumerator StopBounceMonster(float stopBounceSecond, Monster monsterComponent, float recoverSpeed)
+    {
+        yield return new WaitForSeconds(stopBounceSecond);
+        monsterComponent.moveSpeed = recoverSpeed;
     }
 
     public void GetDamaged(float damageAmount)

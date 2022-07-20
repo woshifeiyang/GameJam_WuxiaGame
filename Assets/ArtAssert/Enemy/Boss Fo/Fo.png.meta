@@ -14,6 +14,48 @@ TextureImporter:
   - first:
       213: 1344354930679996387
     second: Fo_3
+  - first:
+      213: 5179202891695282042
+    second: Fo_4
+  - first:
+      213: -4085212263206869817
+    second: Fo_5
+  - first:
+      213: -4267700911110118020
+    second: Fo_6
+  - first:
+      213: 135440078810102332
+    second: Fo_7
+  - first:
+      213: 731803330953491862
+    second: Fo_8
+  - first:
+      213: -7884037437270211428
+    second: Fo_9
+  - first:
+      213: -240626157112212965
+    second: Fo_10
+  - first:
+      213: 824683872074770194
+    second: Fo_11
+  - first:
+      213: 3508971891628085921
+    second: Fo_12
+  - first:
+      213: 4503304236343693002
+    second: Fo_13
+  - first:
+      213: -180252953312241860
+    second: Fo_14
+  - first:
+      213: 5409897900525649517
+    second: Fo_15
+  - first:
+      213: 5594632455700613247
+    second: Fo_16
+  - first:
+      213: 2992534786150171367
+    second: Fo_17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -180,8 +222,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 200
-        height: 200
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,10 +241,10 @@ TextureImporter:
       name: Fo_1
       rect:
         serializedVersion: 2
-        x: 200
+        x: 512
         y: 0
-        width: 200
-        height: 200
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,10 +262,10 @@ TextureImporter:
       name: Fo_2
       rect:
         serializedVersion: 2
-        x: 400
+        x: 1024
         y: 0
-        width: 200
-        height: 200
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,10 +283,10 @@ TextureImporter:
       name: Fo_3
       rect:
         serializedVersion: 2
-        x: 600
+        x: 1536
         y: 0
-        width: 200
-        height: 200
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,6 +296,300 @@ TextureImporter:
       bones: []
       spriteID: 3efd93fcfab18a210800000000000000
       internalID: 1344354930679996387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fo_4
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a775c23e69930e740800000000000000
+      internalID: 5179202891695282042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fo_5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c42c7b47196e47c0800000000000000
+      internalID: -4085212263206869817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fo_6
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c75aba1f1a416c4c0800000000000000
+      internalID: -4267700911110118020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fo_7
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ab3d9b80e21e100800000000000000
+      internalID: 135440078810102332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fo_8
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6953ee29043e72a00800000000000000
+      internalID: 731803330953491862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fo_9
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c94c0a3e8b5469290800000000000000
+      internalID: -7884037437270211428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fo_10
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b12c8a5f8cf19acf0800000000000000
+      internalID: -240626157112212965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fo_11
+      rect:
+        serializedVersion: 2
+        x: 5632
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 217a20fbc9dd17b00800000000000000
+      internalID: 824683872074770194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fo_12
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a29257185f52b030800000000000000
+      internalID: 3508971891628085921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fo_13
+      rect:
+        serializedVersion: 2
+        x: 6656
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace07cae753fe7e30800000000000000
+      internalID: 4503304236343693002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fo_14
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c37db1cd4ec9f7df0800000000000000
+      internalID: -180252953312241860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fo_15
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e76f74a71d31b40800000000000000
+      internalID: 5409897900525649517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fo_16
+      rect:
+        serializedVersion: 2
+        x: 8192
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7808eaa39024ad40800000000000000
+      internalID: 5594632455700613247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fo_17
+      rect:
+        serializedVersion: 2
+        x: 8704
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e20b7a688e978920800000000000000
+      internalID: 2992534786150171367
       vertices: []
       indices: 
       edges: []

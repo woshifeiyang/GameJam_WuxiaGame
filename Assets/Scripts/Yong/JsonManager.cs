@@ -38,22 +38,14 @@ public class JsonManager : MonoSingleton<JsonManager>
     public List<BasicPropJson> basicPropList;
 
     public List<SkillListJson> skillList;
-    
-    // Start is called before the first frame update
-    void Start()
+
+    public void InitJsonManager()
     {
         basicPropList = new List<BasicPropJson>();
         skillList = new List<SkillListJson>();
         ParseBasicPropJson();
         ParseSkillListJson();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ParseBasicPropJson()
     {
         string text = GetTextForStreamingAssets("Basic Properties.json");

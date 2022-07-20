@@ -29,52 +29,30 @@ public class UIManager : MonoSingleton<UIManager>
 
     private GameObject _phoneButtonObj;
 
-    // Start is called before the first frame update
-    void Start()
+    protected override void InitAwake()
     {
-        if (GameObject.Find("BasicPropUI"))
-        {
-            _basicPropUIObj = GameObject.Find("BasicPropUI");
-            _basicPropUIObj.SetActive(false);
-        }
-        
-        if (GameObject.Find("SkillListUI"))
-        {
-            _skillListUIObj = GameObject.Find("SkillListUI");
-            _skillListUIObj.SetActive(false);
-        }
-        
-        if (GameObject.Find("EvaluationUI"))
-        {
-            _evaluationUIObj = GameObject.Find("EvaluationUI");
-            _evaluationUIObj.SetActive(false);
-        }
-
-        if (GameObject.Find("FirstChooseUI"))
-        {
-            _firstChooseUIObj = GameObject.Find("FirstChooseUI");
-            _firstChooseUIObj.SetActive(false);
-        }
-
-        if (GameObject.Find("PhoneButton"))
-        {
-            _phoneButtonObj = GameObject.Find("PhoneButton");
-            _phoneButtonObj.SetActive(true);
-        }
-
-        if (GameObject.Find("GiftUI"))
-        {
-            _giftUIObj = GameObject.Find("GiftUI");
-            _giftUIObj.SetActive(false);
-        }
-        
-        Invoke(nameof(ShowFirstChooseUI), 1.0f);
+        base.InitAwake();
+        _basicPropUIObj = GameObject.Find("BasicPropUI");
+        _skillListUIObj = GameObject.Find("SkillListUI");
+        _evaluationUIObj = GameObject.Find("EvaluationUI");
+        _firstChooseUIObj = GameObject.Find("FirstChooseUI");
+        _phoneButtonObj = GameObject.Find("PhoneButton");
+        _giftUIObj = GameObject.Find("GiftUI");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void InitUIManager()
     {
+        _basicPropUIObj.SetActive(false);
         
+        _skillListUIObj.SetActive(false);
+        
+        _evaluationUIObj.SetActive(false);
+
+        _firstChooseUIObj.SetActive(false);
+
+        _phoneButtonObj.SetActive(true);
+
+        _giftUIObj.SetActive(false);
     }
 
     public void PauseGame()
@@ -153,6 +131,7 @@ public class UIManager : MonoSingleton<UIManager>
     {
         if (_firstChooseUIObj.activeSelf) return;
         
+        Debug.Log("FirstChoose");
         _firstChooseUIObj.SetActive(true);
         _firstChooseUIObj.GetComponent<Animator>().SetBool("isVisable", true);
         _phoneButtonObj.SetActive(false);

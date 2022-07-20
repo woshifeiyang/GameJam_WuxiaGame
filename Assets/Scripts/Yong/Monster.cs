@@ -157,7 +157,8 @@ public class Monster : MonoBehaviour
             Invoke(nameof(PutObjectInPool), 0f);
             // 从敌人探测器列表中移除该对象
             EnemyDetector.Instance.enemyList.Remove(gameObject);
-            EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_KillEnemy);
+            // 杀敌数增加
+            Main.Instance.AddEnemyKills();
         }
         else
         {

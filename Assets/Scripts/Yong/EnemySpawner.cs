@@ -15,19 +15,11 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
     public const float screenHeightUnit = 20f;
 
     public EnemyObjectPool objectPoolHolder;
-    // Start is called before the first frame update
-    void Start()
-    {
-        objectPoolHolder = GetComponent<EnemyObjectPool>();
-        
-        //InvokeRepeating(nameof(SpawnEnemy), 1.0f, enemySpawnCd); //后期要改
-        //InvokeRepeating(nameof(updateSpawnCd), 1.0f, 0.05f);
-    }
 
-    // Update is called once per frame
-    void Update()
+    protected override void InitAwake()
     {
-        
+        base.InitAwake();
+        objectPoolHolder = GetComponent<EnemyObjectPool>();
     }
 
     private void FixedUpdate()

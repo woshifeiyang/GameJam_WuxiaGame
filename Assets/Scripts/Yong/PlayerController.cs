@@ -28,7 +28,7 @@ public class PlayerController : MonoSingleton<PlayerController>
     // player parameters
     // experience
     private float _curExperience;
-    private float _totalExperience;
+    private float _totalExperience = 5.0f;
     private int _level = 1;
     
     // moveSpeed
@@ -84,23 +84,17 @@ public class PlayerController : MonoSingleton<PlayerController>
 
         _mmProgressBar = GameObject.Find("HPBar").GetComponent<MMProgressBar>();
         _expBar = GameObject.Find("ExpBar").GetComponent<MMProgressBar>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        _totalExperience = 5;
-        _importedLocalScale = this.transform.localScale;
         
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
-
         floatingJoystick = _floatingJoystick.GetComponent<FloatingJoystick>();
-        canMove = true;
-        
-        
     }
 
+    public void InitPlayerController()
+    {
+        _importedLocalScale = this.transform.localScale;
+        canMove = true;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -118,11 +112,6 @@ public class PlayerController : MonoSingleton<PlayerController>
         _mmProgressBar.UpdateBar01(Mathf.Clamp(curHealth / _healthFinal, 0f, 1f));
         _expBar.UpdateBar01(Mathf.Clamp(_curExperience / _totalExperience, 0f, 1f));
         
-        if (Input.GetKeyDown (KeyCode.Space))
-        {
-            EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GetSkill);
-        }
-
     }
 
     private void FixedUpdate()

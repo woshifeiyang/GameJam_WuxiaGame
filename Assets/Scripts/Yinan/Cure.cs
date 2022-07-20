@@ -14,12 +14,13 @@ public class Cure : FieldSkillBase
     
     public void CurePlayer(float distance)
     {
-        if (cure&GameObject.Find("301").GetComponent<CircleCollider2D>())
+        if (cure)
         {
-            if (distance < GameObject.Find("301").GetComponent<CircleCollider2D>().radius)
+            if (distance < 0.5f*(range+2.3))
             {
                 if (PlayerController.Instance.curHealth < PlayerController.Instance.maxHealth)
                     PlayerController.Instance.curHealth += PlayerController.Instance.maxHealth/100;
+                Debug.Log("cure sucs&distace=" + distance);
             }
         }
     }

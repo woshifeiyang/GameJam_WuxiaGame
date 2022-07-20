@@ -35,7 +35,8 @@ public class Skill301 : FieldSkillBase
 
     IEnumerator SkillLastSeconds()
     {
-        yield return new WaitForSeconds(skillLastTime);
+        Debug.Log(Time.timeSinceLevelLoad);
+        yield return new WaitForSeconds(0.02f);
         this.GetComponent<CircleCollider2D>().enabled = !this.GetComponent<CircleCollider2D>().enabled;
     }
 }

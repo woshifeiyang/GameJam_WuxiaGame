@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class PlayerController : MonoSingleton<PlayerController>
 {
+    public bool immortal = false;
+
     private Rigidbody2D _rb;
 
     private Animator _anim;
@@ -140,17 +142,20 @@ public class PlayerController : MonoSingleton<PlayerController>
     // 被怪物攻击
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if ((col.gameObject.CompareTag("Enemy") || col.gameObject.CompareTag("EliteEnemy") || col.gameObject.CompareTag("Boss"))
-            && col.gameObject.GetComponent<Monster>().isDead == false)
+        if (!immortal)
         {
-            if (curHealth - col.gameObject.GetComponent<Monster>().damage > 0.0f)
+            if ((col.gameObject.CompareTag("Enemy") || col.gameObject.CompareTag("EliteEnemy") || col.gameObject.CompareTag("Boss"))
+                && col.gameObject.GetComponent<Monster>().isDead == false)
             {
-                curHealth -= col.gameObject.GetComponent<Monster>().damage;
-                PlayerDamageFeedback?.PlayFeedbacks();
-            }
-            else
-            {
-                EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GameOver);
+                if (curHealth - col.gameObject.GetComponent<Monster>().damage > 0.0f)
+                {
+                    curHealth -= col.gameObject.GetComponent<Monster>().damage;
+                    PlayerDamageFeedback?.PlayFeedbacks();
+                }
+                else
+                {
+                    EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GameOver);
+                }
             }
         }
     }

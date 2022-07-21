@@ -26,7 +26,6 @@ public class Monster : MonoBehaviour
 
     public DamagePopupManager DamagePopupManager;
 
-    public MMFeedbacks MMF;
 
     private Rigidbody2D _rb;
 
@@ -38,10 +37,12 @@ public class Monster : MonoBehaviour
 
     private SpriteRenderer _spriteRenderer;
 
+    private Material _material;
+
     private void OnEnable()
     {
         SetAlive();
-        MMF?.ResetFeedbacks();
+        _material.DisableKeyword("_BEATTACK");
         _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 1);
     }
     // 如果怪物在摄像机内可见，添加进敌人探测器的可视怪物列表中
@@ -59,12 +60,11 @@ public class Monster : MonoBehaviour
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _material = _spriteRenderer.material;
     }
 
     void Start()
     {
-        MMF = GetComponent<MMFeedbacks>();
-        MMF?.ResetFeedbacks();
         _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 1);
         // DamagePopupManager = GameObject.FindWithTag("DamagePopupManager").GetComponent<DamagePopupManager>();
         
@@ -78,7 +78,7 @@ public class Monster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void FixedUpdate()
     {
@@ -102,6 +102,7 @@ public class Monster : MonoBehaviour
         {
             //Debug.Log(obj.GetComponent<MonoSkillBase>().damage);
             GetDamaged(obj.gameObject);
+            StartCoroutine(HitFeedback());
             if (tag == "Boss")
             {
                 Debug.Log("damage Boss");
@@ -170,7 +171,6 @@ public class Monster : MonoBehaviour
     {
         float totalDamage = damageMaker.GetComponent<MonoSkillBase>().damage;
         
-        MMF?.PlayFeedbacks();
         // DamagePopupManager.Create(transform.position, (int)damageMaker.GetComponent<Skill>().damage);
         if (health - totalDamage > 0.0f)
         {
@@ -195,6 +195,17 @@ public class Monster : MonoBehaviour
     {
         //Debug.Log("获取的距离为"+ Vector3.Distance(this.transform.position, PlayerController.Instance.GetPlayerPosition()));
         return Vector3.Distance(this.transform.position, PlayerController.Instance.GetPlayerPosition());
+    }
+    
+    // Hit Animation
+    IEnumerator HitFeedback()
+    {
+        _material.EnableKeyword("_BEATTACK");
+
+            yield return new WaitForSeconds(0.1f);
+        
+        _material.DisableKeyword("_BEATTACK");
+
     }
 
 }

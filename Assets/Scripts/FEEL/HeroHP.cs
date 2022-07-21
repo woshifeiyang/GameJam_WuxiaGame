@@ -1,35 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
-using MoreMountains.Tools;
 using UnityEngine;
+
 public class HeroHP : MonoBehaviour
 {
-    public const int MAX_HP = 100;
-    public int initialHP = 80;
-    public int currentHP;
-    private MMProgressBar _mmProgressBar;
 
+    private Material material;
+    private SpriteRenderer _spriteRenderer;
+    
     // Start is called before the first frame update
     void Start()
     {
-        currentHP = initialHP;
-        _mmProgressBar = GameObject.Find("HPBar").GetComponent<MMProgressBar>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        material = _spriteRenderer.material;
     }
 
     // Update is called once per frame
     void Update()
     {
-            float percentHP = (float)currentHP / MAX_HP;
-            if (Input.GetKeyDown("space"))
-            {
-                currentHP += (int)Random.Range(-10.0f, 10.0f);
-                if (currentHP > MAX_HP)
-                    currentHP = MAX_HP;
-                if (currentHP < 0)
-                    currentHP = 0;
-            }
-            _mmProgressBar.UpdateBar01(Mathf.Clamp(percentHP, 0f, 1f));
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            material.EnableKeyword("_BEATTACK");
+        }
+        material.DisableKeyword("_BEATTACK");
     }
     
 }

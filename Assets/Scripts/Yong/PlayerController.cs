@@ -25,6 +25,9 @@ public class PlayerController : MonoSingleton<PlayerController>
 
     public Vector2 lastVelocity;
 
+    public float _bounceForce = 200f;
+    public float _bounceTime = 0.1f;
+
     // player parameters
     // experience
     private float _curExperience;
@@ -111,6 +114,11 @@ public class PlayerController : MonoSingleton<PlayerController>
         
         _mmProgressBar.UpdateBar01(Mathf.Clamp(curHealth / _healthFinal, 0f, 1f));
         _expBar.UpdateBar01(Mathf.Clamp(_curExperience / _totalExperience, 0f, 1f));
+
+        if (immortal)
+        {
+            curHealth = maxHealth;
+        }
         
     }
 
@@ -136,24 +144,29 @@ public class PlayerController : MonoSingleton<PlayerController>
     // 被怪物攻击
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (!immortal)
+        if ((col.gameObject.CompareTag("Enemy") || col.gameObject.CompareTag("EliteEnemy") || col.gameObject.CompareTag("Boss"))
+            && col.gameObject.GetComponent<Monster>().isDead == false)
         {
-            if ((col.gameObject.CompareTag("Enemy") || col.gameObject.CompareTag("EliteEnemy") || col.gameObject.CompareTag("Boss"))
-                && col.gameObject.GetComponent<Monster>().isDead == false)
+            if (curHealth - col.gameObject.GetComponent<Monster>().damage > 0.0f)
             {
-                if (curHealth - col.gameObject.GetComponent<Monster>().damage > 0.0f)
-                {
-                    curHealth -= col.gameObject.GetComponent<Monster>().damage;
-                    PlayerDamageFeedback?.PlayFeedbacks();
-                }
-                else
-                {
-                    curHealth = 0.0f;
-                    EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GameOver);
-                }
-                
-                BounceEnemy(1f, 0.3f, col);
+                curHealth -= col.gameObject.GetComponent<Monster>().damage;
+                PlayerDamageFeedback?.PlayFeedbacks();
             }
+            else
+            {
+                curHealth = 0.0f;
+                EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GameOver);
+            }
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D col)
+    {
+        if ((col.gameObject.CompareTag("Enemy") || col.gameObject.CompareTag("EliteEnemy") ||
+             col.gameObject.CompareTag("Boss"))
+            && col.gameObject.GetComponent<Monster>().isDead == false)
+        {
+            BounceEnemy(_bounceForce,_bounceTime,col);
         }
     }
 
@@ -163,20 +176,19 @@ public class PlayerController : MonoSingleton<PlayerController>
         
         Monster tempM = targetCollider.gameObject.GetComponent<Monster>();
         Rigidbody2D rb = targetCollider.gameObject.GetComponent<Rigidbody2D>();
-
-        float tempSpeed = tempM.moveSpeed;
-        tempM.moveSpeed = 0f;
-
+        
         rb.velocity = new Vector2(0f, 0f);
+        
+        tempM.canMove = false;
         rb.AddForce( - targetCollider.contacts[0].normal * bounceForce);
 
-        StartCoroutine(StopBounceMonster(bounceTime,tempM,tempSpeed));
+        StartCoroutine(StopBounceMonster(bounceTime,tempM));
     }
 
-    IEnumerator StopBounceMonster(float stopBounceSecond, Monster monsterComponent, float recoverSpeed)
+    IEnumerator StopBounceMonster(float stopBounceSecond, Monster monsterComponent)
     {
         yield return new WaitForSeconds(stopBounceSecond);
-        monsterComponent.moveSpeed = recoverSpeed;
+        monsterComponent.canMove = true;
     }
 
     public void GetDamaged(float damageAmount)

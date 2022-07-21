@@ -56,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 932182fd20847c54db45c8c1d96c20ae, type: 2}
+  - {fileID: 2100000, guid: 5b76ddb1d7419964fb0dfe27990e5d45, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -3022703498332849101, guid: 1f405aa3cc8acc24ebee9f1b83f2ef82, type: 3}
-  m_Color: {r: 0.7490196, g: 0.19607843, b: 0.2509804, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -154,7 +154,6 @@ MonoBehaviour:
   poolBelongTo: 
   deathAnimation: {fileID: 0}
   DamagePopupManager: {fileID: 0}
-  MMF: {fileID: 0}
 --- !u!50 &5243666614868315176
 Rigidbody2D:
   serializedVersion: 4

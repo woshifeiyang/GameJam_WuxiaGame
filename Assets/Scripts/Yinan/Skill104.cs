@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill104 : MultTargetSkillBase
+public class Skill104 : ScopeSkillBase
 {
-    
     public override void Start()
     {
-        
+        this.transform.position = EnemyDetector.Instance.GetNearestEnemyLoc();
     }
 
-    // Update is called once per frame
-    public override void Update()
+
+    private void ResetCollider()
     {
+        this.GetComponent<CircleCollider2D>().enabled = !this.GetComponent<CircleCollider2D>().enabled;
+        Invoke("SwitchCollider",0.02f);
 
     }
     private void SelfDestory()
@@ -21,7 +22,10 @@ public class Skill104 : MultTargetSkillBase
     }
     private void SwordCall()
     {
-        GameObject.Find("SkillManager").GetComponent<SwordEmi>().SwordCall1();
-        
+        GameObject.Find("SkillManager").GetComponent<SwordEmi>().SwordCall1();        
+    }
+    private void SwitchCollider()
+    {
+        this.GetComponent<CircleCollider2D>().enabled = !this.GetComponent<CircleCollider2D>().enabled;
     }
 }

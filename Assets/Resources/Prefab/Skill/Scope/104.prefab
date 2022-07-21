@@ -29,7 +29,7 @@ RectTransform:
   m_GameObject: {fileID: 2823410563044626974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 4336733030467979620}
   - {fileID: 1531176292989285341}
@@ -46,8 +46,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -12.912923, y: 1.932534}
-  m_SizeDelta: {x: 3.2, y: 14.5}
+  m_AnchoredPosition: {x: -1.2989426, y: 9.152962}
+  m_SizeDelta: {x: 2.01, y: 5.25}
   m_Pivot: {x: 0.5, y: 0.49999997}
 --- !u!58 &5839143069959311497
 CircleCollider2D:
@@ -62,9 +62,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.6}
+  m_Offset: {x: 0, y: 1.02}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.66
 --- !u!95 &7323230989029988957
 Animator:
   serializedVersion: 3
@@ -118,9 +118,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 104
-  damage: 100
-  cd: 5
-  skillNum: 1
+  damage: 40
+  cd: 4
+  skillTime: 0
+  range: 0
 --- !u!1001 &453627999191122646
 PrefabInstance:
   m_ObjectHideFlags: 0

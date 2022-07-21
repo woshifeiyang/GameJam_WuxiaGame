@@ -53,7 +53,7 @@ public class PlayerController : MonoSingleton<PlayerController>
     private float _healthFinal;
     
     // attack
-    public float attackRatio = 5.0f;
+    public float attackRatio = 10.0f;
     private int _attackLevel = 0;
 
     // Projectiles

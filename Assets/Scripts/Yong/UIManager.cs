@@ -145,7 +145,8 @@ public class UIManager : MonoSingleton<UIManager>
         
         _evaluationUIObj.SetActive(true);
         _phoneButtonObj.SetActive(false);
-        
+
+        InitEvaluationUI();
         PauseGame();
     }
 
@@ -214,6 +215,13 @@ public class UIManager : MonoSingleton<UIManager>
             Button skillButton = _firstChooseUIObj.transform.Find(buttonPath).GetComponent<Button>();
             InitFirstChooseButton(skillButton, i, dictionary[i]);
         }
+    }
+
+    private void InitEvaluationUI()
+    {
+        Button mainMenuButton = _evaluationUIObj.transform.Find("MainMenuButton").GetComponent<Button>();
+        mainMenuButton.onClick.RemoveAllListeners();
+        mainMenuButton.onClick.AddListener(() => {ChangeScene("UI");});
     }
     private void InitBasicPropButton(Button button, BasicPropJson obj)
     {
@@ -326,9 +334,6 @@ public class UIManager : MonoSingleton<UIManager>
 
         TextMeshProUGUI skillDesText = _skillListUIObj.transform.Find("Upgrade/Description/SkillDescription").GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI buffDesText = _skillListUIObj.transform.Find("Upgrade/Description/BuffDescription").GetComponent<TextMeshProUGUI>();
-
-        //Text skillDesText = _skillListUIObj.transform.Find("Upgrade/Description/SkillDescription").GetComponent<Text>();
-        //Text buffDesText = _skillListUIObj.transform.Find("Upgrade/Description/BuffDescription").GetComponent<Text>();
 
         skillDesText.text = obj.Description;
         buffDesText.text = obj.Buff;

@@ -14,15 +14,17 @@ public class EnemyDetector : MonoSingleton<EnemyDetector>
 
     public List<GameObject> enemyList;
 
-    // Start is called before the first frame update
+    protected override void InitAwake()
+    {
+        base.InitAwake();
+        _cc = GetComponent<CircleCollider2D>();
+    }
+
     void Start()
     {
-        _cc = GetComponent<CircleCollider2D>();
         enemyList = new List<GameObject>();
-
         _hasFoundEnemy = false;
         StartCoroutine("FindNearestTarget");
-        //InvokeRepeating("ShowNum", 0.0f, 0.1f);
     }
 
     // Update is called once per frame
@@ -33,7 +35,7 @@ public class EnemyDetector : MonoSingleton<EnemyDetector>
             Debug.DrawLine(transform.position, _nearestEnemy.transform.position, Color.red);
         }
     }
-    IEnumerator FindNearestTarget()
+    public IEnumerator FindNearestTarget()
     {
         float radius = _cc.radius;
         while (true)
@@ -50,19 +52,7 @@ public class EnemyDetector : MonoSingleton<EnemyDetector>
     // 敌人探测器
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy") && other.gameObject.GetComponent<Monster>().isDead == false)
-        {
-            _nearestEnemy = other.gameObject;
-            _hasFoundEnemy = true;
-        }
-
-        if (other.gameObject.CompareTag("EliteEnemy") && other.gameObject.GetComponent<Monster>().isDead == false)
-        {
-            _nearestEnemy = other.gameObject;
-            _hasFoundEnemy = true;
-        }
-        
-        if (other.gameObject.CompareTag("Boss") && other.gameObject.GetComponent<Monster>().isDead == false)
+        if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("EliteEnemy") || other.gameObject.CompareTag("Boss")) && other.gameObject.GetComponent<Monster>().isDead == false)
         {
             _nearestEnemy = other.gameObject;
             _hasFoundEnemy = true;
@@ -87,8 +77,5 @@ public class EnemyDetector : MonoSingleton<EnemyDetector>
     {
         return list.OrderBy(arg => Guid.NewGuid()).Take(1).ToList();
     }
-    public void ShowNum()
-    {
-        Debug.Log(enemyList.Count);
-    }
+    
 }

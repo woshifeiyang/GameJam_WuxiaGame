@@ -110,7 +110,6 @@ public class BulletSkill : SkillBase
             obj.GetComponent<BulletSkillBase>().speed = Speed + PlayerController.Instance.GetPlayerSkillSpeed();
             obj.GetComponent<BulletSkillBase>().damage = Damage + PlayerController.Instance.GetPlayerAttack();
             obj.GetComponent<BulletSkillBase>().skillNum = SkillNum + PlayerController.Instance.GetPlayerProjectileNum();
-            obj.GetComponent<BulletSkillBase>().cd = Cd * PlayerController.Instance.GetPlayerSkillCd();
             Timer = 0;
         }
     }
@@ -173,6 +172,8 @@ public class MultTargetSkill : SkillBase
         Timer += (Time.deltaTime);
         if (Timer >= Cd)
         {
+            // 更新技能cd
+            Cd *= PlayerController.Instance.GetPlayerSkillCd();
             int num = EnemyDetector.Instance.enemyList.Count;
             List<GameObject> list;
             if (SkillNum > num) list = EnemyDetector.Instance.enemyList;

@@ -22,7 +22,7 @@ public class Skill301 : FieldSkillBase
         this.transform.localScale = new Vector3(range, range, 1f);
         skill301Timer += Time.deltaTime;
         //_cc.radius = range;
-        if(skill301Timer > cd)
+        if(skill301Timer > 0.5f)
         {
             damage = 0.6f * PlayerController.Instance.maxHealth;
             skill301Timer = 0;

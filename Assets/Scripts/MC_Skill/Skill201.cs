@@ -16,7 +16,7 @@ public class Skill201 : MultTargetSkillBase
                 Invoke("Lightcall1", 0.3f);
             }
         }
-        Invoke("SelfDestory", 0.3f);
+        
     }
 
     private void Lightcall1()

@@ -8,7 +8,13 @@ public class Skill302 : FieldSkillBase
     public override void Start()
     {
         GameObject.Find("SkillManager").GetComponent<Cure>().EnableCure();
+        
     }
 
-    
+    public override void Update()
+    {
+        this.transform.localScale = new Vector3(range, range, 1f);
+    }
+
+
 }

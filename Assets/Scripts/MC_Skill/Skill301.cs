@@ -11,6 +11,7 @@ public class Skill301 : FieldSkillBase
     private CircleCollider2D _cc;
     public override void Start()
     {
+        damage = 0.6f * PlayerController.Instance.maxHealth;
         _cc = this.GetComponent<CircleCollider2D>();
         //_cc.radius = range;
         _cc.enabled = false;

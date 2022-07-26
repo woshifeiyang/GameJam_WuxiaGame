@@ -312,9 +312,6 @@ public class PlayerController : MonoSingleton<PlayerController>
         _skillCdFinal = Mathf.Pow(skillCdRatio, _skillCdLevel);
         // Health;
         _healthFinal = maxHealth + (healthRatio * _healthLevel);
-
-        //Debug.Log("moveSpeedLevel: " + _moveSpeedLevel);
-        //Debug.Log("skillCdLevel: " + _skillCdLevel);
-        //Debug.Log("HealthLevel: " + _healthLevel);
+        
     }
 }

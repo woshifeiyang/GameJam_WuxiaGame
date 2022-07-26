@@ -16,6 +16,10 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
 
     public EnemyObjectPool objectPoolHolder;
 
+    public int enemySpawningCount = 0;
+    public int monsterOnField = 0;
+    public float timer = 0f;
+
     protected override void InitAwake()
     {
         base.InitAwake();
@@ -27,17 +31,31 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
         updateSpawnCd();
     }
 
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer > 1f)
+        {
+            Debug.Log("Spawned enemy per sec:" + enemySpawningCount);
+            Debug.Log("Current Enemy Count :" + monsterOnField);
+            timer = 0f;
+            enemySpawningCount = 0;
+        }
+    }
+
     void updateSpawnCd()
     {
         float spawnCdResult = 1f;
 
         int poolCurrentCount = objectPoolHolder.numCountOfPool[currentPool];
         int poolMaxCount = objectPoolHolder.numCountOfPool[currentPool + "Max"];
-        int monsterOnField = objectPoolHolder.numCountOfPool[currentPool + "OnField"];
+        monsterOnField = objectPoolHolder.numCountOfPool[currentPool + "OnField"];
 
         spawnCdResult = (float)monsterOnField / (float)poolMaxCount;
-        
+
         enemySpawnCd = spawnCdResult;
+
+        
     }
 
     public void SpawnEnemy()
@@ -57,6 +75,8 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
                 enemy.transform.position = GetRandomPosition();
                 enemy.transform.SetParent(EnemyObjectPool.EnemyObjectPoolInstance.objectOutOfPool.transform);
                 enemy.SetActive(true);
+
+                enemySpawningCount++;
             }
             else
             {

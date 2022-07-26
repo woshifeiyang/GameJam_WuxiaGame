@@ -8,7 +8,7 @@ public class SpecialEnemyReturnZone : MonoBehaviour
     {
         if (other.CompareTag("EliteEnemy"))
         {
-            StartCoroutine(moveEliteEnemyAfterSeconds(2f, other.gameObject));
+            StartCoroutine(moveEliteEnemyAfterSeconds(1f, other.gameObject));
         }
     }
     

@@ -23,6 +23,10 @@ public class MapManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            importMaps[i] = transform.GetChild(i).gameObject;
+        }
         player = GameObject.FindWithTag("Player");
         //get maps into 2d array
         maps = new GameObject[mapLength, mapLength];

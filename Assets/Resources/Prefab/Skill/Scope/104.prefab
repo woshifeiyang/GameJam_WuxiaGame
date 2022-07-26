@@ -56,7 +56,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2823410563044626974}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -64,7 +64,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 1.02}
   serializedVersion: 2
-  m_Radius: 0.66
+  m_Radius: 0.65
 --- !u!95 &7323230989029988957
 Animator:
   serializedVersion: 3

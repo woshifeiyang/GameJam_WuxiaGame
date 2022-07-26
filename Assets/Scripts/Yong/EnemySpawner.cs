@@ -11,8 +11,8 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
 
     public string currentPool;
 
-    public const float screenWidthUnit = 9.5f;
-    public const float screenHeightUnit = 20f;
+    public const float screenWidthUnit = 8.5f;
+    public const float screenHeightUnit = 19f;
 
     public EnemyObjectPool objectPoolHolder;
 

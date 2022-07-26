@@ -11,6 +11,7 @@ public class Skill301 : FieldSkillBase
     private CircleCollider2D _cc;
     public override void Start()
     {
+        damage = 0.6f * PlayerController.Instance.maxHealth;
         _cc = this.GetComponent<CircleCollider2D>();
         //_cc.radius = range;
         _cc.enabled = false;
@@ -22,7 +23,7 @@ public class Skill301 : FieldSkillBase
         this.transform.localScale = new Vector3(range, range, 1f);
         skill301Timer += Time.deltaTime;
         //_cc.radius = range;
-        if(skill301Timer > cd)
+        if(skill301Timer > 0.5f)
         {
             damage = 0.6f * PlayerController.Instance.maxHealth;
             skill301Timer = 0;

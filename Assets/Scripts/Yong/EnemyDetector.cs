@@ -40,7 +40,7 @@ public class EnemyDetector : MonoSingleton<EnemyDetector>
         float radius = _cc.radius;
         while (true)
         {
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.1f);
             if (_hasFoundEnemy || _cc.radius >= 10.0f)
             {
                 _cc.radius = radius;

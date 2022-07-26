@@ -29,6 +29,10 @@ public class UIManager : MonoSingleton<UIManager>
 
     private GameObject _phoneButtonObj;
 
+    private GameObject _wechatUIObj;
+
+    private GameObject _shareUIObj;
+
     protected override void InitAwake()
     {
         base.InitAwake();
@@ -38,6 +42,8 @@ public class UIManager : MonoSingleton<UIManager>
         _firstChooseUIObj = GameObject.Find("FirstChooseUI");
         _phoneButtonObj = GameObject.Find("PhoneButton");
         _giftUIObj = GameObject.Find("GiftUI");
+        _wechatUIObj = GameObject.Find("WechatUI");
+        _shareUIObj = GameObject.Find("ShareUI");
     }
 
     public void InitUIManager()
@@ -53,6 +59,10 @@ public class UIManager : MonoSingleton<UIManager>
         _phoneButtonObj.SetActive(true);
 
         _giftUIObj.SetActive(false);
+        
+        _wechatUIObj.SetActive(false);
+        
+        _shareUIObj.SetActive(false);
     }
 
     public void PauseGame()
@@ -150,6 +160,19 @@ public class UIManager : MonoSingleton<UIManager>
         PauseGame();
     }
 
+    public void ShowWechatUI()
+    {
+        _wechatUIObj.SetActive(true);
+        InitWechatUI();
+    }
+    public void ShowShareUI()
+    {
+        _wechatUIObj.SetActive(false);
+        _shareUIObj.SetActive(true);
+        
+        InitShareUI();
+    }
+
     private void InitBasicPropUI()
     {
         List<BasicPropJson> list = EnemyDetector.GetRandomElements(JsonManager.Instance.basicPropList, 3);
@@ -220,8 +243,29 @@ public class UIManager : MonoSingleton<UIManager>
     private void InitEvaluationUI()
     {
         Button mainMenuButton = _evaluationUIObj.transform.Find("MainMenuButton").GetComponent<Button>();
+        Button shareButton = _evaluationUIObj.transform.Find("ShareButton").GetComponent<Button>();
+        
         mainMenuButton.onClick.RemoveAllListeners();
         mainMenuButton.onClick.AddListener(() => {ChangeScene("UI");});
+        shareButton.onClick.RemoveAllListeners();
+        shareButton.onClick.AddListener(ShowWechatUI);
+    }
+
+    private void InitWechatUI()
+    {
+        Button wechatButton = _wechatUIObj.transform.Find("WechatButton").GetComponent<Button>();
+        wechatButton.onClick.RemoveAllListeners();
+        wechatButton.onClick.AddListener(ShowShareUI);
+    }
+
+    private void InitShareUI()
+    {
+        Button sendButton = _shareUIObj.transform.Find("SendButton").GetComponent<Button>();
+        Button cancelButton = _shareUIObj.transform.Find("CancelButton").GetComponent<Button>();
+        sendButton.onClick.RemoveAllListeners();
+        sendButton.onClick.AddListener((() => {_shareUIObj.SetActive(false);}));
+        cancelButton.onClick.RemoveAllListeners();
+        cancelButton.onClick.AddListener((() => {_shareUIObj.SetActive(false);}));
     }
     private void InitBasicPropButton(Button button, BasicPropJson obj)
     {

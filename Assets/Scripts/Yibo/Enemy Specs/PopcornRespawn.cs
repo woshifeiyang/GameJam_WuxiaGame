@@ -66,7 +66,7 @@ public class PopcornRespawn : MonoBehaviour
         }
         else
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
 
         gameObject.SetActive(false);

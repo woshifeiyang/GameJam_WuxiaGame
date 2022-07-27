@@ -198,10 +198,12 @@ public class UIManager : MonoSingleton<UIManager>
 
     private void InitSkillListUI()
     {
-        Image descriptionPage = _skillListUIObj.transform.Find("Upgrade/Description").GetComponent<Image>();
-        descriptionPage.gameObject.SetActive(false); 
-        
         List<SkillListJson> list = EnemyDetector.GetRandomElements(JsonManager.Instance.skillList, 3);
+        Transform skillDesText = _skillListUIObj.transform.Find("Upgrade/SkillDescription");
+        Transform buffDesText = _skillListUIObj.transform.Find("Upgrade/BuffDescription");
+        skillDesText.gameObject.SetActive(false);
+        buffDesText.gameObject.SetActive(false);
+        
         for (int i = 1; i <= list.Count; i++)
         {
             string skillButtonPath = "Upgrade/Skill_Button" + i;
@@ -373,15 +375,13 @@ public class UIManager : MonoSingleton<UIManager>
 
     private void ShowSkillInformation(SkillListJson obj)
     {
-        Image descriptionPage = _skillListUIObj.transform.Find("Upgrade/Description").GetComponent<Image>();
-        descriptionPage.gameObject.SetActive(true);
-
-        TextMeshProUGUI skillDesText = _skillListUIObj.transform.Find("Upgrade/Description/SkillDescription").GetComponent<TextMeshProUGUI>();
-        TextMeshProUGUI buffDesText = _skillListUIObj.transform.Find("Upgrade/Description/BuffDescription").GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI skillDesText = _skillListUIObj.transform.Find("Upgrade/SkillDescription").GetComponent<TextMeshProUGUI>();
+        skillDesText.gameObject.SetActive(true);
+        TextMeshProUGUI buffDesText = _skillListUIObj.transform.Find("Upgrade/BuffDescription").GetComponent<TextMeshProUGUI>();
+        buffDesText.gameObject.SetActive(true);
 
         skillDesText.text = obj.Description;
         buffDesText.text = obj.Buff;
-        
     }
     private void ChooseBulletSkill(SkillListJson obj)
     {

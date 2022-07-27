@@ -8,7 +8,7 @@ using UnityEngine;
 public class PlayerController : MonoSingleton<PlayerController>
 {
     public bool immortal = false;
-
+    public bool blockLevelUp = false;
     private Rigidbody2D _rb;
 
     private Animator _anim;
@@ -173,8 +173,6 @@ public class PlayerController : MonoSingleton<PlayerController>
 
     private void BounceEnemy(float bounceForce, float bounceTime, Collision2D targetCollider)
     {
-        Debug.Log("bounce Enemy");
-        
         Monster tempM = targetCollider.gameObject.GetComponent<Monster>();
         Rigidbody2D rb = targetCollider.gameObject.GetComponent<Rigidbody2D>();
         
@@ -254,13 +252,16 @@ public class PlayerController : MonoSingleton<PlayerController>
     }
     public void IncreaseExperience()
     {
-        if (_totalExperience - _curExperience <= 1.0f)
+        if (!blockLevelUp)
         {
-            EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_BasicPropLevelUp);
-        }
-        else if (_curExperience < _totalExperience)
-        {
-            ++_curExperience;
+            if (_totalExperience - _curExperience <= 1.0f)
+            {
+                EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_BasicPropLevelUp);
+            }
+            else if (_curExperience < _totalExperience)
+            {
+                ++_curExperience;
+            }
         }
     }
 

@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class EnemySpawner : MonoSingleton<EnemySpawner>
 {
     public float enemySpawnCd;
-
+    public float spawnCdFactor = 0.1f;
     public string currentPool;
 
     public const float screenWidthUnit = 8.5f;
@@ -53,9 +53,10 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
 
         spawnCdResult = (float)monsterOnField / (float)poolMaxCount;
 
-        enemySpawnCd = spawnCdResult;
+        float tempSpawnSpeed = 1 / spawnCdResult;
+        tempSpawnSpeed *= spawnCdFactor;
 
-        
+        enemySpawnCd = 1/tempSpawnSpeed;
     }
 
     public void SpawnEnemy()

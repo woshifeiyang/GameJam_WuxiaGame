@@ -60,9 +60,13 @@ public class PopcornRespawn : MonoBehaviour
     IEnumerator SelfRecycle()
     {
         yield return new WaitForSeconds(1f);
-        if (enemyParent.gameObject)
+        if (enemyParent!=null)
         {
             transform.SetParent(enemyParent.transform);
+        }
+        else
+        {
+            Destroy(this);
         }
 
         gameObject.SetActive(false);

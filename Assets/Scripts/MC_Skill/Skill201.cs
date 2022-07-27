@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Skill201 : MultTargetSkillBase
 {
-    
+    public float fixedDamage = 100;
     public override void Start()
     {
+        damage = fixedDamage;
         bool dou = GameObject.Find("SkillManager").GetComponent<DouStk>().GetDou();
         //Debug.Log("dou" + dou);
         if (dou)

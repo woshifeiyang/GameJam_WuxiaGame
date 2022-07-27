@@ -25,7 +25,7 @@ public class Skill301 : FieldSkillBase
         //_cc.radius = range;
         if(skill301Timer > 0.5f)
         {
-            damage = 0.6f * PlayerController.Instance.maxHealth;
+            damage = 0.3f * PlayerController.Instance.maxHealth;
             skill301Timer = 0;
 
             this.GetComponent<CircleCollider2D>().enabled = !this.GetComponent<CircleCollider2D>().enabled;

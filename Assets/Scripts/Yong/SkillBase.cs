@@ -172,8 +172,6 @@ public class MultTargetSkill : SkillBase
         Timer += (Time.deltaTime);
         if (Timer >= Cd)
         {
-            // 更新技能cd
-            Cd *= PlayerController.Instance.GetPlayerSkillCd();
             int num = EnemyDetector.Instance.enemyList.Count;
             List<GameObject> list;
             if (SkillNum > num) list = EnemyDetector.Instance.enemyList;

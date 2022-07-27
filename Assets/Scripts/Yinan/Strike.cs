@@ -45,7 +45,7 @@ public class Strike : MonoSkillBase
             {
                 GameObject obj = GameObject.Instantiate(SkillObj);
                 SkillObj.transform.position = list[i].transform.position;
-                obj.GetComponent<MultTargetSkillBase>().damage = Damage + PlayerController.Instance.GetPlayerAttack();                
+                obj.GetComponent<MultTargetSkillBase>().damage = Damage;               
             }
         }
     }
@@ -58,7 +58,7 @@ public class Strike : MonoSkillBase
             List<GameObject> list = EnemyDetector.GetRandomElement(EnemyDetector.Instance.enemyList);
             GameObject obj = GameObject.Instantiate(SkillObj2);
             SkillObj2.transform.position = list[0].transform.position;
-            obj.GetComponent<MultTargetSkillBase>().damage = Damage + PlayerController.Instance.GetPlayerAttack();
+            obj.GetComponent<MultTargetSkillBase>().damage = Damage;
         }
            
        

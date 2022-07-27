@@ -8,9 +8,12 @@ public class Skill202 : ScopeSkillBase
     private int randomIndex;
     private bool triggered = false;
     private Animator animator;
+    private float realDamage;
     // Start is called before the first frame update
     public override void Start()
     {
+        realDamage = damage;
+        damage = 1;
         animator = this.GetComponent<Animator>();
         this.transform.localScale = new Vector3(3+range*1.5f,3+range*1.5f,1);
         //this.GetComponent<CircleCollider2D>().radius = range;
@@ -33,6 +36,7 @@ public class Skill202 : ScopeSkillBase
         {
             triggered = true;
             animator.SetTrigger("lightstorm");
+            damage = realDamage + PlayerController.Instance.GetPlayerAttack();
 
         }
     }

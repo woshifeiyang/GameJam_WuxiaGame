@@ -48,6 +48,7 @@ public class JsonManager : MonoSingleton<JsonManager>
     }
     public void ParseBasicPropJson()
     {
+        
         string text = GetTextForStreamingAssets("Basic Properties.json");
         JsonData jsonData = JsonMapper.ToObject(text);
         if (jsonData != null)
@@ -108,8 +109,7 @@ public class JsonManager : MonoSingleton<JsonManager>
         {
 
         }
-        //Debug.Log("t_WWW.text=  " + t_WWW.text);
-      
+
         return t_WWW.text;
     }
 

@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: Chinese
+  currentLanguage: English
   detectLanguage: 1
   defaultLanguage: 
   saveLoad: 1
@@ -796,7 +796,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1105209245}
         m_TargetAssemblyTypeName: GameData, Assembly-CSharp
-        m_MethodName: getlanguage
+        m_MethodName: GetLanguage
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2033,7 +2033,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8BED\u8A00"
+  m_Text: Language
 --- !u!222 &641367002
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4103,7 +4103,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5f275c76e0f7e47b30f25489e5f16d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  language: 0
 --- !u!4 &1105209246
 Transform:
   m_ObjectHideFlags: 0
@@ -6255,7 +6254,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1105209245}
         m_TargetAssemblyTypeName: GameData, Assembly-CSharp
-        m_MethodName: getlanguage
+        m_MethodName: GetLanguage
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6912,7 +6911,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u97F3\u4E50"
+  m_Text: Audio
 --- !u!222 &1917651414
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class GameData : MonoBehaviour
 {
-    public int language;
+    public static int language;
 
     void Start() {
         GameObject.DontDestroyOnLoad(gameObject);
     }
 
-    public void getlanguage(int a)
+    public void GetLanguage(int a)
     {
         language = a;
+        
     }
 }

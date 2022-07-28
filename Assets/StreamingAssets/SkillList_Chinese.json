@@ -1,0 +1,106 @@
+[
+  {
+    "Id": 101,
+    "KeyName":"飞剑",
+    "Category":"Bullet",
+    "Description":"单体攻击，朝敌人发射一把飞剑",
+    "Buff":"可受增益: 伤害提升, 技能冷却缩减, 技能数量增加, 飞行速度提升",
+    "ResAddress":"SkillIcon/Sword"
+  },
+  {
+    "Id": 102,
+    "KeyName":"穿透箭",
+    "Category":"Bullet",
+    "Description":"多体攻击，朝敌人发射一把可穿透敌人的飞剑",
+    "Buff":"可受增益: 伤害提升, 技能冷却缩减, 技能数量增加, 飞行速度提升",
+    "ResAddress":"SkillIcon/PiercingSword"
+  },
+  {
+    "Id": 103,
+    "KeyName":"分裂箭",
+    "Category":"Bullet",
+    "Description":"多体攻击，朝敌人扇形发射三把飞剑",
+    "Buff":"可受增益: 伤害提升, 技能冷却缩减, 技能数量增加, 飞行速度提升",
+    "ResAddress":"SkillIcon/SplitSword"
+  },
+  {
+    "Id": 201,
+    "KeyName":"雷电击",
+    "Category":"MultTarget",
+    "Description":"多体攻击，释放闪电攻击多名敌人",
+    "Buff":"可受增益: 技能冷却缩减, 技能数量增加",
+    "ResAddress":"SkillIcon/LightningStrike"
+  },
+  {
+    "Id": 202,
+    "KeyName":"雷电风暴",
+    "Category":"Scope",
+    "Description":"范围攻击，会在随机释放雷电风暴攻击敌人",
+    "Buff":"可受增益: 技能冷却缩减, Projectiles+1, 伤害范围增加",
+    "ResAddress":"SkillIcon/LightningStorm"
+  },
+  {
+    "Id": 203,
+    "KeyName":"雷电返还",
+    "Category":"Field",
+    "Description":"当玩家被攻击时会自动释放一道雷电攻击该敌人",
+    "Buff":"",
+    "ResAddress":"SkillIcon/LightningReturn"
+  },
+  {
+    "Id": 204,
+    "KeyName":"过载",
+    "Category":"Field",
+    "Description":"当雷电击被释放时，有50%概率再次释放一次",
+    "Buff":"",
+    "ResAddress":"SkillIcon/OverLoad"
+  },
+  {
+    "Id": 301,
+    "KeyName":"降魔阵",
+    "Category":"Field",
+    "Description":"范围攻击，在降魔阵内的敌人会被自动削减血量",
+    "Buff":"可受增益: 血量增加, 伤害范围增加",
+    "ResAddress":"SkillIcon/MagicCircle"
+  },
+  {
+    "Id": 302,
+    "KeyName":"曼陀罗",
+    "Category":"Field",
+    "Description":"当敌人在降魔阵内阵亡时，玩家回复一定血量",
+    "Buff":"",
+    "ResAddress":"SkillIcon/Mandala"
+  },
+  {
+    "Id": 303,
+    "KeyName":"如来神掌",
+    "Category":"Field",
+    "Description":"范围攻击，在玩家四周释放佛掌，攻击四个方向的敌人",
+    "Buff":"可受增益: 血量增加, 伤害范围增加",
+    "ResAddress":"SkillIcon/BuddhaPalms"
+  },
+  {
+    "Id": 304,
+    "KeyName":"厄业",
+    "Category":"Field",
+    "Description":"根据玩家杀敌数量增加玩家最大生命上限",
+    "Buff":"",
+    "ResAddress":"SkillIcon/Karma"
+  },
+  {
+    "Id": 401,
+    "KeyName":"Poison Gas",
+    "Category":"Scope",
+    "Description":"Poison gas is released behind the player and damages enemies in a certain area",
+    "Buff":"Buff: Increase attack speed, Damage range",
+    "ResAddress":"SkillIcon/PoisonGas"
+  },
+  {
+    "Id": 402,
+    "KeyName":"杯弓蛇影",
+    "Category":"Bullet",
+    "Description":"单体攻击, 释放毒蛇攻击敌人并回复一定血量",
+    "Buff":"可受增益: 技能冷却缩减, 技能数量增加, 飞行速度提升",
+    "ResAddress":"SkillIcon/DashingSnake"
+  }
+]

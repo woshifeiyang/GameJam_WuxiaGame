@@ -56,7 +56,7 @@ public class Skill103 : BulletSkillBase
 
     private void OnTriggerEnter2D(Collider2D obj)
     {
-        if (obj.gameObject.CompareTag("Enemy"))
+        if (obj.gameObject.CompareTag("Enemy") || obj.gameObject.CompareTag("EliteEnemy") || obj.gameObject.CompareTag("Boss"))
         {
             --skillPene;
             if (skillPene == 0)

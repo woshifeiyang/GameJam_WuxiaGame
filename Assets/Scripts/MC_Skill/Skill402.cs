@@ -48,7 +48,7 @@ public class Skill402 : BulletSkillBase
 
     private void OnTriggerEnter2D(Collider2D obj)
     {
-        if (obj.gameObject.CompareTag("Enemy") && first == true)
+        if ((obj.gameObject.CompareTag("Enemy") || obj.gameObject.CompareTag("EliteEnemy") || obj.gameObject.CompareTag("Boss")) && first == true)
         {
             first = false;
         }

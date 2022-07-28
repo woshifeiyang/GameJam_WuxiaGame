@@ -39,11 +39,6 @@ public class Skill102 : BulletSkillBase
             childSkill.GetComponent<Rigidbody2D>().AddForce(_vec.normalized * speed, ForceMode2D.Force);
         }
     }
-    // Update is called once per frame
-    public override void Update()
-    {
-        
-    }
 
     private void SelfDestory()
     {
@@ -52,7 +47,7 @@ public class Skill102 : BulletSkillBase
 
     private void OnTriggerEnter2D(Collider2D obj)
     {
-        if (obj.gameObject.CompareTag("Enemy"))
+        if (obj.gameObject.CompareTag("Enemy") || obj.gameObject.CompareTag("EliteEnemy") || obj.gameObject.CompareTag("Boss"))
         {
             --skillPene;
             if (skillPene == 0)

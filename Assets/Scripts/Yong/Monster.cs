@@ -66,7 +66,7 @@ public class Monster : MonoBehaviour
     void Start()
     {
         _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 1);
-        // DamagePopupManager = GameObject.FindWithTag("DamagePopupManager").GetComponent<DamagePopupManager>();
+        DamagePopupManager = GameObject.FindWithTag("DamagePopupManager").GetComponent<DamagePopupManager>();
         
         _importedLocalScale = transform.localScale;
         _rb = GetComponent<Rigidbody2D>();
@@ -167,7 +167,7 @@ public class Monster : MonoBehaviour
     {
         float totalDamage = damageMaker.GetComponent<MonoSkillBase>().damage;
         
-        // DamagePopupManager.Create(transform.position, (int)damageMaker.GetComponent<Skill>().damage);
+        DamagePopupManager.Create(transform.position, (int)totalDamage);
         if (health - totalDamage > 0.0f)
         {
             health -= totalDamage;

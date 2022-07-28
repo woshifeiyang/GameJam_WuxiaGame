@@ -48,8 +48,15 @@ public class JsonManager : MonoSingleton<JsonManager>
     }
     public void ParseBasicPropJson()
     {
-        
-        string text = GetTextForStreamingAssets("Basic Properties.json");
+        string text;
+        if (GameData.language == 0)
+        {
+            text = GetTextForStreamingAssets("Basic Properties.json");
+        }
+        else
+        {
+            text = GetTextForStreamingAssets("BasicProp_Chinese.json");
+        }
         JsonData jsonData = JsonMapper.ToObject(text);
         if (jsonData != null)
         {
@@ -68,7 +75,15 @@ public class JsonManager : MonoSingleton<JsonManager>
 
     public void ParseSkillListJson()
     {
-        string text = GetTextForStreamingAssets("SkillList.json");
+        string text;
+        if (GameData.language == 0)
+        {
+            text = GetTextForStreamingAssets("SkillList.json");
+        }
+        else
+        {
+            text = GetTextForStreamingAssets("SkillList_Chinese.json");
+        }
         JsonData jsonData = JsonMapper.ToObject(text);
         if (jsonData != null)
         {

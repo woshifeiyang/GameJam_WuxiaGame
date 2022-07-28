@@ -1,0 +1,51 @@
+[
+  {
+    "Id": 1,
+    "KeyName": "伤害提升",
+    "Value": 5.0,
+    "Description": "技能伤害将会提升",
+    "ResAddress": "SkillIcon/DamageUpgrade"
+  },
+  {
+    "Id": 2,
+    "KeyName": "血量增加",
+    "Value": 5.0,
+    "Description": "最大生命值将会提升",
+    "ResAddress": "SkillIcon/HPUpgrade"
+  },
+  {
+    "Id": 3,
+    "KeyName": "移动速度提升",
+    "Value": 0.3,
+    "Description": "角色的移动速度增加",
+    "ResAddress": "SkillIcon/MoveSpeed"
+  },
+  {
+    "Id": 4,
+    "KeyName": "技能冷却缩减",
+    "Value": 0.85,
+    "Description": "技能释放间隔时间减少",
+    "ResAddress": "SkillIcon/AttackSpeed"
+  },
+  {
+    "Id": 5,
+    "KeyName": "技能数量增加",
+    "Value": 1.0,
+    "Description": "技能的释放数量+1",
+    "ResAddress": "SkillIcon/BulletCopy"
+  },
+  {
+    "Id": 6,
+    "KeyName": "技能飞行速度提升",
+    "Value": 40.0,
+    "Description": "技能的飞行速度增加",
+    "ResAddress": "SkillIcon/BulletSpeed"
+  },
+  {
+    "Id": 7,
+    "KeyName": "伤害范围增加",
+    "Value": 2.0,
+    "Description": "技能的攻击范围将会提升",
+    "ResAddress": "SkillIcon/DamageRange"
+  }
+]

@@ -13,6 +13,5 @@ public class GameData : MonoBehaviour
     public void GetLanguage(int a)
     {
         language = a;
-        
     }
 }

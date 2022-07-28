@@ -36,7 +36,7 @@
     "KeyName":"雷电风暴",
     "Category":"Scope",
     "Description":"范围攻击，会在随机释放雷电风暴攻击敌人",
-    "Buff":"可受增益: 技能冷却缩减, Projectiles+1, 伤害范围增加",
+    "Buff":"可受增益: 技能冷却缩减, 伤害范围增加",
     "ResAddress":"SkillIcon/LightningStorm"
   },
   {
@@ -89,10 +89,10 @@
   },
   {
     "Id": 401,
-    "KeyName":"Poison Gas",
+    "KeyName":"毒蛊",
     "Category":"Scope",
-    "Description":"Poison gas is released behind the player and damages enemies in a certain area",
-    "Buff":"Buff: Increase attack speed, Damage range",
+    "Description":"范围攻击，在玩家身后释放毒蛊攻击敌人",
+    "Buff":"可受增益: 技能冷却缩减, 伤害范围增加",
     "ResAddress":"SkillIcon/PoisonGas"
   },
   {

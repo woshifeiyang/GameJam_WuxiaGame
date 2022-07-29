@@ -32,7 +32,7 @@ public class Skill101 : BulletSkillBase
         string assertPath = "Prefab/Skill/Bullet/101m";
         for (int i = 1; i < skillNum; i++)
         {
-            float offset = UnityEngine.Random.Range(-2, 2);
+            float offset = UnityEngine.Random.Range(-1, 1);
             GameObject childSkill = (GameObject)Instantiate(Resources.Load(assertPath));
             
             childSkill.transform.position = new Vector3(transform.position.x + offset, transform.position.y + offset, 0);

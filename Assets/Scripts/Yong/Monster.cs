@@ -122,6 +122,10 @@ public class Monster : MonoBehaviour
                 {
                     Statistic.Instance.Dps103(CalcuDps(obj.gameObject));
                 }
+                else if (obj.gameObject.transform.Find("Skilltag").CompareTag("103"))
+                {
+                    Statistic.Instance.Dps104(CalcuDps(obj.gameObject));
+                }
                 else if (obj.gameObject.transform.Find("Skilltag").CompareTag("301"))
                 {
                     Statistic.Instance.Dps301(CalcuDps(obj.gameObject));

@@ -224,7 +224,7 @@ public class Statistic : MonoSingleton<Statistic>
         transform.Find("101").GetComponent<Text>().text = "101:" + Mathf.Ceil(dps101).ToString();
         transform.Find("102").GetComponent<Text>().text = "102:" + Mathf.Ceil(dps102).ToString();
         transform.Find("103").GetComponent<Text>().text = "103:" + Mathf.Ceil(dps103).ToString();
-        //transform.Find("104").GetComponent<Text>().text = "104:" + dps104.ToString();
+        transform.Find("104").GetComponent<Text>().text = "104:" + Mathf.Ceil(dps104).ToString();
         transform.Find("201").GetComponent<Text>().text = "201:" + Mathf.Ceil(dps201).ToString();
         transform.Find("202").GetComponent<Text>().text = "202:" + Mathf.Ceil(dps202).ToString();
         transform.Find("301").GetComponent<Text>().text = "301:" + Mathf.Ceil(dps301).ToString();

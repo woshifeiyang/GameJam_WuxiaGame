@@ -11,6 +11,14 @@ TagManager:
   - EliteEnemy
   - Boss
   - BossSkill
+  - Storm
+  - 201
+  - 103
+  - 102
+  - 101
+  - 402
+  - 301
+  - 303
   layers:
   - Default
   - TransparentFX

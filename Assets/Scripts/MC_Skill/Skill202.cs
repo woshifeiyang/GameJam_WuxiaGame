@@ -49,6 +49,11 @@ public class Skill202 : ScopeSkillBase
         
     }
 
+    private void ColliderClose()
+    {
+        this.GetComponent<CircleCollider2D>().enabled = false;
+    }
+
     // Update is called once per frame
 
     private void SelfDestory()

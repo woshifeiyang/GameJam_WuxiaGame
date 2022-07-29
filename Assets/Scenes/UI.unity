@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: English
+  currentLanguage: Chinese
   detectLanguage: 1
   defaultLanguage: 
   saveLoad: 1
@@ -2033,7 +2033,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Language
+  m_Text: "\u8BED\u8A00"
 --- !u!222 &641367002
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6911,7 +6911,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Audio
+  m_Text: "\u97F3\u4E50"
 --- !u!222 &1917651414
 CanvasRenderer:
   m_ObjectHideFlags: 0

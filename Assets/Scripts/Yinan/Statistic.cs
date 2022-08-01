@@ -68,12 +68,10 @@ public class Statistic : MonoSingleton<Statistic>
         timer += Time.deltaTime;
         if (timer > 1)
         {
-            showDPS();
-            
+            //showDPS();
             timer = 0;
         }
         timerSkill += Time.deltaTime;
-
     }
 
     public void Dps101(float damage)
@@ -219,6 +217,7 @@ public class Statistic : MonoSingleton<Statistic>
         }
        
     }
+    
     void showDPS()
     {
         transform.Find("101").GetComponent<Text>().text = "101:" + Mathf.Ceil(dps101).ToString();

@@ -24,6 +24,14 @@
     "ResAddress":"SkillIcon/SplitSword"
   },
   {
+    "Id": 104,
+    "KeyName":"Blade Storm",
+    "Category":"Scope",
+    "Description":"AOE attack, Blade storm will attack the nearest enemy within a certain range",
+    "Buff":"Buff: Normal Damage upgrade, Increase attack speed",
+    "ResAddress":"SkillIcon/SwordArea"
+  },
+  {
     "Id": 201,
     "KeyName":"Lightning Strike",
     "Category":"MultTarget",
@@ -36,7 +44,7 @@
     "KeyName":"Lightning Storm",
     "Category":"Scope",
     "Description":"Randomly generate a fixed AOE damage lightning storm within the screen",
-    "Buff":"Buff: Increase attack speed, Projectiles+1, Damage range",
+    "Buff":"Buff: Increase attack speed, Damage range",
     "ResAddress":"SkillIcon/LightningStorm"
   },
   {

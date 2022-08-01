@@ -13,7 +13,6 @@ public class SwordEmi : MonoSkillBase
     {
         Sword = Resources.Load("Prefab/Skill/Field/104s1") as GameObject;
         SkillObj = Resources.Load("Prefab/Skill/MultTarget/104") as GameObject;
-
     }
 
         // Update is called once per frame

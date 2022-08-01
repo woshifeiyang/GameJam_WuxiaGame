@@ -24,6 +24,14 @@
     "ResAddress":"SkillIcon/SplitSword"
   },
   {
+    "Id": 104,
+    "KeyName":"火舞旋风",
+    "Category":"Scope",
+    "Description":"范围攻击, 召唤剑刃攻击最近的一定范围内的敌人",
+    "Buff":"可受增益: 技能冷却缩减, 伤害范围增加",
+    "ResAddress":"SkillIcon/SwordArea"
+  },
+  {
     "Id": 201,
     "KeyName":"雷电击",
     "Category":"MultTarget",

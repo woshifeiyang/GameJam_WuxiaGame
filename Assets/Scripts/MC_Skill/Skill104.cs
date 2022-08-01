@@ -6,13 +6,24 @@ public class Skill104 : ScopeSkillBase
 {
     public override void Start()
     {
-        this.transform.position = EnemyDetector.Instance.GetNearestEnemyLoc();
+        transform.position = EnemyDetector.Instance.GetNearestEnemyLoc();
+        InvokeRepeating(nameof(MakeDamage), 0, 0.5f);
     }
-
-    private void ResetCollider()
+    
+    private void MakeDamage()
     {
-        this.GetComponent<CircleCollider2D>().enabled = !this.GetComponent<CircleCollider2D>().enabled;
-        InvokeRepeating("SwitchCollider",1,0.02f);
+        transform.localScale = new Vector3(range, range, 1f);
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, range / 2);
+        
+        //OnDrawGizmos();
+        Debug.Log("the num of collider array is:" + hitColliders.Length);
+        foreach (var enemy in hitColliders)
+        {
+            if (enemy.gameObject != null)
+            {
+                enemy.gameObject.GetComponent<Monster>().GetDamaged(damage);
+            }
+        }
     }
     
     private void SelfDestory()
@@ -20,13 +31,9 @@ public class Skill104 : ScopeSkillBase
         Destroy(gameObject);
     }
     
-    private void SwordCall()
+    void OnDrawGizmos()
     {
-        GameObject.Find("SkillManager").GetComponent<SwordEmi>().SwordCall1();        
-    }
-    
-    private void SwitchCollider()
-    {
-        this.GetComponent<CircleCollider2D>().enabled = !this.GetComponent<CircleCollider2D>().enabled;
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(transform.position, range / 2);
     }
 }

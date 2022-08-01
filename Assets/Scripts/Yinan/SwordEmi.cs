@@ -50,8 +50,6 @@ public class SwordEmi : MonoSkillBase
             SkillObj.transform.position = list[0].transform.position;
             obj.GetComponent<MultTargetSkillBase>().damage = Damage + PlayerController.Instance.GetPlayerAttack();
         }
-
-
     }
     public void SwordDiscard()
     {

@@ -100,7 +100,7 @@ public class Monster : MonoBehaviour
     {
         if (obj.gameObject.CompareTag("Skill") && isDead == false)
         {
-            if (obj.gameObject.transform.childCount != 0)
+            /*if (obj.gameObject.transform.childCount != 0)
             {
                 if (obj.gameObject.transform.Find("Skilltag").CompareTag("Storm"))
                 {
@@ -138,7 +138,7 @@ public class Monster : MonoBehaviour
                 {
                     Statistic.Instance.Dps402(CalcuDps(obj.gameObject));
                 }
-            }
+            }*/
           
             GetDamaged(obj.gameObject);
             StartCoroutine(HitFeedback());
@@ -218,8 +218,24 @@ public class Monster : MonoBehaviour
             PlayerController.Instance.IncreaseExperience();
             SetDead();
         }
-
     }
+    
+    public void GetDamaged(float skillDamage)
+    {
+        DamagePopupManager.Create(transform.position, (int)skillDamage);
+        if (health - skillDamage > 0.0f)
+        {
+            health -= skillDamage;
+            //Debug.Log("Monster health = " + health);
+        }
+        else
+        {
+            //Debug.Log("Attack damage = " + totalDamage);
+            PlayerController.Instance.IncreaseExperience();
+            SetDead();
+        }
+    }
+    
     public void ActiveSKill302()
     {
         //Debug.Log("技能302激活");

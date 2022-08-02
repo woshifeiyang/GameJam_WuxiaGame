@@ -14,12 +14,11 @@ public class Skill104 : ScopeSkillBase
     {
         transform.localScale = new Vector3(range, range, 1f);
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, range / 2);
-        
         //OnDrawGizmos();
-        Debug.Log("the num of collider array is:" + hitColliders.Length);
+        //Debug.Log("the num of collider array is:" + hitColliders.Length);
         foreach (var enemy in hitColliders)
         {
-            if (enemy.gameObject != null)
+            if (!enemy)
             {
                 enemy.gameObject.GetComponent<Monster>().GetDamaged(damage);
             }

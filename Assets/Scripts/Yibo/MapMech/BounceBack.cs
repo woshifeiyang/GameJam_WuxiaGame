@@ -30,7 +30,7 @@ public class BounceBack : MonoBehaviour
             rb.velocity = new Vector2(0f, 0f);
             rb.AddForce( - col.contacts[0].normal * bounceForce);
             
-            anim.Play("Base Layer.BounceTrigger", 0, 0f);
+            anim.SetBool("isTrigger", true);
             
             Invoke(nameof(StopBounce),bounceTime);
         }
@@ -39,5 +39,6 @@ public class BounceBack : MonoBehaviour
     void StopBounce()
     {
         player.GetComponent<PlayerController>().canMove = true;
+        anim.SetBool("isTrigger", false);
     }
 }

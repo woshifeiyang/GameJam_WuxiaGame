@@ -15,7 +15,7 @@ public class MapManager : MonoBehaviour
     public int mapLength = 3;
     //number of maps in one direction, 3 means 3x3 maps
 
-    
+   
     private Vector3 playerPos;
     private int[] currentPosNum;
     private int currentQuadrant;

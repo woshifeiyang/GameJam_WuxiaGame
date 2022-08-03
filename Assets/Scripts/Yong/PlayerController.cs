@@ -140,6 +140,7 @@ public class PlayerController : MonoSingleton<PlayerController>
         if (curHealth <= 0.0f)
         {
             _anim.SetBool("isDead", true);
+            canMove = false;
         }
     }
     // 被怪物攻击
@@ -156,7 +157,7 @@ public class PlayerController : MonoSingleton<PlayerController>
             else
             {
                 curHealth = 0.0f;
-                EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GameOver);
+                //Invoke("GameOver",2.0f);
             }
         }
     }
@@ -197,12 +198,12 @@ public class PlayerController : MonoSingleton<PlayerController>
             curHealth -= damageAmount;
             PlayerDamageFeedback?.PlayFeedbacks();
         }
-        else
-        {
-            EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GameOver);
-        }
     }
 
+    public void GameOver()
+    {
+        EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GameOver);
+    }
     public Vector3 GetPlayerPosition()
     {
         return transform.position;

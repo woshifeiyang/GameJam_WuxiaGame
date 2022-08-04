@@ -20,10 +20,21 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
     public int monsterOnField = 0;
     public float timer = 0f;
 
+    private Dictionary<int, float> difficultyOfEnemyPool = new Dictionary<int, float>();
+
     protected override void InitAwake()
     {
         base.InitAwake();
         objectPoolHolder = GetComponent<EnemyObjectPool>();
+
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 1; j < 4; j++)
+            {
+                int tempId = 100 + i * 10 + j;
+                difficultyOfEnemyPool.Add(tempId, 0f);
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -83,6 +94,19 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
             {
                 Debug.Log("enemy is null, please check whether the name of pool is right or pool is null");
             }
+        }
+    }
+
+    private void SetEnemySpawningSpeed(int id, float targetSpeed)
+    {
+        difficultyOfEnemyPool[id] = targetSpeed;
+    }
+
+    private void ClearEnemySpawningSpeed()
+    {
+        foreach(KeyValuePair<int,float> entry in difficultyOfEnemyPool)
+        {
+            difficultyOfEnemyPool[entry.Key] = 0f;
         }
     }
     

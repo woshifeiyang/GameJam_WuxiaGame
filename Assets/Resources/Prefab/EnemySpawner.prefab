@@ -46,8 +46,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawnCd: 1
-  currentPool: 
+  spawnCdFactor: 1
+  currentPool: First
   objectPoolHolder: {fileID: 0}
+  enemySpawningCount: 0
+  monsterOnField: 0
+  timer: 0
 --- !u!114 &5159115867889821447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,10 +67,12 @@ MonoBehaviour:
   objectInPool: {fileID: 0}
   objectOutOfPool: {fileID: 0}
   firstPool:
-  - name: Tauren
+  - name: PopcornFirst
+    count: 1000
+  - name: PopcornHeadFirst
     count: 100
-  - name: Shardsoul
-    count: 10
+  - name: BobaFirst
+    count: 70
   secondPool: []
   thirdPool: []
   fourthPool: []
@@ -88,4 +94,4 @@ MonoBehaviour:
   - {fileID: 5243666614868315174, guid: 95f92361e95ca324aa356012eb64f697, type: 3}
   - {fileID: 5243666614868315174, guid: 9d984bf38dd3a404498566c25ce58a2e, type: 3}
   firstLevelBoss: {fileID: 0}
-  eliteEnemyCd: 60
+  eliteEnemyCd: 20

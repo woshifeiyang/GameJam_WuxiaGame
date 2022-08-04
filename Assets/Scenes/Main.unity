@@ -10618,30 +10618,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4614396183551652625, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
-      propertyPath: eliteEnemyCd
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5159115867889821447, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
-      propertyPath: firstPool.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5159115867889821447, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
-      propertyPath: firstPool.Array.data[0].name
-      value: Popcorn
-      objectReference: {fileID: 0}
-    - target: {fileID: 5159115867889821447, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
-      propertyPath: firstPool.Array.data[1].name
-      value: PopcornHead
-      objectReference: {fileID: 0}
-    - target: {fileID: 5159115867889821447, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
-      propertyPath: firstPool.Array.data[2].name
-      value: Boba
-      objectReference: {fileID: 0}
-    - target: {fileID: 5159115867889821447, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
-      propertyPath: firstPool.Array.data[2].count
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 8599008191193289619, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -10685,14 +10661,6 @@ PrefabInstance:
     - target: {fileID: 8599008191193289619, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8599008191193289644, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
-      propertyPath: currentPool
-      value: First
-      objectReference: {fileID: 0}
-    - target: {fileID: 8599008191193289644, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
-      propertyPath: enemySpawnCd
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8599008191193289645, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
       propertyPath: m_Name

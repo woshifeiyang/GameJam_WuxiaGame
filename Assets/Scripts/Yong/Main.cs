@@ -13,6 +13,7 @@ public class Main : MonoSingleton<Main>
         JsonManager.Instance.InitJsonManager();
         UIManager.Instance.InitUIManager();
         EventListener.Instance.InitEventListener();
+        EnemySpawner.Instance.InitEnemySpawner();
         
         GameStart();
     }

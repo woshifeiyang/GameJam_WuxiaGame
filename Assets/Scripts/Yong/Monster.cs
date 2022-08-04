@@ -22,10 +22,9 @@ public class Monster : MonoBehaviour
 
     public string poolBelongTo = null;
 
-    public Animation deathAnimation;
+    private Animation _deathAnimation;
 
-    public DamagePopupManager DamagePopupManager;
-
+    private DamagePopupManager _damagePopupManager;
 
     private Rigidbody2D _rb;
 
@@ -66,7 +65,7 @@ public class Monster : MonoBehaviour
     void Start()
     {
         _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 1);
-        DamagePopupManager = GameObject.FindWithTag("DamagePopupManager").GetComponent<DamagePopupManager>();
+        _damagePopupManager = GameObject.FindWithTag("DamagePopupManager").GetComponent<DamagePopupManager>();
         
         _importedLocalScale = transform.localScale;
         _rb = GetComponent<Rigidbody2D>();
@@ -85,7 +84,7 @@ public class Monster : MonoBehaviour
         Vector3 playerPosition = PlayerController.Instance.GetPlayerPosition();
         if (canMove)
         {
-            _rb.MovePosition(transform.position + (playerPosition - transform.position).normalized * Time.fixedDeltaTime * _moveSpeed );
+            //_rb.MovePosition(transform.position + (playerPosition - transform.position).normalized * Time.fixedDeltaTime * _moveSpeed );
         }
 
         if (transform.position.x - playerPosition.x > 0)
@@ -156,7 +155,7 @@ public class Monster : MonoBehaviour
 
     private void PutObjectInPool()
     {
-        EnemyObjectPool.EnemyObjectPoolInstance.PutObjectInPool(this.gameObject);
+        EnemyObjectPool.Instance.PutObjectInPool(this.gameObject);
     }
 
     public void SetAlive()
@@ -206,7 +205,7 @@ public class Monster : MonoBehaviour
     {
         float totalDamage = damageMaker.GetComponent<MonoSkillBase>().damage;
         
-        DamagePopupManager.Create(transform.position, (int)totalDamage);
+        _damagePopupManager.Create(transform.position, (int)totalDamage);
         if (health - totalDamage > 0.0f)
         {
             health -= totalDamage;
@@ -222,7 +221,7 @@ public class Monster : MonoBehaviour
     
     public void GetDamaged(float skillDamage)
     {
-        DamagePopupManager.Create(transform.position, (int)skillDamage);
+        _damagePopupManager.Create(transform.position, (int)skillDamage);
         if (health - skillDamage > 0.0f)
         {
             health -= skillDamage;

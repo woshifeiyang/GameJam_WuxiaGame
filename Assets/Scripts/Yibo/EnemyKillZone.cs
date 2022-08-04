@@ -16,7 +16,7 @@ public class EnemyKillZone : MonoBehaviour
             }
             else
             {
-                EnemyObjectPool.EnemyObjectPoolInstance.PutObjectInPool(other.gameObject);
+                EnemyObjectPool.Instance.PutObjectInPool(other.gameObject);
                 //Debug.Log("put object in pool");
             }
 

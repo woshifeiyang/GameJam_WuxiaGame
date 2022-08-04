@@ -20,6 +20,7 @@ TagManager:
   - 301
   - 303
   - 401
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - 
+  - Obstacle
   - Sword
   - 
   - 

@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: Chinese
+  currentLanguage: English
   detectLanguage: 1
   defaultLanguage: 
   saveLoad: 1
@@ -2033,7 +2033,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8BED\u8A00"
+  m_Text: Language
 --- !u!222 &641367002
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3152,7 +3152,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8FD4\u56DE"
+  m_Text: Return
 --- !u!222 &885293344
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6704,7 +6704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1893180717
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6911,7 +6911,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u97F3\u4E50"
+  m_Text: Audio
 --- !u!222 &1917651414
 CanvasRenderer:
   m_ObjectHideFlags: 0

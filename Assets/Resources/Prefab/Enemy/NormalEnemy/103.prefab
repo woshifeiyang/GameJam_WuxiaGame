@@ -126,7 +126,7 @@ MonoBehaviour:
   damage: 5
   isDead: 0
   canMove: 1
-  poolBelongTo: First
+  poolBelongTo: 103
   deathAnimation: {fileID: 0}
   DamagePopupManager: {fileID: 0}
 --- !u!50 &5243666614868315176

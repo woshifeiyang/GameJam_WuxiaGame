@@ -213,13 +213,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1c8823f534a2d418322b61e275c9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterId: 102
+  monsterId: 132
   health: 100
   moveSpeed: 1
   damage: 10
   isDead: 0
   canMove: 1
-  poolBelongTo: First
+  poolBelongTo: 132
   deathAnimation: {fileID: 0}
   DamagePopupManager: {fileID: 0}
 --- !u!50 &5243666614868315176

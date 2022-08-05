@@ -9,9 +9,14 @@ public class Skill301 : FieldSkillBase
     public float skillLastTime;
 
     private CircleCollider2D _cc;
+
+    public void Awake()
+    {
+        damage = 0.3f * PlayerController.Instance.maxHealth;
+    }
     public override void Start()
     {
-        damage = 0.6f * PlayerController.Instance.maxHealth;
+        
         _cc = this.GetComponent<CircleCollider2D>();
         //_cc.radius = range;
         _cc.enabled = false;

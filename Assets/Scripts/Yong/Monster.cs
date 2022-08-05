@@ -101,46 +101,7 @@ public class Monster : MonoBehaviour
     {
         if (obj.gameObject.CompareTag("Skill") && isDead == false)
         {
-            /*if (obj.gameObject.transform.childCount != 0)
-            {
-                if (obj.gameObject.transform.Find("Skilltag").CompareTag("Storm"))
-                {
-                    Statistic.Instance.Dps202(CalcuDps(obj.gameObject));     
-                }
-                else if (obj.gameObject.transform.Find("Skilltag").CompareTag("201"))
-                {
-                    Statistic.Instance.Dps201(CalcuDps(obj.gameObject));
-                }
-                else if (obj.gameObject.transform.Find("Skilltag").CompareTag("101"))
-                {
-                    Statistic.Instance.Dps101(CalcuDps(obj.gameObject));
-                }
-                else if (obj.gameObject.transform.Find("Skilltag").CompareTag("102"))
-                {
-                    Statistic.Instance.Dps102(CalcuDps(obj.gameObject));
-                }
-                else if (obj.gameObject.transform.Find("Skilltag").CompareTag("103"))
-                {
-                    Statistic.Instance.Dps103(CalcuDps(obj.gameObject));
-                }
-                else if (obj.gameObject.transform.Find("Skilltag").CompareTag("301"))
-                {
-                    Statistic.Instance.Dps301(CalcuDps(obj.gameObject));
-                }
-                else if (obj.gameObject.transform.Find("Skilltag").CompareTag("303"))
-                {
-                    Statistic.Instance.Dps303(CalcuDps(obj.gameObject));
-                }
-                else if (obj.gameObject.transform.Find("Skilltag").CompareTag("401"))
-                {
-                    Statistic.Instance.Dps401(CalcuDps(obj.gameObject));
-                }
-                else if (obj.gameObject.transform.Find("Skilltag").CompareTag("402"))
-                {
-                    Statistic.Instance.Dps402(CalcuDps(obj.gameObject));
-                }
-            }*/
-          
+            //DPScheck(obj);    
             GetDamaged(obj.gameObject);
             StartCoroutine(HitFeedback());
         }
@@ -269,4 +230,46 @@ public class Monster : MonoBehaviour
             return damage;
     }
 
+    private void DPScheck(Collider2D obj)
+    {
+        if (obj.gameObject.transform.childCount != 0)
+           {
+               if (obj.gameObject.transform.Find("Skilltag").CompareTag("Storm"))
+               {
+                   Statistic.Instance.Dps202(CalcuDps(obj.gameObject));     
+               }
+               else if (obj.gameObject.transform.Find("Skilltag").CompareTag("201"))
+               {
+                   Statistic.Instance.Dps201(CalcuDps(obj.gameObject));
+               }
+               else if (obj.gameObject.transform.Find("Skilltag").CompareTag("101"))
+               {
+                   Statistic.Instance.Dps101(CalcuDps(obj.gameObject));
+               }
+               else if (obj.gameObject.transform.Find("Skilltag").CompareTag("102"))
+               {
+                   Statistic.Instance.Dps102(CalcuDps(obj.gameObject));
+               }
+               else if (obj.gameObject.transform.Find("Skilltag").CompareTag("103"))
+               {
+                   Statistic.Instance.Dps103(CalcuDps(obj.gameObject));
+               }
+               else if (obj.gameObject.transform.Find("Skilltag").CompareTag("301"))
+               {
+                   Statistic.Instance.Dps301(CalcuDps(obj.gameObject));
+               }
+               else if (obj.gameObject.transform.Find("Skilltag").CompareTag("303"))
+               {
+                   Statistic.Instance.Dps303(CalcuDps(obj.gameObject));
+               }
+               else if (obj.gameObject.transform.Find("Skilltag").CompareTag("401"))
+               {
+                   Statistic.Instance.Dps401(CalcuDps(obj.gameObject));
+               }
+               else if (obj.gameObject.transform.Find("Skilltag").CompareTag("402"))
+               {
+                   Statistic.Instance.Dps402(CalcuDps(obj.gameObject));
+               }
+           }
+    }
 }

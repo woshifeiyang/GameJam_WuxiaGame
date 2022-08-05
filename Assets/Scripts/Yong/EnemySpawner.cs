@@ -19,9 +19,11 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
     private float _timer = 0f;
     
     private Dictionary<int, float> difficultyOfEnemyPool = new Dictionary<int, float>();
+    private string targetPool;
 
     public void InitEnemySpawner()
     {
+        targetPool = "101";
         _currentPool = "101";
         for (int i = 0; i < 5; i++)
         {
@@ -93,6 +95,11 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
             }
             cd = enemySpawnCd;
         }
+    }
+
+    IEnumerator updateTargetPool()
+    {
+        yield return null;
     }
 
     private void SetEnemySpawningSpeed(int id, float targetSpeed)

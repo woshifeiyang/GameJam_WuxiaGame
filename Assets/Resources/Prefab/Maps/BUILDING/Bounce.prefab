@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3672709048669840046}
   - component: {fileID: 3672709048669840047}
   - component: {fileID: 3672709048669840045}
-  - component: {fileID: 5138161298768417556}
   - component: {fileID: 1115137654534362519}
   m_Layer: 0
   m_Name: Bounce
@@ -100,59 +99,7 @@ MonoBehaviour:
   bounceForce: 1000
   player: {fileID: 0}
   bounceTime: 0.7
---- !u!60 &5138161298768417556
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3672709048669840042}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.04, y: 2.68}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 1.02, y: -0.29999998}
-      - {x: 1.0407851, y: 0.3946556}
-      - {x: 0.86901724, y: 0.606644}
-      - {x: 0.6830761, y: 0.69987935}
-      - {x: 0.6245086, y: 0.8822714}
-      - {x: 0.41946292, y: 1.037892}
-      - {x: 0.40429035, y: 1.1646817}
-      - {x: 0.28227141, y: 1.3577626}
-      - {x: -0.1516312, y: 1.3519721}
-      - {x: -0.2820206, y: 1.0942774}
-      - {x: -0.495423, y: 1.1046449}
-      - {x: -0.75196344, y: 0.82112324}
-      - {x: -0.79349196, y: 0.5269503}
-      - {x: -1.0333219, y: 0.33135694}
-      - {x: -1.0293946, y: -0.20377907}
-      - {x: -0.84561557, y: -0.33346626}
-      - {x: -0.6062008, y: -0.5925479}
-      - {x: -0.21375877, y: -0.67298675}
-      - {x: -0.044737577, y: -0.7152621}
-      - {x: 0.1650958, y: -0.72436416}
-      - {x: 0.2684356, y: -0.69089806}
-      - {x: 0.3948235, y: -0.60818374}
-    - - {x: -0.43753785, y: -0.5242179}
-      - {x: -0.3107114, y: -0.35540858}
-      - {x: -0.42557505, y: -0.3178301}
-      - {x: -0.60392517, y: -0.31768423}
-      - {x: -0.6345309, y: -0.44194245}
-      - {x: -0.500878, y: -0.48891497}
+  anim: {fileID: 0}
 --- !u!95 &1115137654534362519
 Animator:
   serializedVersion: 3

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Feedbacks;
+using Pathfinding;
 using UnityEngine;
 
 public class Monster : MonoBehaviour
@@ -70,6 +71,7 @@ public class Monster : MonoBehaviour
         _importedLocalScale = transform.localScale;
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
+        GetComponent<AIDestinationSetter>().target = PlayerController.Instance.transform;
         
         SetMoveSpeed();
     }
@@ -171,7 +173,7 @@ public class Monster : MonoBehaviour
         isDead = true;
         _moveSpeed = 0.0f;
         SwitchAnim();
-
+        GetComponent<AILerp>().canMove = false;
         //test if the child has children
         if (monsterId == "102" || monsterId == "302")
         {

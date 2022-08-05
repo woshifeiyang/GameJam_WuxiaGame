@@ -98,6 +98,8 @@ public class PlayerController : MonoSingleton<PlayerController>
         _importedLocalScale = this.transform.localScale;
         canMove = true;
         updateParameters();
+        
+        //InvokeRepeating(nameof(UpdateAStarGraph), 1.0f,1.0f);
     }
     // Update is called once per frame
     void Update()
@@ -132,6 +134,7 @@ public class PlayerController : MonoSingleton<PlayerController>
         {
             _rb.MovePosition(_rb.position + _movement * _moveSpeedFinal * Time.deltaTime);
         }
+        
     }
 
     private void SwitchAnim()
@@ -142,6 +145,11 @@ public class PlayerController : MonoSingleton<PlayerController>
             _anim.SetBool("isDead", true);
             canMove = false;
         }
+    }
+
+    private void UpdateAStarGraph()
+    {
+        
     }
     // 被怪物攻击
     private void OnCollisionEnter2D(Collision2D col)

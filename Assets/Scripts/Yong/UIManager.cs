@@ -141,7 +141,6 @@ public class UIManager : MonoSingleton<UIManager>
     {
         if (_firstChooseUIObj.activeSelf) return;
         
-        Debug.Log("FirstChoose");
         _firstChooseUIObj.SetActive(true);
         _firstChooseUIObj.GetComponent<Animator>().SetBool("isVisable", true);
         _phoneButtonObj.SetActive(false);

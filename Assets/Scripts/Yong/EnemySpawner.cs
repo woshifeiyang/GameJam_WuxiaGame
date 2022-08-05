@@ -9,31 +9,20 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
 {
     public float enemySpawnCd;
     public float spawnCdFactor = 0.1f;
-    public string currentPool;
+    private string _currentPool;
 
     private const float ScreenWidthUnit = 8.5f;
     private const float ScreenHeightUnit = 19f;
 
     public int enemySpawningCount = 0;
     public int monsterOnField = 0;
-    public float timer = 0f;
-
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-    public void InitEnemySpawner()
-    {
-        currentPool = "101";
-=======
->>>>>>> Stashed changes
+    private float _timer = 0f;
+    
     private Dictionary<int, float> difficultyOfEnemyPool = new Dictionary<int, float>();
 
-    protected override void InitAwake()
+    public void InitEnemySpawner()
     {
-        base.InitAwake();
-        objectPoolHolder = GetComponent<EnemyObjectPool>();
-<<<<<<< Updated upstream
-
+        _currentPool = "101";
         for (int i = 0; i < 5; i++)
         {
             for (int j = 1; j < 4; j++)
@@ -43,28 +32,15 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
             }
         }
     }
-=======
->>>>>>> Stashed changes
-
-        for (int i = 0; i < 5; i++)
-        {
-            for (int j = 1; j < 4; j++)
-            {
-                int tempId = 100 + i * 10 + j;
-                difficultyOfEnemyPool.Add(tempId, 0f);
-            }
-        }
->>>>>>> b00a4d0f7b222e81146e4e0c5fb8187861f0472b
-    }
-
+    
     private void FixedUpdate()
     {
-        //UpdateSpawnCd();
+        UpdateSpawnCd();
         
-        timer += Time.fixedDeltaTime;
-        if (timer > 1f)
+        _timer += Time.fixedDeltaTime;
+        if (_timer > 1f)
         {
-            timer = 0f;
+            _timer = 0f;
             enemySpawningCount = 0;
         }
     }
@@ -78,16 +54,16 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
     {
         float spawnCdResult = 1f;
 
-        int poolCurrentCount = EnemyObjectPool.Instance.EnemyNumInPool[currentPool];
-        int poolMaxCount = EnemyObjectPool.Instance.EnemyNumInPool[currentPool + "Max"];
-        monsterOnField = EnemyObjectPool.Instance.EnemyNumInPool[currentPool + "OnField"];
+        int poolCurrentCount = EnemyObjectPool.Instance.EnemyNumInPool[_currentPool];
+        int poolMaxCount = EnemyObjectPool.Instance.EnemyNumInPool[_currentPool + "Max"];
+        monsterOnField = EnemyObjectPool.Instance.EnemyNumInPool[_currentPool + "OnField"];
 
-        spawnCdResult = (float)monsterOnField / (float)poolMaxCount;
+        spawnCdResult = monsterOnField / (float)poolMaxCount;
 
         float tempSpawnSpeed = 1 / spawnCdResult;
         tempSpawnSpeed *= spawnCdFactor;
 
-        enemySpawnCd = 1/tempSpawnSpeed;
+        enemySpawnCd = 1 / tempSpawnSpeed;
     }
 
     public void SpawnEnemy()
@@ -102,7 +78,7 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
         while (true)
         {
             yield return new WaitForSeconds(cd);
-            GameObject enemy = EnemyObjectPool.Instance.GetObjectFromPool(currentPool); //  后期要改
+            GameObject enemy = EnemyObjectPool.Instance.GetObjectFromPool(_currentPool); //  后期要改
             if (enemy)
             {
                 enemy.transform.position = GetRandomPosition();
@@ -131,19 +107,7 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
             difficultyOfEnemyPool[entry.Key] = 0f;
         }
     }
-
-    private void SetEnemySpawningSpeed(int id, float targetSpeed)
-    {
-        difficultyOfEnemyPool[id] = targetSpeed;
-    }
-
-    private void ClearEnemySpawningSpeed()
-    {
-        foreach(KeyValuePair<int,float> entry in difficultyOfEnemyPool)
-        {
-            difficultyOfEnemyPool[entry.Key] = 0f;
-        }
-    }
+    
     
     public static Vector2 GetRandomPosition()
     {

@@ -6330,6 +6330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 929907199}
   - component: {fileID: 929907200}
+  - component: {fileID: 929907201}
   m_Layer: 3
   m_Name: A*
   m_TagString: Untagged
@@ -6367,7 +6368,7 @@ MonoBehaviour:
   data:
     dataString: UEsDBBQAAAgIAAAAIezZQeKBVgIAABIFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1zmzAQ/SsenesOdjxN3FuLHacHx564nVy4yGgBjYXE6MNfGf/3rgQYQqcnxHtvd9+uFj4Il6aC1Cq90pytFQPyfUT8mXwZdeQLnGmu5I5fodW8c2YLL6JB80YtV4hPfJhRJVjN0x8yF14cIegkz5QulyyHWBlrEM6oMICUVtZHS4Q+RuSMj/Hch1zwNH30pyue5tHohscUpAXdSVthK6tVTqaClhUwb7kTP7Tqh1omsZlG4Y2nSghuGifEXqrQaUwr47APFDBOsbNQ3usL4Hlhvct+8CbLDNjGkqaXBdc4oDor+anqqZXUHGpfRypcMDB9Cp7qpOt/+PEk0JlW5UtbdxL5Grbg6eGNXlJqbG+sfXjx2biTJyoOdC/gvQD5qlZaOcmQtNr5UGdguuhe763FBaSHDq+tDkBX/f9yfA+30P05Frzce+rrrAZ2QoV5h6sHjTfzCw2HxTBNCkS9iz8GftO8v0EN8cy1sUg1XUpvb6+c9lKyDDPz3TgbKy0hwI3pCiQV9rLFNHZ4hQOuV3bAPFP/rTTFG679BAYhAe70UTSgtup0vyxTqNMaTLFxVnAJnWlPvOKcYiVlvWH9mbRhO6czmvbCcsfZ59UiWTZj+8mc7mcwRzNP42/T/YxOMnx/TLM5i0jYPS6xTyq2tdFmPHhrsksucc/aX8hopWkVtp1pelrxa6l6I+cyU7tUA8hNneFuHDQWwa+SLRnHAe3AWi7DfZOPhAiVHoAl90RJ6HR5tpomXZaEVPyorEcSEod/RkI8fN/lrYYjh5Mv3ia7kdtfUEsDBBQAAAgIAAAAIex8n9hRbAAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrRSWppJSpKhZWKSSaqloYGBha6ZUZJJomEakG+enGaZYqAUC1RfUlmQ6peYmwrRE5BYkpGWmZeSmZeu516UmeIOMlopthYAUEsBAi0AFAAACAgAAAAh7NlB4oFWAgAAEgUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAAh7Hyf2FFsAAAAeAAAAAkAJAAAAAAAAAAAAAAAowIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABaAwAAAAA=
     upgradeData: 
-    file_cachedStartup: {fileID: 0}
+    file_cachedStartup: {fileID: 4900000, guid: 0ec457697f6b0154081a64fb7ea89272, type: 3}
     data_cachedStartup: 
     cacheStartup: 0
   showNavGraphs: 1
@@ -6406,6 +6407,22 @@ MonoBehaviour:
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
   showGraphs: 1
+--- !u!114 &929907201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929907198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a634230476dc478b88eceac73b1c8a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  updateDistance: 3
+  target: {fileID: 2924226447480045136}
+  graphIndex: 0
 --- !u!1 &984030863
 GameObject:
   m_ObjectHideFlags: 0
@@ -15938,6 +15955,10 @@ PrefabInstance:
     - target: {fileID: 8563263028949727388, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
       propertyPath: healthLevel
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563263028949727388, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
+      propertyPath: _bounceForce
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8563263028949727388, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
       propertyPath: skillCdLevel

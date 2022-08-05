@@ -43,6 +43,11 @@ public class Monster : MonoBehaviour
     {
         SetAlive();
         _material.DisableKeyword("_BEATTACK");
+
+        if (GetComponent<AILerp>())
+        {
+            GetComponent<AILerp>().canMove = true;
+        }
         _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 1);
     }
     // 如果怪物在摄像机内可见，添加进敌人探测器的可视怪物列表中
@@ -71,8 +76,9 @@ public class Monster : MonoBehaviour
         _importedLocalScale = transform.localScale;
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
-        GetComponent<AIDestinationSetter>().target = PlayerController.Instance.transform;
         
+        GetComponent<AIDestinationSetter>().target = PlayerController.Instance.transform;
+
         SetMoveSpeed();
     }
 
@@ -188,11 +194,9 @@ public class Monster : MonoBehaviour
         if (health - skillDamage > 0.0f)
         {
             health -= skillDamage;
-            //Debug.Log("Monster health = " + health);
         }
         else
         {
-            //Debug.Log("Attack damage = " + totalDamage);
             PlayerController.Instance.IncreaseExperience();
             SetDead();
         }

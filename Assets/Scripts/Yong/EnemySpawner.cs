@@ -7,8 +7,9 @@ using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoSingleton<EnemySpawner>
 {
-    public float enemySpawnCd;
-    public float spawnCdFactor = 0.1f;
+    public float enemySpawnCdBase;
+    public float enemySpawnCdFinal;
+    public float spawnCdFactorAdjust = 0.1f;
     private string _currentPool;
 
     private const float ScreenWidthUnit = 8.5f;
@@ -18,21 +19,83 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
     public int monsterOnField = 0;
     private float _timer = 0f;
     
-    private Dictionary<int, float> difficultyOfEnemyPool = new Dictionary<int, float>();
+
+    //test dic 
+    private Dictionary<string, float> difficultyOfEnemyPool = new Dictionary<string, float>();
     private string targetPool;
 
+    // [game stage number][enemy id]
+    public float[][] enemySpawnSpeed;
+
+    public int totalStageCount = 0;
+
+    public float finalSpawnCd = 1f;
+    public EnemyObjectPool objectPoolComp;
+
+    //enemy data struct
+    [Serializable]
+    public struct EnemyDifficultyData
+    {
+        public string name;
+        public float spawnSpeed;
+    }
+    [Serializable]
+    public struct Stages
+    {
+        public EnemyDifficultyData[] EnemyData;
+    }
+
+    public Stages[] difficultyOfStages;
+    public int currentStageNum = 0;
     public void InitEnemySpawner()
     {
+        objectPoolComp = gameObject.GetComponent<EnemyObjectPool>();
+
+        enemySpawnSpeed = new float[totalStageCount][];
+
         targetPool = "101";
         _currentPool = "101";
-        for (int i = 0; i < 5; i++)
+
+        InitSpawnSpeed();
+    }
+
+    private void PutDataIntoDic()
+    {
+        difficultyOfEnemyPool.Clear();
+
+        foreach(EnemyDifficultyData entry in difficultyOfStages[currentStageNum].EnemyData)
         {
-            for (int j = 1; j < 4; j++)
+            difficultyOfEnemyPool.Add(entry.name, entry.spawnSpeed);
+        }
+    }
+
+    private float GetTotalSpawnSpeedInSecond()
+    {
+        float totalSpawnSpeed = 0f;
+
+        foreach(KeyValuePair<string,float> entry in difficultyOfEnemyPool)
+        {
+            totalSpawnSpeed += entry.Value;
+        }
+
+        return 1/totalSpawnSpeed;
+    }
+
+    private void InitSpawnSpeed()
+    {
+        for (int m = 0; m < enemySpawnSpeed.Length; m++)
+        {
+            for (int i = 0; i < 5; i++)
             {
-                int tempId = 100 + i * 10 + j;
-                difficultyOfEnemyPool.Add(tempId, 0f);
+                for (int j = 1; j < 4; j++)
+                {
+                    int tempId = 100 + i * 10 + j;
+                    enemySpawnSpeed[m][tempId] = 0;
+                }
             }
         }
+
+        PutDataIntoDic();
     }
     
     private void FixedUpdate()
@@ -54,18 +117,15 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
     
     void UpdateSpawnCd()
     {
-        float spawnCdResult = 1f;
-
-        int poolCurrentCount = EnemyObjectPool.Instance.EnemyNumInPool[_currentPool];
-        int poolMaxCount = EnemyObjectPool.Instance.EnemyNumInPool[_currentPool + "Max"];
-        monsterOnField = EnemyObjectPool.Instance.EnemyNumInPool[_currentPool + "OnField"];
-
-        spawnCdResult = monsterOnField / (float)poolMaxCount;
-
-        float tempSpawnSpeed = 1 / spawnCdResult;
-        tempSpawnSpeed *= spawnCdFactor;
-
-        enemySpawnCd = 1 / tempSpawnSpeed;
+        enemySpawnCdBase = GetTotalSpawnSpeedInSecond();
+        enemySpawnCdFinal = enemySpawnCdBase;
+        if ((1/GetTotalSpawnSpeedInSecond() * 8) > objectPoolComp.countEnemyTotalNum()) 
+        {
+            float enemyMapFillFactor = 1f;
+            enemyMapFillFactor = (float)(objectPoolComp.countEnemyTotalNum() + 1)/ 500f;
+            enemySpawnCdFinal = enemySpawnCdBase * enemyMapFillFactor;
+        }
+        Debug.Log("enemy spawn cd = " + enemySpawnCdFinal);
     }
 
     public void SpawnEnemy()
@@ -76,7 +136,7 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
     
     IEnumerator SpawnEnemy_C()
     {
-        float cd = enemySpawnCd;
+        float cd = enemySpawnCdFinal;
         while (true)
         {
             yield return new WaitForSeconds(cd);
@@ -91,9 +151,9 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
             }
             else
             {
-                Debug.Log("enemy is null, please check whether the name of pool is right or pool is null");
+               Debug.Log("enemy is null, please check whether the name of pool is right or pool is null");
             }
-            cd = enemySpawnCd;
+            cd = enemySpawnCdFinal;
         }
     }
 
@@ -102,14 +162,14 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
         yield return null;
     }
 
-    private void SetEnemySpawningSpeed(int id, float targetSpeed)
+    private void SetEnemySpawningSpeed(string id, float targetSpeed)
     {
         difficultyOfEnemyPool[id] = targetSpeed;
     }
 
     private void ClearEnemySpawningSpeed()
     {
-        foreach(KeyValuePair<int,float> entry in difficultyOfEnemyPool)
+        foreach(KeyValuePair<string,float> entry in difficultyOfEnemyPool)
         {
             difficultyOfEnemyPool[entry.Key] = 0f;
         }

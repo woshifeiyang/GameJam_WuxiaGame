@@ -32,6 +32,11 @@ public class EnemyObjectPool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        for(int i = 0; i < enemyArray.Length; i++)
+        {
+            enemyArray[i].count = 500;
+        }
+
         objectInPool = new GameObject();
         objectInPool.name = "objectInPool";
         objectOutOfPool = new GameObject();
@@ -52,7 +57,19 @@ public class EnemyObjectPool : MonoBehaviour
         // 场内该种类敌人数量
         EnemyNumInPool.Add(enemy.name + "OnField", 0);
     }
-    
+
+    public int countEnemyTotalNum()
+    {
+        int result = 0;
+
+        foreach(EnemyStruct entry in enemyArray)
+        {
+            String temp = entry.name + "OnField";
+            result += EnemyNumInPool[temp];
+        }
+        Debug.Log("result" + result);
+        return result;
+    }
     /// <summary>
     /// 将每个结构体数组中设定的怪物种类和数量填充进不同的对象池
     /// </summary>

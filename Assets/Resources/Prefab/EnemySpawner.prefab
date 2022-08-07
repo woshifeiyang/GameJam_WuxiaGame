@@ -45,13 +45,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f81dd322da9ba428336d76ec20d9f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawnCd: 1
-  spawnCdFactor: 1
-  currentPool: First
-  objectPoolHolder: {fileID: 0}
+  enemySpawnCdBase: 0
+  enemySpawnCdFinal: 0
+  spawnCdFactorAdjust: 0.1
   enemySpawningCount: 0
   monsterOnField: 0
-  timer: 0
+  totalStageCount: 0
+  finalSpawnCd: 1
+  objectPoolComp: {fileID: 0}
+  difficultyOfStages:
+  - EnemyData:
+    - name: 101
+      spawnSpeed: 1
+    - name: 102
+      spawnSpeed: 0
+    - name: 103
+      spawnSpeed: 0
+    - name: 111
+      spawnSpeed: 1
+    - name: 112
+      spawnSpeed: 1
+    - name: 113
+      spawnSpeed: 0
+    - name: 121
+      spawnSpeed: 0
+    - name: 122
+      spawnSpeed: 0
+    - name: 123
+      spawnSpeed: 0
+    - name: 131
+      spawnSpeed: 0
+    - name: 132
+      spawnSpeed: 0
+    - name: 133
+      spawnSpeed: 0
+    - name: 141
+      spawnSpeed: 0
+    - name: 142
+      spawnSpeed: 0
+    - name: 143
+      spawnSpeed: 0
+  currentStageNum: 0
 --- !u!114 &5159115867889821447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,16 +100,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectInPool: {fileID: 0}
   objectOutOfPool: {fileID: 0}
-  firstPool:
-  - name: PopcornFirst
-    count: 1000
-  - name: PopcornHeadFirst
+  enemyArray:
+  - name: 101
     count: 100
-  - name: BobaFirst
-    count: 70
-  secondPool: []
-  thirdPool: []
-  fourthPool: []
+  - name: 102
+    count: 10
+  - name: 103
+    count: 10
+  - name: 111
+    count: 10
+  - name: 112
+    count: 10
+  - name: 113
+    count: 10
+  - name: 121
+    count: 10
+  - name: 122
+    count: 10
+  - name: 123
+    count: 10
+  - name: 131
+    count: 10
+  - name: 132
+    count: 10
+  - name: 133
+    count: 10
+  - name: 141
+    count: 10
+  - name: 142
+    count: 10
+  - name: 143
+    count: 10
 --- !u!114 &4614396183551652625
 MonoBehaviour:
   m_ObjectHideFlags: 0

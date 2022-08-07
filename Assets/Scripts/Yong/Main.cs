@@ -25,6 +25,10 @@ public class Main : MonoSingleton<Main>
         {
             EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GetSkill);
         }
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            UIManager.Instance.ShowBasicPropUI();
+        }
     }
     // 管理游戏整体进程逻辑
     private void GameStart()

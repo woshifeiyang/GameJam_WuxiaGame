@@ -6,14 +6,16 @@ using UnityEngine;
 
 public class SpecialEnemySpawner : MonoBehaviour
 {
-    public GameObject[] firstLevelEliteEnemy;
-    public GameObject firstLevelBoss;
-
-    public int eliteEnemyCd = 60;
-
+    [Serializable]
+    public struct SpecialEnemy
+    {
+        public GameObject specialEnemy;
+        public float spawnSecond;
+    }
+    public SpecialEnemy[] specialEnemyHolder;
+    public float Timer = 0f;
 
     private int enemySpawnMarker = 0;
-    private float secondMarker = 0f;
 
     private void Start()
     {
@@ -22,15 +24,13 @@ public class SpecialEnemySpawner : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (secondMarker > eliteEnemyCd && enemySpawnMarker < firstLevelEliteEnemy.Length)
+        if (Timer > specialEnemyHolder[enemySpawnMarker].spawnSecond)
         {
             Debug.Log("Spawn " + enemySpawnMarker + "elite");
-            secondMarker = 0f;
-            SpecialEnemySpawn(firstLevelEliteEnemy[enemySpawnMarker]);
+            SpecialEnemySpawn(specialEnemyHolder[enemySpawnMarker].specialEnemy);
             enemySpawnMarker++;
         }
-
-        secondMarker += Time.deltaTime;
+        Timer += Time.deltaTime;
     }
 
     void SpecialEnemySpawn(GameObject spawnTarget)

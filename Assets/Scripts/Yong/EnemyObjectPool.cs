@@ -67,7 +67,7 @@ public class EnemyObjectPool : MonoBehaviour
             String temp = entry.name + "OnField";
             result += EnemyNumInPool[temp];
         }
-        Debug.Log("result" + result);
+        //Debug.Log("result" + result);
         return result;
     }
     /// <summary>

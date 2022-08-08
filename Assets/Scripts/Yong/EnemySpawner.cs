@@ -47,16 +47,25 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
 
     public Stages[] difficultyOfStages;
     public int currentStageNum = 0;
+    private Dictionary<string, float> enemySpawnRatio = new Dictionary<string, float>();
+
+    public Queue<string> spawnQueue;
+    private float enqueueTimer = 0f;
+
     public void InitEnemySpawner()
     {
         objectPoolComp = gameObject.GetComponent<EnemyObjectPool>();
 
         enemySpawnSpeed = new float[totalStageCount][];
 
+        spawnQueue = new Queue<string>();
+        spawnQueue.Enqueue("101");
+
         targetPool = "101";
         _currentPool = "101";
 
         InitSpawnSpeed();
+        StageSwitch();
     }
 
     private void PutDataIntoDic()
@@ -108,11 +117,45 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
             _timer = 0f;
             enemySpawningCount = 0;
         }
+
+        enqueueTimer += Time.deltaTime;
+    }
+    private void Update()
+    {
+        UpdateSpawnQueue();
     }
 
-    IEnumerator UpdateCurrentPool()
+    void UpdateSpawnQueue()
     {
-        yield return null;
+        if (spawnQueue.Count < 100)
+        {
+            float randomNum = Random.Range(0, 1f);
+            string tempResult = "101";
+            foreach(KeyValuePair<string,float> entry in enemySpawnRatio)
+            {
+                if(entry.Value > randomNum)
+                {
+                    tempResult = entry.Key;
+                    break;
+                }
+            }
+            spawnQueue.Enqueue(tempResult);
+        }
+    }
+
+    void StageSwitch()
+    {
+        float tempCursor = 0f;
+        foreach (KeyValuePair<string, float> entry in difficultyOfEnemyPool)
+        {
+            if (entry.Value != 0)
+            {
+                float tempRatio = entry.Value * GetTotalSpawnSpeedInSecond();
+                tempCursor += tempRatio;
+                enemySpawnRatio.Add(entry.Key, tempCursor);
+                Debug.Log("add " + entry.Key + " ratio " + tempCursor);
+            }
+        }
     }
     
     void UpdateSpawnCd()
@@ -125,12 +168,11 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
             enemyMapFillFactor = (float)(objectPoolComp.countEnemyTotalNum() + 1)/ 500f;
             enemySpawnCdFinal = enemySpawnCdBase * enemyMapFillFactor;
         }
-        Debug.Log("enemy spawn cd = " + enemySpawnCdFinal);
+        //Debug.Log("enemy spawn cd = " + enemySpawnCdFinal);
     }
 
     public void SpawnEnemy()
     {
-        StartCoroutine(UpdateCurrentPool());
         StartCoroutine(SpawnEnemy_C());
     }
     
@@ -140,18 +182,22 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
         while (true)
         {
             yield return new WaitForSeconds(cd);
-            GameObject enemy = EnemyObjectPool.Instance.GetObjectFromPool(_currentPool); //  后期要改
-            if (enemy)
+            //GameObject enemy = EnemyObjectPool.Instance.GetObjectFromPool(_currentPool);
+            if (spawnQueue.Count > 0)
             {
-                enemy.transform.position = GetRandomPosition();
-                enemy.transform.SetParent(EnemyObjectPool.Instance.objectOutOfPool.transform);
-                enemy.SetActive(true);
+                GameObject enemy = EnemyObjectPool.Instance.GetObjectFromPool(spawnQueue.Dequeue());//  后期要改
+                if (enemy)
+                {
+                    enemy.transform.position = GetRandomPosition();
+                    enemy.transform.SetParent(EnemyObjectPool.Instance.objectOutOfPool.transform);
+                    enemy.SetActive(true);
 
-                enemySpawningCount++;
-            }
-            else
-            {
-               Debug.Log("enemy is null, please check whether the name of pool is right or pool is null");
+                    enemySpawningCount++;
+                }
+                else
+                {
+                    Debug.Log("enemy is null, please check whether the name of pool is right or pool is null");
+                }
             }
             cd = enemySpawnCdFinal;
         }

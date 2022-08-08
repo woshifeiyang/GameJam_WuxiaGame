@@ -54,7 +54,7 @@ MonoBehaviour:
   finalSpawnCd: 1
   objectPoolComp: {fileID: 0}
   difficultyOfStages:
-  - startOfStageTime: 0
+  - endOfStageTime: 10
     EnemyData:
     - name: 101
       spawnSpeed: 2
@@ -86,7 +86,7 @@ MonoBehaviour:
       spawnSpeed: 0
     - name: 143
       spawnSpeed: 0
-  - startOfStageTime: 10
+  - endOfStageTime: 30
     EnemyData:
     - name: 101
       spawnSpeed: 3
@@ -118,7 +118,7 @@ MonoBehaviour:
       spawnSpeed: 0
     - name: 143
       spawnSpeed: 0
-  - startOfStageTime: 30
+  - endOfStageTime: 50
     EnemyData:
     - name: 101
       spawnSpeed: 2
@@ -150,7 +150,7 @@ MonoBehaviour:
       spawnSpeed: 0
     - name: 143
       spawnSpeed: 0
-  - startOfStageTime: 50
+  - endOfStageTime: 65
     EnemyData:
     - name: 101
       spawnSpeed: 7
@@ -182,7 +182,7 @@ MonoBehaviour:
       spawnSpeed: 0
     - name: 143
       spawnSpeed: 0
-  - startOfStageTime: 65
+  - endOfStageTime: 80
     EnemyData:
     - name: 101
       spawnSpeed: 4
@@ -214,7 +214,7 @@ MonoBehaviour:
       spawnSpeed: 0
     - name: 143
       spawnSpeed: 0
-  - startOfStageTime: 80
+  - endOfStageTime: 105
     EnemyData:
     - name: 101
       spawnSpeed: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
       spawnSpeed: 0
     - name: 143
       spawnSpeed: 0
-  - startOfStageTime: 105
+  - endOfStageTime: 10000
     EnemyData:
     - name: 101
       spawnSpeed: 0
@@ -342,4 +342,4 @@ MonoBehaviour:
   - {fileID: 5243666614868315174, guid: 95f92361e95ca324aa356012eb64f697, type: 3}
   - {fileID: 5243666614868315174, guid: 9d984bf38dd3a404498566c25ce58a2e, type: 3}
   firstLevelBoss: {fileID: 0}
-  eliteEnemyCd: 20
+  eliteEnemyCd: 50

@@ -54,11 +54,76 @@ MonoBehaviour:
   finalSpawnCd: 1
   objectPoolComp: {fileID: 0}
   difficultyOfStages:
-  - EnemyData:
+  - startOfStageTime: 0
+    EnemyData:
     - name: 101
-      spawnSpeed: 1
+      spawnSpeed: 2
     - name: 102
       spawnSpeed: 0
+    - name: 103
+      spawnSpeed: 0
+    - name: 111
+      spawnSpeed: 0
+    - name: 112
+      spawnSpeed: 0
+    - name: 113
+      spawnSpeed: 0
+    - name: 121
+      spawnSpeed: 0
+    - name: 122
+      spawnSpeed: 0
+    - name: 123
+      spawnSpeed: 0
+    - name: 131
+      spawnSpeed: 0
+    - name: 132
+      spawnSpeed: 0
+    - name: 133
+      spawnSpeed: 0
+    - name: 141
+      spawnSpeed: 0
+    - name: 142
+      spawnSpeed: 0
+    - name: 143
+      spawnSpeed: 0
+  - startOfStageTime: 10
+    EnemyData:
+    - name: 101
+      spawnSpeed: 3
+    - name: 102
+      spawnSpeed: 1
+    - name: 103
+      spawnSpeed: 0
+    - name: 111
+      spawnSpeed: 0
+    - name: 112
+      spawnSpeed: 0
+    - name: 113
+      spawnSpeed: 0
+    - name: 121
+      spawnSpeed: 0
+    - name: 122
+      spawnSpeed: 0
+    - name: 123
+      spawnSpeed: 0
+    - name: 131
+      spawnSpeed: 0
+    - name: 132
+      spawnSpeed: 0
+    - name: 133
+      spawnSpeed: 0
+    - name: 141
+      spawnSpeed: 0
+    - name: 142
+      spawnSpeed: 0
+    - name: 143
+      spawnSpeed: 0
+  - startOfStageTime: 30
+    EnemyData:
+    - name: 101
+      spawnSpeed: 2
+    - name: 102
+      spawnSpeed: 0.5
     - name: 103
       spawnSpeed: 0
     - name: 111
@@ -67,6 +132,134 @@ MonoBehaviour:
       spawnSpeed: 1
     - name: 113
       spawnSpeed: 0
+    - name: 121
+      spawnSpeed: 0
+    - name: 122
+      spawnSpeed: 0
+    - name: 123
+      spawnSpeed: 0
+    - name: 131
+      spawnSpeed: 0
+    - name: 132
+      spawnSpeed: 0
+    - name: 133
+      spawnSpeed: 0
+    - name: 141
+      spawnSpeed: 0
+    - name: 142
+      spawnSpeed: 0
+    - name: 143
+      spawnSpeed: 0
+  - startOfStageTime: 50
+    EnemyData:
+    - name: 101
+      spawnSpeed: 7
+    - name: 102
+      spawnSpeed: 0.5
+    - name: 103
+      spawnSpeed: 0
+    - name: 111
+      spawnSpeed: 1
+    - name: 112
+      spawnSpeed: 1
+    - name: 113
+      spawnSpeed: 0
+    - name: 121
+      spawnSpeed: 0
+    - name: 122
+      spawnSpeed: 0
+    - name: 123
+      spawnSpeed: 0
+    - name: 131
+      spawnSpeed: 0
+    - name: 132
+      spawnSpeed: 0
+    - name: 133
+      spawnSpeed: 0
+    - name: 141
+      spawnSpeed: 0
+    - name: 142
+      spawnSpeed: 0
+    - name: 143
+      spawnSpeed: 0
+  - startOfStageTime: 65
+    EnemyData:
+    - name: 101
+      spawnSpeed: 4
+    - name: 102
+      spawnSpeed: 1
+    - name: 103
+      spawnSpeed: 2
+    - name: 111
+      spawnSpeed: 3
+    - name: 112
+      spawnSpeed: 1
+    - name: 113
+      spawnSpeed: 0
+    - name: 121
+      spawnSpeed: 0
+    - name: 122
+      spawnSpeed: 0
+    - name: 123
+      spawnSpeed: 0
+    - name: 131
+      spawnSpeed: 0
+    - name: 132
+      spawnSpeed: 0
+    - name: 133
+      spawnSpeed: 0
+    - name: 141
+      spawnSpeed: 0
+    - name: 142
+      spawnSpeed: 0
+    - name: 143
+      spawnSpeed: 0
+  - startOfStageTime: 80
+    EnemyData:
+    - name: 101
+      spawnSpeed: 0
+    - name: 102
+      spawnSpeed: 0
+    - name: 103
+      spawnSpeed: 3
+    - name: 111
+      spawnSpeed: 5
+    - name: 112
+      spawnSpeed: 1
+    - name: 113
+      spawnSpeed: 3
+    - name: 121
+      spawnSpeed: 0
+    - name: 122
+      spawnSpeed: 0
+    - name: 123
+      spawnSpeed: 0
+    - name: 131
+      spawnSpeed: 0
+    - name: 132
+      spawnSpeed: 0
+    - name: 133
+      spawnSpeed: 0
+    - name: 141
+      spawnSpeed: 0
+    - name: 142
+      spawnSpeed: 0
+    - name: 143
+      spawnSpeed: 0
+  - startOfStageTime: 105
+    EnemyData:
+    - name: 101
+      spawnSpeed: 0
+    - name: 102
+      spawnSpeed: 0
+    - name: 103
+      spawnSpeed: 0
+    - name: 111
+      spawnSpeed: 4
+    - name: 112
+      spawnSpeed: 2
+    - name: 113
+      spawnSpeed: 2
     - name: 121
       spawnSpeed: 0
     - name: 122

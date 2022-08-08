@@ -42,6 +42,7 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
     [Serializable]
     public struct Stages
     {
+        public float startOfStageTime;
         public EnemyDifficultyData[] EnemyData;
     }
 
@@ -50,7 +51,7 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
     private Dictionary<string, float> enemySpawnRatio = new Dictionary<string, float>();
 
     public Queue<string> spawnQueue;
-    private float enqueueTimer = 0f;
+    private float Timer = 0f;
 
     public void InitEnemySpawner()
     {
@@ -118,7 +119,18 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
             enemySpawningCount = 0;
         }
 
-        enqueueTimer += Time.deltaTime;
+        Timer += Time.deltaTime;
+
+        for (int i = currentStageNum; i < difficultyOfStages.Length; i++)
+        {
+            if (Timer > difficultyOfStages[i].startOfStageTime && currentStageNum != i)
+            {
+                currentStageNum = i;
+                spawnQueue.Clear();
+                StageSwitch();
+                break;
+            }
+        }
     }
     private void Update()
     {
@@ -146,6 +158,10 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
     void StageSwitch()
     {
         float tempCursor = 0f;
+        enemySpawnRatio.Clear();
+
+        PutDataIntoDic();
+
         foreach (KeyValuePair<string, float> entry in difficultyOfEnemyPool)
         {
             if (entry.Value != 0)
@@ -156,6 +172,7 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
                 Debug.Log("add " + entry.Key + " ratio " + tempCursor);
             }
         }
+
     }
     
     void UpdateSpawnCd()

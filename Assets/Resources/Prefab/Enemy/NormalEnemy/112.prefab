@@ -562,4 +562,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locationHolder: {fileID: 2734696128965062024}
   enemyParent: {fileID: 5243666614868315174}
-  deathProduct: {fileID: 5243666614868315174, guid: 1705906ec3555254793e6e181dd9831b, type: 3}
+  deathProduct: {fileID: 5243666614868315174, guid: 3f656b94fd6fc944eaba0e9a9172b036, type: 3}

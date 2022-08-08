@@ -142,7 +142,7 @@ public class Monster : MonoBehaviour
         SwitchAnim();
         GetComponent<AILerp>().canMove = false;
         //test if the child has children
-        if (monsterId == "102" || monsterId == "302")
+        if (monsterId[2] == '2')
         {
             transform.GetChild(0).gameObject.SetActive(true);
         }

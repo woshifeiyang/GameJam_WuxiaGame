@@ -1938,6 +1938,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1195142506605473532, guid: f7d423c2558051742a9d4217263afb81, type: 3}
+      propertyPath: m_text
+      value: "In the 21st century, the gods came into this world. They are actually
+        a group of aliens, but they are proclaimed as gods by believers. They keep
+        humans in captivity and enslave in this world. \n\nAs a  cultivator, you
+        must save the world and overthrow the rule of God.\n\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1195142506605473532, guid: f7d423c2558051742a9d4217263afb81, type: 3}
       propertyPath: m_fontColor.a
       value: 1
       objectReference: {fileID: 0}
@@ -10800,6 +10807,10 @@ PrefabInstance:
     - target: {fileID: 8599008191193289645, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
       propertyPath: m_Name
       value: EnemySpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599008191193289645, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}

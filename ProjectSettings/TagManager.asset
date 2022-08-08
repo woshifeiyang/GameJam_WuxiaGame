@@ -21,6 +21,7 @@ TagManager:
   - 303
   - 401
   - Obstacle
+  - BobaRiver
   layers:
   - Default
   - TransparentFX

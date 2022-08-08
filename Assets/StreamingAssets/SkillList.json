@@ -59,7 +59,7 @@
     "Id": 204,
     "KeyName":"Overload",
     "Category":"Field",
-    "Description":"When releasing lightning strike, there is a 50% chance to release it again",
+    "Description":"50% chance to cast an additional strike when casting a thunderbolt",
     "Buff":"",
     "ResAddress":"SkillIcon/OverLoad"
   },
@@ -81,9 +81,9 @@
   },
   {
     "Id": 303,
-    "KeyName":"Buddha Palms",
+    "KeyName":"Arhat Formation",
     "Category":"Field",
-    "Description":"Four Buddha palms appear around the character, performing AOE HP% attack",
+    "Description":"Four Arhats appear around the character, performing AOE damage",
     "Buff":"Buff: HP, Damage range",
     "ResAddress":"SkillIcon/BuddhaPalms"
   },
@@ -91,7 +91,7 @@
     "Id": 304,
     "KeyName":"Bad Karma",
     "Category":"Field",
-    "Description":"Increase the maximum blood volume based on the number of kills/level",
+    "Description":"Increase the maximum HP(hit points) based on the number of kills/level",
     "Buff":"",
     "ResAddress":"SkillIcon/Karma"
   },
@@ -107,7 +107,7 @@
     "Id": 402,
     "KeyName":"Dashing Snake",
     "Category":"Bullet",
-    "Description":"The player releases a snake to deal fixed damage to the nearest enemy, and the snake will restore HP to the player",
+    "Description":"The player releases a snake to deal fixed damage to the nearest enemy, and the snake will restore HP(hit points) to the player",
     "Buff":"Buff: Increase attack speed, Projectiles+1, Projectiles flight speed+",
     "ResAddress":"SkillIcon/DashingSnake"
   }

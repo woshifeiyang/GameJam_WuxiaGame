@@ -140,7 +140,7 @@ public class FieldSkill : SkillBase
     {
         base.Update();
         Skill.transform.position = PlayerController.Instance.GetPlayerPosition();
-        Skill.GetComponent<FieldSkillBase>().damage = Damage + PlayerController.Instance.GetPlayerAttack();
+        //Skill.GetComponent<FieldSkillBase>().damage = Damage + PlayerController.Instance.GetPlayerAttack();
         Skill.GetComponent<FieldSkillBase>().range = Range + PlayerController.Instance.GetPlayerSkillRange();
         Skill.GetComponent<FieldSkillBase>().cd = Cd * PlayerController.Instance.GetPlayerSkillCd();
     }

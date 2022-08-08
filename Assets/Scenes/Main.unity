@@ -10721,6 +10721,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4614396183551652625, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
+      propertyPath: eliteEnemyCd
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8599008191193289619, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -10764,6 +10768,34 @@ PrefabInstance:
     - target: {fileID: 8599008191193289619, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599008191193289644, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
+      propertyPath: difficultyOfStages.Array.data[0].endOfStageTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599008191193289644, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
+      propertyPath: difficultyOfStages.Array.data[1].endOfStageTime
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599008191193289644, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
+      propertyPath: difficultyOfStages.Array.data[2].endOfStageTime
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599008191193289644, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
+      propertyPath: difficultyOfStages.Array.data[3].endOfStageTime
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599008191193289644, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
+      propertyPath: difficultyOfStages.Array.data[4].endOfStageTime
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599008191193289644, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
+      propertyPath: difficultyOfStages.Array.data[5].endOfStageTime
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599008191193289644, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
+      propertyPath: difficultyOfStages.Array.data[6].endOfStageTime
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8599008191193289645, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
       propertyPath: m_Name
@@ -15683,6 +15715,10 @@ PrefabInstance:
     - target: {fileID: 8563263028949727387, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563263028949727388, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
+      propertyPath: immortal
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8563263028949727388, guid: 82ba5e4275db0c141a637e150a3bf540, type: 3}
       propertyPath: curAttack

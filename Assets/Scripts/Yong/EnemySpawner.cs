@@ -42,7 +42,7 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
     [Serializable]
     public struct Stages
     {
-        public float startOfStageTime;
+        public float endOfStageTime;
         public EnemyDifficultyData[] EnemyData;
     }
 
@@ -121,16 +121,23 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
 
         Timer += Time.deltaTime;
 
-        for (int i = currentStageNum; i < difficultyOfStages.Length; i++)
+        if(Timer > difficultyOfStages[currentStageNum].endOfStageTime)
         {
-            if (Timer > difficultyOfStages[i].startOfStageTime && currentStageNum != i)
+            currentStageNum++;
+            spawnQueue.Clear();
+            StageSwitch();
+        }
+
+/*        for (int i = currentStageNum; i < difficultyOfStages.Length; i++)
+        {
+            if (Timer > difficultyOfStages[i].endOfStageTime && currentStageNum != i)
             {
                 currentStageNum = i;
                 spawnQueue.Clear();
                 StageSwitch();
                 break;
             }
-        }
+        }*/
     }
     private void Update()
     {

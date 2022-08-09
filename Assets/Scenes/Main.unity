@@ -15653,6 +15653,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkillManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1003963796733479221, guid: 4be61fa353b296540908ba6ce5091962, type: 3}
+      propertyPath: particle
+      value: 
+      objectReference: {fileID: 3834707109932444833, guid: 6d189e1d178936d4d9d8552f62d8bca5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4be61fa353b296540908ba6ce5091962, type: 3}
 --- !u!1001 &1386442203794334572

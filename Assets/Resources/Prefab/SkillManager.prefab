@@ -82,6 +82,7 @@ MonoBehaviour:
   cd: 0
   range: 0
   cure: 0
+  particle: {fileID: 3834707109932444833, guid: 6d189e1d178936d4d9d8552f62d8bca5, type: 3}
 --- !u!114 &1410317702
 MonoBehaviour:
   m_ObjectHideFlags: 0

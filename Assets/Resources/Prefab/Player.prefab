@@ -895,7 +895,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &8563263028949727391
 Animator:
   serializedVersion: 3
@@ -928,6 +928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   immortal: 0
+  blockLevelUp: 0
   PlayerDamageFeedback: {fileID: 0}
   canMove: 1
   lastVelocity: {x: 0, y: 0}

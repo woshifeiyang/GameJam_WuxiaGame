@@ -5,7 +5,7 @@ using UnityEngine;
 public class Cure : FieldSkillBase
 {
     public bool cure = false;
-   
+    public GameObject particle;
     public void EnableCure()
     {
         cure = true;
@@ -16,9 +16,11 @@ public class Cure : FieldSkillBase
     {
         if (cure)
         {
-            if (distance < 0.5f*(range+2.6))
+            if (distance < 10f*(range+2.6))
             {
-                //Debug.Log("cure suscss");
+                GameObject tempParticle = Instantiate(particle, PlayerController.Instance.GetPlayerPosition(),transform.rotation);
+                StartCoroutine(DestoryParticle(tempParticle));
+                Debug.Log("cure suscss");
                 if (PlayerController.Instance.curHealth < PlayerController.Instance.maxHealth)
                 {
                     if(PlayerController.Instance.curHealth < PlayerController.Instance.maxHealth*0.4f){
@@ -38,5 +40,11 @@ public class Cure : FieldSkillBase
                 //Debug.Log("cure sucs&distace=" + distance);
             }
         }
+    }
+
+    IEnumerator DestoryParticle(GameObject target)
+    {
+        yield return new WaitForSeconds(target.GetComponent<ParticleSystem>().duration);
+        Destroy(target);
     }
 }

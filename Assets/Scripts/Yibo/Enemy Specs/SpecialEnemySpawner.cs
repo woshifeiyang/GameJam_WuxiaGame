@@ -24,11 +24,18 @@ public class SpecialEnemySpawner : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Timer > specialEnemyHolder[enemySpawnMarker].spawnSecond)
+        if (enemySpawnMarker == (specialEnemyHolder.Length - 1))
         {
-            Debug.Log("Spawn " + enemySpawnMarker + "elite");
-            SpecialEnemySpawn(specialEnemyHolder[enemySpawnMarker].specialEnemy);
-            enemySpawnMarker++;
+
+        }
+        else
+        {
+            if (Timer > specialEnemyHolder[enemySpawnMarker].spawnSecond)
+            {
+                Debug.Log("Spawn " + enemySpawnMarker + "elite");
+                SpecialEnemySpawn(specialEnemyHolder[enemySpawnMarker].specialEnemy);
+                enemySpawnMarker++;
+            }
         }
         Timer += Time.deltaTime;
     }

@@ -8,15 +8,23 @@ public class showFPS : MonoBehaviour {
 
     public float timeGap = 0.5f;
     private float tempTime;
-    void Update () {
-        deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
-        float fps = 1.0f / deltaTime;
+    private float timer = 0;
+    //void Update () 
+    //{
+    //    deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
+    //    float fps = 1.0f / deltaTime;
 
-        tempTime += Time.deltaTime;
-        if (tempTime > timeGap)
-        {
-            fpsText.text = "FPS:"+Mathf.Ceil(fps).ToString();
-            tempTime = 0f;
-        }
+    //    tempTime += Time.deltaTime;
+    //    if (tempTime > timeGap)
+    //    {
+    //        fpsText.text = "FPS:"+Mathf.Ceil(fps).ToString();
+    //        tempTime = 0f;
+    //    }
+    //}
+
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        fpsText.text = Mathf.Ceil(timer).ToString();
     }
 }

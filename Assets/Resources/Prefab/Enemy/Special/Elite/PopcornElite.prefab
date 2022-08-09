@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterId: 301
-  health: 1000
+  health: 500
   moveSpeed: 2
   damage: 5
   isDead: 0

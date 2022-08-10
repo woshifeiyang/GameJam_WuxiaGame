@@ -12,7 +12,7 @@ public class Skill301 : FieldSkillBase
 
     public void Awake()
     {
-        damage = 0.3f * PlayerController.Instance.maxHealth;
+        damage = 0.3f * PlayerController.Instance.GetPlayerHealthFinal();
     }
     public override void Start()
     {

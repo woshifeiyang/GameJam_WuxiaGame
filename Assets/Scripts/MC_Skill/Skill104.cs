@@ -12,7 +12,14 @@ public class Skill104 : ScopeSkillBase
     
     public void MakeDamage()
     {
-        transform.localScale = new Vector3(range / 2, range / 2, 1f);
+        if (range <= 6)
+        {
+            transform.localScale = new Vector3(range /1.5f, range / 1.5f, 1f);
+        }
+        else
+        {
+            transform.localScale = new Vector3(4, 4, 1f);
+        }
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, range / 2);
  
         //Debug.Log("the num of collider array is:" + hitColliders.Length);

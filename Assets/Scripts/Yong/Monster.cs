@@ -152,7 +152,8 @@ public class Monster : MonoBehaviour
         //test if the child has children
         if (monsterId[2] == '2')
         {
-            transform.GetChild(0).gameObject.SetActive(true);
+            GameObject deathProduct = Instantiate(transform.GetChild(0).gameObject,transform.position,transform.rotation);
+            deathProduct.SetActive(true);
         }
         GetComponent<Collider2D>().isTrigger = true;
     }

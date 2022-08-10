@@ -50,7 +50,7 @@ public class PlayerController : MonoSingleton<PlayerController>
     public float maxHealth = 20f;
     public float healthRatio = 5f;
     private int _healthLevel = 0;
-    private float _healthFinal;
+    public float healthFinal;
     
     // attack
     public float attackRatio = 10.0f;
@@ -115,12 +115,12 @@ public class PlayerController : MonoSingleton<PlayerController>
         
         SwitchAnim();
         
-        _mmProgressBar.UpdateBar01(Mathf.Clamp(curHealth / _healthFinal, 0f, 1f));
+        _mmProgressBar.UpdateBar01(Mathf.Clamp(curHealth / healthFinal, 0f, 1f));
         _expBar.UpdateBar01(Mathf.Clamp(_curExperience / _totalExperience, 0f, 1f));
 
         if (immortal)
         {
-            curHealth = maxHealth;
+            curHealth = healthFinal;
         }
         
     }
@@ -301,9 +301,16 @@ public class PlayerController : MonoSingleton<PlayerController>
 
     public float GetPlayerHealthFinal()
     {
-        return _healthFinal;
+        return healthFinal;
     }
-    
+
+    public void RecoverHP()
+    {
+        if (curHealth < healthFinal)
+        {
+            curHealth = healthFinal;
+        }
+    }
     private void ExitGame()
     {
         //预处理
@@ -322,7 +329,6 @@ public class PlayerController : MonoSingleton<PlayerController>
         // skillCd;
         _skillCdFinal = Mathf.Pow(skillCdRatio, _skillCdLevel);
         // Health;
-        _healthFinal = maxHealth + (healthRatio * _healthLevel);
-        
+        healthFinal = maxHealth + (healthRatio * _healthLevel);
     }
 }

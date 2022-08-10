@@ -264,6 +264,19 @@ PolygonCollider2D:
       - {x: -0.905, y: -0.205}
       - {x: 0.905, y: -0.205}
       - {x: 0.905, y: 0.205}
+--- !u!114 &1069666851175626868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070780759858600711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9e172316375bb41948ea1bdbde37bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cd: 30
 --- !u!1 &5267585302077658119
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,6 +829,14 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6907303337107214173, guid: 4b3679658cff359438ae89f04e811da0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907303337107214173, guid: 4b3679658cff359438ae89f04e811da0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907303337107214173, guid: 4b3679658cff359438ae89f04e811da0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -860,5 +881,10 @@ PrefabInstance:
 --- !u!4 &4882625517264252823 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6907303337107214173, guid: 4b3679658cff359438ae89f04e811da0, type: 3}
+  m_PrefabInstance: {fileID: 2024713004342206666}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5070780759858600711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6504941670833830861, guid: 4b3679658cff359438ae89f04e811da0, type: 3}
   m_PrefabInstance: {fileID: 2024713004342206666}
   m_PrefabAsset: {fileID: 0}

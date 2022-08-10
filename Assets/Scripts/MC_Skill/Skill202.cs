@@ -12,8 +12,8 @@ public class Skill202 : ScopeSkillBase
     // Start is called before the first frame update
     public override void Start()
     {
-        realDamage = damage;
-        damage = 1;
+        //realDamage = damage;
+        //damage = realDamage + PlayerController.Instance.GetPlayerAttack();
         animator = this.GetComponent<Animator>();
         this.transform.localScale = new Vector3(3+range*1.5f,3+range*1.5f,1);
         //this.GetComponent<CircleCollider2D>().radius = range;
@@ -29,17 +29,17 @@ public class Skill202 : ScopeSkillBase
         
     }
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
+    //void OnTriggerEnter2D(Collider2D col)
+    //{
        
-        if (col.gameObject.CompareTag("Enemy") && triggered == false)
-        {
-            triggered = true;
-            animator.SetTrigger("lightstorm");
-            damage = realDamage + PlayerController.Instance.GetPlayerAttack();
+    //    if (col.gameObject.CompareTag("Enemy") && triggered == false)
+    //    {
+    //        triggered = true;
+    //        animator.SetTrigger("lightstorm");
+    //        damage = realDamage + PlayerController.Instance.GetPlayerAttack();
 
-        }
-    }
+    //    }
+    //}
     private void ColliderOpen()
     {
         
@@ -51,6 +51,7 @@ public class Skill202 : ScopeSkillBase
 
     private void ColliderClose()
     {
+        damage *= 1.2f;
         this.GetComponent<CircleCollider2D>().enabled = false;
     }
 

@@ -96,6 +96,7 @@ public class BulletSkill : SkillBase
         Damage = SkillObj.GetComponent<BulletSkillBase>().damage;
         Cd = SkillObj.GetComponent<BulletSkillBase>().cd;
         SkillNum = SkillObj.GetComponent<BulletSkillBase>().skillNum;
+        Timer = Cd;
     }
     
     public override void Update()

@@ -18,6 +18,8 @@ public class Skill102 : BulletSkillBase
     {
         //伤害系数
         damage *= 3f;
+        ScopeSkill scopeSkill = new ScopeSkill();
+        transform.localScale = new Vector3(scopeSkill.Range + 3, scopeSkill.Range + 3, scopeSkill.Range+3);
         _rb = GetComponent<Rigidbody2D>();
         _vec = EnemyDetector.Instance.GetNearestEnemyLoc() - PlayerController.Instance.transform.position;
         float angle = Vector3.SignedAngle(Vector3.up, _vec, Vector3.forward);
@@ -29,7 +31,7 @@ public class Skill102 : BulletSkillBase
         Invoke("SelfDestory", skillTime);
         
         string assertPath = "Prefab/Skill/Bullet/102m";
-        for (int i = 1; i < skillNum; i++)
+        for (int i = 1; i < 1; i++)
         {
             float offset = i % 2 == 0 ? (i + 1) / 2 : -1 * ((i + 1) / 2);
             GameObject childSkill = (GameObject)Instantiate(Resources.Load(assertPath));

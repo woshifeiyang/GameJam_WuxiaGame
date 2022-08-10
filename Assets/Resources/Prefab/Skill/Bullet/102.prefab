@@ -182,7 +182,7 @@ MonoBehaviour:
   speed: 200
   skillNum: 1
   skillPene: 100
-  skillTime: 3
+  skillTime: 6
 --- !u!96 &7492197646358013180
 TrailRenderer:
   serializedVersion: 2

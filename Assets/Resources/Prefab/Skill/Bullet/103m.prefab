@@ -201,7 +201,7 @@ MonoBehaviour:
   cd: 0
   speed: 0
   skillNum: 0
-  skillPene: 1
+  skillPene: 3
   skillTime: 5
 --- !u!96 &-1101204243240490558
 TrailRenderer:

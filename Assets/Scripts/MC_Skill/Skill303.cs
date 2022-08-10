@@ -60,10 +60,10 @@ public class Skill303 : FieldSkillBase
 
     private void SkillLastSeconds()
     {
-        DestroyImmediate(circleLeftGameobject, true);
-        DestroyImmediate(circleRightGameobject, true);
-        DestroyImmediate(circleTopGameobject, true);
-        DestroyImmediate(circleBottomGameobject, true);
+        Destroy(circleLeftGameobject);
+        Destroy(circleRightGameobject);
+        Destroy(circleTopGameobject);
+        Destroy(circleBottomGameobject);
     }
 
 

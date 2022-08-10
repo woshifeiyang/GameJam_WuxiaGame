@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: -3237393364876077923}
   - component: {fileID: -5701033807303114166}
   m_Layer: 0
-  m_Name: 104
+  m_Name: 304
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ Transform:
   m_GameObject: {fileID: 5243666614868315174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 8481970065380508270}
   m_Father: {fileID: 0}
@@ -154,13 +154,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1c8823f534a2d418322b61e275c9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterId: 104
-  health: 40
+  monsterId: 304
+  health: 500
   moveSpeed: 0.1
-  damage: 5
+  damage: 15
   isDead: 0
   canMove: 1
-  poolBelongTo: 104
+  poolBelongTo: 
 --- !u!50 &5243666614868315176
 Rigidbody2D:
   serializedVersion: 4
@@ -350,8 +350,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.015429825, y: 0.018515809}
-  m_Size: {x: 0.16458482, y: 0.18133733}
+  m_Offset: {x: -0.007322967, y: 0.003954053}
+  m_Size: {x: 0.3193038, y: 0.37755102}
   m_Direction: 0
 --- !u!114 &2660848111106074164
 MonoBehaviour:

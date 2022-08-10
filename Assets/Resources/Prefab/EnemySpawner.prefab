@@ -375,6 +375,11 @@ MonoBehaviour:
     - name: 143
       spawnSpeed: 0
   currentStageNum: 0
+  Timer: 0
+  challengeModeDifficultyFactor: 1
+  C141: {fileID: 5243666614868315174, guid: a47fa1313a1b5804d9c93521440b2efa, type: 3}
+  C142: {fileID: 5243666614868315174, guid: 465a0006ad45b674bb5c9d8364e78f63, type: 3}
+  C143: {fileID: 5243666614868315174, guid: 0b1764ab840dfb943a9f2b912d6c8c35, type: 3}
 --- !u!114 &5159115867889821447
 MonoBehaviour:
   m_ObjectHideFlags: 0

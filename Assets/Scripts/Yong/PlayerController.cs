@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerController : MonoSingleton<PlayerController>
@@ -221,7 +222,7 @@ public class PlayerController : MonoSingleton<PlayerController>
     {
         ++_level;
         _curExperience = 0;
-        _totalExperience += 5;
+        _totalExperience = 4 * math.pow(_level + 1, 2) + 5;
     }
     public void AttackLevelUp()
     {

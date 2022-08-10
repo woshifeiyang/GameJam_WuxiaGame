@@ -306,7 +306,7 @@ MonoBehaviour:
   id: 105
   damage: 100
   cd: 9999
-  speed: 30
+  speed: 20
   skillNum: 0
   skillPene: 0
   skillTime: 9999

@@ -12,7 +12,7 @@ public class Skill103M : BulletSkillBase
         {
             if (skillBase != null)
             {
-                damage = skillBase.SkillObj.GetComponent<Skill103>().damage;
+                damage = skillBase.SkillObj.GetComponent<Skill103>().damage + PlayerController.Instance.GetPlayerAttack();
                 skillTime = skillBase.SkillObj.GetComponent<Skill103>().skillTime;
                 skillPene = skillBase.SkillObj.GetComponent<Skill103>().skillPene;
             }

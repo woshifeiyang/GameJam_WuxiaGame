@@ -200,7 +200,7 @@ MonoBehaviour:
   damage: 55
   cd: 1
   speed: 300
-  skillNum: 5
+  skillNum: 1
   skillPene: 2
   skillTime: 5
 --- !u!96 &-5498193409350465043

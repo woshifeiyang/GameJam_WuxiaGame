@@ -51,7 +51,14 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
     private Dictionary<string, float> enemySpawnRatio = new Dictionary<string, float>();
 
     public Queue<string> spawnQueue;
-    private float Timer = 0f;
+    public float Timer = 0f;
+
+    public float challengeModeDifficultyFactor = 1f;
+
+    //challenge mode enemies
+    public GameObject C141;
+    public GameObject C142;
+    public GameObject C143;
 
     public void InitEnemySpawner()
     {
@@ -117,6 +124,10 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
         {
             _timer = 0f;
             enemySpawningCount = 0;
+            if (currentStageNum == (difficultyOfStages.Length - 1))
+            {
+                challengeModeDifficultyFactor = Mathf.Sqrt(Timer - difficultyOfStages[difficultyOfStages.Length - 2].endOfStageTime) / 5;
+            }
         }
 
         Timer += Time.deltaTime;
@@ -128,16 +139,7 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
             StageSwitch();
         }
 
-/*        for (int i = currentStageNum; i < difficultyOfStages.Length; i++)
-        {
-            if (Timer > difficultyOfStages[i].endOfStageTime && currentStageNum != i)
-            {
-                currentStageNum = i;
-                spawnQueue.Clear();
-                StageSwitch();
-                break;
-            }
-        }*/
+
     }
     private void Update()
     {
@@ -205,25 +207,75 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
         float cd = enemySpawnCdFinal;
         while (true)
         {
-            yield return new WaitForSeconds(cd);
-            //GameObject enemy = EnemyObjectPool.Instance.GetObjectFromPool(_currentPool);
-            if (spawnQueue.Count > 0)
+            if (currentStageNum == (difficultyOfStages.Length - 1))
             {
-                GameObject enemy = EnemyObjectPool.Instance.GetObjectFromPool(spawnQueue.Dequeue());//  后期要改
-                if (enemy)
+                yield return new WaitForSeconds(cd);
+                if (spawnQueue.Count > 0)
                 {
-                    enemy.transform.position = GetRandomPosition();
-                    enemy.transform.SetParent(EnemyObjectPool.Instance.objectOutOfPool.transform);
-                    enemy.SetActive(true);
+                    GameObject enemy = EnemyObjectPool.Instance.GetObjectFromPool(spawnQueue.Dequeue());//  后期要改
+                    if (enemy)
+                    {
+                        enemy.transform.position = GetRandomPosition();
+                        enemy.transform.SetParent(EnemyObjectPool.Instance.objectOutOfPool.transform);
+                        enemy.SetActive(true);
 
-                    enemySpawningCount++;
+                        Monster temp = enemy.GetComponent<Monster>();
+                        Monster originalData;
+
+                        if(temp.monsterId == "141")
+                        {
+                            originalData = C141.GetComponent<Monster>();
+                        }
+                        else if(temp.monsterId == "142")
+                        {
+                            originalData = C142.GetComponent<Monster>();
+                        }
+                        else
+                        {
+                            originalData = C143.GetComponent<Monster>();
+
+                        }
+
+                        temp.health = originalData.health;
+                        temp.damage = originalData.damage;
+                        temp.moveSpeed = originalData.moveSpeed;
+
+
+                        temp.health *= (1f + challengeModeDifficultyFactor);
+                        temp.damage *= (1f + challengeModeDifficultyFactor);
+                        temp.moveSpeed *= (1f + challengeModeDifficultyFactor)/2;
+
+                        enemySpawningCount++;
+                    }
+                    else
+                    {
+                        Debug.Log("enemy is null, please check whether the name of pool is right or pool is null");
+                    }
                 }
-                else
-                {
-                    Debug.Log("enemy is null, please check whether the name of pool is right or pool is null");
-                }
+                cd = enemySpawnCdFinal;
             }
-            cd = enemySpawnCdFinal;
+            else
+            {
+                yield return new WaitForSeconds(cd);
+                //GameObject enemy = EnemyObjectPool.Instance.GetObjectFromPool(_currentPool);
+                if (spawnQueue.Count > 0)
+                {
+                    GameObject enemy = EnemyObjectPool.Instance.GetObjectFromPool(spawnQueue.Dequeue());//  后期要改
+                    if (enemy)
+                    {
+                        enemy.transform.position = GetRandomPosition();
+                        enemy.transform.SetParent(EnemyObjectPool.Instance.objectOutOfPool.transform);
+                        enemy.SetActive(true);
+
+                        enemySpawningCount++;
+                    }
+                    else
+                    {
+                        Debug.Log("enemy is null, please check whether the name of pool is right or pool is null");
+                    }
+                }
+                cd = enemySpawnCdFinal;
+            }
         }
     }
 

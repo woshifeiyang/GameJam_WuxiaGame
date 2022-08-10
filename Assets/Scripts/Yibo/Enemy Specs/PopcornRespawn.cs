@@ -13,12 +13,14 @@ public class PopcornRespawn : MonoBehaviour
     private Monster monsterComponent;
 
     private Transform[] locations;
-    
+
+    private float deathProductHealth = 0f;
+
     void Start()
     {
         //Debug.Log("enter Awake");
         monsterComponent = enemyParent.GetComponent<Monster>();
-
+        deathProductHealth = deathProduct.GetComponent<Monster>().health;
         updateLocatingPoint();
     }
 
@@ -54,15 +56,16 @@ public class PopcornRespawn : MonoBehaviour
     {
         yield return new WaitForSeconds(0.9f);
         gameObject.tag = "Enemy";
-        gameObject.GetComponent<Monster>().health = 100;
+        gameObject.GetComponent<Monster>().health = deathProductHealth;
     }
 
     IEnumerator SelfRecycle()
     {
         yield return new WaitForSeconds(1f);
-        if (enemyParent!=null)
+        if (enemyParent != null)
         {
-            transform.SetParent(enemyParent.transform);
+            Destroy(this.gameObject);
+            //transform.SetParent(enemyParent.transform);
         }
         else
         {

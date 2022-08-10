@@ -12,10 +12,10 @@ public class Skill104 : ScopeSkillBase
     
     public void MakeDamage()
     {
-        transform.localScale = new Vector3(range, range, 1f);
+        transform.localScale = new Vector3(range / 2, range / 2, 1f);
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, range / 2);
  
-        Debug.Log("the num of collider array is:" + hitColliders.Length);
+        //Debug.Log("the num of collider array is:" + hitColliders.Length);
         foreach (var enemy in hitColliders)
         {
             if (enemy && enemy.gameObject.CompareTag("Enemy"))

@@ -11,7 +11,7 @@ public class Karma : FieldSkillBase
     public void EnableKarma()
     {
         karma = true;
-        int initialKillnumber = Main.Instance.enemyKills;
+        int initialKillnumber = EnemySpawner.Instance.GetEnemiesKills();
     }
 
     public override void Update()
@@ -22,7 +22,7 @@ public class Karma : FieldSkillBase
             time = 0;
             if (karma)
             {
-                if(Main.Instance.enemyKills - initialKillnumber > 10)
+                if(EnemySpawner.Instance.GetEnemiesKills() - initialKillnumber > 10)
                 {
                     IncreaseHP();
                 }
@@ -34,7 +34,7 @@ public class Karma : FieldSkillBase
     void IncreaseHP()
     {
         PlayerController.Instance.maxHealth += 1f;
-        initialKillnumber = Main.Instance.enemyKills;
+        initialKillnumber = EnemySpawner.Instance.GetEnemiesKills();
     }
 
 }

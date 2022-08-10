@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Main : MonoSingleton<Main>
 {
-    public int enemyKills = 0;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -36,8 +34,4 @@ public class Main : MonoSingleton<Main>
         EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_FirstChoose);
     }
     
-    public void AddEnemyKills()
-    {
-        ++enemyKills;
-    }
 }

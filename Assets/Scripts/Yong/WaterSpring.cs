@@ -29,7 +29,6 @@ public class WaterSpring : MonoBehaviour
         _timer += Time.deltaTime;
         if (_timer >= cd)
         {
-            PlayerController.Instance.RecoverHP();
             _canRecover = true;
             if(_particleSystem.isStopped) _particleSystem.Play();
             _timer = 0;
@@ -40,6 +39,7 @@ public class WaterSpring : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player") && _canRecover)
         {
+            PlayerController.Instance.RecoverHP();
             _particleSystem.Stop();
             _canRecover = false;
         }

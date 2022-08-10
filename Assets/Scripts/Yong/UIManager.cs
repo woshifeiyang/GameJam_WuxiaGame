@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -33,6 +34,8 @@ public class UIManager : MonoSingleton<UIManager>
 
     private GameObject _shareUIObj;
 
+    private float timer;
+
     protected override void InitAwake()
     {
         base.InitAwake();
@@ -63,8 +66,33 @@ public class UIManager : MonoSingleton<UIManager>
         _wechatUIObj.SetActive(false);
         
         _shareUIObj.SetActive(false);
+
+        StartCoroutine(StartTimer());
     }
 
+    IEnumerator StartTimer()
+    {
+        while (true)
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    public string GetSurvivalTime()
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        int hour = (int)timer / 3600;
+        int minute = (int)(timer - hour * 3600) / 60;
+        int second = (int)(timer - hour * 3600 - minute * 60);
+        stringBuilder.Append(hour);
+        stringBuilder.Append(":");
+        stringBuilder.Append(minute);
+        stringBuilder.Append(":");
+        stringBuilder.Append(second);
+        return stringBuilder.ToString();
+    }
+    
     public void PauseGame()
     {
         Time.timeScale = 0;
@@ -245,7 +273,12 @@ public class UIManager : MonoSingleton<UIManager>
     {
         Button mainMenuButton = _evaluationUIObj.transform.Find("MainMenuButton").GetComponent<Button>();
         Button shareButton = _evaluationUIObj.transform.Find("ShareButton").GetComponent<Button>();
-        
+        Text enemiesKillsText = _evaluationUIObj.transform.Find("EnemiesKills_N/Kills").GetComponent<Text>();
+        Text survivalTimeText = _evaluationUIObj.transform.Find("SurvivalTime_N/Time").GetComponent<Text>();
+
+        enemiesKillsText.text = EnemySpawner.Instance.GetEnemiesKills().ToString();
+        survivalTimeText.text = GetSurvivalTime();
+
         mainMenuButton.onClick.RemoveAllListeners();
         mainMenuButton.onClick.AddListener(() => {ChangeScene("UI");});
         shareButton.onClick.RemoveAllListeners();

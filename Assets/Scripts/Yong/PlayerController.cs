@@ -164,8 +164,8 @@ public class PlayerController : MonoSingleton<PlayerController>
             }
             else
             {
+                GetComponent<CapsuleCollider2D>().isTrigger = true;
                 curHealth = 0.0f;
-                //Invoke("GameOver",2.0f);
             }
         }
     }

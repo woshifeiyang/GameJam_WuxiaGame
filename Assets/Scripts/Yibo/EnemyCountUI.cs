@@ -21,6 +21,6 @@ public class EnemyCountUI : MonoBehaviour
 
     private void OnEnable()
     {
-        text.text = Main.Instance.enemyKills.ToString();
+        text.text = EnemySpawner.Instance.GetEnemiesKills().ToString();
     }
 }

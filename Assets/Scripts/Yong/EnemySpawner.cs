@@ -11,6 +11,7 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
     public float enemySpawnCdFinal;
     public float spawnCdFactorAdjust = 0.1f;
     private string _currentPool;
+    private int _enemyKills = 0;
 
     private const float ScreenWidthUnit = 8.5f;
     private const float ScreenHeightUnit = 19f;
@@ -297,6 +298,15 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
         }
     }
     
+    public void AddEnemyKills()
+    {
+        ++_enemyKills;
+    }
+
+    public int GetEnemiesKills()
+    {
+        return _enemyKills;
+    }
     
     public static Vector2 GetRandomPosition()
     {

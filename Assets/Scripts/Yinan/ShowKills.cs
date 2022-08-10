@@ -15,6 +15,6 @@ public class ShowKills : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        killsText.text = "Kills ="+Main.Instance.enemyKills.ToString();
+        killsText.text = "Kills ="+EnemySpawner.Instance.GetEnemiesKills().ToString();
     }
 }

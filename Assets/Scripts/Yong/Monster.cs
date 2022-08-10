@@ -171,7 +171,7 @@ public class Monster : MonoBehaviour
             // 从敌人探测器列表中移除该对象
             EnemyDetector.Instance.enemyList.Remove(gameObject);
             // 杀敌数增加
-            Main.Instance.AddEnemyKills();
+            EnemySpawner.Instance.AddEnemyKills();
         }
         else
         {

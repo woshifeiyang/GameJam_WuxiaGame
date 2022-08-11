@@ -19,7 +19,7 @@ public class Skill101 : BulletSkillBase
     {
         //伤害系数 速度系数
         damage *= 1f;
-        speed *= 1.7f;
+        speed *= 2.5f;
         _rb = GetComponent<Rigidbody2D>();
         _vec = EnemyDetector.Instance.GetNearestEnemyLoc() - PlayerController.Instance.transform.position;
         float angle = Vector3.SignedAngle(Vector3.up, _vec, Vector3.forward);

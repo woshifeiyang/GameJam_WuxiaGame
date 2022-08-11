@@ -89,9 +89,9 @@ MonoBehaviour:
   - endOfStageTime: 50
     EnemyData:
     - name: 101
-      spawnSpeed: 3
+      spawnSpeed: 2
     - name: 102
-      spawnSpeed: 0.4
+      spawnSpeed: 0.3
     - name: 103
       spawnSpeed: 0
     - name: 111
@@ -121,9 +121,9 @@ MonoBehaviour:
   - endOfStageTime: 70
     EnemyData:
     - name: 101
-      spawnSpeed: 4
+      spawnSpeed: 3
     - name: 102
-      spawnSpeed: 0.5
+      spawnSpeed: 0.4
     - name: 103
       spawnSpeed: 0
     - name: 111
@@ -155,7 +155,7 @@ MonoBehaviour:
     - name: 101
       spawnSpeed: 0
     - name: 102
-      spawnSpeed: 3
+      spawnSpeed: 1
     - name: 103
       spawnSpeed: 0
     - name: 111
@@ -189,9 +189,9 @@ MonoBehaviour:
     - name: 102
       spawnSpeed: 0
     - name: 103
-      spawnSpeed: 2
+      spawnSpeed: 1
     - name: 111
-      spawnSpeed: 5
+      spawnSpeed: 4
     - name: 112
       spawnSpeed: 0
     - name: 113
@@ -221,11 +221,11 @@ MonoBehaviour:
     - name: 102
       spawnSpeed: 0
     - name: 103
-      spawnSpeed: 2
+      spawnSpeed: 1.5
     - name: 111
-      spawnSpeed: 8
+      spawnSpeed: 4
     - name: 112
-      spawnSpeed: 2
+      spawnSpeed: 0.3
     - name: 113
       spawnSpeed: 0
     - name: 121
@@ -261,7 +261,7 @@ MonoBehaviour:
     - name: 113
       spawnSpeed: 0
     - name: 121
-      spawnSpeed: 6
+      spawnSpeed: 4
     - name: 122
       spawnSpeed: 0
     - name: 123
@@ -291,7 +291,7 @@ MonoBehaviour:
     - name: 112
       spawnSpeed: 0
     - name: 113
-      spawnSpeed: 7
+      spawnSpeed: 3
     - name: 121
       spawnSpeed: 6
     - name: 122
@@ -325,7 +325,7 @@ MonoBehaviour:
     - name: 113
       spawnSpeed: 7
     - name: 121
-      spawnSpeed: 8
+      spawnSpeed: 6
     - name: 122
       spawnSpeed: 2
     - name: 123
@@ -342,7 +342,7 @@ MonoBehaviour:
       spawnSpeed: 0
     - name: 143
       spawnSpeed: 0
-  - endOfStageTime: 300
+  - endOfStageTime: 1800
     EnemyData:
     - name: 101
       spawnSpeed: 0
@@ -363,17 +363,49 @@ MonoBehaviour:
     - name: 123
       spawnSpeed: 0
     - name: 131
-      spawnSpeed: 6
+      spawnSpeed: 5
     - name: 132
-      spawnSpeed: 3
-    - name: 133
       spawnSpeed: 2
+    - name: 133
+      spawnSpeed: 1.5
     - name: 141
       spawnSpeed: 0
     - name: 142
       spawnSpeed: 0
     - name: 143
       spawnSpeed: 0
+  - endOfStageTime: 3600
+    EnemyData:
+    - name: 101
+      spawnSpeed: 0
+    - name: 102
+      spawnSpeed: 0
+    - name: 103
+      spawnSpeed: 0
+    - name: 111
+      spawnSpeed: 0
+    - name: 112
+      spawnSpeed: 0
+    - name: 113
+      spawnSpeed: 0
+    - name: 121
+      spawnSpeed: 0
+    - name: 122
+      spawnSpeed: 0
+    - name: 123
+      spawnSpeed: 0
+    - name: 131
+      spawnSpeed: 5
+    - name: 132
+      spawnSpeed: 2
+    - name: 133
+      spawnSpeed: 1.5
+    - name: 141
+      spawnSpeed: 6
+    - name: 142
+      spawnSpeed: 2
+    - name: 143
+      spawnSpeed: 1
   currentStageNum: 0
   Timer: 0
   challengeModeDifficultyFactor: 1
@@ -448,4 +480,6 @@ MonoBehaviour:
     spawnSecond: 115
   - specialEnemy: {fileID: 5243666614868315174, guid: 95f92361e95ca324aa356012eb64f697, type: 3}
     spawnSecond: 160
+  - specialEnemy: {fileID: 5243666614868315174, guid: 9d984bf38dd3a404498566c25ce58a2e, type: 3}
+    spawnSecond: 240
   Timer: 0

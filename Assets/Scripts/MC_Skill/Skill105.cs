@@ -24,7 +24,7 @@ public class Skill105 : BulletSkillBase
     {
         
         rotateSpeed = speed * 5f;
-        Debug.Log("旋转速度=" + speed);
+        //Debug.Log("旋转速度=" + speed);
         //rotateSpeed = 1000f;
         transform.position = center.position + dir.normalized * distance;
         transform.RotateAround(center.position, Vector3.forward, rotateSpeed * Time.deltaTime);

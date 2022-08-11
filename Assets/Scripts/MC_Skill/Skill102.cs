@@ -18,8 +18,7 @@ public class Skill102 : BulletSkillBase
     {
         //伤害系数
         damage *= 3f;
-        ScopeSkill scopeSkill = new ScopeSkill();
-        transform.localScale = new Vector3(scopeSkill.Range + 3, scopeSkill.Range + 3, scopeSkill.Range+3);
+        transform.localScale = new Vector3(PlayerController.Instance.GetPlayerSkillRange()*0.3f+3, PlayerController.Instance.GetPlayerSkillRange() * 0.3f + 3, PlayerController.Instance.GetPlayerSkillRange() * 0.3f + 3);
         _rb = GetComponent<Rigidbody2D>();
         _vec = EnemyDetector.Instance.GetNearestEnemyLoc() - PlayerController.Instance.transform.position;
         float angle = Vector3.SignedAngle(Vector3.up, _vec, Vector3.forward);

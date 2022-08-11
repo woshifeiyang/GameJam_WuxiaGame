@@ -1,114 +1,122 @@
 [
-  {
-    "Id": 101,
-    "KeyName":"Sword",
-    "Category":"Bullet",
-    "Description":"Single attack",
-    "Buff":"Buff: Normal Damage upgrade, Increase attack speed, Projectiles+1, Projectiles flight speed+",
-    "ResAddress":"SkillIcon/Sword"
-  },
-  {
-    "Id": 102,
-    "KeyName":"Piercing Sword",
-    "Category":"Bullet",
-    "Description":"The Sword can penetrate enemies",
-    "Buff":"Buff: Normal Damage upgrade, Increase attack speed, Projectiles+1, Projectiles flight speed+",
-    "ResAddress":"SkillIcon/PiercingSword"
-  },
-  {
-    "Id": 103,
-    "KeyName":"Split Sword",
-    "Category":"Bullet",
-    "Description":"The sword will split multiple swords to attack enemies",
-    "Buff":"Buff: Normal Damage upgrade, Increase attack speed, Projectiles+1, Projectiles flight speed+",
-    "ResAddress":"SkillIcon/SplitSword"
-  },
-  {
-    "Id": 104,
-    "KeyName":"Blade Storm",
-    "Category":"Scope",
-    "Description":"AOE attack, Blade storm will attack the nearest enemy within a certain range",
-    "Buff":"Buff: Normal Damage upgrade, Increase attack speed",
-    "ResAddress":"SkillIcon/SwordArea"
-  },
-  {
-    "Id": 201,
-    "KeyName":"Lightning Strike",
-    "Category":"MultTarget",
-    "Description":"Lightning strikes a single monster",
-    "Buff":"Buff: Increase attack speed, Projectiles+1",
-    "ResAddress":"SkillIcon/LightningStrike"
-  },
-  {
-    "Id": 202,
-    "KeyName":"Lightning Storm",
-    "Category":"Scope",
-    "Description":"Randomly generate a fixed AOE damage lightning storm within the screen",
-    "Buff":"Buff: Increase attack speed, Damage range",
-    "ResAddress":"SkillIcon/LightningStorm"
-  },
-  {
-    "Id": 203,
-    "KeyName":"Lightning Return",
-    "Category":"Field",
-    "Description":"When main character was attacked, a lightning strike will be released",
-    "Buff":"",
-    "ResAddress":"SkillIcon/LightningReturn"
-  },
-  {
-    "Id": 204,
-    "KeyName":"Overload",
-    "Category":"Field",
-    "Description":"50% chance to cast an additional strike when casting a thunderbolt",
-    "Buff":"",
-    "ResAddress":"SkillIcon/OverLoad"
-  },
-  {
-    "Id": 301,
-    "KeyName":"Magic Circle",
-    "Category":"Field",
-    "Description":"This skill will damage enemies within a certain range of the main character",
-    "Buff":"Buff: HP, Damage range",
-    "ResAddress":"SkillIcon/MagicCircle"
-  },
-  {
-    "Id": 302,
-    "KeyName":"Mandala",
-    "Category":"Field",
-    "Description":"When the enemy within the magic circle dies, the character will recover HP",
-    "Buff":"",
-    "ResAddress":"SkillIcon/Mandala"
-  },
-  {
-    "Id": 303,
-    "KeyName":"Arhat Formation",
-    "Category":"Field",
-    "Description":"Four Arhats appear around the character, performing AOE damage",
-    "Buff":"Buff: HP, Damage range",
-    "ResAddress":"SkillIcon/BuddhaPalms"
-  },
-  {
-    "Id": 304,
-    "KeyName":"Bad Karma",
-    "Category":"Field",
-    "Description":"Increase the maximum HP(hit points) based on the number of kills/level",
-    "Buff":"",
-    "ResAddress":"SkillIcon/Karma"
-  },
-  {
-    "Id": 401,
-    "KeyName":"Poison Gas",
-    "Category":"Scope",
-    "Description":"Poison gas is released behind the player and damages enemies in a certain area",
-    "Buff":"Buff: Increase attack speed, Damage range",
-    "ResAddress":"SkillIcon/PoisonGas"
-  },
-  {
-    "Id": 402,
-    "KeyName":"Dashing Snake",
-    "Category":"Bullet",
-    "Description":"The player releases a snake to deal fixed damage to the nearest enemy, and the snake will restore HP(hit points) to the player",
-    "Buff":"Buff: Increase attack speed, Projectiles+1, Projectiles flight speed+",
-    "ResAddress":"SkillIcon/DashingSnake"
-  }
+    {
+        "Id": 101,
+        "KeyName": "Sword",
+        "Category": "Bullet",
+        "Description": "Single attack",
+        "Buff": "Buff: Normal Damage upgrade, Increase attack speed, Projectiles+1, Projectiles flight speed+",
+        "ResAddress": "SkillIcon/Sword"
+    },
+    {
+        "Id": 102,
+        "KeyName": "Piercing Sword",
+        "Category": "Bullet",
+        "Description": "The Sword can penetrate enemies",
+        "Buff": "Buff: Normal Damage upgrade, Increase attack speed, Projectiles+1, Projectiles flight speed+",
+        "ResAddress": "SkillIcon/PiercingSword"
+    },
+    {
+        "Id": 103,
+        "KeyName": "Split Sword",
+        "Category": "Bullet",
+        "Description": "The sword will split multiple swords to attack enemies",
+        "Buff": "Buff: Normal Damage upgrade, Increase attack speed, Projectiles+1, Projectiles flight speed+",
+        "ResAddress": "SkillIcon/SplitSword"
+    },
+    {
+        "Id": 104,
+        "KeyName": "Blade Storm",
+        "Category": "Scope",
+        "Description": "AOE attack, Blade storm will attack the nearest enemy within a certain range",
+        "Buff": "Buff: Normal Damage upgrade, Increase attack speed",
+        "ResAddress": "SkillIcon/SwordArea"
+    },
+    {
+        "Id": 105,
+        "KeyName": "Sword Spirit",
+        "Category": "Bullet",
+        "Description": "Summons a sword spirit around you and attacks surrounding enemies",
+        "Buff": "Buff: Normal Damage upgrade, Projectiles flight speed+, Projectiles+1",
+        "ResAddress": "SkillIcon/SwordSpirit"
+    },
+    {
+        "Id": 201,
+        "KeyName": "Lightning Strike",
+        "Category": "MultTarget",
+        "Description": "Lightning strikes a single monster",
+        "Buff": "Buff: Increase attack speed, Projectiles+1",
+        "ResAddress": "SkillIcon/LightningStrike"
+    },
+    {
+        "Id": 202,
+        "KeyName": "Lightning Storm",
+        "Category": "Scope",
+        "Description": "Randomly generate a fixed AOE damage lightning storm within the screen",
+        "Buff": "Buff: Increase attack speed, Damage range",
+        "ResAddress": "SkillIcon/LightningStorm"
+    },
+    {
+        "Id": 203,
+        "KeyName": "Lightning Return",
+        "Category": "Field",
+        "Description": "When main character was attacked, a lightning strike will be released",
+        "Buff": "",
+        "ResAddress": "SkillIcon/LightningReturn"
+    },
+    {
+        "Id": 204,
+        "KeyName": "Overload",
+        "Category": "Field",
+        "Description": "50% chance to cast an additional strike when casting a thunderbolt",
+        "Buff": "",
+        "ResAddress": "SkillIcon/OverLoad"
+    },
+    {
+        "Id": 301,
+        "KeyName": "Magic Circle",
+        "Category": "Field",
+        "Description": "This skill will damage enemies within a certain range of the main character",
+        "Buff": "Buff: HP, Damage range",
+        "ResAddress": "SkillIcon/MagicCircle"
+    },
+    {
+        "Id": 302,
+        "KeyName": "Mandala",
+        "Category": "Field",
+        "Description": "When the enemy within the magic circle dies, the character will recover HP",
+        "Buff": "",
+        "ResAddress": "SkillIcon/Mandala"
+    },
+    {
+        "Id": 303,
+        "KeyName": "Arhat Formation",
+        "Category": "Field",
+        "Description": "Four Arhats appear around the character, performing AOE damage",
+        "Buff": "Buff: HP, Damage range",
+        "ResAddress": "SkillIcon/BuddhaPalms"
+    },
+    {
+        "Id": 304,
+        "KeyName": "Bad Karma",
+        "Category": "Field",
+        "Description": "Increase the maximum HP(hit points) based on the number of kills/level",
+        "Buff": "",
+        "ResAddress": "SkillIcon/Karma"
+    },
+    {
+        "Id": 401,
+        "KeyName": "Poison Gas",
+        "Category": "Scope",
+        "Description": "Poison gas is released behind the player and damages enemies in a certain area",
+        "Buff": "Buff: Increase attack speed, Damage range",
+        "ResAddress": "SkillIcon/PoisonGas"
+    },
+    {
+        "Id": 402,
+        "KeyName": "Dashing Snake",
+        "Category": "Bullet",
+        "Description": "The player releases a snake to deal fixed damage to the nearest enemy, and the snake will restore HP(hit points) to the player",
+        "Buff": "Buff: Increase attack speed, Projectiles+1, Projectiles flight speed+",
+        "ResAddress": "SkillIcon/DashingSnake"
+    }
 ]

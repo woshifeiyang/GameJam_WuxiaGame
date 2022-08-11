@@ -23,16 +23,16 @@ public class Cure : FieldSkillBase
                 Debug.Log("cure suscss");
                 if (PlayerController.Instance.curHealth < PlayerController.Instance.maxHealth)
                 {
-                    if(PlayerController.Instance.curHealth < PlayerController.Instance.maxHealth*0.4f){
-                        PlayerController.Instance.curHealth += PlayerController.Instance.maxHealth * 0.03f;
+                    if(PlayerController.Instance.curHealth < PlayerController.Instance.maxHealth*0.3f){
+                        PlayerController.Instance.curHealth += PlayerController.Instance.maxHealth * 0.01f;
                     }
-                    else if (PlayerController.Instance.curHealth < PlayerController.Instance.maxHealth * 0.2f)
+                    else if (PlayerController.Instance.curHealth < PlayerController.Instance.maxHealth * 0.15f)
                     {
-                        PlayerController.Instance.curHealth += PlayerController.Instance.maxHealth * 0.05f;
+                        PlayerController.Instance.curHealth += PlayerController.Instance.maxHealth * 0.03f;
                     }
                     else
                     {
-                        PlayerController.Instance.curHealth += PlayerController.Instance.maxHealth *0.01f;
+                        PlayerController.Instance.curHealth += PlayerController.Instance.maxHealth *0.005f;
                     }
                     
                 }

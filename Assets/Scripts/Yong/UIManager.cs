@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -34,7 +35,19 @@ public class UIManager : MonoSingleton<UIManager>
 
     private GameObject _shareUIObj;
 
-    private float timer;
+    private GameObject _narrative;
+
+    private float _timer;
+
+    private int _language;
+
+    public TMP_FontAsset TMP_ChineseFont;
+
+    public TMP_FontAsset TMP_EnglishFont;
+
+    public int chineseFontSize;
+
+    public int englishFontSize;
 
     protected override void InitAwake()
     {
@@ -47,6 +60,7 @@ public class UIManager : MonoSingleton<UIManager>
         _giftUIObj = GameObject.Find("GiftUI");
         _wechatUIObj = GameObject.Find("WechatUI");
         _shareUIObj = GameObject.Find("ShareUI");
+        _narrative = GameObject.Find("NarrativeUI");
     }
 
     public void InitUIManager()
@@ -67,6 +81,8 @@ public class UIManager : MonoSingleton<UIManager>
         
         _shareUIObj.SetActive(false);
 
+        _language = GameData.language;
+        
         StartCoroutine(StartTimer());
     }
 
@@ -74,7 +90,7 @@ public class UIManager : MonoSingleton<UIManager>
     {
         while (true)
         {
-            timer += Time.deltaTime;
+            _timer += Time.deltaTime;
             yield return null;
         }
     }
@@ -82,9 +98,9 @@ public class UIManager : MonoSingleton<UIManager>
     public string GetSurvivalTime()
     {
         StringBuilder stringBuilder = new StringBuilder();
-        int hour = (int)timer / 3600;
-        int minute = (int)(timer - hour * 3600) / 60;
-        int second = (int)(timer - hour * 3600 - minute * 60);
+        int hour = (int)_timer / 3600;
+        int minute = (int)(_timer - hour * 3600) / 60;
+        int second = (int)(_timer - hour * 3600 - minute * 60);
         stringBuilder.Append(hour);
         stringBuilder.Append(":");
         stringBuilder.Append(minute);
@@ -200,6 +216,19 @@ public class UIManager : MonoSingleton<UIManager>
         InitShareUI();
     }
 
+    public void SetFontProperty(TextMeshProUGUI text)
+    {
+        if (_language == 1)
+        {
+            text.font = TMP_ChineseFont;
+            text.fontSize = chineseFontSize;
+        }
+        else
+        {
+            text.font = TMP_EnglishFont;
+            text.fontSize = englishFontSize;
+        }
+    }
     private void InitBasicPropUI()
     {
         List<BasicPropJson> list = EnemyDetector.GetRandomElements(JsonManager.Instance.basicPropList, 3);
@@ -219,7 +248,9 @@ public class UIManager : MonoSingleton<UIManager>
             skillNameText.text = list[i - 1].KeyName;
             TextMeshProUGUI skillDesText = bpButton.transform.Find(skillDesPath).GetComponent<TextMeshProUGUI>();
             //Text skillDesText = bpButton.transform.Find(skillDesPath).GetComponent<Text>();
-            skillDesText.text = list[i - 1].Description + " " + list[i - 1].Value;
+            skillDesText.text = list[i - 1].Description;
+            SetFontProperty(skillNameText);
+            SetFontProperty(skillDesText);
         }
     }
 
@@ -237,14 +268,17 @@ public class UIManager : MonoSingleton<UIManager>
             string skillNamePath = "Skill_Name" + i;
             string desButtonPath = "Des_Button" + i;
             string imagePath = "Skill_Image" + i;
+            string skillTextPath = "Des_Text" + i;
+
             Button skillButton = _skillListUIObj.transform.Find(skillButtonPath).GetComponent<Button>();
-            
             Image image = skillButton.transform.Find(imagePath).GetComponent<Image>();
             UnityEngine.Sprite sprite = Resources.Load(list[i - 1].ResAddress, typeof(UnityEngine.Sprite)) as UnityEngine.Sprite;
             image.sprite = sprite;
             Text skillNameText = skillButton.transform.Find(skillNamePath).GetComponent<Text>();
             skillNameText.text = list[i - 1].KeyName;
             Button desButton = skillButton.transform.Find(desButtonPath).GetComponent<Button>();
+            TextMeshProUGUI desText = desButton.transform.Find(skillTextPath).GetComponent<TextMeshProUGUI>();
+            //SetFontProperty(desText);
             InitSkillListButton(skillButton, desButton, list[i - 1]);
         }
     }
@@ -264,7 +298,11 @@ public class UIManager : MonoSingleton<UIManager>
         for (int i = 1; i < 5; i++)
         {
             string buttonPath = "FC_Button" + i;
+            string textPath = "FC_Text" + i;
             Button skillButton = _firstChooseUIObj.transform.Find(buttonPath).GetComponent<Button>();
+            TextMeshProUGUI text = skillButton.transform.Find(textPath).GetComponent<TextMeshProUGUI>();
+            text.text = dictionary[i].Description;
+            SetFontProperty(text);
             InitFirstChooseButton(skillButton, i, dictionary[i]);
         }
     }
@@ -411,7 +449,9 @@ public class UIManager : MonoSingleton<UIManager>
         skillDesText.gameObject.SetActive(true);
         TextMeshProUGUI buffDesText = _skillListUIObj.transform.Find("Upgrade/BuffDescription").GetComponent<TextMeshProUGUI>();
         buffDesText.gameObject.SetActive(true);
-
+        SetFontProperty(skillDesText);
+        SetFontProperty(buffDesText);
+        
         skillDesText.text = obj.Description;
         buffDesText.text = obj.Buff;
     }

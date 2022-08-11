@@ -7,7 +7,7 @@ public class GameData : MonoBehaviour
     public static int language;
 
     void Start() {
-        GameObject.DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     public void GetLanguage(int a)

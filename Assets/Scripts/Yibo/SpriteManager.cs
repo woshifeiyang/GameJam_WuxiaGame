@@ -20,6 +20,9 @@ public class SpriteManager : Singleton<SpriteManager>
 
     void Start()
     {
+        inputNames = new string[2];
+        inputNames[0] = "Breadman";
+        inputNames[1] = "Snail";
         UpdateSprite();
         if (spriteManagerState != 0)
         {
@@ -31,13 +34,7 @@ public class SpriteManager : Singleton<SpriteManager>
 
     public void GetTypeOfSprite()
     {
-        if(spriteManagerState == 0)
-        {
-            for (int i = 0; i < transform.childCount; i++)
-            {
-                inputNames[i] = transform.GetChild(i).GetComponent<Sprite>().spriteName;
-            }
-        }
+
     }
 
     public void spawnSprites()
@@ -45,6 +42,7 @@ public class SpriteManager : Singleton<SpriteManager>
         for(int i = 0; i < inputNames.Length; i++)
         {
             string assertPath = "Prefab/Sprite/" + inputNames[i];
+            Debug.Log(assertPath);
             GameObject newSprite = (GameObject)Instantiate(Resources.Load(assertPath));
             newSprite.transform.position = spriteLocationHolder[i].transform.position;
         }

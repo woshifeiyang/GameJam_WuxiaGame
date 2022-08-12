@@ -32,6 +32,8 @@ public class Main : MonoSingleton<Main>
     private void GameStart()
     {
         EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_FirstChoose);
+        SpriteManager spm = GameObject.Find("SpriteManager").GetComponent<SpriteManager>();
+        spm.spawnSprites();
     }
     
 }

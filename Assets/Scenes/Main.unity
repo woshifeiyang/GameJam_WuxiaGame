@@ -9871,6 +9871,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8599008191193289644, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
+      propertyPath: difficultyOfStages.Array.data[9].EnemyData.Array.data[9].spawnSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8599008191193289645, guid: be9b87c70bad0ce4bb701fd50d15376d, type: 3}
       propertyPath: m_Name
       value: EnemySpawner

@@ -160,6 +160,10 @@ public class Monster : MonoBehaviour
 
     public void RecycleMonster()
     {
+        if (gameObject.CompareTag("Boss"))
+        {
+            Destroy(gameObject);
+        }
         if (monsterId[0] == '3')
         {
             EventListener.Instance.SendMessage(EventListener.MessageEvent.Message_GetSkill);

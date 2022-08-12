@@ -533,11 +533,11 @@ public class UIManager : MonoSingleton<UIManager>
         _basicPropUIObj.GetComponent<Animator>().SetBool("isVisable", false);
         _phoneButtonObj.SetActive(true);
         RestartGame();
-        yield return new WaitForSeconds(0.5f);
 
         PlayerController tempPC = PlayerController.Instance;
         float health = tempPC.healthFinal / 5.0f;
         tempPC.curHealth = tempPC.curHealth + health < tempPC.healthFinal ? tempPC.curHealth + health : tempPC.healthFinal;
+        yield return new WaitForSeconds(0.5f);
 
         _basicPropUIObj.SetActive(false);
         StopCoroutine(nameof(CloseBasicPropUI_C));

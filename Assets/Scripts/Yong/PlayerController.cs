@@ -222,9 +222,9 @@ public class PlayerController : MonoSingleton<PlayerController>
     {
         ++_level;
         _curExperience = 0;
-        _totalExperience = 2 * math.pow(_level + 1, 2) + 6;
-/*        float health = healthFinal / 5.0f;
-        curHealth = curHealth + health < healthFinal ? curHealth + health : healthFinal;*/
+        _totalExperience = 2 * math.pow(_level + 1, 2) + 6 * _level + 4;
+        /*        float health = healthFinal / 5.0f;
+                curHealth = curHealth + health < healthFinal ? curHealth + health : healthFinal;*/
     }
     public void AttackLevelUp()
     {

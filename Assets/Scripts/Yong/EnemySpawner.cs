@@ -191,7 +191,7 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
     {
         enemySpawnCdBase = GetTotalSpawnSpeedInSecond();
         enemySpawnCdFinal = enemySpawnCdBase;
-        if ((1/GetTotalSpawnSpeedInSecond() * 4) > objectPoolComp.countEnemyTotalNum()) 
+        if ((1/GetTotalSpawnSpeedInSecond() * 6) > objectPoolComp.countEnemyTotalNum()) 
         {
             float enemyMapFillFactor = 1f;
             enemyMapFillFactor = (float)(objectPoolComp.countEnemyTotalNum() + 1)/ 500f;

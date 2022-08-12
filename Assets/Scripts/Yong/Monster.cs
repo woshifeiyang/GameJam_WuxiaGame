@@ -107,9 +107,10 @@ public class Monster : MonoBehaviour
     {
         if (obj.gameObject.CompareTag("Skill") && isDead == false)
         {
-            //DPScheck(obj);    
-            GetDamaged(obj.gameObject);
+            //DPScheck(obj);
             StartCoroutine(HitFeedback());
+            GetDamaged(obj.gameObject);
+            
         }
     }
 

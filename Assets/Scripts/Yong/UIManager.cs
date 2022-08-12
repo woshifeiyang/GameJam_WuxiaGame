@@ -278,7 +278,8 @@ public class UIManager : MonoSingleton<UIManager>
             skillNameText.text = list[i - 1].KeyName;
             Button desButton = skillButton.transform.Find(desButtonPath).GetComponent<Button>();
             TextMeshProUGUI desText = desButton.transform.Find(skillTextPath).GetComponent<TextMeshProUGUI>();
-            //SetFontProperty(desText);
+            desText.text = _language == 1 ? "详细描述" : "Detail";
+            SetFontProperty(desText);
             InitSkillListButton(skillButton, desButton, list[i - 1]);
         }
     }

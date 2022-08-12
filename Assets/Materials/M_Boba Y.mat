@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Popcorn R
+  m_Name: M_Boba Y
   m_Shader: {fileID: -6465566751694194690, guid: 0c7ac68490221ce408cc8dd843d9d783, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
@@ -33,7 +33,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_38a1f2c2e9ee435da657074d19593d7e:
-        m_Texture: {fileID: 2800000, guid: 1f405aa3cc8acc24ebee9f1b83f2ef82, type: 3}
+        m_Texture: {fileID: 2800000, guid: 787762d47576d774986782b56f15dcba, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -97,7 +97,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_c47a3f8811d7476f96a8874418bdb994: 1
+    - Vector1_c47a3f8811d7476f96a8874418bdb994: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -126,11 +126,11 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_17a92accd6f84354a28334cca0f8dade: {r: 0.85882354, g: 0.21840045, b: 0.109803915, a: 0}
+    - Color_17a92accd6f84354a28334cca0f8dade: {r: 0.8584906, g: 0.822026, b: 0.10933607, a: 0}
     - _ATTACKCOLOR: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _TintColor: {r: 1, g: 0.37254903, b: 0.37254903, a: 1}
+    - _TintColor: {r: 1, g: 0.5254902, b: 0.99215686, a: 1}
   m_BuildTextureStacks: []

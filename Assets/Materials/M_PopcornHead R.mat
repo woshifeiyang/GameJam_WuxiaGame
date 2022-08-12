@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Popcorn R
+  m_Name: M_PopcornHead R
   m_Shader: {fileID: -6465566751694194690, guid: 0c7ac68490221ce408cc8dd843d9d783, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
@@ -127,7 +127,6 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_17a92accd6f84354a28334cca0f8dade: {r: 0.85882354, g: 0.21840045, b: 0.109803915, a: 0}
-    - _ATTACKCOLOR: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

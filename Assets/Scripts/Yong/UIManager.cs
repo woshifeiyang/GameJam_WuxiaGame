@@ -534,6 +534,11 @@ public class UIManager : MonoSingleton<UIManager>
         _phoneButtonObj.SetActive(true);
         RestartGame();
         yield return new WaitForSeconds(0.5f);
+
+        PlayerController tempPC = PlayerController.Instance;
+        float health = tempPC.healthFinal / 5.0f;
+        tempPC.curHealth = tempPC.curHealth + health < tempPC.healthFinal ? tempPC.curHealth + health : tempPC.healthFinal;
+
         _basicPropUIObj.SetActive(false);
         StopCoroutine(nameof(CloseBasicPropUI_C));
     }

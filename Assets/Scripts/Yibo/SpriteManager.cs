@@ -20,6 +20,7 @@ public class SpriteManager : Singleton<SpriteManager>
 
     void Start()
     {
+        Debug.Log("hello");
         inputNames = new string[2];
         inputNames[0] = "Breadman";
         inputNames[1] = "Snail";

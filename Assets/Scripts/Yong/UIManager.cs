@@ -35,8 +35,6 @@ public class UIManager : MonoSingleton<UIManager>
 
     private GameObject _shareUIObj;
 
-    private GameObject _narrative;
-
     private float _timer;
 
     private int _language;
@@ -60,7 +58,6 @@ public class UIManager : MonoSingleton<UIManager>
         _giftUIObj = GameObject.Find("GiftUI");
         _wechatUIObj = GameObject.Find("WechatUI");
         _shareUIObj = GameObject.Find("ShareUI");
-        _narrative = GameObject.Find("NarrativeUI");
     }
 
     public void InitUIManager()

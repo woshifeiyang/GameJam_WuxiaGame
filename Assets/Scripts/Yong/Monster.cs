@@ -228,7 +228,7 @@ public class Monster : MonoBehaviour
     {
         _material.EnableKeyword("_BEATTACK");
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         
         _material.DisableKeyword("_BEATTACK");
 

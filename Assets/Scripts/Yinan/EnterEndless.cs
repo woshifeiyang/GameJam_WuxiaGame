@@ -8,11 +8,13 @@ public class EnterEndless : MonoBehaviour
    
 
     // Update is called once per frame
-    void Update()
+   
+       
+    public void enterEndless()
     {
-        if (GetComponent<Monster>().isDead)
-        {
-            EnemySpawner.Instance.Timer = 1795f;
-        }
-    }
+        EnemySpawner.Instance.Timer = 1795f;
+    }    
+           
+        
+    
 }

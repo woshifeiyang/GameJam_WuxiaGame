@@ -26,7 +26,7 @@ public class Skill301 : FieldSkillBase
 
     public override void Update()
     {
-        this.transform.localScale = new Vector3(range, range, 1f);
+        this.transform.localScale = new Vector3(2*Mathf.Pow(1.2f,range), 2 * Mathf.Pow(1.2f, range), 1f);
         skill301Timer += Time.deltaTime;
         //_cc.radius = range;
         if(skill301Timer > 0.5f)

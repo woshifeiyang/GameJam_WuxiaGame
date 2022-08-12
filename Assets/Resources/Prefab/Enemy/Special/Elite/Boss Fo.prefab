@@ -106,9 +106,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPhases: 140000003c00000010270000
   enemiesToSpawn:
-  - {fileID: 5243666614868315174, guid: d494a0c0100c12a46904a31cbc2983a6, type: 3}
-  - {fileID: 5243666614868315174, guid: 38d3f6f4461eb1548a69394af03372a0, type: 3}
-  - {fileID: 5243666614868315174, guid: c968ea439ee77d746b88a3cc1fe3def7, type: 3}
+  - {fileID: 5243666614868315174, guid: 160545c0d94e96b43b5b9203fb99903b, type: 3}
+  - {fileID: 5243666614868315174, guid: 376c129af161f5e4cb07068fa4da4d6a, type: 3}
+  - {fileID: 5243666614868315174, guid: 3cfda5125116d2d4883a721653faa631, type: 3}
 --- !u!1 &4023534640982676359
 GameObject:
   m_ObjectHideFlags: 0

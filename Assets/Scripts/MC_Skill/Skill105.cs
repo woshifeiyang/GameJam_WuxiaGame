@@ -24,7 +24,7 @@ public class Skill105 : BulletSkillBase
             GameObject SkillObj = (GameObject)Instantiate(Resources.Load("Prefab/Skill/Bullet/105m"));
             if( i%2==0)
             {
-                SkillObj.transform.Rotate(new Vector3(0, 0, -180));
+                //SkillObj.transform.Rotate(new Vector3(0, 0, -180));
             }
             //Debug.Log("rotation=" + SkillObj.transform.rotation.z);
             SkillObj.transform.position = new Vector3(center.position.x, transform.position.y + 0.9f*(i+1), center.position.z);

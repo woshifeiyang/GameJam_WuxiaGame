@@ -502,8 +502,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specialEnemyHolder:
+  - specialEnemy: {fileID: 5243666614868315174, guid: dc29e371e8af82845914be0bc67d0c5e, type: 3}
+    spawnSecond: 15
   - specialEnemy: {fileID: 5243666614868315174, guid: ba67345368c85ea40a527c0948fd399c, type: 3}
-    spawnSecond: 20
+    spawnSecond: 35
   - specialEnemy: {fileID: 5243666614868315174, guid: d97803dc6109a0347af4be3192ca7af9, type: 3}
     spawnSecond: 70
   - specialEnemy: {fileID: 5243666614868315174, guid: d97803dc6109a0347af4be3192ca7af9, type: 3}
@@ -513,7 +515,7 @@ MonoBehaviour:
   - specialEnemy: {fileID: 5243666614868315174, guid: 95f92361e95ca324aa356012eb64f697, type: 3}
     spawnSecond: 160
   - specialEnemy: {fileID: 5243666614868315174, guid: 9d984bf38dd3a404498566c25ce58a2e, type: 3}
-    spawnSecond: 255
+    spawnSecond: 240
   - specialEnemy: {fileID: 5243666614868315174, guid: 9d984bf38dd3a404498566c25ce58a2e, type: 3}
     spawnSecond: 5000
   Timer: 0

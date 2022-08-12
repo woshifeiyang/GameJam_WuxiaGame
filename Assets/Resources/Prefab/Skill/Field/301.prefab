@@ -166,6 +166,6 @@ MonoBehaviour:
   id: 301
   damage: 50
   cd: 0.5
-  range: 2
+  range: 0
   skill301Timer: 0
   skillLastTime: 0.05

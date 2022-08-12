@@ -225,7 +225,7 @@ MonoBehaviour:
     - name: 111
       spawnSpeed: 4
     - name: 112
-      spawnSpeed: 0.2
+      spawnSpeed: 0.4
     - name: 113
       spawnSpeed: 0
     - name: 121
@@ -325,9 +325,9 @@ MonoBehaviour:
     - name: 113
       spawnSpeed: 0
     - name: 121
-      spawnSpeed: 5
+      spawnSpeed: 4
     - name: 122
-      spawnSpeed: 2
+      spawnSpeed: 0.5
     - name: 123
       spawnSpeed: 0
     - name: 131
@@ -435,9 +435,9 @@ MonoBehaviour:
     - name: 141
       spawnSpeed: 5
     - name: 142
-      spawnSpeed: 2
+      spawnSpeed: 1
     - name: 143
-      spawnSpeed: 1.5
+      spawnSpeed: 1
   currentStageNum: 0
   Timer: 0
   challengeModeDifficultyFactor: 1

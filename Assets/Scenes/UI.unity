@@ -1770,6 +1770,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4632537545227415028}
     m_Modifications:
+    - target: {fileID: 706922093, guid: f7d423c2558051742a9d4217263afb81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 706922093, guid: f7d423c2558051742a9d4217263afb81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 706922093, guid: f7d423c2558051742a9d4217263afb81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1105209245}
+    - target: {fileID: 706922093, guid: f7d423c2558051742a9d4217263afb81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 706922093, guid: f7d423c2558051742a9d4217263afb81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AllowLoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 706922093, guid: f7d423c2558051742a9d4217263afb81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameData, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 706922093, guid: f7d423c2558051742a9d4217263afb81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1195142506494183800, guid: f7d423c2558051742a9d4217263afb81, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1857,10 +1885,6 @@ PrefabInstance:
     - target: {fileID: 1195142506494183801, guid: f7d423c2558051742a9d4217263afb81, type: 3}
       propertyPath: m_Name
       value: NarrativeUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1195142506494183801, guid: f7d423c2558051742a9d4217263afb81, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7d423c2558051742a9d4217263afb81, type: 3}
@@ -6276,16 +6300,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 69042751677436143, guid: f88999ad064c4ae44af2e4b47538ba34, type: 3}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
+      - m_Target: {fileID: 1105209245}
+        m_TargetAssemblyTypeName: GameData, Assembly-CSharp
+        m_MethodName: LoadSceneAsync
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Main
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1729219828

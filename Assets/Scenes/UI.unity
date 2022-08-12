@@ -699,7 +699,7 @@ GameObject:
   - component: {fileID: 205369315}
   - component: {fileID: 205369314}
   m_Layer: 5
-  m_Name: sprite (2)
+  m_Name: Snail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1666,7 +1666,7 @@ GameObject:
   - component: {fileID: 515537851}
   - component: {fileID: 515537850}
   m_Layer: 5
-  m_Name: sprite
+  m_Name: Breadman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2857,7 +2857,7 @@ GameObject:
   - component: {fileID: 744088552}
   - component: {fileID: 744088551}
   m_Layer: 5
-  m_Name: sprite (1)
+  m_Name: Iceman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3903,6 +3903,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1535517029}
+        m_TargetAssemblyTypeName: SpriteManager, Assembly-CSharp
+        m_MethodName: SetIceman
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &951875728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4836,6 +4848,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1535517029}
+        m_TargetAssemblyTypeName: SpriteManager, Assembly-CSharp
+        m_MethodName: SetSnail
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1175110524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5331,6 +5355,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225888848}
   m_CullTransparentMesh: 1
+--- !u!1001 &1271787861
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6896916693500302401, guid: cdef80068295a4d4c9f2a95b64f55816, type: 3}
+      propertyPath: m_Name
+      value: SpriteManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597083307834982699, guid: cdef80068295a4d4c9f2a95b64f55816, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597083307834982699, guid: cdef80068295a4d4c9f2a95b64f55816, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597083307834982699, guid: cdef80068295a4d4c9f2a95b64f55816, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597083307834982699, guid: cdef80068295a4d4c9f2a95b64f55816, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597083307834982699, guid: cdef80068295a4d4c9f2a95b64f55816, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597083307834982699, guid: cdef80068295a4d4c9f2a95b64f55816, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597083307834982699, guid: cdef80068295a4d4c9f2a95b64f55816, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597083307834982699, guid: cdef80068295a4d4c9f2a95b64f55816, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597083307834982699, guid: cdef80068295a4d4c9f2a95b64f55816, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597083307834982699, guid: cdef80068295a4d4c9f2a95b64f55816, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597083307834982699, guid: cdef80068295a4d4c9f2a95b64f55816, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cdef80068295a4d4c9f2a95b64f55816, type: 3}
 --- !u!1 &1274798674
 GameObject:
   m_ObjectHideFlags: 0
@@ -6199,6 +6280,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528465257}
   m_CullTransparentMesh: 1
+--- !u!114 &1535517029 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8216562574832968765, guid: cdef80068295a4d4c9f2a95b64f55816, type: 3}
+  m_PrefabInstance: {fileID: 1271787861}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a427505a34c82a41a038cce55121d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1575925832
 GameObject:
   m_ObjectHideFlags: 0
@@ -7922,6 +8014,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1535517029}
+        m_TargetAssemblyTypeName: SpriteManager, Assembly-CSharp
+        m_MethodName: SetBreadman
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

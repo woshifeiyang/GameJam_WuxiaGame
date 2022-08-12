@@ -12,11 +12,42 @@ public class SpriteManager : Singleton<SpriteManager>
     // dictionary for subset sprites
     public Dictionary<string, float> spriteManagerProperty = new Dictionary<string, float>();
 
+    public GameObject[] spriteLocationHolder;
+    public string[] inputNames;
+
+    // 0 = ui, 1 = game phase
+    public int spriteManagerState = 0;
+
     void Start()
     {
         UpdateSprite();
-        PlayerController pcr = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        pcr.updateParameters();
+        if (spriteManagerState != 0)
+        {
+            PlayerController pcr = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+            pcr.updateParameters();
+        }
+        
+    }
+
+    public void GetTypeOfSprite()
+    {
+        if(spriteManagerState == 0)
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                inputNames[i] = transform.GetChild(i).GetComponent<Sprite>().spriteName;
+            }
+        }
+    }
+
+    public void spawnSprites()
+    {
+        for(int i = 0; i < inputNames.Length; i++)
+        {
+            string assertPath = "Prefab/Sprite/" + inputNames[i];
+            GameObject newSprite = (GameObject)Instantiate(Resources.Load(assertPath));
+            newSprite.transform.position = spriteLocationHolder[i].transform.position;
+        }
     }
     public void AddNewSprite(string spriteName, Sprite targetSprite)
     {
@@ -27,7 +58,7 @@ public class SpriteManager : Singleton<SpriteManager>
         {
             spriteLibrary.Add(spriteName, targetSprite);
             Debug.Log("add new sprite failed, sprite with same name already exists.");
-            foreach (var VARIABLE in spriteLibrary)
+            foreach (KeyValuePair<string,Sprite> entry in spriteLibrary)
             {
                 //Debug.Log(VARIABLE.Key);
             }
@@ -86,7 +117,18 @@ public class SpriteManager : Singleton<SpriteManager>
         }
     }
     
-    
-    
-    
+    public void SetIceman()
+    {
+        inputNames[0] = "Iceman";
+    }
+    public void SetBreadman()
+    {
+        inputNames[0] = "Breadman";
+    }
+    public void SetSnail()
+    {
+        inputNames[0] = "Snail";
+    }
+
+
 }

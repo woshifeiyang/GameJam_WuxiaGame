@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfecc351596369e40af570ecfc94ce85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteName: 2
+  spriteName: Iceman
   spriteManagerCheckStatus: 1
   spriteUsageStatus: 0
   quality: 0
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  targetPointSecond: 0
+  targetPointSecond: 2
   Speed: 2
   importedLocalScale: {x: 0, y: 0, z: 0}
 --- !u!212 &1712493879634902025

@@ -45,7 +45,7 @@ public class Sprite :  MonoBehaviour
     private void Awake()
     {
         AddNums();
-        AddNewSprite();
+        //AddNewSprite();
     }
     
     public void AddNewSprite()

@@ -26,7 +26,7 @@ public class SpecialEnemySpawner : MonoBehaviour
     {
         if (enemySpawnMarker == (specialEnemyHolder.Length - 1))
         {
-
+            //SpecialEnemySpawn(specialEnemyHolder[specialEnemyHolder.Length - 1].specialEnemy);
         }
         else
         {

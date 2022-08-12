@@ -39,6 +39,21 @@ public class Skill303 : FieldSkillBase
     public override void Update()
     {
         playerPosition = PlayerController.Instance.GetPlayerPosition();
+        //if (PlayerController.Instance.curHealth < 0.1 * PlayerController.Instance.GetPlayerHealthFinal())
+        //{
+        //    cd *= 0.3f;
+        //    Debug.Log("0.1mode");
+        //}
+        //else if(PlayerController.Instance.curHealth < 0.25 * PlayerController.Instance.GetPlayerHealthFinal())
+        //{
+        //    cd *= 0.5f;
+        //    Debug.Log("0.25mode");
+        //}
+        //else if(PlayerController.Instance.curHealth < 0.5 * PlayerController.Instance.GetPlayerHealthFinal())
+        //{
+        //    cd *= 0.7f;
+        //    Debug.Log("0.5mode");
+        //}
         skill303Timer += Time.deltaTime;
         if (skill303Timer > cd)
         {

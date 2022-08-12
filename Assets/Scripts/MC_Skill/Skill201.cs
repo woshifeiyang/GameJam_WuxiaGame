@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Skill201 : MultTargetSkillBase
 {
-    public float fixedDamage = 100;
+    public float fixedDamage = 150;
     public override void Start()
     {
         damage = fixedDamage;

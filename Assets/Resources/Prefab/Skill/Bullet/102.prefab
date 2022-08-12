@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 102
   damage: 50
-  cd: 2
+  cd: 3
   speed: 150
   skillNum: 1
   skillPene: 100
@@ -233,7 +233,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.5
+        value: 0.7538452
         inSlope: 0
         outSlope: 0
         tangentMode: 0

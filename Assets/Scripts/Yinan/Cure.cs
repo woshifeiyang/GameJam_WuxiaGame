@@ -16,19 +16,19 @@ public class Cure : FieldSkillBase
     {
         if (cure)
         {
-            if (distance < 10f*(range+2.6))
+            if (distance < (range+2.6))
             {
                 GameObject tempParticle = Instantiate(particle, PlayerController.Instance.GetPlayerPosition(),transform.rotation);
                 StartCoroutine(DestoryParticle(tempParticle));
                 Debug.Log("cure suscss");
                 if (PlayerController.Instance.curHealth < PlayerController.Instance.maxHealth)
                 {
-                    if(PlayerController.Instance.curHealth < PlayerController.Instance.maxHealth*0.3f){
-                        PlayerController.Instance.curHealth += PlayerController.Instance.maxHealth * 0.01f;
-                    }
-                    else if (PlayerController.Instance.curHealth < PlayerController.Instance.maxHealth * 0.15f)
-                    {
+                    if(PlayerController.Instance.curHealth < PlayerController.Instance.maxHealth*0.15f){
                         PlayerController.Instance.curHealth += PlayerController.Instance.maxHealth * 0.03f;
+                    }
+                    else if (PlayerController.Instance.curHealth < PlayerController.Instance.maxHealth * 0.3f)
+                    {
+                        PlayerController.Instance.curHealth += PlayerController.Instance.maxHealth * 0.01f;
                     }
                     else
                     {

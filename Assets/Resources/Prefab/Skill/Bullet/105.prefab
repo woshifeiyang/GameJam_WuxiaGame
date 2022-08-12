@@ -60,7 +60,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5667774569721688561}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8667384168164182125}
@@ -225,7 +225,7 @@ TrailRenderer:
   m_SortingLayerID: -1612851299
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 0.64
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -304,9 +304,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 105
-  damage: 100
-  cd: 9999
-  speed: 20
+  damage: 30
+  cd: 10
+  speed: 80
   skillNum: 0
   skillPene: 0
-  skillTime: 9999
+  skillTime: 10

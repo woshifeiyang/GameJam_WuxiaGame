@@ -37,7 +37,7 @@
         "Category": "Bullet",
         "Description": "召唤一个剑灵围绕自身并攻击周围的敌人",
         "Buff": "可受增益: 伤害提升, 飞行速度提升, 技能数量增加",
-        "ResAddress": "SkillIcon/SwordSpirit"
+        "ResAddress": "SkillIcon/RotatingSword"
     },
     {
         "Id": 201,

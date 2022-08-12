@@ -34,6 +34,7 @@ public class Karma : FieldSkillBase
     void IncreaseHP()
     {
         PlayerController.Instance.maxHealth += 1f;
+        PlayerController.Instance.updateParameters();
         initialKillnumber = EnemySpawner.Instance.GetEnemiesKills();
     }
 

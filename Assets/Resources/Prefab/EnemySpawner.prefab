@@ -89,9 +89,9 @@ MonoBehaviour:
   - endOfStageTime: 50
     EnemyData:
     - name: 101
-      spawnSpeed: 2
+      spawnSpeed: 3
     - name: 102
-      spawnSpeed: 0.3
+      spawnSpeed: 0
     - name: 103
       spawnSpeed: 0
     - name: 111
@@ -121,7 +121,7 @@ MonoBehaviour:
   - endOfStageTime: 70
     EnemyData:
     - name: 101
-      spawnSpeed: 3
+      spawnSpeed: 4
     - name: 102
       spawnSpeed: 0.4
     - name: 103
@@ -155,7 +155,7 @@ MonoBehaviour:
     - name: 101
       spawnSpeed: 0
     - name: 102
-      spawnSpeed: 1
+      spawnSpeed: 1.6
     - name: 103
       spawnSpeed: 0
     - name: 111
@@ -221,9 +221,9 @@ MonoBehaviour:
     - name: 102
       spawnSpeed: 0
     - name: 103
-      spawnSpeed: 1.5
+      spawnSpeed: 0
     - name: 111
-      spawnSpeed: 4
+      spawnSpeed: 6
     - name: 112
       spawnSpeed: 0.3
     - name: 113
@@ -261,7 +261,7 @@ MonoBehaviour:
     - name: 113
       spawnSpeed: 0
     - name: 121
-      spawnSpeed: 4
+      spawnSpeed: 5
     - name: 122
       spawnSpeed: 0
     - name: 123
@@ -472,9 +472,9 @@ MonoBehaviour:
   specialEnemyHolder:
   - specialEnemy: {fileID: 5243666614868315174, guid: ba67345368c85ea40a527c0948fd399c, type: 3}
     spawnSecond: 20
-  - specialEnemy: {fileID: 5243666614868315174, guid: ba67345368c85ea40a527c0948fd399c, type: 3}
+  - specialEnemy: {fileID: 5243666614868315174, guid: d97803dc6109a0347af4be3192ca7af9, type: 3}
     spawnSecond: 70
-  - specialEnemy: {fileID: 5243666614868315174, guid: ba67345368c85ea40a527c0948fd399c, type: 3}
+  - specialEnemy: {fileID: 5243666614868315174, guid: d97803dc6109a0347af4be3192ca7af9, type: 3}
     spawnSecond: 70
   - specialEnemy: {fileID: 5243666614868315174, guid: 5e8628c4a4c12dd4f8f48bc577d4b768, type: 3}
     spawnSecond: 115
@@ -482,4 +482,6 @@ MonoBehaviour:
     spawnSecond: 160
   - specialEnemy: {fileID: 5243666614868315174, guid: 9d984bf38dd3a404498566c25ce58a2e, type: 3}
     spawnSecond: 240
+  - specialEnemy: {fileID: 5243666614868315174, guid: 9d984bf38dd3a404498566c25ce58a2e, type: 3}
+    spawnSecond: 2000
   Timer: 0

@@ -35,6 +35,8 @@ public class UIManager : MonoSingleton<UIManager>
 
     private GameObject _shareUIObj;
 
+    private GameObject _narrative;
+
     private float _timer;
 
     private int _language;
@@ -58,6 +60,7 @@ public class UIManager : MonoSingleton<UIManager>
         _giftUIObj = GameObject.Find("GiftUI");
         _wechatUIObj = GameObject.Find("WechatUI");
         _shareUIObj = GameObject.Find("ShareUI");
+        _narrative = GameObject.Find("NarrativeUI");
     }
 
     public void InitUIManager()
@@ -448,8 +451,11 @@ public class UIManager : MonoSingleton<UIManager>
         TextMeshProUGUI buffDesText = _skillListUIObj.transform.Find("Upgrade/BuffDescription").GetComponent<TextMeshProUGUI>();
         buffDesText.gameObject.SetActive(true);
         SetFontProperty(skillDesText);
+        skillDesText.fontSize = 40;
         SetFontProperty(buffDesText);
-        
+        buffDesText.fontSize = 30;
+
+
         skillDesText.text = obj.Description;
         buffDesText.text = obj.Buff;
     }

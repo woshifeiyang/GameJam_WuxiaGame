@@ -154,7 +154,7 @@ MonoBehaviour:
   skillPene: 1
   skillTime: 2
   first: 1
-  HPcure: 1
+  HPcure: 5
 --- !u!95 &633404206094256152
 Animator:
   serializedVersion: 3

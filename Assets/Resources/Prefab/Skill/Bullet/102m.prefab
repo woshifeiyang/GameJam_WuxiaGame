@@ -202,7 +202,7 @@ MonoBehaviour:
   speed: 0
   skillNum: 0
   skillPene: 0
-  skillTime: 0
+  skillTime: 10
 --- !u!96 &6246205476736979907
 TrailRenderer:
   serializedVersion: 2

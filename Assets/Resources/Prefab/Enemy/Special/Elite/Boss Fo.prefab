@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 1939382687081895567}
   - component: {fileID: 4767030004487303125}
   - component: {fileID: 2609662296439957417}
+  - component: {fileID: -8171046356051339034}
   m_Layer: 0
   m_Name: Boss Fo
   m_TagString: Boss
@@ -349,7 +350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterId: 201
-  health: 7000
+  health: 15000
   moveSpeed: 1
   damage: 5
   isDead: 0
@@ -717,6 +718,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
+--- !u!114 &-8171046356051339034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5243666614868315174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2b324dd8d696f42a0ec54da9fb264e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5524315569000780145
 GameObject:
   m_ObjectHideFlags: 0

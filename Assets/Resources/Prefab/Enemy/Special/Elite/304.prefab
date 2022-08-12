@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: -5701033807303114166}
   m_Layer: 0
   m_Name: 304
-  m_TagString: Enemy
+  m_TagString: EliteEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

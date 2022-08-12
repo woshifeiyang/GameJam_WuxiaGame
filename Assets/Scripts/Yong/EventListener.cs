@@ -42,7 +42,6 @@ public class EventListener : MonoSingleton<EventListener>
         _basicPropLevelUp += PlayerController.Instance.LevelUp;
 
         _getSkill = new GetSkill(UIManager.Instance.ShowSkillListUI);
-        _getSkill += PlayerController.Instance.LevelUp;
 
         _gameOver = new GameOver(UIManager.Instance.ShowEvaluationUI);
         

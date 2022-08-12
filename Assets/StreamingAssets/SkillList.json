@@ -37,7 +37,7 @@
         "Category": "Bullet",
         "Description": "Summons a sword spirit around you and attacks surrounding enemies",
         "Buff": "Buff: Normal Damage upgrade, Projectiles flight speed+, Projectiles+1",
-        "ResAddress": "SkillIcon/SwordSpirit"
+        "ResAddress": "SkillIcon/RotatingSword"
     },
     {
         "Id": 201,

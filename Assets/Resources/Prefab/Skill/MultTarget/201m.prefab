@@ -164,6 +164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2011
-  damage: 100
+  damage: 150
   cd: 10000
   skillNum: 4

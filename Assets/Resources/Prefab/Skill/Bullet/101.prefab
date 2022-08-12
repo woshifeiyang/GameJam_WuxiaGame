@@ -198,8 +198,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 101
   damage: 55
-  cd: 1
-  speed: 200
+  cd: 0.7
+  speed: 150
   skillNum: 1
   skillPene: 2
   skillTime: 5

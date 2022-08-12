@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterId: 102
-  health: 100
+  health: 120
   moveSpeed: 1
   damage: 10
   isDead: 0
@@ -546,7 +546,7 @@ MonoBehaviour:
     maximumInterval: 2
     visualizeSensitivity: 0
   canMove: 1
-  speed: 0.63
+  speed: 0.5
   orientation: 0
   enableRotation: 0
   rotationSpeed: 10

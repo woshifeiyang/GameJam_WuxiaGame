@@ -222,7 +222,7 @@ public class PlayerController : MonoSingleton<PlayerController>
     {
         ++_level;
         _curExperience = 0;
-        _totalExperience = 4 * math.pow(_level + 1, 2) + 5;
+        _totalExperience = 1 * math.pow(_level + 1, 2) + 5;
     }
     public void AttackLevelUp()
     {

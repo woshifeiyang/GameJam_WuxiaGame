@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterId: 132
-  health: 200
+  health: 250
   moveSpeed: 1
   damage: 10
   isDead: 0

@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_PopcornHead P
+  m_Name: M_PopcornHead Y
   m_Shader: {fileID: -6465566751694194690, guid: 0c7ac68490221ce408cc8dd843d9d783, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
@@ -131,5 +131,5 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _TintColor: {r: 1, g: 0.5254902, b: 0.99215686, a: 1}
+    - _TintColor: {r: 1, g: 0.9254902, b: 0.07058824, a: 1}
   m_BuildTextureStacks: []

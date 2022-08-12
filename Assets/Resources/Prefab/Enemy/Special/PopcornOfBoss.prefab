@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: -3237393364876077923}
   - component: {fileID: -5701033807303114166}
   m_Layer: 0
-  m_Name: 101
+  m_Name: PopcornOfBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,7 +174,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6d430857c91461d44b2dc9b43db72ba1, type: 2}
+  - {fileID: 2100000, guid: 8f528b603f5fa8b4cbdb2831364d5fa9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

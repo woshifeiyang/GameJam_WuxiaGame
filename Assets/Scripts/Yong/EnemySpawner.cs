@@ -145,12 +145,14 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
     private void Update()
     {
         UpdateSpawnQueue();
+        //Debug.Log(spawnQueue.Count);
     }
 
     void UpdateSpawnQueue()
     {
         if (spawnQueue.Count < 100)
         {
+            
             float randomNum = Random.Range(0, 1f);
             string tempResult = "101";
             foreach(KeyValuePair<string,float> entry in enemySpawnRatio)
@@ -208,12 +210,24 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
         float cd = enemySpawnCdFinal;
         while (true)
         {
+            if (cd < 0.02f)
+            {
+                cd = 0.02f;
+            }
+            if (cd > 1f || cd == Mathf.Infinity)
+            {
+                cd = 1f;
+            }
+            Debug.Log("enter spawn");
             if (currentStageNum == (difficultyOfStages.Length - 1))
             {
+                Debug.Log("cd"+cd);
                 yield return new WaitForSeconds(cd);
                 if (spawnQueue.Count > 0)
                 {
-                    GameObject enemy = EnemyObjectPool.Instance.GetObjectFromPool(spawnQueue.Dequeue());//  后期要改
+                    Debug.Log("endless spawn");
+                    GameObject enemy = EnemyObjectPool.Instance.GetObjectFromPool(spawnQueue.Dequeue());
+                    Debug.Log(enemy.GetComponent<Monster>().monsterId);//  后期要改
                     if (enemy)
                     {
                         enemy.transform.position = GetRandomPosition();
@@ -257,11 +271,13 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
             }
             else
             {
+                Debug.Log("cd" + cd);
                 yield return new WaitForSeconds(cd);
                 //GameObject enemy = EnemyObjectPool.Instance.GetObjectFromPool(_currentPool);
                 if (spawnQueue.Count > 0)
                 {
-                    GameObject enemy = EnemyObjectPool.Instance.GetObjectFromPool(spawnQueue.Dequeue());//  后期要改
+                    GameObject enemy = EnemyObjectPool.Instance.GetObjectFromPool(spawnQueue.Dequeue());
+                    Debug.Log(enemy.GetComponent<Monster>().monsterId);
                     if (enemy)
                     {
                         enemy.transform.position = GetRandomPosition();

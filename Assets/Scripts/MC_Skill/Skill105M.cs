@@ -38,8 +38,6 @@ public class Skill105M : BulletSkillBase
     // Update is called once per frame
     public override void Update()
     {
-
-        Debug.Log("105m speed=" + speed);
         transform.position = center.position + dir.normalized * distance;
         transform.RotateAround(center.position, new Vector3(0,0,1), rotateSpeed * Time.deltaTime);
         dir = transform.position - center.position;

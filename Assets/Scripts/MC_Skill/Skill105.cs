@@ -36,8 +36,6 @@ public class Skill105 : BulletSkillBase
 
     public override void Update()
     {
-        
-        Debug.Log("105speed=" + speed);
         //rotateSpeed = 1000f;
         transform.position = center.position + dir.normalized * distance;
         transform.RotateAround(center.position, Vector3.forward, rotateSpeed * Time.deltaTime);

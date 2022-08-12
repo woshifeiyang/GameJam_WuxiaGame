@@ -218,16 +218,16 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
             {
                 cd = 1f;
             }
-            Debug.Log("enter spawn");
+            //Debug.Log("enter spawn");
             if (currentStageNum == (difficultyOfStages.Length - 1))
             {
                 Debug.Log("cd"+cd);
                 yield return new WaitForSeconds(cd);
                 if (spawnQueue.Count > 0)
                 {
-                    Debug.Log("endless spawn");
+                    //Debug.Log("endless spawn");
                     GameObject enemy = EnemyObjectPool.Instance.GetObjectFromPool(spawnQueue.Dequeue());
-                    Debug.Log(enemy.GetComponent<Monster>().monsterId);//  后期要改
+                    //Debug.Log(enemy.GetComponent<Monster>().monsterId);//  后期要改
                     if (enemy)
                     {
                         enemy.transform.position = GetRandomPosition();
@@ -271,13 +271,13 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
             }
             else
             {
-                Debug.Log("cd" + cd);
+                //Debug.Log("cd" + cd);
                 yield return new WaitForSeconds(cd);
                 //GameObject enemy = EnemyObjectPool.Instance.GetObjectFromPool(_currentPool);
                 if (spawnQueue.Count > 0)
                 {
                     GameObject enemy = EnemyObjectPool.Instance.GetObjectFromPool(spawnQueue.Dequeue());
-                    Debug.Log(enemy.GetComponent<Monster>().monsterId);
+                    //Debug.Log(enemy.GetComponent<Monster>().monsterId);
                     if (enemy)
                     {
                         enemy.transform.position = GetRandomPosition();

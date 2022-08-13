@@ -41,13 +41,15 @@ public class GameData : MonoBehaviour
         {
             _narrativeUI.transform.Find("Text_English").gameObject.SetActive(false);
             _narrativeUI.transform.Find("Text_Chinese").gameObject.SetActive(true);
+            Debug.Log("111");
         }
         else
         {
             _narrativeUI.transform.Find("Text_English").gameObject.SetActive(true);
             _narrativeUI.transform.Find("Text_Chinese").gameObject.SetActive(false);
+            Debug.Log("222");
         }
-        
+
         Operation = SceneManager.LoadSceneAsync("Main");
         
         Operation.allowSceneActivation = false;

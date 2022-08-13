@@ -395,11 +395,11 @@ MonoBehaviour:
     - name: 123
       spawnSpeed: 0
     - name: 131
-      spawnSpeed: 5
+      spawnSpeed: 4
     - name: 132
-      spawnSpeed: 2
+      spawnSpeed: 0
     - name: 133
-      spawnSpeed: 1.5
+      spawnSpeed: 0
     - name: 141
       spawnSpeed: 0
     - name: 142

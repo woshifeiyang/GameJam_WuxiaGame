@@ -6391,18 +6391,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1195142506527520331}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!114 &1729219828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8176,13 +8164,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "In the 21st century, the gods came into this world. They are actually
-    a group of aliens, but they are proclaimed as gods by believers. They keep humans
-    in captivity and enslave in this world. \n\nAs a  cultivator, you must save the
-    world and overthrow the rule of God.\n\n"
+  m_text: "\u5929\u5730\u4E0D\u4EC1\uFF0C\u4EE5\u4E07\u7269\u4E3A\u520D\u72D7\u3002\u516C\u51432022\uFF0C\u4E7E\u95E8\u6D1E\u5F00\uFF0C\u771F\u795E\u964D\u4E16\u3002\u5929\u5916\u6765\u5BA2\u62AB\u7740\u795E\u7684\u7F8A\u76AE\uFF0C\u70E7\u6740\u62A2\u63A0\uFF0C\u65E0\u6076\u4E0D\u4F5C\u3002\n\n\u5F1F\u5B50\u62DC\u4E09\u6E05\uFF0C\u4FEE\u4E07\u6CD5\uFF0C\u610F\u52A9\u4E16\u4EBA\u5EA6\u6B64\u52AB\u3002\n\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7e60b60c6b25bfc45a0b1d19722163b2, type: 2}
-  m_sharedMaterial: {fileID: 3328038084059132869, guid: 7e60b60c6b25bfc45a0b1d19722163b2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7ab4c700060a5294aa5fca15d18267e1, type: 2}
+  m_sharedMaterial: {fileID: 2322143177956908509, guid: 7ab4c700060a5294aa5fca15d18267e1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8218,7 +8203,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 6
-  m_lineSpacing: 20
+  m_lineSpacing: 60
   m_lineSpacingMax: 0
   m_paragraphSpacing: 5
   m_charWidthMaxAdj: 0
@@ -9082,7 +9067,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &7602464475467398198
 GameObject:
   m_ObjectHideFlags: 0

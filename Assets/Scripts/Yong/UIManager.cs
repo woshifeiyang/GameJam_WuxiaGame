@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -41,6 +42,8 @@ public class UIManager : MonoSingleton<UIManager>
 
     private int _language;
 
+    private Text _healthText;
+
     public TMP_FontAsset TMP_ChineseFont;
 
     public TMP_FontAsset TMP_EnglishFont;
@@ -82,10 +85,29 @@ public class UIManager : MonoSingleton<UIManager>
         _shareUIObj.SetActive(false);
 
         _language = GameData.language;
+
+        _healthText = GameObject.Find("Health bar/Container/HPBar/PercentageText").GetComponent<Text>();
+        
+        UpdateHealthValue();
         
         StartCoroutine(StartTimer());
     }
 
+    private void FixedUpdate()
+    {
+        UpdateHealthValue();
+    }
+
+    private void UpdateHealthValue()
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        float curHealth = PlayerController.Instance.curHealth;
+        float finalHealth = PlayerController.Instance.healthFinal;
+        stringBuilder.Append(curHealth);
+        stringBuilder.Append(" / ");
+        stringBuilder.Append(finalHealth);
+        _healthText.text = stringBuilder.ToString();
+    }
     IEnumerator StartTimer()
     {
         while (true)
